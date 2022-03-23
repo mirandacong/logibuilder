@@ -1,0 +1,26 @@
+@use '../core/styles/shared';
+
+.logi-selected-label {
+    align-items: center;
+    display: inline-flex;
+    margin: 2px 4px 2px 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 28px;
+    font-size: 14px;
+    max-width: 100%;
+}
+
+.logi-selected-label-content {
+    cursor: default;
+    @include shared.logi-overflow-ellipsis;
+}
+
+.logi-selected-label-delete-icon {
+    flex-shrink: 0;
+    margin: 0 4px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    line-height: 16px;
+}

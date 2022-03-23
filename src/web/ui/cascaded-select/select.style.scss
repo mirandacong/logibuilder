@@ -1,0 +1,120 @@
+@use '../core/styles/shared';
+
+$panel-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+$bg-disabled: rgba(0, 0, 0, 0.04);
+$color-icon-disabled: rgba(0, 0, 0, 0.38);
+$color-text-disabled: rgba(0, 0, 0, 0.24);
+
+.logi-cascaded-select {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    &.logi-cascaded-select-diabled{
+        cursor: not-allowed;
+        @include shared.user-select(none);
+        .logi-cascaded-select-origin{
+            background-color: $bg-disabled;
+        }
+        .logi-cascaded-select-label{
+            color: $color-text-disabled;
+        }
+        .logi-cascaded-select-dropdown-icon{
+            color: $color-icon-disabled;
+        }
+    }
+}
+
+.logi-cascaded-select:not(.logi-cascaded-select-diabled) .logi-cascaded-select-origin {
+    &:not(.no-border):hover {
+        border-color: shared.$black-24;
+    }
+}
+
+
+.logi-cascaded-select-origin {
+    align-items: center;
+    display: flex;
+    border: shared.$border-base;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 36px;
+    &.no-border {
+        border-color: transparent;
+    }
+}
+
+.logi-cascaded-select-wrapper {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.logi-cascaded-select-inner-label {
+    padding-left: 8px;
+    margin-right: 8px;
+}
+.logi-cascaded-select-label {
+    color: shared.$black-87;
+    min-width: 64px;
+    padding-right: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.logi-cascaded-select-dropdown-icon {
+    color: shared.$font-color-base;
+    position: absolute;
+    right: 4px;
+}
+
+.cdk-overlay-backdrop.logi-cascaded-select-backdrop {
+    background-color: none;
+}
+
+.logi-cascaded-select-menus {
+    display: flex;
+    box-shadow: $panel-shadow;
+    border-radius: 4px;
+    padding: 8px 0;
+    background-color: shared.$base-white;
+    max-height: 240px;
+}
+.logi-cascaded-select-menu {
+    overflow-y: auto;
+    margin: 0;
+    border-right: shared.$border-base;
+    padding: 0;
+    list-style: none;
+    &:last-child {
+        border-right-color: transparent;
+    }
+}
+.logi-cascaded-select-menu-item {
+    @include shared.logi-overflow-ellipsis;
+    box-sizing: border-box;
+    padding: 0 16px;
+    font-size: 14px;
+    line-height: 32px;
+    color: shared.$font-color-darker;
+}
+
+.logi-cascaded-select-ripple, .logi-cascaded-select-focus-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+.logi-cascaded-select-focus-overlay {
+    opacity: 0;
+    background-color: black;
+}
+.logi-cascaded-select:hover .logi-cascaded-select-focus-overlay {
+    opacity: 0.04;
+}

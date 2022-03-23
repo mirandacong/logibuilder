@@ -1,0 +1,310 @@
+@use '../core/styles/shared';
+@use 'sass:math';
+
+$logi-checkbox-mark-path-length: 22.910259;
+$logi-checkbox-indeterminate-checked-easing-function: cubic-bezier(0.14, 0, 0, 1);
+$logi-checkbox-ripple-radius: 16px;
+$logi-toggle-padding: 8px !default;
+$logi-checkbox-item-spacing: $logi-toggle-padding;
+
+$logi-checkbox-size: 16px !default;
+$logi-checkbox-mark-stroke-size: math.div(2, 15) * $logi-checkbox-size !default;
+$logi-checkbox-border-width: 2px;
+
+$logi-checkbox-transition-duration: 90ms;
+$logi-toggle-padding: 8px !default;
+
+$swift-ease-out-duration: 400ms !default;
+$swift-ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
+$logi-linear-out-slow-in-timing-function: cubic-bezier(0, 0, 0.2, 0.1) !default;
+$logi-fast-out-slow-in-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$logi-fast-out-linear-in-timing-function: cubic-bezier(0.4, 0, 1, 1) !default;
+$logi-elevation-transition-duration: 280ms !default;
+
+$logi-elevation-transition-timing-function: $logi-fast-out-slow-in-timing-function;
+
+@function logi-elevation-transition-property-value(
+    $duration: $logi-elevation-transition-duration,
+    $easing: $logi-elevation-transition-timing-function) {
+    @return box-shadow #{$duration} #{$easing};
+}
+
+%logi-checkbox-outer-box {
+    @include shared.logi-fill;
+    border-radius: 2px;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.logi-checkbox {
+    transition: background $swift-ease-out-duration $swift-ease-out-timing-function, logi-elevation-transition-property-value();
+
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+    .logi-ripple-element:not(.logi-checkbox-persistent-ripple) {
+        opacity: 0.16;
+    }
+}
+
+.logi-checkbox-layout {
+    @include shared.user-select(none);
+    align-items: baseline;
+    display: inline-flex;
+    cursor: inherit;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.logi-checkbox-label {
+    @include shared.user-select(none);
+}
+
+.logi-checkbox-inner-container {
+    position: relative;
+    flex-shrink: 0;
+    order: 0;
+    display: inline-block;
+    margin: auto;
+    margin-right: $logi-checkbox-item-spacing;
+    width: $logi-checkbox-size;
+    height: $logi-checkbox-size;
+    line-height: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    [dir='rtl'] & {
+        margin: {
+            left: $logi-checkbox-item-spacing;
+            right: auto;
+        }
+    }
+}
+
+.logi-checkbox-inner-container-no-side-margin {
+    margin: {
+        left: 0;
+        right: 0;
+    }
+}
+
+.logi-checkbox-frame {
+    @extend %logi-checkbox-outer-box;
+    transition: border-color $logi-checkbox-transition-duration $logi-linear-out-slow-in-timing-function;
+    background-color: transparent;
+    color: shared.$font-color-base;
+    border: {
+        width: $logi-checkbox-border-width;
+        style: solid;
+    }
+}
+
+.logi-checkbox-background {
+    @extend %logi-checkbox-outer-box;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    transition: background-color $logi-checkbox-transition-duration
+        $logi-linear-out-slow-in-timing-function, opacity $logi-checkbox-transition-duration $logi-linear-out-slow-in-timing-function;
+}
+
+.logi-checkbox-persistent-ripple {
+    transform: none;
+    width: 100%;
+    height: 100%;
+
+    .logi-checkbox-inner-container:hover & {
+        opacity: 0.04;
+    }
+
+    .logi-checkbox.cdk-keyboard-focused & {
+        opacity: 0.12;
+    }
+
+    &, .logi-checkbox.logi-checkbox-disabled .logi-checkbox-inner-container:hover & {
+        opacity: 0;
+    }
+}
+
+.logi-checkbox-checkmark {
+    @include shared.logi-fill;
+    width: 100%;
+}
+
+.logi-checkbox-checkmark-path {
+    stroke: {
+        width: $logi-checkbox-mark-stroke-size;
+        dasharray: $logi-checkbox-mark-path-length;
+        dashoffset: $logi-checkbox-mark-path-length;
+    }
+}
+
+.logi-checkbox-mixedmark {
+    $height: floor($logi-checkbox-mark-stroke-size);
+    opacity: 0;
+    transform: scaleX(0) rotate(0deg);
+    border-radius: 2px;
+    width: calc(100% - 6px);
+    height: $height;
+}
+
+.logi-checkbox-label-before {
+    .logi-checkbox-inner-container {
+        order: 1;
+        margin: {
+            left: $logi-checkbox-item-spacing;
+            right: auto;
+        }
+
+        [dir='rtl'] & {
+            margin: {
+                left: auto;
+                right: $logi-checkbox-item-spacing;
+            }
+        }
+    }
+}
+
+.logi-checkbox-checked {
+    .logi-checkbox-checkmark {
+        opacity: 1;
+    }
+
+    .logi-checkbox-checkmark-path {
+        stroke-dashoffset: 0;
+    }
+
+    .logi-checkbox-mixedmark {
+        transform: scaleX(1) rotate(-45deg);
+    }
+}
+
+.logi-checkbox-indeterminate {
+    .logi-checkbox-checkmark {
+        opacity: 0;
+        transform: rotate(45deg);
+    }
+
+    .logi-checkbox-checkmark-path {
+        stroke-dashoffset: 0;
+    }
+
+    .logi-checkbox-mixedmark {
+        opacity: 1;
+        transform: scaleX(1) rotate(0deg);
+    }
+}
+
+.logi-checkbox-unchecked {
+    .logi-checkbox-background {
+        background-color: transparent;
+    }
+}
+
+.logi-checkbox-disabled {
+    cursor: default;
+    .logi-checkbox-frame {
+        border-color: rgba(0, 0, 0, 0.38);
+    }
+    .logi-checkbox-label {
+        color: rgba(0, 0, 0, 0.38);
+    }
+}
+.logi-checkbox-checked.logi-checkbox-disabled, .logi-checkbox-indeterminate.logi-checkbox-disabled {
+    cursor: default;
+    .logi-checkbox-background {
+        background-color: rgba(0, 0, 0, 0.38);
+    }
+    .logi-checkbox-frame {
+        border-color: transparent;
+    }
+}
+
+.logi-checkbox-ripple {
+    position: absolute;
+    z-index: 1;
+    top: calc(50% - #{$logi-checkbox-ripple-radius});
+    left: calc(50% - #{$logi-checkbox-ripple-radius});
+    border-radius: 50%;
+    width: $logi-checkbox-ripple-radius * 2;
+    height: $logi-checkbox-ripple-radius * 2;
+    pointer-events: none;
+}
+.logi-checkbox:hover:not(.logi-checkbox-disabled) {
+    .logi-checkbox-ripple {
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+}
+.logi-checkbox:hover:not(.logi-checkbox-disabled).logi-checkbox-checked {
+    .logi-checkbox-ripple {
+        background-color: rgba(65, 120, 184, 0.04);
+    }
+}
+.logi-checkbox-anim {
+    $indeterminate-change-duration: 500ms;
+
+    &-unchecked-checked {
+        .logi-checkbox-background {
+            animation: $logi-checkbox-transition-duration * 2 linear 0ms logi-checkbox-fade-in-background;
+        }
+
+        .logi-checkbox-checkmark-path {
+            animation: $logi-checkbox-transition-duration * 2 linear 0ms logi-checkbox-unchecked-checked-checkmark-path;
+        }
+    }
+
+    &-unchecked-indeterminate {
+        .logi-checkbox-background {
+            animation: $logi-checkbox-transition-duration * 2 linear 0ms logi-checkbox-fade-in-background;
+        }
+
+        .logi-checkbox-mixedmark {
+            animation: $logi-checkbox-transition-duration linear 0ms logi-checkbox-unchecked-indeterminate-mixedmark;
+        }
+    }
+
+    &-checked-unchecked {
+        .logi-checkbox-background {
+            animation: $logi-checkbox-transition-duration * 2 linear 0ms logi-checkbox-fade-out-background;
+        }
+
+        .logi-checkbox-checkmark-path {
+            animation: $logi-checkbox-transition-duration linear 0ms logi-checkbox-checked-unchecked-checkmark-path;
+        }
+    }
+
+    &-checked-indeterminate {
+        .logi-checkbox-checkmark {
+            animation: $logi-checkbox-transition-duration linear 0ms logi-checkbox-checked-indeterminate-checkmark;
+        }
+
+        .logi-checkbox-mixedmark {
+            animation: $logi-checkbox-transition-duration linear 0ms logi-checkbox-checked-indeterminate-mixedmark;
+        }
+    }
+
+    &-indeterminate-checked {
+        .logi-checkbox-checkmark {
+            animation: $indeterminate-change-duration linear 0ms logi-checkbox-indeterminate-checked-checkmark;
+        }
+
+        .logi-checkbox-mixedmark {
+            animation: $indeterminate-change-duration linear 0ms logi-checkbox-indeterminate-checked-mixedmark;
+        }
+    }
+
+    &-indeterminate-unchecked {
+        .logi-checkbox-background {
+            animation: $logi-checkbox-transition-duration * 2 linear 0ms logi-checkbox-fade-out-background;
+        }
+
+        .logi-checkbox-mixedmark {
+            animation: $indeterminate-change-duration * 0.6 linear 0ms logi-checkbox-indeterminate-unchecked-mixedmark;
+        }
+    }
+}
+
+.logi-checkbox-input {
+    bottom: 0;
+    left: 50%;
+}

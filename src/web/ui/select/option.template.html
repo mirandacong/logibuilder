@@ -1,0 +1,6 @@
+<div class='logi-option-container'>
+    <ng-content></ng-content>
+</div>
+<mat-icon class='logi-option-selected-icon' *ngIf='multiple && selected' svgIcon='ic_selected'></mat-icon>
+<div class='logi-option-ripple' mat-ripple [matRippleTrigger]='getHostElement()'
+    [matRippleDisabled]='disabled || disableRipple'></div>

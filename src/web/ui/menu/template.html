@@ -1,0 +1,7 @@
+<ng-template>
+    <div class="logi-menu-panel" [id]='panelId' (click)='close$.emit("click")'>
+        <div class="logi-menu-content">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</ng-template>

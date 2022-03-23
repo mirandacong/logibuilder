@@ -1,0 +1,7 @@
+<div class="logi-input-number-wrapper" [class.logi-disabled]="disabled" [class.logi-focused]="focus$ | async">
+    <button class="logi-input-number-button subtract" (click)="onSubtract()" [disabled]="disabled || isMinValue"
+        [icon]="leftIcon" logi-icon-button></button>
+    <input class="logi-input-number-element" #input [disabled]="disabled" [value]="value">
+    <button class="logi-input-number-button add" (click)="onAdd()" [disabled]="disabled || isMaxValue"
+        [icon]="rightIcon" logi-icon-button></button>
+</div>

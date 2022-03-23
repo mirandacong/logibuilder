@@ -1,0 +1,44 @@
+<div class="btns" *ngFor="let btn of fxExcelToolbar" [ngSwitch]="btn.type">
+    <ng-container *ngSwitchCase="toolbarType.ZOOM">
+        <div class="input-btn" matTooltip="缩放">
+            <input class="input" #zoomInput #zoomTrigger="matAutocompleteTrigger"
+                (keydown.enter)="onZoomChange();zoomTrigger.closePanel();zoomInput.blur()" [formControl]="zoomCtrl"
+                [matAutocomplete]="zoomAuto" logi-input size="small" spellcheck="false" value="small size">
+            <mat-autocomplete #zoomAuto="matAutocomplete" [class]="&quot;logi-toolbar-auto-style&quot;">
+                <mat-option *ngFor="let zoom of zoomList" (click)="onZoomChange();zoomInput.blur()" [value]="zoom">
+                    {{zoom}}</mat-option>
+            </mat-autocomplete>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="toolbarType.DEFAULT">
+        <button class="icon-button" (click)="setModifier(btn,btn.value,fxExcelToolbar)"
+            [disabled]="btn.disabled || readonly" [ngClass]="{&quot;selected&quot;:btn.selected}" color="secondary"
+            logi-button matTooltip="{{btn.tooltip}}" rippleCentered>
+            <mat-icon class="icon-button-icon" [svgIcon]="btn.icons[0]"></mat-icon>
+        </button>
+    </ng-container>
+    <ng-container *ngSwitchCase="toolbarType.SELECT">
+        <div class="font-family-btn" matTooltip="{{btn.tooltip}}">
+            <logi-select class="btn-select font-family-select" [disabled]="readonly" [matRippleCentered]="true"
+                [matRippleColor]="iconRippleColor" [matRippleDisabled]="true" [value]="btn.value" matRipple>
+                <logi-option *ngFor="let family of btn.menuButtons" (click)="setModifier(btn,family.value)"
+                    [value]="family.value">{{family.value}}</logi-option>
+            </logi-select>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="toolbarType.FONT_SIZE">
+        <div class="input-btn" matTooltip="字号">
+            <input class="input" #fontSize #fontSizeTrigger="matAutocompleteTrigger"
+                (keydown.enter)="setModifier(btn);fontSizeTrigger.closePanel();fontSize.blur()"
+                [formControl]="fontSizeCtrl" [matAutocomplete]="fontSizeAuto" logi-input size="small" spellcheck="false"
+                value="small size">
+            <mat-autocomplete #fontSizeAuto="matAutocomplete" [class]="&quot;logi-toolbar-auto-style&quot;">
+                <mat-option *ngFor="let size of fontSizeList" (click)="setModifier(btn);fontSize.blur()" [value]="size">
+                    {{size}}</mat-option>
+            </mat-autocomplete>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="toolbarType.DIVIDER">
+        <div class="divider"></div>
+    </ng-container>
+</div>

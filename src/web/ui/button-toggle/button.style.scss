@@ -1,0 +1,30 @@
+@use '../core/styles/shared';
+
+$bg-group: rgba(0, 0, 0, 0.04);
+$bg-button-selected: white;
+
+.logi-button-toggle-group {
+    display: inline-flex;
+    border-radius: 4px;
+    padding: 4px;
+    background-color: $bg-group;
+}
+
+.logi-button-toggle-button {
+    border: none;
+    border-radius: 4px;
+    height: 28px;
+    padding: 0 16px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: shared.$base-font;
+    color: shared.$font-color-base;
+    outline: none;
+    white-space: nowrap;
+}
+
+.logi-button-toggle-button-selected {
+    background-color: $bg-button-selected;
+    font-weight: bold;
+}

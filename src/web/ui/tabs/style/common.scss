@@ -1,0 +1,73 @@
+$ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+$border-width-base: 1px;
+$border-style-base: solid;
+$border-color-split: hsv(0, 0, 94%);
+$border-base: 1px solid  rgba(0, 0, 0, 0.12);
+$font-size-base: 14px;
+$tabs-title-font-size: $font-size-base;
+$font-variant-base: tabular-nums;
+$line-height-base: 1.5715;
+$font-feature-settings-base: 'tnum';
+$tabs-scrolling-size: 32px;
+$margin-md: 16px;
+$text-color-secondary: fade(white, 45%);
+$black-12: fade(white, 30%);
+$tabs-horizontal-margin: 0 32px 0 0;
+$padding-sm: 12px;
+$margin-sm: 12px;
+$tabs-horizontal-padding: $padding-sm 0;
+$border-radius-base: 2px;
+$padding-md: 16px;
+$tabs-horizontal-padding-lg: $padding-md 0;
+$padding-xs: 8px;
+$tabs-horizontal-padding-sm: $padding-xs 0;
+$tabs-vertical-margin: 0 0 $margin-md 0;
+$padding-lg: 24px;
+$tabs-vertical-padding: $padding-xs $padding-lg;
+$blue-base: #1890FF;
+$primary-color: $blue-base;
+$font-size-sm: 12px;
+$font-size-lg: $font-size-base + 2px;
+$tabs-title-font-size-lg: $font-size-lg;
+$tabs-title-font-size-sm: $font-size-base;
+
+@mixin iconfont-size-under-12px($size) {
+    display: inline-block;
+    font-size: $size;
+}
+
+@mixin reset-component {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: $font-size-base;
+    font-variant: $font-variant-base;
+    list-style: none;
+    font-feature-settings: $font-feature-settings-base;
+}
+
+@mixin clearfix {
+    // https://github.com/ant-design/ant-design/issues/21301#issuecomment-583955229
+    &::before {
+        content: '';
+        display: table;
+    }
+    &::after {
+        // https://github.com/ant-design/ant-design/issues/21864
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+// Hidden content
+@mixin tabs-hidden-content() {
+    height: 0;
+    padding: 0 !important;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    input {
+        visibility: hidden;
+    }
+}

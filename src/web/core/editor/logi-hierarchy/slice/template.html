@@ -1,0 +1,34 @@
+<div class="slice-container" #container>
+    <logi-fb-tag class="fb-tag" (menuMouseDown$)="onTagMenuMouseDown($event)" (typeChange$)="setSliceTagType($event)"
+        [empty]="isEmpty()" [node]="node" [readonly]="readonly" [sliceExpr]="slice" [styleTarget]="container"
+        [type]="slice.type" logi-node-focusable></logi-fb-tag>
+    <div class="selection-block" #name>
+        <div class="left">
+            <ng-container *ngIf="isRow(node);else col">
+                <logi-row-slice-name [node]="node" [slice]="slice"></logi-row-slice-name>
+            </ng-container>
+            <ng-template #col>
+                <logi-col-slice-name [node]="node" [slice]="slice"></logi-col-slice-name>
+            </ng-template>
+        </div>
+        <div class="right">
+            <logi-equal class="equal"></logi-equal>
+            <logi-simple-editor class="editor" [focusType]="focusType.EXPRESSION" [node]="node" [readonly]="readonly"
+                [sliceExpr]="slice" logi-node-focusable></logi-simple-editor>
+        </div>
+    </div>
+    <div class="tool-btn-block" [class.menu-open]='isMenuOpen'>
+        <button class="slice-menu-btn" *ngIf="!isFirstSlice() &amp;&amp; !readonly" [matMenuTriggerFor]="slice_menu"
+            icon="ic_overflow_menu" (menuClosed)='onMenuClosed()' (menuOpened)='onMenuOpen()' logi-icon-button></button>
+    </div>
+</div>
+<mat-menu #slice_menu="matMenu">
+    <ng-template matMenuContent>
+        <button class="slice-menu-item" (click)="addSlice()" mat-menu-item>
+            <div class="menu-text">添加切片</div>
+        </button>
+        <button class="slice-menu-item" (click)="deleteSlice()" mat-menu-item>
+            <div class="menu-text">删除切片</div>
+        </button>
+    </ng-template>
+</mat-menu>

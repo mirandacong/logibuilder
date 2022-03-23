@@ -1,0 +1,616 @@
+---
+cellInfos:
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Underline-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q1
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q1
+      row: Control!Style tamplate table!Underline
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Underline-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q2
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q2
+      row: Control!Style tamplate table!Underline
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Underline-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q3
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q3
+      row: Control!Style tamplate table!Underline
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Underline-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q4
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q4
+      row: Control!Style tamplate table!Underline
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Underline-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q5
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q5
+      row: Control!Style tamplate table!Underline
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Indent-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q1
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q1
+      row: Control!Style tamplate table!Indent
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Indent-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q2
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q2
+      row: Control!Style tamplate table!Indent
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Indent-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q3
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q3
+      row: Control!Style tamplate table!Indent
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Indent-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q4
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q4
+      row: Control!Style tamplate table!Indent
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Indent-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q5
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q5
+      row: Control!Style tamplate table!Indent
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Italic indent+1 %-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q1
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q1
+      row: Control!Style tamplate table!Italic indent+1 %
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Italic indent+1 %-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q2
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q2
+      row: Control!Style tamplate table!Italic indent+1 %
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Italic indent+1 %-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q3
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q3
+      row: Control!Style tamplate table!Italic indent+1 %
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Italic indent+1 %-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q4
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q4
+      row: Control!Style tamplate table!Italic indent+1 %
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Italic indent+1 %-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q5
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q5
+      row: Control!Style tamplate table!Italic indent+1 %
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Normal-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q1
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q1
+      row: Control!Style tamplate table!Normal
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Normal-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q2
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q2
+      row: Control!Style tamplate table!Normal
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Normal-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q3
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q3
+      row: Control!Style tamplate table!Normal
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Normal-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q4
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q4
+      row: Control!Style tamplate table!Normal
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Normal-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q5
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q5
+      row: Control!Style tamplate table!Normal
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Bold-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q1
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q1
+      row: Control!Style tamplate table!Bold
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Bold-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q2
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q2
+      row: Control!Style tamplate table!Bold
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Bold-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q3
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q3
+      row: Control!Style tamplate table!Bold
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Bold-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q4
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q4
+      row: Control!Style tamplate table!Bold
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Bold-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q5
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q5
+      row: Control!Style tamplate table!Bold
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Bold indent-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q1
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q1
+      row: Control!Style tamplate table!Bold indent
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Bold indent-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q2
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q2
+      row: Control!Style tamplate table!Bold indent
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Bold indent-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q3
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q3
+      row: Control!Style tamplate table!Bold indent
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Bold indent-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q4
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q4
+      row: Control!Style tamplate table!Bold indent
+  - formulaList:
+      - castFrom: Control!Style tamplate table!Bold indent-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q5
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q5
+      row: Control!Style tamplate table!Bold indent
+  - formulaList:
+      - castFrom: Control!Style tamplate table!SPLITTER-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q1
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q1
+      row: Control!Style tamplate table!SPLITTER
+  - formulaList:
+      - castFrom: Control!Style tamplate table!SPLITTER-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q2
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q2
+      row: Control!Style tamplate table!SPLITTER
+  - formulaList:
+      - castFrom: Control!Style tamplate table!SPLITTER-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q3
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q3
+      row: Control!Style tamplate table!SPLITTER
+  - formulaList:
+      - castFrom: Control!Style tamplate table!SPLITTER-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q4
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q4
+      row: Control!Style tamplate table!SPLITTER
+  - formulaList:
+      - castFrom: Control!Style tamplate table!SPLITTER-
+        expr: '{SOURCE()}'
+        inNodes:
+          - col: Control!Style tamplate table!2017!Q5
+            row: Control!Style tamplate table!SOURCE()
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q5
+      row: Control!Style tamplate table!SPLITTER
+  - formulaList:
+      - castFrom: Control!Style tamplate table!default-
+        expr: 1/2
+        inNodes: []
+        op:
+          rootOp: div
+          subOpInfos:
+            - - type: Atomic
+                value: 1
+              - &ref_0 []
+            - - type: Atomic
+                value: 2
+              - &ref_1 []
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q1
+      row: Control!Style tamplate table!default
+  - formulaList:
+      - castFrom: Control!Style tamplate table!default-
+        expr: 1/2
+        inNodes: []
+        op:
+          rootOp: div
+          subOpInfos:
+            - - type: Atomic
+                value: 1
+              - *ref_0
+            - - type: Atomic
+                value: 2
+              - *ref_1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q2
+      row: Control!Style tamplate table!default
+  - formulaList:
+      - castFrom: Control!Style tamplate table!default-
+        expr: 1/2
+        inNodes: []
+        op:
+          rootOp: div
+          subOpInfos:
+            - - type: Atomic
+                value: 1
+              - *ref_0
+            - - type: Atomic
+                value: 2
+              - *ref_1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q3
+      row: Control!Style tamplate table!default
+  - formulaList:
+      - castFrom: Control!Style tamplate table!default-
+        expr: 1/2
+        inNodes: []
+        op:
+          rootOp: div
+          subOpInfos:
+            - - type: Atomic
+                value: 1
+              - *ref_0
+            - - type: Atomic
+                value: 2
+              - *ref_1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q4
+      row: Control!Style tamplate table!default
+  - formulaList:
+      - castFrom: Control!Style tamplate table!default-
+        expr: 1/2
+        inNodes: []
+        op:
+          rootOp: div
+          subOpInfos:
+            - - type: Atomic
+                value: 1
+              - *ref_0
+            - - type: Atomic
+                value: 2
+              - *ref_1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Style tamplate table!2017!Q5
+      row: Control!Style tamplate table!default
+fbInNodes:
+  Control!Style tamplate table!2017!Q1: []
+  Control!Style tamplate table!2017!Q2: []
+  Control!Style tamplate table!2017!Q3: []
+  Control!Style tamplate table!2017!Q4: []
+  Control!Style tamplate table!2017!Q5: []
+  Control!Style tamplate table!Bold:
+    - Control!Style tamplate table!SOURCE()
+  Control!Style tamplate table!Bold indent:
+    - Control!Style tamplate table!SOURCE()
+  Control!Style tamplate table!INPUT(): []
+  Control!Style tamplate table!INPUT() empty: []
+  Control!Style tamplate table!Indent:
+    - Control!Style tamplate table!SOURCE()
+  Control!Style tamplate table!Italic indent+1 %:
+    - Control!Style tamplate table!SOURCE()
+  Control!Style tamplate table!Normal:
+    - Control!Style tamplate table!SOURCE()
+  Control!Style tamplate table!SOURCE(): []
+  Control!Style tamplate table!SOURCE() empty: []
+  Control!Style tamplate table!SPLITTER:
+    - Control!Style tamplate table!SOURCE()
+  Control!Style tamplate table!Underline:
+    - Control!Style tamplate table!SOURCE()
+  Control!Style tamplate table!default: []
+  Control!Style tamplate table!empty cell: []
+  Control!Style tamplate table!scalar empty: []
+  Control!Style tamplate table!scalar no num: []
+  Control!Style tamplate table!separator: []

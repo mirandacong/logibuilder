@@ -1,0 +1,10 @@
+<div class="suggest-tab" #scroll_container>
+  <div class="tab-item-container" *ngFor="let item of items; let i = index" [class.active]="i === selectedIndex">
+    <div class="tab-item" (mousedown)="onItemMousedown(i)" [innerHTML]="getItemHtml(item.parts)" matTooltip="{{getItemString(item)}}"></div>
+  </div>
+</div>
+<div class="resolved-node" *ngIf="resolvedNode !== undefined">
+  <logi-node class="other" *ngIf="resolvedNode.last !== undefined" [uuid]="resolvedNode.last"></logi-node>
+  <logi-node class="curr" *ngIf="resolvedNode.node !== undefined" [main]="true" [uuid]="resolvedNode.node"></logi-node>
+  <logi-node class="other" *ngIf="resolvedNode.next !== undefined" [uuid]="resolvedNode.next"></logi-node>
+</div>

@@ -1,0 +1,7 @@
+<logi-checkbox *ngIf="showCheckbox" [class.logi-table-selection-select-all-custom]="showRowSelection" [checked]="checked" [disabled]="disabled" [indeterminate]="indeterminate" (change$)="onCheckedChange($event)"></logi-checkbox>
+<div class="logi-table-selection-extra" *ngIf="showRowSelection">
+  <button class="logi-table-selection-down" [matMenuTriggerFor]="selectionMenu" [icon]="&quot;ic_arrow_down&quot;" logi-icon-button></button>
+</div>
+<mat-menu class="logi-table-selection-menu" #selectionMenu="matMenu">
+  <li mat-menu-item *ngFor="let selection of listOfSelections" (click)="selection.onSelect()">{{ selection.text }}</li>
+</mat-menu>

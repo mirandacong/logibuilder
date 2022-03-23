@@ -1,0 +1,54 @@
+@mixin table-size($size, $padding-vertical, $padding-vertical-horizontal, $font-size, $height) {
+    .logi-table.logi-table-#{$size} {
+        font-size: $font-size;
+
+        .logi-table-title, .logi-table-footer, .logi-table-thead > tr > th, .logi-table-tbody > tr > td, tfoot > tr > th, tfoot > tr > td {
+            height: $height;
+            padding: $padding-vertical $padding-vertical-horizontal;
+        }
+
+        .logi-table-thead {
+            th.logi-table-column-has-sorters {
+                height: $height;
+                padding: 0;
+            }
+
+            .logi-table-filter-column {
+                margin: -#{$padding-vertical} -$padding-vertical-horizontal;
+                height: $height;
+            }
+
+            .logi-table-filter-column-title {
+                height: $height;
+                padding: $padding-vertical 2.3em $padding-vertical $padding-vertical-horizontal;
+            }
+
+            .logi-table-column-sorters {
+                height: $height;
+                padding: $padding-vertical $padding-vertical-horizontal;
+            }
+        }
+
+        .logi-table-expanded-row-fixed {
+            margin: -#{$padding-vertical} -$padding-vertical-horizontal;
+            height: $height;
+        }
+    }
+}
+
+// ================================================================
+// =                            Middle                            =
+// ================================================================
+@include table-size('middle', 0, 16px, 14px, 36px);
+
+// ================================================================
+// =                            Small                             =
+// ================================================================
+@include table-size('small', 0, 16px, 14px, 32px);
+
+.logi-table-small {
+    .logi-table-selection-column {
+        width: 46px;
+        min-width: 46px;
+    }
+}

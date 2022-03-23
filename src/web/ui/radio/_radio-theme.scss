@@ -1,0 +1,21 @@
+@use '../core/theming/theming';
+
+@mixin logi-radio-theme($theme) {
+    $primary: map-get($theme, primary);
+    $warn: map-get($theme, warn);
+
+    $color-primary: theming.logi-color($primary);
+    $bg-checked-hover: rgba($color-primary, 0.04);
+
+    .logi-radio-checked {
+        .logi-radio-inner-circle {
+            background-color: $color-primary;
+        }
+        .logi-radio-outer-circle {
+            border-color: $color-primary;
+        }
+        &:hover:not(.logi-radio-disabled) {
+            background-color: $bg-checked-hover;
+        }
+    }
+}

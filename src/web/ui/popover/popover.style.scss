@@ -1,0 +1,8 @@
+@use '../core/styles/shared';
+
+.logi-popover-panel {
+    box-shadow: shared.$shadow-2;
+    border-radius: 4px;
+    padding: 8px 16px;
+    background-color: shared.$base-white;
+}

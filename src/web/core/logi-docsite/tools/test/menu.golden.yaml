@@ -1,0 +1,17 @@
+---
+title: Examples
+group:
+- title: Ex
+  url: src/web/core/logi-docsite/tools/test/examples/ex
+- title: Foo
+  group:
+  - title: Bar
+    url: src/web/core/logi-docsite/tools/test/examples/foo/bar
+  - title: Cat
+    url: src/web/core/logi-docsite/tools/test/examples/foo/cat
+  - title: Foo1
+    group:
+    - title: Bar
+      url: src/web/core/logi-docsite/tools/test/examples/foo/foo1/bar
+    - title: Cat
+      url: src/web/core/logi-docsite/tools/test/examples/foo/foo1/cat

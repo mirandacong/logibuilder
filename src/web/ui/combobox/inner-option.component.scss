@@ -1,0 +1,37 @@
+@use '../core/styles/shared';
+
+.logi-inner-option {
+    align-items: center;
+    height: 32px;
+    padding: 0 16px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.87);
+
+    &.logi-option-selected {
+        font-weight: bold;
+    }
+
+    &.logi-option-activated {
+        background-color: shared.$bg-hover;
+    }
+
+    &:hover:not(.logi-option-disabled) {
+        background-color: shared.$bg-hover;
+    }
+
+    &.logi-option-disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.24);
+    }
+}
+.logi-inner-option-container {
+    @include shared.logi-overflow-ellipsis;
+}
+
+.logi-inner-option-selected-icon {
+    flex-shrink: 0;
+    margin-left: auto;
+    color: shared.$black-60;
+}

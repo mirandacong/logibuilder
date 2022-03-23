@@ -1,0 +1,19 @@
+:host {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+.empty-image {
+    display: inline-block;
+    width: 96px;
+    height: 96px;
+}
+
+.prompt {
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+}

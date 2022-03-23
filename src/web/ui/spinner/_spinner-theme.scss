@@ -1,0 +1,13 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+@mixin logi-spinner-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    $color-primary: theming.logi-color($primary);
+
+    .logi-spinner-element circle {
+        stroke: $color-primary !important;
+    }
+}

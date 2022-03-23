@@ -1,0 +1,59 @@
+/* stylelint-disable */
+@use '../../core/styles/shared';
+
+$border: shared.$border-base;
+
+logi-table, logi-table-title-footer, logi-table-inner-scroll, logi-table-inner-default, logi-table-selection {
+    display: block;
+}
+
+.logi-customize-table-empty-page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: calc(100% - 49px);
+}
+logi-table-inner-scroll {
+    border-radius: 4px;
+    height: 100%;
+    box-sizing: border-box;
+}
+logi-table-inner-default {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+logi-table > .loading-shape {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+
+    &.bg {
+        background-color: shared.$black-16;
+    }
+}
+
+.logi-table-out-bordered {
+    > .logi-table-title {
+        border: $border;
+        border-bottom: 0;
+    }
+    > .logi-table-container {
+        border: $border;
+    }
+    > .logi-table-footer {
+        border: $border;
+        border-top: 0;
+    }
+}
+.logi-table-wrapper-rtl .logi-table thead > tr > th.logi-table-selection-column {
+    text-align: center;
+}

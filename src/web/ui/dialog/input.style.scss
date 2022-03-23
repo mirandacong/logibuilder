@@ -1,0 +1,21 @@
+@use '../core/styles/palette.scss';
+
+@use '../core/styles/shared.scss';
+
+$error-color: map-get(palette.$logi-red, 600);
+
+:host {
+    .input-content {
+        position: relative;
+    }
+    .error {
+        position: absolute;
+        font-size: 12px;
+        color: $error-color;
+    }
+    .label {
+        height: 20px;
+        line-height: 20px;
+        @include shared.set-font(14px, $color: shared.$black-60);
+    }
+}

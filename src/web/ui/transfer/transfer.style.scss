@@ -1,0 +1,39 @@
+@use '../core/styles/shared';
+
+@use '../core/styles/palette';
+
+:host {
+    display: flex;
+}
+
+.left, .right {
+    width: 100%;
+    height: 100%;
+}
+
+.body {
+    overflow-y: auto;
+    border: 1px solid shared.$black-12;
+    border-radius: 4px;
+    height: calc(100% - 46px);
+    padding: 8px 0;
+}
+
+.buttons {
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    margin: 0 16px;
+}
+
+.button-right {
+    margin-top: 16px;
+}
+
+.title {
+    @include shared.set-font(14px);
+    opacity: 1;
+    margin-bottom: 8px;
+    line-height: 20px;
+    color: shared.$font-color-base;
+}

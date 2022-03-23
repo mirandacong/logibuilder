@@ -1,0 +1,6 @@
+<col *ngFor="let width of listOfColWidth" [style.width]="width" [style.minWidth]="width">
+<thead class="logi-table-thead" *ngIf="theadTemplate">
+    <ng-template [ngTemplateOutlet]="theadTemplate"></ng-template>
+</thead>
+<ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+<ng-content></ng-content>

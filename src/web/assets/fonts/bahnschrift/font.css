@@ -1,0 +1,5 @@
+@font-face {
+    font-family: "bahnschrift";
+    src: local("bahnschrift"), url("bahnschrift.ttf") format("truetype");
+    font-display: swap
+}

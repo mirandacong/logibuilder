@@ -1,0 +1,96 @@
+@use 'src/web/assets/styles/palette.scss';
+
+:host {
+    align-items: center;
+
+    display: flex;
+
+    height: inherit;
+    padding-left: 3px;
+    padding-right: 3px;
+    ::ng-deep {
+        .btn-select {
+            border-radius: 4px;
+            .logi-select-trigger {
+                height: 100%;
+                min-height: 0;
+            }
+            .mat-icon {
+                width: 12px;
+                height: 28px;
+            }
+        }
+    }
+}
+.btn {
+    display: flex;
+    width: 72px;
+}
+.font-family-btn {
+    display: flex;
+    height: 26px;
+}
+.button-ripple-round {
+    z-index: 1;
+    border-radius: 50%;
+}
+.icon-button {
+    align-items: center;
+    display: flex;
+    border-radius: 4px;
+    width: auto;
+    height: 28px;
+    padding: 5px;
+    min-width: auto;
+
+    ::ng-deep.logi-button-wrapper {
+        height: 18px;
+        line-height: 18px;
+    }
+
+    &:disabled {
+        .tip {
+            color: rgba(0, 0, 0, 0.38);
+        }
+    }
+    &.selected {
+        background-color: palette.logi-black(0.12) !important;
+        color: map-get(palette.$aris-brand, 600);
+    }
+    &:active:not(:disabled) {
+        background-color: palette.logi-black(0);
+    }
+    &:focus:not(:disabled) {
+        background-color: palette.logi-black(0);
+    }
+}
+
+.icon-button-icon {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+}
+
+.divider {
+    display: inline-block;
+
+    margin: auto 3px;
+    width: 1px;
+    height: 24px;
+
+    background-color: palette.logi-black(0.12);
+}
+.btn-select:hover:not(:disabled) {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+.input-btn {
+    margin: 0 2px;
+}
+.input {
+    width: 72px;
+}
+.btns {
+    align-items: center;
+    display: flex;
+    margin: 0 1px;
+}

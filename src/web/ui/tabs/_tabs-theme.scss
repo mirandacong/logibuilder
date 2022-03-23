@@ -1,0 +1,15 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+@mixin logi-tabs-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    .logi-tabs-ink-bar {
+        background-color: theming.logi-color($primary);
+    }
+
+    .logi-tabs-bar .logi-tabs-tab-active {
+        color: theming.logi-color($primary);
+    }
+}

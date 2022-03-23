@@ -1,0 +1,11 @@
+@use '../core/styles/shared';
+
+@mixin logi-menu-theme($theme) {
+    $background: map-get($theme, background);
+
+    .logi-menu-item:hover {
+        &:not([disabled]) {
+            background-color: map-get($background, hover);
+        }
+    }
+}

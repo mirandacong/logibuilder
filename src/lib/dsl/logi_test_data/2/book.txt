@@ -1,0 +1,387 @@
+@0,0,0,0@
+```(
+book FS
+    sheet Income Statement
+        header mainheader
+            stub us$ mn
+            [[hist, start]] 2016 | [[hist]] 2017 | [[hist,last]] 2018 | [[proj]] 2019 | [[proj]] 2020
+        table Income Statement
+            header = {mainheader}   # whether or not here we need {}
+
+            + Sales = SUM({Product 1: FS/Income Statement/Income Statement/Sales}, {Product 2: FS/Income Statement/Income Statement/Sales})
+            + Sales
+                - Product 1:
+                    [hist] = source()
+                    # we need to support lag of 1Q, 1Y ...
+                    [proj] = {Product 1 [proj && qr]}.lag(1) * (1+{Product 1:FS/Income Statement/Ratios/yoy growth/Sales})
+                - Product 2:
+                    [hist] = source()
+                    [[ASSUMPTION]][proj] = {Product 2 [last]}     #here we need to support a scalar to a vector
+
+            Cost of Sales:
+                [hist] = source()
+                [proj] = {Sales[proj]} * {COGS % Sales: FS/Income Statement/Ratios[proj]}
+
+            + Gross Profit = {Sales}-{Cost of Sales}
+
+            + Operating Expenses = {R&D Expenses} + {SG&A Expenses}
+            -- R&D Expenses:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = input()
+            -- SG&A Expenses:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = input()
+
+            + Operating Income = {Gross Profit} - {Operating Expenses}
+
+
+            D&A = {D&A: FS/Cash Flow Statement/Cash Flow Statement}
+            EBITDA = {Operating Income}+{D&A}
+
+
+            Interest Expenses:
+                [hist] = source()
+                [proj] = ({Total Debt: FS/Balance Sheet/Balance Sheet[hist]}    \
+                +{Total Debt: FS/Balance Sheet/Balance Sheet[hist]}.lag(1))/2  \
+                * {Interest Rate: FS/Income Statement/Ratios}
+
+            Other Non Operating Income:
+                [hist] =  source()
+                [[ASSUMPTION]][proj] = input()
+
+            + Pretax Income = {Operating Income}+{Interest Expenses}+{Other Non Operating Income}
+            Taxes:
+                [hist] = source()
+                [proj] = - {Pretax Income}*{Tax Rate: FS/Income Statement/Ratios}
+            EBT = {Pretax Income} - {Taxes}
+
+
+            Net Income Attributable to the Minority Interest:
+                [hist] = source()
+                [proj] = -{EBT} * {Net Income Attributable to the Minority Interest % EBT:   \
+                FS/Income Statement/Ratios}
+            + Net Income = {Pretax Income}+{Taxes}+{Net Income Attributable to the Minority Interest}
+
+
+            - Diluted Shares:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Diluted Shares[last]}
+                # whether or not explicit type cast is needed here  e.g. .tovector()
+
+            + EPS Diluted = {Net Income}/{Diluted Shares}
+
+        table Variation of the Share Capital
+            header = {mainheader}
+
+            + Share Repurchases
+            - Beggining Basic Shares:
+                [hist] = source()
+                [proj] = {Ending Basic Shares}.lag(1)
+            - Shares Issued:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = input()
+            - [[ref]]Shares Repurchased = - {Share Repurchased[cal]}
+            - Ending Basic Shares:
+                [hist] = source()
+                [proj] = {Beggining Basic Shares} + {Shares Issued} + {Shares Repurchased[ref]}
+            + Average Basic Shares = AVERAGE({Beggining Basic Shares},{Ending Basic Shares})
+            - Dilutive Effect of Stock Options:
+                [hist] = {Average Diluted Shares[hist]}-{Average Basic Shares[hist]}
+                [[ASSUMPTION]][proj] = {Dilutive Effect of Stock Options[last]}
+            + Average Diluted Shares:
+                [hist] = source()
+                [proj] = {Average Basic Shares[proj]}+{Dilutive Effect of Stock Options[proj]}
+
+            [[cal]]Share Repurchased:
+                [hist] = source()
+                [proj] = {$ Repurchases[proj]}/{Share Price[proj]}
+            Share Price:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = input()
+            $ Repurchases:
+                [hist] = {Share Repurchased[hist]}*{Share Price[hist]}
+                [[ASSUMPTION]][proj] = input()
+
+        table Ratios
+            header = {mainheader}
+            + yoy growth
+                + Sales
+                    - Product 1:
+                        [hist] = {Product 1: FS/Income Statement/Income Statement/Sales}/  \
+                        {Product 1: FS/Income Statement/Income Statement/Sales}.lag(1)-1
+                        [[ASSUMPTION]][proj] = {Product 1[hist]}.average()
+                    - Product 2 = {Product 2: FS/Income Statement/Income Statement/Sales}/   \
+                        {Product 2: FS/Income Statement/Income Statement/Sales}.lag(1)-1
+                Gross Profit = {Gross Profit: FS/Income Statement/Income Statement}/    \
+                    {Gross Profit: FS/Income Statement/Income Statement} -1
+                Net Income = {Net Income: FS/Income Statement/Income Statement}/    \
+                    {Net Income: FS/Income Statement/Income Statement} -1
+
+            + Margins
+                - Gross Margin = {Gross Profit:FS/Income Statement/Income Statement}    \
+                    /{Sales: FS/Income Statement/Income Statement}
+                - EBITDA Margin[[Operating Income]] = {Operating Income: FS/Income Statement/Income Statement} \
+                    /{Sales: FS/Income Statement/Income Statement}
+                - EBITDA Margin[[EBITDA]] = {EBITDA:FS/Income Statement/Income Statement}   \
+                    /{Sales: FS/Income Statement/Income Statement}
+
+            - COGS % Sales:
+                [hist] = {Cost of Sales: FS/Income Statement/Income Statement}   \
+                    /{Sales:FS/Income Statement/Income Statement}
+                [[ASSUMPTION]][proj] = {COGS % Sales[hist]}.average()
+            - Interest Rate:
+                [hist] = {Interest Expenses:FS/Income Statement/Income Statement[hist]}/    \
+                    ({Total Debt: FS/Balance Sheet/Balance Sheet[hist]}  \
+                +{Total Debt: FS/Balance Sheet/Balance Sheet[hist]}.lag(1))/2
+                [[ASSUMPTION]][proj] = input()
+            - Tax Rate:
+                [hist] = - {Taxes: FS/Income Statement/Income Statement}   \
+                /{Pretax Income: FS/Income Statement/Income Statement}
+                [[ASSUMPTION]][proj] = {Tax Rate[hist]}.average()
+            - Net Income Attributable to the Minority Interest % EBT:
+                [hist] = - {Net Income Attributable to the Minority Interest: \
+                    FS/Income Statement/Income Statement}  \
+                /{EBT: FS/Income Statement/Income Statement}
+                [[ASSUMPTION]][proj] = {Net Income Attributable to the Minority Interest % EBT}.average()
+
+    sheet Balance Sheet
+        table Balance Sheet
+            header = {mainheader}
+
+            + Assets
+            - Receivables = - {Receivables, Net: FS/Balance Sheet/Balance Sheet}.diff(1)
+            Surplus Cash = max(0, - SUM({Cash & Equivalents},{Investment Securities},{Receivables},{Inventories}, \
+            {Deferred Income Taxes},{Prepaid Expenses and Other Current Assets}) + SUM({Notes and Loan Payables}, \
+            {Current Portion of Long-Term Debt},{Accounts Payable},{Accrued and Other Liabilities},{Long-Term Debt}, \
+            {Deferred Income Taxes},{Other Liabilities}) + {Total Shareholders' Equity})
+            Cash & Equivalents:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Cash & Equivalents[last]}
+            Investment Securities:
+                [hist] = source()
+                [[ASSUMPTION]] [proj] = {Investment Securities[last]}
+            Receivables, Net:
+                [hist] = source()
+                [proj] = {Sales: FS/Income Statement/Income Statement[proj]} * {Inventories % COGS:FS/Balance Sheet/Ratios[proj]}
+            Inventories:
+                [hist] = source()
+                [proj] = {Cost of Sales: FS/Income Statement/Income Statement[proj]}    \
+                 * {Inventories % COGS:FS/Balance Sheet/Ratios[proj]}
+            Prepaid Expenses and Other Current Assets:
+                [hist] = source()
+                [[ASSUMPTION]][proj]={Prepaid Expenses and Other Current Assets[last]}
+            ++ Total Current Assets = SUM({Surplus Cash},{Cash & Equivalents},{Investment Securities},{Receivables, Net}, \
+            {Inventories},{Deferred Income Taxes},{Prepaid Expenses and Other Current Assets})
+
+
+            PP&E, Net:
+                [hist] = source()
+                [proj] ={PP&E, Net[proj]}.lag(1) + {D&A: FS/Income Statement/Income Statement}
+            Goodwill, Net:
+                [hist] = source()
+                [[ASSUMPTION]][proj]= {Goodwill, Net[last]}
+            Other Intangible Assets, Net:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Other Intangible Assets, Net[last]}
+            Other Assets:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Other Assets[last]}
+            ++ Total Assets = SUM({Total Current Assets},{PP&E, Net},{Goodwill, Net},  \
+            {Other Intangible Assets, Net}, {Other Assets})
+
+            + Liabilities
+            Short-Term Debt = max(0, SUM({Cash & Equivalents},{Investment Securities},{Receivables},{Inventories}, \
+            {Deferred Income Taxes},{Prepaid Expenses and Other Current Assets}) - SUM({Notes and Loan Payables}, \
+            {Current Portion of Long-Term Debt},{Accounts Payable},{Accrued and Other Liabilities},{Long-Term Debt}, \
+            {Deferred Income Taxes},{Other Liabilities}) - {Total Shareholders' Equity})
+            Notes and Loan Payables:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Notes and Loan Payables[last]}
+            Current Portion of Long-Term Debt:
+                [hist] = source()
+                [[ASSUMPTION]] [proj] = input()
+            Accounts Payable:
+                [hist] = source()
+                [proj] = {Cost of Sales: FS/Income Statement/Income Statement} \
+                * {AP % COGS: FS/Balance Sheet/Ratios}
+            Accrued and Other Liabilities:
+                [hist] = source()
+                [proj] = {Sales: FS/Income Statement/Income Statement}   \
+                * {Accrued and Other Liabilities % Sales: FS/Balance Sheet/Ratios}
+            ++ Total Current Liabilities = SUM({Short-Term Debt},{Notes and Loan Payables}, \
+            {Current Portion of Long-Term Debt},{Accounts Payable},{Accrued and Other Liabilities})
+
+            Long-Term Debt:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Long-Term Debt[last]}
+            Total Debt:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Long-Term Debt[last]}
+            Deferred Income Taxes:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Deferred Income Taxes[last]}
+            Other Liabilities:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Other Liabilities[last]}
+            ++ Total Liabilities = {Total Current Liabilities} + SUM({Long-Term Debt}, \
+            {Deferred Income Taxes},{Other Liabilities})
+
+            Shareholders' Equity
+            - Preferred Stock:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Preferred Stock[last]}
+            - Common Stock:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Common Stock[last]}
+            - Additional Paid-In Capital:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Additional Paid-In Capital[last]}
+            - Retained Earnings:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Retained Earnings[proj]}.lag(1)+{Net Income: \
+                FS/Income Statement/Income Statement} +{Dividends Paid: FS/Cash Flow Statement/Cash Flow Statement}
+            - Accumulated Other Comprehensive Income:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Accumulated Other Comprehensive Income[proj]}.lag(1) + \
+                {Stock-Based Compensation Expenses: FS/Cash Flow Statement/Cash Flow Statement} + \
+                {Proceeds from Stock Options, Other: FS/Cash Flow Statement/Cash Flow Statement}
+            - Reserve for ESOP Debt Retirement:
+                [hist] = source()
+                [[ASSUMPTION]] [proj] = {Reserve for ESOP Debt Retirement[last]}
+            - Treasury Stock:
+                [hist] = source()
+                [proj] = {Treasury Stock[proj]}.lag(1) +    \
+                {$ Repurchases: FS/Income Statement/Variation of the Share Capital}
+            - Minority Interest:
+                [hist] = source()
+                [proj] = {Minority Interest[proj]}.lag(1) + {Net Income Attributable to the Minority Interest: \
+                FS/Income Statement/Income Statement}
+            ++ Total Shareholders' Equity = SUM({Preferred Stock},{Common Stock}, \
+            {Additional Paid-In Capital},{Retained Earnings},{Accumulated Other Comprehensive Income}, \
+            {Reserve for ESOP Debt Retirement},{Treasury Stock},{Minority Interest})
+
+            check = {Total Liabilities} + {Total Shareholders' Equity} - {Total Assets}
+
+        table Ratios
+            header = {mainheader}
+            AR % Sales:
+                [hist] = {Receivables, Net: FS/Balance Sheet/Balance Sheet} /   \
+                {Sales:FS/Income Statement/Income Statement}
+                [proj] = {AR % Sales[hist]}.average()
+            Inventories % COGS:
+                [hist] = {Inventories: FS/Balance Sheet/Balance Sheet} / \
+                {Cost of Sales:FS/Income Statement/Income Statement}
+
+            AP % COGS:
+                [hist] = {Accounts Payable: FS/Balance Sheet/Balance Sheet} /  \
+                {Cost of Sales:FS/Income Statement/Income Statement}
+                [proj] = {AP % COGS[hist]}.average()
+
+            Accrued and Other Liabilities % Sales:
+                [hist] = {Accrued and Other Liabilities: FS/Balance Sheet/Balance Sheet} \
+                /{Sales: FS/Income Statement/Income Statement}
+
+
+    sheet Cash Flow Statement
+        table Cash Flow Statement
+            header = {mainheader}
+
+            + Net Income = {Net Income: FS/Income Statement/Income Statement}
+            Adjustments
+            - D&A = sum({Depreciation: FS/Cash Flow Statement/Cash Flow Statement/D&A}, {Ammortization: FS/Income Statement/Income Statement/D&A})
+            - D&A
+                - Depreciation:
+                    [hist] =  source()
+                    [proj] =  {PP&E, Net: FS/Balance Sheet/Balance Sheet}.lag(1)       \
+                    * {Depreciation % Opening PP&E: FS/Cash Flow Statement/Ratios [proj]}
+                - Ammortization = source():
+                    [hist] = source()
+                    [[ASSUMPTION]][proj] = 0
+            - Stock-Based Compensation Expenses:
+                [hist] =  source()
+                [[ASSUMPTION]][proj] = {Stock-Based Compensation Expenses[last]}
+            - Deferred Income Taxes:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = {Deferred Income Taxes: FS/Balance Sheet/Balance Sheet}- \
+                    {Deferred Income Taxes:FS/Balance Sheet/Balance Sheet}.lag(1)
+            - [[Adjustments]]] Other = {Prepaid Expenses and Other Current Assets:FS/Balance Sheet/Balance Sheet[Adjustments]}.diff(1)
+
+            # here we need to support the diff(n) method
+
+            Changes in A/L
+            - Receivables = - {Receivables, Net: FS/Balance Sheet/Balance Sheet}.diff(1)
+            - Inventories =  - {Inventories: FS/Balance Sheet/Balance Sheet}.diff(1)
+            - A&P, Accrued and Other Liabilities = {Accounts Payable: FS/Balance Sheet/Balance Sheet}.diff(1) \
+                + {Accrued and Other Liabilities: FS/Balance Sheet/Balance Sheet}.diff(1)
+            - Other Operating Assets and Liabilities = - {Other Assets: FS/Balance Sheet/Balance Sheet}.diff(1)   \
+                + {Other Liabilities: FS/Balance Sheet/Balance Sheet}.diff(1)
+
+            + Cash Provided by Operations = {Net Income}+SUM({D&A},{Stock-Based Compensation Expenses},   \
+            {Deferred Income Taxes},{Other}) + SUM({Receivables},{Inventories},{A&P, Accrued and Other Liabilities},\
+            {Other Operating Assets and Liabilities})
+
+            Cash Flows from Investing Activities
+            - CAPEX:
+                [hist] = source()
+                [proj] = {Product 1:FS/Income Statement/Income Statement/Sales[hist]} \
+                * {CAPEX % Sales: FS/Cash Flow Statement/Ratios}
+            - Proceeds from Asset Sales:
+                [hist] = source()
+                [[ASSUMPTION]] [proj] = input()
+            - Payment for Aquisition:
+                [hist] = source()
+                [[ASSUMPTION]] [proj] = input()
+            - [[Cash Flows from Investing Activities]] Other:
+                [hist] = {Cash Used for Investing Activities} - SUM({CAPEX},{Proceeds from Asset Sales}, \
+                {Payment for Aquisition})
+                [[ASSUMPTION]][proj] = {Other[last && Cash Flows from Investing Activities]}
+            + Cash Used for Investing Activities:
+                [hist] = source()
+                [proj] = SUM({CAPEX[proj]},{Proceeds from Asset Sales[proj]},{Payment for Aquisition},  \
+                {Other[proj && Cash Flows from Investing Activities]})
+
+            Cash Flows from Financing Activities
+            - Change in Short-Term Debt = {Short-Term Debt:FS/Balance Sheet/Balance Sheet}.diff(1) \
+                + {Notes and Loan Payables: FS/Balance Sheet/Balance Sheet}.diff(1) \
+                + {Current Portion of Long-Term Debt: FS/Balance Sheet/Balance Sheet}.diff(1)
+            - Change in Long-Term Debt = {Long-Term Debt:FS/Balance Sheet/Balance Sheet}.diff(1)
+            - Dividends Paid:
+                [hist] = source()
+                [proj] = - {Diluted Shares:FS/Income Statement/Income Statement[proj]}   \
+                * {Dividend per Share:FS/Cash Flow Statement/Ratios[proj]}
+            - Purchase of Treasury Shares = - {$ Repurchases: FS/Income Statement/Variation of the Share Capital}
+            - Proceeds from Stock Options, Other:
+                [hist] = source()
+                [proj] = {Proceeds from Stock Options, Other[last]}
+            + Cash Used for Financing Activities = SUM({Change in Short-Term Debt},{Change in Long-Term Debt}, \
+                {Dividends Paid},{Purchase of Treasury Shares},{Proceeds from Stock Options, Other})
+
+            [[ASSUMPTION]]]Cash Provided by Discontinued Operations = 0
+            Exchange Rate Effect on Cash / Other:
+                [hist] = source()
+                [[ASSUMPTION]][proj] = 0
+            + Net Increase (Decrease) in Cash and Cash Equivalents = SUM({Cash Provided by Operations}, \
+            {Cash Used for Investing Activities}, {Cash Used for Financing Activities})
+
+            Cash and Cash Equivs, Beg = {Cash and Cash Equivs, End}.lag(1)
+            Cash and Cash Equivs, End:
+                [hist] = source()
+                [proj] = {Cash and Cash Equivs, Beg} + {Net Increase (Decrease) in Cash and Cash Equivalents}
+
+            check = {Cash and Cash Equivs, End} - {Surplus Cash:FS/Balance Sheet/Balance Sheet} \
+                - {Surplus Cash: FS/Balance Sheet/Balance Sheet}
+
+
+        table Ratios
+            header = {mainheader}
+            -- Depreciation % Opening PP&E:
+                [hist] = {D&A:FS/Cash Flow Statement/Cash Flow Statement}/{PP&E, Net: FS/Balance Sheet/Balance Sheet}.lag(1)
+                [[ASSUMPTION]][proj] = {Depreciation % Opening PP&E [hist]}.average()
+            Dividend per Share:
+                [hist] = source()
+                [[strategy=CHECK]][hist] = {Dividends Paid: FS/Cash Flow Statement/Cash Flow Statement[hist]} \
+                /{Diluted Shares: FS/Income Statement/Income Statement[proj]}
+            CAPEX % Sales:
+                [hist] = {CAPEX:FS/Cash Flow Statement/Cash Flow Statement[hist]}/{Sales:FS/Income Statement/Income Statement[hist]}
+                [[ASSUMPTION]][proj] = {CAPEX % Sales[hist]}.average()
+)```

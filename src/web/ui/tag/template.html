@@ -1,0 +1,13 @@
+<span class="logi-tag-wrapper" [class.logi-tag-content-ellipsis]='ellipsis'>
+    <mat-icon class="logi-tag-icon" *ngIf='isIconTag()' [svgIcon]='icon'>{{fontIcon}}</mat-icon>
+    <span *ngIf='!isCloseableMode(); else temp'>
+        <ng-content></ng-content>
+    </span>
+    <ng-template #temp>
+        <logi-readonly-input class="logi-tag-text" (change$)='onEditTag($event)' [name]='text'></logi-readonly-input>
+    </ng-template>
+    <button class="logi-tag-close-icon" *ngIf='isCloseableMode()' (click)='onClose($event)' [disabled]='disabled'
+        icon='ic_close' logi-icon-button smaller></button>
+</span>
+<div class="logi-tag-ripple" [matRippleColor]='rippleColor' [matRippleDisabled]='isRippleDisabled()'
+    [matRippleTrigger]='getHostElement()' matRipple></div>

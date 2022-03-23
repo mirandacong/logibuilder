@@ -1,0 +1,9 @@
+@use '../../shared' as editor;
+
+.ref-name-input {
+    @include editor.slice-name-input;
+}
+
+.slice-suggestion-panel {
+    @include editor.slice-suggestion-panel;
+}

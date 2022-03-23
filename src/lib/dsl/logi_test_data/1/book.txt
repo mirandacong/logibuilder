@@ -1,0 +1,83 @@
+@0,0,0,0@
+```(
+book Test model
+    sheet Control
+        ++ title Financial Statement
+            + title China
+        header period
+            stub us mn
+            [[hist]] 2017 | [[hist]] 2018 | [[hist]] 2019
+                Q1 | Q2 | Q3 | Q4 | FY
+                [[priority=6, strategy=CHECK]]FY:
+                    [stock] = {Q1} + {Q2} + {Q3} + {Q4}
+                    [current] = {Q4}
+            [[proj]] 2020
+                Q1 | Q2 | Q3 | Q4 | FY
+
+        table Revenue Breakup
+            header = {period: Test Model/Control}
+
+            ++ [[stock]]Revenue = SUM({Total:\
+                    Test model/Control/Revenue Breakup/Electronic products}, \
+                    {Services})
+
+            -- yoy growth[[Revenue]] = {Revenue}/{Revenue}.lag(1)-1
+
+            + Electronic products
+                - [[assumption]]iPhone[proj] = input()
+                    [hist] = source
+                - iPad[proj] ={iPad[proj]}.lag(1)*({iPad[hist]}/{iPad[hist]}.lag(1)).average()
+                    [hist] = source
+                - Mac:
+                    [[assumption]][proj] = input()
+                Total:
+                    [[strategy=CHECK]][hist] = {iPhone[hist]}+{iPad[hist]}+{Mac[hist]}
+                    [proj] = {iPhone[proj]} + {iPad[proj]} + {Mac[proj]}
+
+            -- yoy growth[[Total]] = {Total: Test model/Control/Revenue Breakup/Electronic products}
+
+            + Services:
+                [[fact]][hist] = input()
+                [proj] = {Services[proj]}.lag(1)*(1 + {yoy growth[[service_growth]]})
+
+            -- @ [[service_growth, assumption]] yoy growth = input()
+
+
+        title Income Statement
+            table Income Statement
+                header = {period: Test model/Control}
+
+                + [[current]] Cost of Sales:
+                    [[fact]][hist] = source()
+                    [[assumption]][proj] = input()
+
+                [[current]] Operating Expenses:
+                    [[estimated]][hist] = input()
+                    [proj] = {Revenue: Test model/Control/Revenue Breakup}\
+                        * {as %revenue[hist]}.average()
+
+                -- as %revenue = {Operating Expenses}/{Revenue:\
+                Test model/Control/Revenue Breakup}
+
+                Operating Income = {Revenue:\
+                    Test model/Control/Revenue Breakup} \
+                    - {Operating Expenses}
+
+                Total Interest & Other Income:
+                    [[fact]][hist] = source()
+                    [[assumption]][proj] = input()
+
+                Pretax Income = {Operating Income} + {Total Interest & Other Income}
+
+                @ tax rate = input()
+                tax = {Operating Income} * {tax rate}
+
+                + Net Income = {Pretax Income} - {tax}
+
+
+
+                Gross Profit = {Revenue:\
+                    Test model/Control/Revenue Breakup} - {Cost of Sales}
+                -- Gross Margin = {Gross Profit} / {Revenue:\
+                    Test model/Control/Revenue Breakup}
+)```

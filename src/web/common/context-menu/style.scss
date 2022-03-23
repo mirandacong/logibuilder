@@ -1,0 +1,29 @@
+$menu-box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+$white: rgba(255, 255, 255, 1);
+$menu-width: 240px;
+$radius: 4px;
+
+.cdk-overlay-container {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* stylelint-disable-next-line */
+::ng-deep {
+    .ngx-contextmenu.cdk-overlay-pane {
+        position: absolute;
+        align-items: center;
+        display: flex;
+        box-shadow: $menu-box-shadow;
+        border-radius: $radius;
+        box-sizing: border-box;
+        width: $menu-width;
+        background: $white;
+        pointer-events: auto;
+    }
+}

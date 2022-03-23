@@ -1,0 +1,6 @@
+<ng-template #content_template>
+  <ng-content></ng-content>
+</ng-template>
+<ng-container *ngIf="!isInsideTable">
+  <ng-template [ngTemplateOutlet]="content_template"></ng-template>
+</ng-container>

@@ -1,0 +1,114 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette';
+
+$excel-bar-button-size: 20px;
+$excel-bar-height: 32px;
+$excel-header-background-color: #E6E6E6;
+
+$status-bar-height: 24px;
+$refresh-btn-size: 18px;
+$border-color: palette.logi-black(0.12);
+
+%excel-view-bar-button-position {
+    @include shared.square-size($excel-bar-button-size);
+}
+
+/*
+ * This component may be as bootstrap component. Set global style here to
+ * override default html style.
+ */
+html, body {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+}
+
+.excel-preview-header {
+    align-items: center;
+    display: flex;
+    height: $excel-bar-height;
+    background-color: $excel-header-background-color;
+    -webkit-app-region: drag;
+
+    .refresh-btn .mat-icon {
+        width: $refresh-btn-size;
+        height: $refresh-btn-size;
+        line-height: $refresh-btn-size;
+    }
+}
+
+.csf-sheet-formula {
+    flex-flow: row;
+    align-items: center;
+
+    display: flex;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: calc(#{$status-bar-height} - 1px);
+
+    background-color: palette.logi-white(1);
+    @include shared.set-font();
+    &.has-border {
+        border: 1px solid $border-color;
+    }
+
+    .csf-sheet-formula-bar {
+        align-items: center;
+
+        display: flex;
+
+        width: calc(100% - 128px);
+        height: 100%;
+        padding-left: 23px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    .cell-address {
+        align-items: center;
+        display: flex;
+        border-right: 1px solid $border-color;
+        width: 128px;
+        height: 100%;
+        padding-left: 8px;
+    }
+    .fx {
+        position: absolute;
+        left: 121px;
+
+        border-radius: 44px;
+        width: 31px;
+        height: 18px;
+
+        background-color: palette.aris-brand(0.12);
+
+        line-height: 18px;
+        font-weight: bold;
+        text-align: center;
+        color: palette.aris-brand();
+    }
+}
+
+.excel-preview-body {
+    @include shared.size(calc(100% - 142px),100%);
+    @include shared.element-display-flex();
+    /* stylelint-disable-next-line */
+    overflow: hidden;
+    .csf-sheet-container {
+        height: calc(100% - #{$status-bar-height});
+    }
+
+    .csf-sheet-status-bar {
+        height: $status-bar-height;
+    }
+}
+
+.legend {
+    position: absolute;
+    bottom: 21px;
+    right: 18px;
+}

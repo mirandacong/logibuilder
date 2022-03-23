@@ -1,0 +1,11 @@
+{
+    "extends": [
+        "./.tslint.d/codelyzer.json",
+        "./.tslint.d/consistent-codestyle.json",
+        "./.tslint.d/core.json",
+        "./.tslint.d/eslint-rules.json",
+        "./.tslint.d/immutable.json",
+        "./.tslint.d/microsoft-contrib.json",
+        "./.tslint.d/vrsource.json"
+    ]
+}

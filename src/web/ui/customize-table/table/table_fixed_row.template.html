@@ -1,0 +1,9 @@
+<td class="logi-disable-td logi-table-cell" #tdelement>
+    <div class="logi-table-expanded-row-fixed" #fixelement [style.width.px]="hostWidth$ | async"
+        style="position: sticky;  overflow: hidden;">
+        <ng-template [ngTemplateOutlet]="contentTemplate"></ng-template>
+    </div>
+</td>
+<ng-template #contentTemplate>
+    <ng-content></ng-content>
+</ng-template>

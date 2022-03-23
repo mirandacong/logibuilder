@@ -1,0 +1,1075 @@
+
+= Logi.Builder函数使用说明
+
+== 目录
+
+- [[#a | 行计算型函数]]
+-- [[#a0 | !=]]
+-- [[#a1 | &]]
+-- [[#a2 | <>]]
+-- [[#a3 | ABS]]
+-- [[#a4 | AND]]
+-- [[#a5 | AVERAGE]]
+-- [[#a6 | AVERAGEIFV]]
+-- [[#a7 | COS]]
+-- [[#a8 | COUNT]]
+-- [[#a9 | DATE]]
+-- [[#a10 | EMPTY]]
+-- [[#a11 | IF]]
+-- [[#a12 | IFERROR]]
+-- [[#a13 | IRR]]
+-- [[#a14 | ISERROR]]
+-- [[#a15 | LOG]]
+-- [[#a16 | MAX]]
+-- [[#a17 | MIN]]
+-- [[#a18 | NOT]]
+-- [[#a19 | NPV]]
+-- [[#a20 | OR]]
+-- [[#a21 | POWER]]
+-- [[#a22 | ROUND]]
+-- [[#a23 | SIN]]
+-- [[#a24 | SUM]]
+-- [[#a25 | SWITCH]]
+-- [[#a26 | XIRR]]
+-- [[#a27 | XNPV]]
+-- [[#a28 | YEARFRAC]]
+- [[#b | 列计算型函数]]
+-- [[#b0 | average]]
+-- [[#b1 | averageifv]]
+-- [[#b2 | averageprevious]]
+-- [[#b3 | count]]
+-- [[#b4 | day]]
+-- [[#b5 | diff]]
+-- [[#b6 | growth]]
+-- [[#b7 | halfyears]]
+-- [[#b8 | lag]]
+-- [[#b9 | latter]]
+-- [[#b10 | lead]]
+-- [[#b11 | linear]]
+-- [[#b12 | max]]
+-- [[#b13 | min]]
+-- [[#b14 | months]]
+-- [[#b15 | previous]]
+-- [[#b16 | quarters]]
+-- [[#b17 | sum]]
+-- [[#b18 | year]]
+-- [[#b19 | years]]
+
+== 行计算型函数 {anchor #a}
+
+(NOTE) !={anchor #a0}
+
+- 函数描述
+
+    !=
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>element1</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+<tr><td>element2</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+</table>
+
+- 返回值类型
+
+    ##布尔值##
+
+- 示例
+
+    !=(element1, element2)
+
+(NOTE) &{anchor #a1}
+
+- 函数描述
+
+    连接两个元素
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>值</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+<tr><td>值</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    &(argument, argument)
+
+(NOTE) <>{anchor #a2}
+
+- 函数描述
+
+    <>
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>element1</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+<tr><td>element2</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+</table>
+
+- 返回值类型
+
+    ##布尔值##
+
+- 示例
+
+    <>(element1, element2)
+
+(NOTE) ABS{anchor #a3}
+
+- 函数描述
+
+    计算绝对值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>值</td>}<td>##数值 | 布尔值##</td><td>❌</td><td>❌</td><td>需要计算绝对值的值</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数值##
+
+- 示例
+
+    ABS(值)
+
+(NOTE) AND{anchor #a4}
+
+- 函数描述
+
+    返回所有表达式的与值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>逻辑值</td>}<td>##数值 | 布尔值##</td><td>✔️</td><td>❌</td><td>逻辑表达式</td></tr>
+</table>
+
+- 返回值类型
+
+    ##布尔值##
+
+- 示例
+
+    AND(逻辑值1, 逻辑值2, ...)
+
+(NOTE) AVERAGE{anchor #a5}
+
+- 函数描述
+
+    返回算术平均值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>值</td>}<td>##数值 | 数组##</td><td>✔️</td><td>❌</td><td>计算平均值时用到的数值或范围</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    AVERAGE(值1, 值2, ...)
+
+(NOTE) AVERAGEIFV{anchor #a6}
+
+- 函数描述
+
+    返回算术平均值,忽略空值与错误
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>值1</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>计算平均值时用到的数值或范围</td></tr>
+<tr><td>值2</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>计算平均值时用到的数值或范围</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    AVERAGEIFV(值1, 值2)
+
+(NOTE) COS{anchor #a7}
+
+- 函数描述
+
+    返回给定角度的余弦值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>角度</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>要取其余弦值的角度，以弧度表示</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数值##
+
+- 示例
+
+    COS(角度)
+
+(NOTE) COUNT{anchor #a8}
+
+- 函数描述
+
+    计算区域中包含数字的单元格的个数
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>值</td>}<td>##数值 | 数组##</td><td>✔️</td><td>❌</td><td>计数时要检查的第一个值或范围</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    COUNT(值1, 值2, ...)
+
+(NOTE) DATE{anchor #a9}
+
+- 函数描述
+
+    返回在Excel日期时间中代表日期的数字
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>年</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>日期中的年份</td></tr>
+<tr><td>月</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>日期中的月份</td></tr>
+<tr><td>日</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>日期中的“日”部分</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    DATE(年, 月, 日)
+
+(NOTE) EMPTY{anchor #a10}
+
+- 函数描述
+
+    暂无
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##空值##
+
+- 示例
+
+    EMPTY()
+
+(NOTE) IF{anchor #a11}
+
+- 函数描述
+
+    判断是否满足某个条件,如果满足,则返回第一个值,否则返回另一个值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>条件</td>}<td>##布尔值##</td><td>❌</td><td>❌</td><td>一个表达式或对包含表达式的单元格的引用，该表达式代表某种逻辑值，即 TRUE 或 FALSE</td></tr>
+<tr><td>为 TRUE 时的返回值</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>当逻辑表达式为 TRUE 时函数返回的值</td></tr>
+<tr><td>为 FALSE 时的返回值</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>当逻辑表达式为 FALSE 时函数返回的值</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    IF(条件, 为 TRUE 时的返回值, 为 FALSE 时的返回值)
+
+(NOTE) IFERROR{anchor #a12}
+
+- 函数描述
+
+    如果表达式是错误的,则返回默认值,否则返回表达式自身的值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>值</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>value 本身不为错误值的情况下要返回的值</td></tr>
+<tr><td>默认值</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>value 是错误值的情况下函数返回的值</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    IFERROR(值, 默认值)
+
+(NOTE) IRR{anchor #a13}
+
+- 函数描述
+
+    返回一系列现金流的内部收益率
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>现金流数额</td>}<td>##数组##</td><td>❌</td><td>❌</td><td>其中含有投资相关收益或支出的数组或范围（现金流数额中必须至少包含一项负的和一项正的现金流金额才能计算回报率）</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数值##
+
+- 示例
+
+    IRR(现金流数额)
+
+(NOTE) ISERROR{anchor #a14}
+
+- 函数描述
+
+    检查值是否错误
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>任意值</td>}<td>##数组 | 布尔值 | 数值 | 日期##</td><td>❌</td><td>❌</td><td>任意一个表达式</td></tr>
+</table>
+
+- 返回值类型
+
+    ##布尔值##
+
+- 示例
+
+    ISERROR(任意值)
+
+(NOTE) LOG{anchor #a15}
+
+- 函数描述
+
+    根据底数返回数值的对数
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>值</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>要计算其以给定底数为底的对数的值（值必须为正数）</td></tr>
+<tr><td>底数</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>用于计算此对数的底数</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数值##
+
+- 示例
+
+    LOG(值, 底数)
+
+(NOTE) MAX{anchor #a16}
+
+- 函数描述
+
+    返回一组数值中的最大值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>值</td>}<td>##数值 | 数组##</td><td>✔️</td><td>❌</td><td>计算最大值时所用的值或范围</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    MAX(值1, 值2, ...)
+
+(NOTE) MIN{anchor #a17}
+
+- 函数描述
+
+    返回一组数值中的最小值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>值</td>}<td>##数值 | 数组##</td><td>✔️</td><td>❌</td><td>计算最小值时所用的值或范围</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    MIN(值1, 值2, ...)
+
+(NOTE) NOT{anchor #a18}
+
+- 函数描述
+
+    对逻辑表达式的值求反
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>逻辑值</td>}<td>##数值 | 布尔值##</td><td>❌</td><td>❌</td><td>逻辑表达式</td></tr>
+</table>
+
+- 返回值类型
+
+    ##布尔值##
+
+- 示例
+
+    NOT(逻辑值)
+
+(NOTE) NPV{anchor #a19}
+
+- 函数描述
+
+    根据收支现金流和贴现率,返回净限值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>贴现率</td>}<td>##数值##</td><td>❌</td><td>❌</td><td>一个期间内的投资贴现率</td></tr>
+<tr><td>现金流</td>}<td>##数组##</td><td>❌</td><td>❌</td><td>未来现金流</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数值##
+
+- 示例
+
+    NPV(贴现率, 现金流)
+
+(NOTE) OR{anchor #a20}
+
+- 函数描述
+
+    返回所有表达式的或值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>逻辑值</td>}<td>##数值 | 布尔值##</td><td>✔️</td><td>❌</td><td>逻辑表达式</td></tr>
+</table>
+
+- 返回值类型
+
+    ##布尔值##
+
+- 示例
+
+    OR(逻辑值1, 逻辑值2, ...)
+
+(NOTE) POWER{anchor #a21}
+
+- 函数描述
+
+    返回某一数值的某次幂
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>基数</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>要计算其指数次幂的数值（如果基数为负，则指数必须为整数）</td></tr>
+<tr><td>指数</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>指定底数的自乘幂次值</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    POWER(基数, 指数)
+
+(NOTE) ROUND{anchor #a22}
+
+- 函数描述
+
+    按指定位数对数值进行四舍五入
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>值</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>要四舍五入为位数位小数的数值</td></tr>
+<tr><td>位数</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>要舍入到的小数位数（位数可以取负值，在这种情况下会将值的小数点左侧部分舍入到指定的位数）</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数值##
+
+- 示例
+
+    ROUND(值, 位数)
+
+(NOTE) SIN{anchor #a23}
+
+- 函数描述
+
+    返回给定角度的正弦值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>角度</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>要返回其正弦值的角度，以弧度表示</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数值##
+
+- 示例
+
+    SIN(角度)
+
+(NOTE) SUM{anchor #a24}
+
+- 函数描述
+
+    计算对应区域的所有数值的和
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>值</td>}<td>##数值 | 数组##</td><td>✔️</td><td>❌</td><td>要相加的数值或范围</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    SUM(值1, 值2, ...)
+
+(NOTE) SWITCH{anchor #a25}
+
+- 函数描述
+
+    根据计算表达式的值返回与第一个匹配值对应的结果,如果没有匹配项,则返回默认值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>表达式</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>任何有效的值</td></tr>
+<tr><td>案例</td>}<td>##数值 | 数组##</td><td>✔️</td><td>❌</td><td>检查是否与表达式匹配的第一种情况</td></tr>
+<tr><td>值</td>}<td>##数值 | 数组##</td><td>✔️</td><td>❌</td><td>案例与表达式匹配后返回的对应值</td></tr>
+<tr><td>默认值</td>}<td>##数值 | 数组##</td><td>❌</td><td>❌</td><td>没有与表达式匹配的情况后返回的可选值（指定为最后一个参数）</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    SWITCH(表达式, 案例1, 值1, 案例2, 值2, ..., 默认值)
+
+(NOTE) XIRR{anchor #a26}
+
+- 函数描述
+
+    计算一连续期间现金流的内部收益率
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>现金流数额</td>}<td>##数组##</td><td>❌</td><td>❌</td><td>其中含有投资相关收益或支出的数组或范围(现金流数额中必须至少包含一项负的和一项正的现金流金额才能计算回报率)</td></tr>
+<tr><td>现金流日期</td>}<td>##数组##</td><td>❌</td><td>❌</td><td>与现金流数额参数中的现金流对应的日期数组或范围</td></tr>
+<tr><td>收益率估值</td>}<td>##数值##</td><td>❌</td><td>✔️</td><td>对内部回报率的估算值（默认值为0.1）</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数值##
+
+- 示例
+
+    XIRR(现金流数额, 现金流日期, [收益率估值])
+
+(NOTE) XNPV{anchor #a27}
+
+- 函数描述
+
+    计算净现值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>贴现率</td>}<td>##数值##</td><td>❌</td><td>❌</td><td>一个期间内的投资贴现率</td></tr>
+<tr><td>现金流数额</td>}<td>##数组##</td><td>❌</td><td>❌</td><td>其中含有投资相关收益或支出的单元格范围</td></tr>
+<tr><td>现金流日期</td>}<td>##数组##</td><td>❌</td><td>❌</td><td>与现金流数额参数中的现金流对应的日期值单元格范围</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数值##
+
+- 示例
+
+    XNPV(贴现率, 现金流数额, 现金流日期)
+
+(NOTE) YEARFRAC{anchor #a28}
+
+- 函数描述
+
+    计算两个日期之间的天数(取整天数)占一年的比例
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>开始日期</td>}<td>##数值##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+<tr><td>结束日期</td>}<td>##数值##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+<tr><td>计算方式</td>}<td>##数值##</td><td>❌</td><td>✔️</td><td>要使用的日计数基准类型:
+0或省略:US(NASD) 30/360
+1:实际/实际
+2:实际/360
+3:实际/365
+4:欧洲 30/360</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数值##
+
+- 示例
+
+    YEARFRAC(开始日期, 结束日期, [计算方式])
+
+== 列计算型函数 {anchor #b}
+
+(NOTE) average{anchor #b0}
+
+- 函数描述
+
+    计算区域中数值的算术平均数
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##数值 | 数组##
+
+- 示例
+
+    {ref}.average()
+
+(NOTE) averageifv{anchor #b1}
+
+- 函数描述
+
+    返回算术平均值,忽略空值与错误
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##数值##
+
+- 示例
+
+    {ref}.averageifv()
+
+(NOTE) averageprevious{anchor #b2}
+
+- 函数描述
+
+    计算在此之前一段时间范围内的值的平均值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>时间</td>}<td>##日期##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    {ref}.averageprevious(时间)
+
+(NOTE) count{anchor #b3}
+
+- 函数描述
+
+    计算区域中包含数值的个数
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##数值 | 数组##
+
+- 示例
+
+    {ref}.count()
+
+(NOTE) day{anchor #b4}
+
+- 函数描述
+
+    返回日期的日期值
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    {ref}.day()
+
+(NOTE) diff{anchor #b5}
+
+- 函数描述
+
+    计算两个日期之间的天数、月数或年数
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>时期</td>}<td>##日期##</td><td>❌</td><td>❌</td><td>计算中要使用的开始日期-结束日期</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    {ref}.diff(时期)
+
+(NOTE) growth{anchor #b6}
+
+- 函数描述
+
+    暂无
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    {ref}.growth()
+
+(NOTE) halfyears{anchor #b7}
+
+- 函数描述
+
+    取当前时间范围内的所有半年度
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##矩阵##
+
+- 示例
+
+    {ref}.halfyears()
+
+(NOTE) lag{anchor #b8}
+
+- 函数描述
+
+    将一组数列右移若干个单位
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>时期</td>}<td>##日期##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    {ref}.lag(时期)
+
+(NOTE) latter{anchor #b9}
+
+- 函数描述
+
+    取在此之后一段时间范围内的值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>时间</td>}<td>##日期##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+</table>
+
+- 返回值类型
+
+    ##矩阵##
+
+- 示例
+
+    {ref}.latter(时间)
+
+(NOTE) lead{anchor #b10}
+
+- 函数描述
+
+    将一组数列左移若干个单位
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>时期</td>}<td>##日期##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    {ref}.lead(时期)
+
+(NOTE) linear{anchor #b11}
+
+- 函数描述
+
+    根据起始值和终止值返回一组等差数列
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>起始值</td>}<td>##数值##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+<tr><td>终止值</td>}<td>##数值##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+</table>
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    {ref}.linear(起始值, 终止值)
+
+(NOTE) max{anchor #b12}
+
+- 函数描述
+
+    计算区域中所有数值的最大值
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##数值 | 数组##
+
+- 示例
+
+    {ref}.max()
+
+(NOTE) min{anchor #b13}
+
+- 函数描述
+
+    计算区域中所有数值的最小值
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##数值 | 数组##
+
+- 示例
+
+    {ref}.min()
+
+(NOTE) months{anchor #b14}
+
+- 函数描述
+
+    取当前时间范围内的所有月度
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##矩阵##
+
+- 示例
+
+    {ref}.months()
+
+(NOTE) previous{anchor #b15}
+
+- 函数描述
+
+    取在此之前一段时间范围内的值
+
+- 参数信息
+
+<table>
+<tr><th>参数名</th><th>参数类型</th><th>可重复</th><th>可选</th><th>参数描述</th></tr>
+<tr><td>时间</td>}<td>##日期##</td><td>❌</td><td>❌</td><td>暂无</td></tr>
+</table>
+
+- 返回值类型
+
+    ##矩阵##
+
+- 示例
+
+    {ref}.previous(时间)
+
+(NOTE) quarters{anchor #b16}
+
+- 函数描述
+
+    取当前时间范围内的所有季度
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##矩阵##
+
+- 示例
+
+    {ref}.quarters()
+
+(NOTE) sum{anchor #b17}
+
+- 函数描述
+
+    计算区域中所有数值的和
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##数值 | 数组##
+
+- 示例
+
+    {ref}.sum()
+
+(NOTE) year{anchor #b18}
+
+- 函数描述
+
+    返回日期的年份值
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##数组##
+
+- 示例
+
+    {ref}.year()
+
+(NOTE) years{anchor #b19}
+
+- 函数描述
+
+    取当前时间范围内的所有年度
+
+- 参数信息
+
+    无参数
+
+- 返回值类型
+
+    ##矩阵##
+
+- 示例
+
+    {ref}.years()

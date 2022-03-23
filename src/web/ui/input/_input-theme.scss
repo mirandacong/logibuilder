@@ -1,0 +1,130 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+$disabled-bg: rgba(0, 0, 0, 0.04);
+
+/** TODO(zengkai): move this style to another position **/
+@mixin _logi-input-style {
+    border: shared.$border-base;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 36px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-family: shared.$base-font;
+    outline: none;
+
+    &.logi-large {
+        height: 56px;
+        font-size: 16px;
+    }
+    &.logi-small {
+        height: 24px;
+        font-size: 12px;
+    }
+    &.logi-disabled {
+        border: shared.$border-base;
+        background-color: $disabled-bg;
+        color: shared.$black-38;
+        pointer-events: none;
+        &::placeholder {
+            color: shared.$black-38;
+        }
+    }
+    &:hover {
+        border-color: shared.$font-color-base;
+    }
+    &:focus {
+        border-width: 2px;
+    }
+    &.ng-touched.ng-invalid {
+        border-width: 2px;
+    }
+}
+
+@mixin _logi-input-number-theme($theme) {
+    $primary: map-get($theme, primary);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+
+    $color-primary: theming.logi-color($primary);
+    $focused-border-color: map-get($background, focused-border);
+
+    .logi-input-number-wrapper.logi-focused {
+        border-color: $focused-border-color;
+        .logi-input-number-element {
+            caret-color: $color-primary;
+        }
+    }
+
+    .logi-select-input-panel .mat-option.selected {
+        color: $color-primary;
+    }
+}
+
+@mixin _logi-select-input-theme($theme) {
+    $background: map-get($theme, background);
+
+    $focused-border-color: map-get($background, focused-border);
+
+    .logi-dropdown-select-input .logi-select-input-element:focus {
+        border-color: $focused-border-color;
+    }
+}
+
+@mixin _logi-active-input-theme($theme) {
+    $primary: map-get($theme, primary);
+    $color-primary: theming.logi-color($primary);
+
+    .logi-active-input-button.active {
+        color: $color-primary !important;
+    }
+}
+
+@mixin _logi-textarea-count-theme($theme) {
+    textarea.logi-input-element {
+        resize: vertical;
+    }
+    .logi-textarea-count::after {
+        content: attr(data-count);
+        pointer-events: none;
+        white-space: nowrap;
+        float: right;
+        color: rgba(0, 0, 0, 0.38);
+        font-size: 14px;
+    }
+}
+
+@mixin logi-input-theme($theme) {
+    $primary: map-get($theme, primary);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+
+    $color-primary: theming.logi-color($primary);
+    $color-warn: theming.logi-color($warn);
+    $color: rgba(0, 0, 0, 0.87);
+    $focused-border-color: map-get($background, focused-border);
+
+    @include _logi-input-number-theme($theme);
+    @include _logi-select-input-theme($theme);
+    @include _logi-active-input-theme($theme);
+    @include _logi-textarea-count-theme($theme);
+    .logi-input-element {
+        @include _logi-input-style;
+        color: $color;
+        caret-color: $color-primary;
+
+        &:focus {
+            border-color: $focused-border-color;
+        }
+        &.ng-invalid {
+            border-color: $color-warn;
+        }
+    }
+
+    .ng-invalid .logi-input-element {
+        caret-color: $color-warn;
+    }
+}

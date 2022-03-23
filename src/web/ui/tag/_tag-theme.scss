@@ -1,0 +1,22 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+@mixin logi-tag-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    $color: theming.logi-color($primary);
+    $color-border: theming.logi-color($primary, 0.12);
+    $color-bg: theming.logi-color($primary, 0.24);
+    $color-hover: theming.logi-color($primary, 0.6);
+
+    .logi-tag-base {
+        border-color: $color-border;
+        background-color: $color-bg;
+        color: $color;
+
+        &:hover:not([disabled]) {
+            border-color: $color-hover;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@use 'src/web/assets/styles/shared';
+
+:host {
+    flex-direction: column;
+
+    display: flex;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    padding: 8px 5px;
+
+    background-color: shared.$base-white;
+    @include shared.set-font(14px);
+}

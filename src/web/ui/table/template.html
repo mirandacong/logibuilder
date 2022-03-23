@@ -1,0 +1,41 @@
+<div class="table-wrapper" [class.with-paginator]="pageSizeOptions !== undefined">
+    <table class="logi-style-table" [class.fixed-layout]="singleSelect || multipleSelect" [dataSource]="dataSource"
+        mat-table matSort>
+        <ng-container matColumnDef="{{singleSelectColFlag}}">
+            <th *matHeaderCellDef mat-header-cell></th>
+            <td *matCellDef="let element" mat-cell>
+                <mat-radio-button [checked]="isSelected(element)" [disableRipple]="true" [name]="radioName">
+                </mat-radio-button>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="{{multipleSelectColFlag}}">
+            <th *matHeaderCellDef mat-header-cell>
+                <mat-checkbox (change)="$event ? toggleAll() : null"
+                    [checked]="selection.hasValue() &amp;&amp; isAllSelected()"
+                    [indeterminate]="selection.hasValue() &amp;&amp; !isAllSelected()"></mat-checkbox>
+            </th>
+            <td *matCellDef="let element" mat-cell>
+                <mat-checkbox (change)="$event ? selection.toggle(element) : null" (click)="$event.stopPropagation()"
+                    [checked]="selection.isSelected(element)"></mat-checkbox>
+            </td>
+        </ng-container>
+        <ng-container *ngFor="let column of dataColumns;let i=index;" matColumnDef="{{column}}">
+            <th *matHeaderCellDef [disabled]="isDisableSort(column)" [style.width]="getColumnWidth(i)" disableClear
+                mat-header-cell mat-sort-header>{{columnTitles[i]}}</th>
+            <td *matCellDef="let element" mat-cell><a class="row-link" *ngIf="rowLinkUrl !== undefined"
+                    [href]="rowLinkUrl ? rowLinkUrl(element) : &quot;&quot;" rel="noopener" target="_blank"></a>
+                <ng-template #default>{{element[column]}}</ng-template>
+                <ng-container
+                    *ngTemplateOutlet="colTemplateMap.get(column) ? (colTemplateMap.get(column) || null) : default; context: {$implicit: element}">
+                </ng-container>
+            </td>
+        </ng-container>
+        <tr *matHeaderRowDef="columns; sticky: headerSticky" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: columns" (click)="click(row)" [class.selected]="isSelected(row)" mat-row></tr>
+    </table>
+    <div class="loading-shade" *ngIf="loading">
+        <logi-spinner></logi-spinner>
+    </div>
+</div>
+<mat-paginator *ngIf="pageSizeOptions" (page)="handleChange()" [length]="total" [pageIndex]="pageIndex"
+    [pageSizeOptions]="pageSizeOptions"></mat-paginator>

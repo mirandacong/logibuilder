@@ -1,0 +1,35 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+@mixin logi-combobox-size($selector, $config) {
+    $font-size: map-get($config, font-size);
+    $trigger-height: map-get($config, trigger-height);
+    $arrow-icon-size: map-get($config, arrow-icon-size);
+    $selected-label-height: map-get($config, selected-label-height);
+    $selected-label-delete-icon-size: map-get($config, selected-label-delete-icon-size);
+
+    #{$selector} {
+        font-size: $font-size;
+        .logi-combobox-trigger {
+            font-size: $font-size;
+            min-height: $trigger-height;
+        }
+        .logi-combobox-arrow-icon {
+            width: $arrow-icon-size;
+            height: $arrow-icon-size;
+            line-height: $arrow-icon-size;
+        }
+        .logi-selected-label {
+            height: $selected-label-height;
+        }
+        .logi-selected-label-delete-icon {
+            width: $selected-label-delete-icon-size;
+            height: $selected-label-delete-icon-size;
+            line-height: $selected-label-delete-icon-size;
+        }
+        .logi-combobox-search-input {
+            height: $trigger-height - 2;
+        }
+    }
+}

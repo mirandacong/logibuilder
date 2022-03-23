@@ -1,0 +1,23 @@
+@use '../core/styles/shared';
+
+$disable-color: rgba(0, 0, 0, 0.24);
+
+.logi-cascaded-select-option {
+    position: relative;
+    cursor: pointer;
+}
+
+.logi-cascaded-select-expand {
+    position: absolute;
+    right: 0;
+    align-items: center;
+    display: inline-flex;
+    height: 100%;
+
+    .expand-icon {
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        color: shared.$font-color-base;
+    }
+}

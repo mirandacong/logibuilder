@@ -1,0 +1,353 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette';
+
+@use '../shared' as editor;
+
+$circle-size: 7px;
+$drag-icon-top: 6px;
+$table-input-width: 96px;
+$stub-input-width: 99px;
+$input-padding-compact: 0 3px;
+$input-height-compact: 18px;
+$stub-compact: 0 0 0 8px;
+$node-type-margin: 8px 16px 8px 0;
+$node-type-height: 16px;
+$stub-btns-height: 34px;
+$radius: 4px;
+$dropzone-height: 8px;
+$dropzone-circle-margin: 1px 0 0 9px;
+$dropzone-line-margin: 3px 8px 3px 6px;
+$dropzone-line-height: 2px;
+
+$color: (
+    'white':rgba(255, 255, 255, 1),
+    'table-bkg': rgba(250, 250, 250, 1),
+    'input-color': rgba(0, 0, 0, 0.87),
+    'selected-bkg': rgba(65, 120, 184, 0.08),
+    'text-color': rgba(0, 0, 0, 0.6),
+    'placeholder': rgba(0, 0, 0, 0.38),
+    'normal': rgba(0, 0, 0, 0.12),
+    'hover-bkg': rgba(0, 0, 0, 0.04),
+    'dropzone-placeholder': rgba(229, 144, 53, 1),
+);
+
+$border: (
+    'selected-border': 1px solid shared.$base-blue,
+    'normal-border': 1px solid map-get($color, 'normal'),
+    'table-border': 2px solid shared.$base-blue,
+    'circle-border': 4px solid map-get($color, 'table-bkg'),
+);
+
+@mixin table-border {
+    border-radius: 4px 4px 0 0;
+    width: 100%;
+    height: 2px;
+    position: relative;
+}
+
+%focused {
+    &.name-focused, &.expr-focused, &.stub-focused {
+        border-left: map-get($border, 'selected-border');
+        border-right: map-get($border, 'selected-border');
+        background-color: map-get($color, 'white');
+        caret-color: palette.aris-brand();
+    }
+}
+
+/* Used when dragging nodes starts */
+.dragging-elements-fade-away {
+    /* stylelint-disable-next-line */
+    opacity: 0.38;
+}
+:host {
+    align-items: center;
+
+    display: flex;
+
+    border-radius: $radius;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    padding-right: 8px;
+    fill: palette.logi-black(1);
+}
+.table-block {
+    flex: 1;
+    flex-direction: column;
+
+    display: flex;
+
+    height: 100%;
+
+    &.compact-flex {
+        flex: none;
+    }
+
+    .table-block-title {
+        position: sticky;
+        z-index: 100;
+        top: 0;
+        flex: 1;
+        align-items: center;
+
+        display: flex;
+
+        margin-bottom: 7px;
+        border-bottom: map-get($border, 'table-border');
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        border-top: 1px solid transparent;
+        height: 100%;
+
+        background-color: map-get($color, 'table-bkg');
+
+        max-height: 36px;
+        min-height: 36px;
+        white-space: nowrap;
+
+        &.selected {
+            border: map-get($border, 'selected-border');
+            border-bottom: map-get($border, 'table-border');
+            border-radius: $radius $radius 0 0;
+            background-color: map-get($color, 'selected-bkg');
+        }
+
+        &:hover {
+            background-color: map-get($color, 'hover-bkg');
+        }
+
+        &.rounded-border {
+            border: 1px solid transparent;
+            border-radius: $radius;
+            &.selected {
+                border: map-get($border, 'selected-border');
+            }
+        }
+
+        /* Toggle this class when a table sticks to top or not */
+        &.table-sticky-change {
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            border-top: 1px solid transparent;
+            background-color: palette.logi-white(1);
+        }
+    }
+
+    .drag-icon {
+        margin-top: $drag-icon-top;
+        cursor: pointer;
+        color: palette.logi-black(0.38);
+    }
+
+    .block-drag-icon {
+        cursor: pointer;
+        color: palette.logi-green();
+    }
+
+    .footer-line {
+        display: flex;
+        margin-left: 12px;
+        padding-bottom: 14px;
+
+        .tree-flag {
+            @include editor.tree-flag-empty;
+
+            .circle {
+                @include editor.tree-flag-circle-empty;
+            }
+        }
+    }
+
+    .mat-icon-wrapper {
+        min-width: 24px;
+    }
+}
+
+.stub-btn {
+    justify-content: flex-end;
+
+    display: flex;
+
+    margin-left: auto;
+
+    line-height: $stub-btns-height;
+    min-width: fit-content;
+
+    ::ng-deep {
+        span {
+            align-items: center;
+            display: flex;
+            max-width: fit-content;
+
+            div {
+                overflow: hidden;
+                max-width: 200px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .icon-link {
+        display: inline-block;
+        margin-right: 8px;
+        color: palette.logi-black(0.24);
+    }
+    .this-column-set {
+        display: inline-block;
+
+        margin-right: 8px;
+
+        font-size: 12px;
+        font-weight: 400;
+        color: palette.logi-black(0.6);
+    }
+    .icon-right-load {
+        display: inline-block;
+        color: palette.logi-black(0.6);
+    }
+    .unlink {
+        opacity: 0;
+    }
+}
+
+.collapsed-btn {
+    color: map-get(palette.$aris-brand, 600);
+    min-width: 32px;
+}
+
+.node-type {
+    margin: $node-type-margin;
+    height: $node-type-height;
+    line-height: $node-type-height;
+    @include shared.set-font(12px, bold);
+    color: shared.$base-blue;
+    max-width: 24px;
+}
+
+.block-name-input {
+    height: 33px;
+    background: none;
+    max-width: $table-input-width;
+    min-width: 60px;
+    @include editor.node-ref-name(12px, $padding: 0 6px 0 8px);
+    @extend %focused;
+}
+
+.compact-name-input {
+    padding: $input-padding-compact;
+    line-height: $input-height-compact;
+    @include shared.set-font(12px,bold);
+    color: shared.$base-blue;
+}
+
+.stub-name {
+    border-bottom: none;
+    border-left: map-get($border, 'normal-border');
+    border-right: map-get($border, 'normal-border');
+    border-top: none;
+    height: 33px;
+    padding: 0 16px 0 8px;
+
+    background: none;
+
+    color: map-get($color, 'input-color');
+
+    max-width: $stub-input-width;
+    outline: none;
+    @include shared.set-font(12px, 400);
+    @extend %focused;
+
+    ::placeholder {
+        -webkit-text-fill-color: map-get($color, 'placeholder');
+    }
+}
+
+.short-border {
+    margin-right: 16px;
+    padding: $stub-compact;
+}
+
+.column-row-tab {
+    @include shared.set-font(12px, 400);
+    align-self: flex-start;
+
+    margin: 0 16px;
+    height: 33px;
+
+    cursor: pointer;
+
+    line-height: 34px;
+    text-align: center;
+    color: map-get($color, 'text-color');
+    max-width: 36px;
+}
+
+.column-tab {
+    margin-right: 16px;
+}
+
+.tabs-bold {
+    font-weight: bold;
+    color: shared.$base-blue;
+}
+
+.border {
+    @include table-border;
+    /* stylelint-disable-next-line */
+    background-color: transparent;
+}
+
+.active-border {
+    @include table-border;
+    background-color: shared.$base-blue;
+}
+
+.dropzone {
+    padding-bottom: $dropzone-height;
+}
+
+.drop-placeholder {
+    display: flex;
+
+    .drop-circle {
+        z-index: 1;
+
+        margin: $dropzone-circle-margin;
+        border: map-get($border, 'circle-border');
+        border-radius: 50%;
+        @include shared.size($circle-size, $circle-size);
+
+        background-color: map-get($color, 'dropzone-placeholder');
+    }
+
+    .drop-line {
+        margin: $dropzone-line-margin;
+        width: 100%;
+        height: $dropzone-line-height;
+        background-color: map-get($color, 'dropzone-placeholder');
+    }
+}
+.text {
+    display: flex;
+    .action {
+        overflow: hidden;
+        margin-left: 36px;
+        width: 208px;
+        text-overflow: ellipsis;
+    }
+    .curr {
+        margin-left: 12px;
+    }
+}
+
+::ng-deep {
+    @include editor.menu-max-height;
+}
+
+.menu-btn {
+    min-width: 24px;
+}

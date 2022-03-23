@@ -1,0 +1,43 @@
+/**
+ * ======== NOTE ========
+ * Style rules of this file are used to cover the default style of angular
+ * material components and other global style.
+ *
+ * TODO(zengkai): should remove this file.
+ */
+
+/* **************** logi style of mat-dialog ****************** */
+.mat-dialog-title {
+    margin-bottom: 24px !important;
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+/**
+ * If set margin-bottom instead of padding-bottom, the error message of
+ * input element at bottom of mat-dialog-content will not display.
+ */
+.mat-dialog-content {
+    padding-bottom: 24px !important;
+}
+
+.mat-dialog-actions {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: auto !important;
+
+    button {
+        margin-left: 8px !important;
+    }
+}
+
+/**
+ * There is a title tag in svg which used in mat-icon. It will show the title
+ * when mouse over the svg.
+ * Set pointer-events none to prevent this.
+ */
+.mat-icon svg {
+    pointer-events: none;
+}

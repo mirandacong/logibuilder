@@ -1,0 +1,164 @@
+/* stylelint-disable */
+@use '../core/styles/shared';
+
+@use '../core/styles/palette';
+
+$paginator-height: 56px;
+$checkbox-disable-color: rgba(0, 0, 0, 0.38);
+$color-header-cell: palette.logi-black(0.6);
+$bg-row-hover: palette.logi-black(0.04);
+$bg-row-selected: palette.aris-brand(0.08);
+$color-cell-selected: shared.$base-brand;
+
+/* **************** logi style of mat-table ****************** */
+::ng-deep.logi-style-table {
+    * {
+        white-space: nowrap;
+    }
+
+    tr.mat-header-row {
+        height: 48px;
+    }
+    th.mat-header-cell {
+        border-bottom-color: transparent;
+        padding: 0 8px;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: bold;
+        color: $color-header-cell;
+    }
+
+    tr.mat-row {
+        &:hover {
+            background-color: $bg-row-hover;
+        }
+        &.selected {
+            background-color: $bg-row-selected;
+
+            .mat-cell {
+                font-weight: bold;
+                color: $color-cell-selected;
+            }
+        }
+    }
+
+    td.mat-cell {
+        position: relative;
+        padding: 0 8px;
+        font-size: 14px;
+    }
+}
+
+:host {
+    position: relative;
+    height: 100%;
+
+    ::ng-deep {
+        /**
+         * Cover mat-radio style
+         * https://stackoverflow.com/questions/53892268/styling-mat-radio-button-in-angular-material
+         */
+        .mat-radio-container {
+            width: 18px;
+            height: 18px;
+        }
+        .mat-radio-outer-circle {
+            width: 18px;
+            height: 18px;
+        }
+        .mat-radio-inner-circle {
+            width: 18px;
+            height: 18px;
+        }
+        .mat-radio-button .mat-radio-ripple {
+            top: calc(50% - 18px);
+            left: calc(50% - 18px);
+            width: 36px;
+            height: 36px;
+        }
+        .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple {
+            background-color: shared.$base-brand;
+        }
+
+        /**
+         * Cover mat-checkbox style
+         */
+        .mat-checkbox-indeterminate .mat-checkbox-background {
+            background-color: shared.$base-brand;
+        }
+        .mat-checkbox-checked .mat-checkbox-background {
+            background-color: shared.$base-brand;
+        }
+        .mat-checkbox-disabled {
+            .mat-checkbox-frame {
+                display: none;
+            }
+            .mat-checkbox-background {
+                background-color: $checkbox-disable-color;
+            }
+        }
+        .mat-checkbox .mat-ripple {
+            display: none;
+        }
+    }
+}
+
+.loading-shade {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+}
+
+.table-wrapper {
+    &.with-paginator {
+        position: relative;
+
+        overflow-y: auto;
+
+        border: shared.$border-base;
+        border-radius: 4px;
+        box-sizing: border-box;
+        height: calc(100% - #{$paginator-height});
+    }
+}
+
+table {
+    width: 100%;
+    ::ng-deep tbody tr {
+        cursor: pointer;
+    }
+}
+
+table.fixed-layout {
+    table-layout: fixed;
+
+    .mat-column-logi-table-single-select {
+        width: 32px;
+
+        /* TODO (kai): Remove this after finished basic radio button component
+         */
+        ::ng-deep .mat-radio-button.mat-radio-checked {
+            .mat-radio-outer-circle {
+                border-color: shared.$base-brand !important;
+            }
+            .mat-radio-inner-circle {
+                background-color: shared.$base-brand !important;
+            }
+        }
+    }
+
+    .mat-column-logi-table-multiple-select {
+        width: 32px;
+    }
+}
+
+.row-link {
+    @include shared.logi-fill;
+}

@@ -1,0 +1,64 @@
+@use '../../theme';
+
+$font-color: #444;
+$gray-back: rgba(0, 0, 0, 0.08);
+$menu-item-height: 36px;
+
+:host {
+    display: block;
+}
+
+.menu {
+    display: block;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.menu-item {
+
+    justify-content: space-between;
+    align-items: center;
+
+    display: flex;
+
+    overflow-wrap: break-word;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 24px;
+
+    cursor: pointer;
+
+    line-height: 2.1rem;
+    font-family: theme.$font-family;
+    text-align: left;
+    color: $font-color;
+
+    text-decoration: none;
+    word-wrap: break-word;
+}
+
+.menu-item:hover {
+    color: theme.$theme-color;
+    background-color: $gray-back;
+}
+
+a {
+
+    transition: background-color 0.2s;
+    transition-duration: 0.2s;
+    transition-property: background-color;
+    transition-timing-function: ease;
+
+    color: $font-color;
+
+    text-decoration: none;
+}
+
+a:hover {
+    color: theme.$theme-color;
+}
+
+.selected {
+    color: theme.$theme-color;
+}

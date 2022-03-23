@@ -1,0 +1,2686 @@
+---
+annotations: {}
+labels: []
+name: FS
+nodetype: 1
+subnodes:
+- annotations: {}
+  labels: []
+  name: Income Statement
+  nodetype: 2
+  subnodes:
+  - annotations: {}
+    header_stub: us$ mn
+    labels: []
+    name: Income Statement
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - start
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({Sales!Product 1},{Sales!Product 2})
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Sales
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      labels: []
+      modifier: +
+      name: Sales
+      nodetype: 5
+      subnodes:
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: '-'
+        name: Product 1
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{Ratios!yoy growth!Sales!Product 1}[proj && qr].lag(1) * (1+{Ratios!yoy
+              growth!Sales!Product 1})'
+          name: proj
+          type: 0
+        - annotations: {}
+          expression: ''
+          name: proj && qr
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: '-'
+        name: Product 2
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{Product 2}[last]'
+          name: proj
+          type: 0
+        - annotations: {}
+          expression: ''
+          name: last
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Cost of Sales
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Sales}[proj] * {Ratios!COGS % Sales}[proj]'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Sales}-{Cost of Sales}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Gross Profit
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{R&D Expenses} + {SG&A Expenses}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Operating Expenses
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: R&D Expenses
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: SG&A Expenses
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Gross Profit} - {Operating Expenses}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Operating Income
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Cash Flow Statement!Cash Flow Statement!D&A}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: D&A
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Operating Income}+{D&A}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: EBITDA
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Interest Expenses
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ({Balance Sheet!Balance Sheet!Total Debt}[hist]+{Balance Sheet!Balance
+            Sheet!Total Debt}[hist].lag(1))/2* {Ratios!Interest Rate}
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Other Non Operating Income
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Operating Income}+{Interest Expenses}+{Other Non Operating Income}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Pretax Income
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Taxes
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: -({Pretax Income}*{Ratios!Tax Rate})
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Pretax Income} - {Taxes}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: EBT
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Net Income Attributable to the Minority Interest
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: -({EBT} * {Ratios!Net Income Attributable to the Minority Interest
+            % EBT})
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Pretax Income}+{Taxes}+{Net Income Attributable to the Minority
+          Interest}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Net Income
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Diluted Shares
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Diluted Shares}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Net Income}/{Diluted Shares}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: EPS Diluted
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    header_stub: us$ mn
+    labels: []
+    name: Variation of the Share Capital
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - start
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Share Repurchases
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Beggining Basic Shares
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Ending Basic Shares}.lag(1)'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Shares Issued
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '- {Share Repurchased}[cal]'
+      is_def_scalar: false
+      labels:
+      - ref
+      modifier: '-'
+      name: Shares Repurchased
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: ref
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Ending Basic Shares
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Beggining Basic Shares} + {Shares Issued} + {Shares Repurchased}[ref]'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: AVERAGE({Beggining Basic Shares},{Ending Basic Shares})
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Average Basic Shares
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Dilutive Effect of Stock Options
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Average Diluted Shares}[hist]-{Average Basic Shares}[hist]'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Dilutive Effect of Stock Options}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Average Diluted Shares
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Average Basic Shares}[proj]+{Dilutive Effect of Stock Options}[proj]'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - cal
+      modifier: ''
+      name: Share Repurchased
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: cal
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{$ Repurchases}[proj]/{Share Price}[proj]'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Share Price
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: $ Repurchases
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Share Repurchased}[hist]*{Share Price}[hist]'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    header_stub: us$ mn
+    labels: []
+    name: Ratios
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - start
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: yoy growth
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      labels: []
+      modifier: ''
+      name: yoy growth
+      nodetype: 5
+      subnodes:
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: +
+        name: Sales
+        nodetype: 7
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        labels: []
+        modifier: +
+        name: Sales
+        nodetype: 5
+        subnodes:
+        - alias: ''
+          annotations: {}
+          expression: ''
+          is_def_scalar: false
+          labels: []
+          modifier: '-'
+          name: Product 1
+          nodetype: 7
+          slice_exprs:
+          - annotations: {}
+            expression: '{Income Statement!Sales!Product 1}/{Income Statement!Sales!Product
+                1}.lag(1)-1'
+            name: hist
+            type: 0
+          - annotations: {}
+            expression: '{Product 1}[hist].average()'
+            name: proj
+            type: 0
+          sources: []
+          subnodes: []
+          type: 0
+        - alias: ''
+          annotations: {}
+          expression: '{Income Statement!Sales!Product 2}/{Income Statement!Sales!Product
+              2}.lag(1)-1'
+          is_def_scalar: false
+          labels: []
+          modifier: '-'
+          name: Product 2
+          nodetype: 7
+          slice_exprs: []
+          sources: []
+          subnodes: []
+          type: 0
+      - alias: ''
+        annotations: {}
+        expression: '{Income Statement!Gross Profit}/ {Income Statement!Gross Profit}
+            -1'
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: Gross Profit
+        nodetype: 7
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: '{Income Statement!Net Income}/ {Income Statement!Net Income}
+            -1'
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: Net Income
+        nodetype: 7
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Margins
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      labels: []
+      modifier: +
+      name: Margins
+      nodetype: 5
+      subnodes:
+      - alias: ''
+        annotations: {}
+        expression: '{Income Statement!Gross Profit}/{Income Statement!Sales}'
+        is_def_scalar: false
+        labels: []
+        modifier: '-'
+        name: Gross Margin
+        nodetype: 7
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: '{Income Statement!Operating Income}/{Income Statement!Sales}'
+        is_def_scalar: false
+        labels:
+        - Operating Income
+        modifier: '-'
+        name: EBITDA Margin
+        nodetype: 7
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: '{Income Statement!EBITDA} / {Income Statement!Sales}'
+        is_def_scalar: false
+        labels:
+        - EBITDA
+        modifier: '-'
+        name: EBITDA Margin
+        nodetype: 7
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: COGS % Sales
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Income Statement!Cost of Sales}/{Income Statement!Sales}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{COGS % Sales}[hist].average()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Interest Rate
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Income Statement!Interest Expenses}[hist] / ({Balance Sheet!Balance
+            Sheet!Total Debt}[hist] + {Balance Sheet!Balance Sheet!Total Debt}[hist].lag(1))/2'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Tax Rate
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: -({Income Statement!Taxes}/{Income Statement!Pretax Income})
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Tax Rate}[hist].average()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Net Income Attributable to the Minority Interest % EBT
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: -({Income Statement!Net Income Attributable to the Minority Interest}
+            / {Income Statement!EBT})
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Net Income Attributable to the Minority Interest % EBT}.average()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+- annotations: {}
+  labels: []
+  name: Balance Sheet
+  nodetype: 2
+  subnodes:
+  - annotations: {}
+    header_stub: us$ mn
+    labels: []
+    name: Balance Sheet
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - start
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Assets
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '- ({Receivables, Net} - {Receivables, Net}.lag(1))'
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Receivables
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: max(0, - SUM({Cash & Equivalents}, {Investment Securities}, {Receivables},
+          {Inventories}, {Deferred Income Taxes}, {Prepaid Expenses and Other Current
+          Assets}) + sum({Notes and Loan Payables}, {Current Portion of Long-Term
+          Debt}, {Accounts Payable}, {Accrued and Other Liabilities}, {Long-Term Debt},
+          {Deferred Income Taxes}, {Other Liabilities}) + {Total Shareholders' Equity})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Surplus Cash
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Cash & Equivalents
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Cash & Equivalents}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Investment Securities
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Investment Securities}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Receivables, Net
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Income Statement!Income Statement!Sales}[proj] * {Ratios!Inventories
+            % COGS}[proj]'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Inventories
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Income Statement!Income Statement!Cost of Sales}[proj]* {Ratios!Inventories
+            % COGS}[proj]'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Prepaid Expenses and Other Current Assets
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Prepaid Expenses and Other Current Assets}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: Adjustments
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({Surplus Cash},{Cash & Equivalents},{Investment Securities},{Receivables,
+          Net},{Inventories},{Deferred Income Taxes},{Prepaid Expenses and Other Current
+          Assets})
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: Total Current Assets
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: PP&E, Net
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{PP&E, Net}[proj].lag(1) + {Income Statement!Income Statement!D&A}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Goodwill, Net
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Goodwill, Net}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Other Intangible Assets, Net
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Other Intangible Assets, Net}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Other Assets
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Other Assets}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({Total Current Assets},{PP&E, Net},{Goodwill, Net},{Other Intangible
+          Assets, Net}, {Other Assets})
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: Total Assets
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Liabilities
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: max(0, SUM({Cash & Equivalents},{Investment Securities},{Receivables},{Inventories},{Deferred
+          Income Taxes},{Prepaid Expenses and Other Current Assets}) - SUM({Notes
+          and Loan Payables},{Current Portion of Long-Term Debt},{Accounts Payable},{Accrued
+          and Other Liabilities},{Long-Term Debt},{Deferred Income Taxes},{Other Liabilities})
+          - {Total Shareholders' Equity})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Short-Term Debt
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Notes and Loan Payables
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Notes and Loan Payables}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Current Portion of Long-Term Debt
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Accounts Payable
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Income Statement!Income Statement!Cost of Sales} * {Ratios!AP
+            % COGS}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Accrued and Other Liabilities
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Income Statement!Income Statement!Sales} * {Ratios!Accrued and
+            Other Liabilities % Sales}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({Short-Term Debt},{Notes and Loan Payables},{Current Portion
+          of Long-Term Debt},{Accounts Payable},{Accrued and Other Liabilities})
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: Total Current Liabilities
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Long-Term Debt
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Long-Term Debt}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Total Debt
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Long-Term Debt}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Deferred Income Taxes
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Deferred Income Taxes}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Other Liabilities
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Other Liabilities}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Total Current Liabilities} + SUM({Long-Term Debt},{Deferred Income
+          Taxes},{Other Liabilities})'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: Total Liabilities
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Shareholders' Equity
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Preferred Stock
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Preferred Stock}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Common Stock
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Common Stock}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Additional Paid-In Capital
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Additional Paid-In Capital}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Retained Earnings
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Retained Earnings}[proj].lag(1)+{Income Statement!Income Statement!Net
+            Income} + {Cash Flow Statement!Cash Flow Statement!Dividends Paid}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Accumulated Other Comprehensive Income
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Accumulated Other Comprehensive Income}[proj].lag(1) + {Cash
+            Flow Statement!Cash Flow Statement!Stock-Based Compensation Expenses}
+            + {Cash Flow Statement!Cash Flow Statement!Proceeds from Stock Options,
+            Other}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Reserve for ESOP Debt Retirement
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Reserve for ESOP Debt Retirement}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Treasury Stock
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Treasury Stock}[proj].lag(1) + {Income Statement!Variation of
+            the Share Capital!$ Repurchases}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Minority Interest
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Minority Interest}[proj].lag(1) + {Income Statement!Income Statement!Net
+            Income Attributable to the Minority Interest}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({Preferred Stock},{Common Stock}, {Additional Paid-In Capital},{Retained
+          Earnings},{Accumulated Other Comprehensive Income}, {Reserve for ESOP Debt
+          Retirement},{Treasury Stock},{Minority Interest})
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: Total Shareholders' Equity
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: "{Total Liabilities} + {Total Shareholders' Equity} - {Total Assets}"
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: check
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    header_stub: us$ mn
+    labels: []
+    name: Ratios
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - start
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: AR % Sales
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Balance Sheet!Receivables, Net} /{Income Statement!Income Statement!Sales}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{AR % Sales}[hist].average()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Inventories % COGS
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Balance Sheet!Inventories} / {Income Statement!Income Statement!Cost
+            of Sales}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: AP % COGS
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Balance Sheet!Accounts Payable} /{Income Statement!Income Statement!Cost
+            of Sales}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{AP % COGS}[hist].average()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Accrued and Other Liabilities % Sales
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Balance Sheet!Accrued and Other Liabilities} / {Income Statement!Income
+            Statement!Sales}'
+        name: hist
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+- annotations: {}
+  labels: []
+  name: Cash Flow Statement
+  nodetype: 2
+  subnodes:
+  - annotations: {}
+    header_stub: us$ mn
+    labels: []
+    name: Cash Flow Statement
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - start
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Income Statement!Income Statement!Net Income}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Net Income
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Adjustments
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: sum({D&A!Depreciation}, {D&A!Ammortization})
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: D&A
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      labels: []
+      modifier: '-'
+      name: D&A
+      nodetype: 5
+      subnodes:
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: '-'
+        name: Depreciation
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{Balance Sheet!Balance Sheet!PP&E, Net}.lag(1) * {Ratios!Depreciation
+              % Opening PP&E}[proj]'
+          name: proj
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: '-'
+        name: Ammortization
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '0'
+          name: proj
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Stock-Based Compensation Expenses
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Stock-Based Compensation Expenses}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Deferred Income Taxes
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Balance Sheet!Balance Sheet!Deferred Income Taxes}-{Balance
+            Sheet!Balance Sheet!Deferred Income Taxes}.lag(1)'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: '1'
+      annotations: {}
+      expression: '{Balance Sheet!Balance Sheet!Prepaid Expenses and Other Current
+          Assets}[adjustments] -{Balance Sheet!Balance Sheet!Prepaid Expenses and
+          Other Current Assets}[adjustments].lag(1)'
+      is_def_scalar: false
+      labels:
+      - Adjustments
+      modifier: '-'
+      name: Other
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Changes in A/L
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: -({Balance Sheet!Balance Sheet!Receivables, Net} -{Balance Sheet!Balance
+          Sheet!Receivables, Net}.lag(1))
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Receivables
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: -({Balance Sheet!Balance Sheet!Inventories} - {Balance Sheet!Balance
+          Sheet!Inventories}.lag(1))
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Inventories
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ({Balance Sheet!Balance Sheet!Accounts Payable} -{Balance Sheet!Balance
+          Sheet!Accounts Payable}.lag(1))+ ({Balance Sheet!Balance Sheet!Accrued and
+          Other Liabilities} - {Balance Sheet!Balance Sheet!Accrued and Other Liabilities}.lag(1))
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: A&P, Accrued and Other Liabilities
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: -({Balance Sheet!Balance Sheet!Other Assets} -{Balance Sheet!Balance
+          Sheet!Other Assets}.lag(1))+({Balance Sheet!Balance Sheet!Other Liabilities}
+          -{Balance Sheet!Balance Sheet!Other Liabilities}.lag(1))
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Other Operating Assets and Liabilities
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Net Income}+SUM({D&A},{Stock-Based Compensation Expenses},{Deferred
+          Income Taxes},{Other@2}) + SUM({Receivables},{Inventories},{A&P, Accrued
+          and Other Liabilities},{Other Operating Assets and Liabilities})'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Cash Provided by Operations
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Cash Flows from Investing Activities
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: CAPEX
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Income Statement!Income Statement!Sales}[hist]* {Ratios!CAPEX
+            % Sales}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Proceeds from Asset Sales
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Payment for Aquisition
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: '2'
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - Cash Flows from Investing Activities
+      modifier: '-'
+      name: Other
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Cash Used for Investing Activities} - SUM({CAPEX},{Proceeds
+            from Asset Sales},{Payment for Aquisition})'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Other@1}[last && Cash Flows from Investing Activities]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last && Cash Flows from Investing Activities
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj && Cash Flows from Investing Activities
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Cash Used for Investing Activities
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: SUM({CAPEX}[proj],{Proceeds from Asset Sales}[proj],{Payment for
+            Aquisition},{Other@1}[proj && Cash Flows from Investing Activities])
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Cash Flows from Financing Activities
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Balance Sheet!Balance Sheet!Short-Term Debt}.diff(1) + {Balance
+          Sheet!Balance Sheet!Notes and Loan Payables}.diff(1) + {Balance Sheet!Balance
+          Sheet!Current Portion of Long-Term Debt}.diff(1)'
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Change in Short-Term Debt
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Balance Sheet!Balance Sheet!Long-Term Debt} -{Balance Sheet!Balance
+          Sheet!Long-Term Debt}.lag(1)'
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Change in Long-Term Debt
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Dividends Paid
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: -({Income Statement!Income Statement!Diluted Shares}[proj]* {Ratios!Dividend
+            per Share}[proj])
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: -{Income Statement!Variation of the Share Capital!$ Repurchases}
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Purchase of Treasury Shares
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Proceeds from Stock Options, Other
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Proceeds from Stock Options, Other}[last]'
+        name: proj
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: last
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({Change in Short-Term Debt},{Change in Long-Term Debt},{Dividends
+          Paid},{Purchase of Treasury Shares},{Proceeds from Stock Options, Other})
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Cash Used for Financing Activities
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '0'
+      is_def_scalar: false
+      labels:
+      - ASSUMPTION
+      modifier: ''
+      name: Cash Provided by Discontinued Operations
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Exchange Rate Effect on Cash / Other
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '0'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({Cash Provided by Operations},{Cash Used for Investing Activities},
+          {Cash Used for Financing Activities})
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Net Increase (Decrease) in Cash and Cash Equivalents
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Cash and Cash Equivs, End}.lag(1)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Cash and Cash Equivs, Beg
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Cash and Cash Equivs, End
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Cash and Cash Equivs, Beg} + {Net Increase (Decrease) in Cash
+            and Cash Equivalents}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Cash and Cash Equivs, End} - {Balance Sheet!Balance Sheet!Surplus
+          Cash}- {Balance Sheet!Balance Sheet!Surplus Cash}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: check
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    header_stub: us$ mn
+    labels: []
+    name: Ratios
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - start
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: Depreciation % Opening PP&E
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Cash Flow Statement!D&A}/{Balance Sheet!Balance Sheet!PP&E,
+            Net}.lag(1)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Depreciation % Opening PP&E}[hist].average()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Dividend per Share
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Cash Flow Statement!Dividends Paid}[hist]/{Income Statement!Income
+            Statement!Diluted Shares}[proj]'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: CAPEX % Sales
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Cash Flow Statement!CAPEX}[hist]/{Income Statement!Income Statement!Sales}[hist]'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{CAPEX % Sales}[hist].average()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0

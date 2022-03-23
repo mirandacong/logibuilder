@@ -1,0 +1,36 @@
+@use 'src/web/assets/styles/shared.scss';
+
+@use 'src/web/assets/styles/palette.scss';
+
+:host {
+    .input {
+        border: 1px solid palette.logi-black(0.12);
+        border-radius: 4px;
+        box-sizing: border-box;
+        width: 492px;
+        height: 240px;
+        padding: 8px;
+        line-height: 24px;
+        outline: none;
+        resize: none;
+        @include shared.set-font(14px);
+        &:focus {
+            border: 2px solid map-get(palette.$aris-brand, 600);
+            caret-color: map-get(palette.$aris-brand, 600);
+        }
+    }
+}
+
+.footer {
+    /* stylelint-disable-next-line */
+    justify-content: space-between;
+}
+
+.content {
+    @include shared.set-font(14px);
+    margin-bottom: 8px;
+    width: 174px;
+    height: 20px;
+    line-height: 20px;
+    color: palette.logi-black(0.87);
+}

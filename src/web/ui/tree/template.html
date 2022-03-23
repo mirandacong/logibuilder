@@ -1,0 +1,35 @@
+<logi-group-input class="input" *ngIf='showSearch' (input)='onSearch($event)' suffixIcon='ic_search'>
+    <input logi-input placeholder='请输入关键字搜索'>
+</logi-group-input>
+<mat-tree class="logi-tree-root" [dataSource]='dataSource' [treeControl]='treeControl'>
+    <mat-tree-node class="logi-tree-node" *matTreeNodeDef='let node' (click)='onClick(node)'
+        [class.hidden]='!node.visible' [matTooltip]='node.tooltip' [class.selected]='sel.isSelected(node.dataNode)'
+        matTreeNodePadding>
+        <div class="logi-tree-node-indent-line" *ngFor='let i of getLines(node)' [style.left.px]='12 + i * 40'></div>
+        <mat-icon class="logi-tree-node-icon logi-tree-node-leaf-icon" [class.selected]='sel.isSelected(node.dataNode)'
+            [svgIcon]='getIcon ? getIcon(node) : "ic_value"'>
+        </mat-icon>
+        <div class="node-name">{{node.name}}</div>
+        <ng-container *ngIf="!sel.isMultipleSelection(); else multi_checkbox">
+            <logi-radio-button class="check-btn" [checked]='sel.isSelected(node.dataNode)' [disabled]='node.disabled'
+                size='middle'>
+            </logi-radio-button>
+        </ng-container>
+        <ng-template #multi_checkbox>
+            <logi-checkbox class="check-btn" (change$)='onClick(node)' (click)='$event.stopPropagation()'
+                [checked]='sel.isSelected(node.dataNode)' [disabled]='node.disabled'></logi-checkbox>
+        </ng-template>
+    </mat-tree-node>
+    <mat-tree-node class="logi-tree-node" *matTreeNodeDef="let node;when: hasChild" [class.hidden]='!node.visible'
+        matTreeNodePadding matTreeNodeToggle>
+        <button class="toggle-btn" [icon]='!treeControl.isExpanded(node) ? "ic_arrow_drop_right":"ic_arrow_drop_down"'
+            logi-icon-button small></button>
+        <div class="logi-tree-node-indent-line" *ngFor='let i of getLines(node)' [style.left.px]='12 + i * 40'></div>
+        <mat-icon class="logi-tree-node-icon" [svgIcon]='getIcon ? getIcon(node) : "ic_folder"'></mat-icon>
+        <div class="node-name">{{node.name}}</div>
+        <logi-checkbox class="check-btn" *ngIf='sel.isMultipleSelection()' (change$)='groupToggle(node)'
+            (click)='$event.stopPropagation()' [checked]='sel.isSelected(node.dataNode)' [disabled]='node.disabled'
+            [indeterminate]='someSelected(node)'>
+        </logi-checkbox>
+    </mat-tree-node>
+</mat-tree>

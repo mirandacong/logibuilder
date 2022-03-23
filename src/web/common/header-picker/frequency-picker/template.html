@@ -1,0 +1,49 @@
+<ng-container *ngIf="info?.frequency !== frequencyEnum.YEAR;else yearView">
+    <tr class="year">
+        <td class="start-year">
+            <button (click)="onBack()" [icon]="&quot;ic_arrow_left&quot;" logi-icon-button></button><span
+                class="start-year-span">{{startYear}}年</span>
+        </td>
+        <td class="end-year"><span class="start-year-span">{{endYear}}年</span>
+            <button (click)="onForward()" [icon]="&quot;ic_arrow_right&quot;" logi-icon-button></button>
+        </td>
+    </tr>
+    <tr class="frequency">
+        <td class="start-frequency" [class.month]="info.frequency === frequencyEnum.MONTH">
+            <div class="other-view" *ngFor="let item of startItems;trackBy:trackByFn" (click)="selectItem(item)"
+                (mouseenter)="hoverItem(item)" [class.item-active]="item.equals(startItem) || item.equals(endItem)">
+                <span>{{item.month}}</span>
+                <div class="other-background" [class.item-over]="isOver(item)" [class.over-left]="isShowLeft(item)"
+                    [class.over-right]="isShowRight(item)"></div>
+            </div>
+        </td>
+        <td class="end-frequency" [class.month]="info.frequency === frequencyEnum.MONTH">
+            <div class="other-view" *ngFor="let item of endItems;trackBy:trackByFn" (click)="selectItem(item)"
+                (mouseenter)="hoverItem(item)" [class.item-active]="item.equals(startItem) || item.equals(endItem)">
+                <span>{{item.month}}</span>
+                <div class="other-background" [class.item-over]="isOver(item)" [class.over-left]="isShowLeft(item)"
+                    [class.over-right]="isShowRight(item)"></div>
+            </div>
+        </td>
+    </tr>
+</ng-container>
+<ng-template #yearView>
+    <div class="header"><span class="years">{{startYear}}-{{endYear}}</span>
+        <div class="buttons">
+            <button class="left" (click)="onBack()" [icon]="&quot;ic_arrow_left&quot;" logi-icon-button></button>
+            <button class="right" (click)="onForward()" [icon]="&quot;ic_arrow_right&quot;" logi-icon-button></button>
+        </div>
+    </div>
+    <div class="body">
+        <tr class="line" *ngFor="let items of years;trackBy:trackByFn">
+            <td class="year-view" *ngFor="let item of items; let first=first; let last=last;trackBy:trackByFn"
+                (click)="selectItem(item)" (mouseenter)="hoverItem(item)"
+                [class.item-active]="item.equals(startItem) || item.equals(endItem)">
+                <span>{{item.year}}</span>
+                <div class="background" [class.item-over]="isOver(item) &amp;&amp; !(last || first)"
+                    [class.over-left]="isShowLeft(item) || (last &amp;&amp; isOver(item))"
+                    [class.over-right]="isShowRight(item) || (first &amp;&amp; isOver(item))"></div>
+            </td>
+        </tr>
+    </div>
+</ng-template>

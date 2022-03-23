@@ -1,0 +1,42 @@
+<div class="block-wrapper sheet-block" #container [style.display]="node.tree.length === 0 ? &quot;none&quot; : &quot;block&quot;">
+  <div class="dropzone" #dropzone [dndDropZone]="dropZone" [hostUuid]="node.uuid" logi-dnd-dropzone>
+    <div class="drop-placeholder" logi-dnd-placeholder>
+      <div class="drop-circle"></div>
+      <div class="drop-line"></div>
+    </div>
+    <div class="sheet-context" *ngFor="let child of node.tree;let i=index;trackBy:trackByFnReturnItem" #element_ref>
+      <logi-editor-title class="sheet-item" *ngIf="isTitle(child)" [title]="child">
+        <mat-icon class="title-drag-icon" *ngIf="!readonly" [dndDraggable]="child.uuid" [dndType]="child.nodetype.toString()" [dragElement]="element_ref" [dropzoneElement]="dropzone" [focusType]="focusType.DRAG" [image]="childDragImage" [node]="child" [uuid]="child.uuid" logi-dnd-draggable logi-dnd-image logi-node-focusable svgIcon="ic_handle"></mat-icon>
+      </logi-editor-title>
+      <logi-editor-table class="sheet-item" *ngIf="isTable(child)" #tables [table]="child">
+        <mat-icon class="table-drag-icon" *ngIf="!readonly" [dndDraggable]="child.uuid" [dndType]="child.nodetype.toString()" [dragElement]="element_ref" [dropzoneElement]="dropzone" [focusType]="focusType.DRAG" [image]="childDragImage" [node]="child" [uuid]="child.uuid" logi-dnd-draggable logi-dnd-image logi-node-focusable svgIcon="ic_handle"></mat-icon>
+      </logi-editor-table>
+      <ng-template #childDragImage>
+        <logi-drag-img class="title-drag-image" [ngClass]="{
+                        &quot;title-drag-image&quot;: child.nodetype === nodeType.TITLE,
+                        &quot;table-drag-image&quot;: child.nodetype === nodeType.TABLE}"></logi-drag-img>
+      </ng-template>
+    </div>
+  </div>
+</div>
+<div class="init-create-block" *ngIf="node.tree.length===0">
+  <div class="empty-sheet">
+    <mat-icon class="img" svgIcon="ic_file_empty"></mat-icon>
+    <div class="first-text">此工作表没有内容</div>
+    <div class="second-text">您可以通过工具栏添加表格、标题，或导入表格模板</div>
+    <div class="buttons">
+      <button class="init-btn" *ngFor="let block of blockList; trackBy: trackByFnReturnItem" (click)="addChild(block, 0)" [disabled]="readonly" color="secondary" icon="ic_add" logi-icon-text-button>{{block}}</button>
+    </div>
+  </div>
+</div>
+<logi-context-menu #contextMenu>
+  <ng-template *ngFor="let action of contextMenuActions;let i=index; trackBy:trackByFnReturnItem" (execute)="action.click &amp;&amp; action.click($event.item)" [childMenuClass]="action?.childMenuClass" [divider]="action.divider" [enabled]="action.enabled" [subMenu]="action?.subMenu ? subMenu : undefined" [visible]="action.visible" let-item logi-context-menu-item>{{action.html()}}<span class="menu-shortcut" *ngIf="action.shortcut">{{ action.shortcut }}</span></ng-template>
+</logi-context-menu>
+<logi-context-menu #subMenu>
+  <ng-template *ngFor="let action of subMenuActions; trackBy: trackByFnReturnItem" (execute)="action.click &amp;&amp; action.click()" [divider]="action.divider" [enabled]="action.enabled" [showToolTip]="action.showToolTip" [text]="action.html()" [visible]="action.visible" let-item logi-context-menu-item>
+    <div class="text">
+      <mat-icon *ngIf="action?.isCurr" svgIcon="ic_selected"></mat-icon>
+      <div class="action" [ngClass]="{&quot;curr&quot;: action?.isCurr}">{{action?.html()}}</div>
+    </div>
+  </ng-template>
+</logi-context-menu>

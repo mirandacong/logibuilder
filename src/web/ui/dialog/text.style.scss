@@ -1,0 +1,39 @@
+@use '../core/styles/palette.scss';
+
+@use '../core/styles/shared.scss';
+
+$basic-color: palette.logi-black(0.87);
+$path-color: palette.logi-black(0.6);
+$link-color: map-get(palette.$aris-brand, 600);
+$error-color: map-get(palette.$logi-red, 600);
+
+.basic {
+    @include shared.set-font(16px, 400);
+    color: $basic-color;
+}
+
+.emphasis {
+    @include shared.set-font(16px, bold);
+    color: $basic-color;
+}
+
+.path {
+    @include shared.set-font(16px, 400);
+    cursor: pointer;
+    line-height: 24px;
+    color: $path-color;
+}
+
+.link {
+    @include shared.set-font(16px, bold);
+    cursor: pointer;
+    line-height: 24px;
+    color: $link-color;
+}
+.message {
+    display: inline;
+    line-height: 24px;
+    &:last-child {
+        margin-right: 0;
+    }
+}

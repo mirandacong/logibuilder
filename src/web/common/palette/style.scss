@@ -1,0 +1,65 @@
+@use 'src/web/assets/styles/shared.scss';
+
+@use 'src/web/assets/styles/palette.scss';
+
+:host {
+    box-shadow: 0 12px 24px palette.logi-black(0.16);
+    border-radius: 4px;
+    width: 132px;
+    height: 172px;
+
+    background-color: palette.logi-white(1);
+}
+
+.reset {
+    align-items: center;
+
+    display: flex;
+
+    margin-top: 8px;
+    width: 132px;
+    height: 32px;
+
+    cursor: pointer;
+}
+.icon {
+    margin: 4px 3px 4px 4px;
+    width: 18px;
+    height: 18px;
+    padding: 4px;
+
+    color: palette.logi-black(0.6);
+}
+.check {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    color: palette.logi-white(1);
+}
+
+.display-div {
+    display: block;
+}
+
+.text {
+    @include shared.set-font();
+    width: 24px;
+    height: 18px;
+    line-height: 18px;
+    color: palette.logi-black(0.87);
+}
+
+.palette {
+    flex-wrap: wrap;
+    display: flex;
+    margin-left: 6px;
+}
+
+.color-cell {
+    margin: 2px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+
+    cursor: pointer;
+}

@@ -1,0 +1,1 @@
+<span class="part" *ngFor="let part of message.parts" [class.current]="part.isCurrent" [ngClass]="getPartClass(part)">{{ part.content }}</span>

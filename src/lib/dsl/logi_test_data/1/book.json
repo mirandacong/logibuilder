@@ -1,0 +1,1591 @@
+{
+    "book": {
+        "annotations": {},
+        "labels": [],
+        "name": "Test model",
+        "nodetype": 1,
+        "subnodes": [
+            {
+                "annotations": {},
+                "labels": [],
+                "name": "Control",
+                "nodetype": 2,
+                "subnodes": [
+                    {
+                        "annotations": {},
+                        "labels": [],
+                        "name": "Financial Statement",
+                        "nodetype": 3,
+                        "subnodes": [
+                            {
+                                "annotations": {},
+                                "labels": [],
+                                "name": "China",
+                                "nodetype": 3,
+                                "subnodes": [],
+                                "uuid": "a73c8215-ceaa-4c0c-ab75-54bff2c2530c"
+                            }
+                        ],
+                        "uuid": "73afd6d3-7e24-45c8-88a4-3267bac6154f"
+                    },
+                    {
+                        "annotations": {},
+                        "headerStub": "us mn",
+                        "labels": [],
+                        "name": "Revenue Breakup",
+                        "nodetype": 4,
+                        "subnodes": [
+                            {
+                                "annotations": {},
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2017",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "674322c5-cd51-4e5b-b1b6-b5eac5c75182",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "ac90ec5c-eea3-4fd8-8474-04e126023d20",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "c9a235fe-9d16-4e1b-a7ad-65bd0f865ce3",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "44f3c080-f114-48d7-96eb-fe1faed56e3a",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [
+                                            "strategy",
+                                            "CHECK"
+                                        ],
+                                        "name": "FY",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Revenue Breakup!2017!Q1}+{Revenue Breakup!2017!Q2}+{Revenue Breakup!2017!Q3}+{Revenue Breakup!2017!Q4}",
+                                                "name": "stock",
+                                                "type": 0,
+                                                "uuid": "cfbcf4d5-ad88-4b11-acf7-4aa0fbf65678"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Revenue Breakup!2017!Q4}",
+                                                "name": "current",
+                                                "type": 0,
+                                                "uuid": "3051367f-c66b-4763-92ff-809ee0c4758f"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "2064cd81-fe6b-43e5-8d61-d021849e89b4",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "8cb15103-3378-43ed-a02f-2b7ff7939bbf"
+                            },
+                            {
+                                "annotations": {},
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2018",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "ee2e05c2-8823-405c-87eb-b015d6c6540b",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "2803e539-a472-40cf-bda3-efc6be508284",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "cf78857f-d9eb-4a81-9be0-f1d502326eb8",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "8f5892b7-7b6d-4d25-a5dd-a23da3b5f94b",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [
+                                            "strategy",
+                                            "CHECK"
+                                        ],
+                                        "name": "FY",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Revenue Breakup!2018!Q1}+{Revenue Breakup!2018!Q2}+{Revenue Breakup!2018!Q3}+{Revenue Breakup!2018!Q4}",
+                                                "name": "stock",
+                                                "type": 0,
+                                                "uuid": "1cebfc23-b2a4-4849-9a5c-755c8a0c3785"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Revenue Breakup!2018!Q4}",
+                                                "name": "current",
+                                                "type": 0,
+                                                "uuid": "cb84ff2c-a4d6-48ec-a0ff-2cd9d1618624"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "a1b8ce47-6947-484f-85b6-b3f30335a8c8",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "17d89270-9d20-475e-ae67-ef11b4193f25"
+                            },
+                            {
+                                "annotations": {},
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2019",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "ada92963-285e-4335-a81e-ec8c5cd9f8fa",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "ac020895-df53-453b-a5be-f5ce31f6eec6",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "11efa8bf-1a99-4b17-86e2-e9a827f43c32",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "68f156e2-85bf-4a51-a423-1ce0861897e6",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [
+                                            "strategy",
+                                            "CHECK"
+                                        ],
+                                        "name": "FY",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Revenue Breakup!2019!Q1}+{Revenue Breakup!2019!Q2}+{Revenue Breakup!2019!Q3}+{Revenue Breakup!2019!Q4}",
+                                                "name": "stock",
+                                                "type": 0,
+                                                "uuid": "e6b09ddd-2765-4624-9ee7-cad41623e258"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Revenue Breakup!2019!Q4}",
+                                                "name": "current",
+                                                "type": 0,
+                                                "uuid": "e15b77c8-67b1-4c16-b14b-1c9c257bc1c1"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "ba08f594-5da7-4186-af56-6893d6ddc697",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "2bb03920-2e99-4d12-a47a-e5c985410398"
+                            },
+                            {
+                                "annotations": {},
+                                "labels": [
+                                    "proj"
+                                ],
+                                "name": "2020",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "7a3a050f-ba48-4d3f-80de-03937abe8fd8",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "8cbb3851-b1ec-4ece-a660-8f1943c72d51",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "d16835af-64d3-4c0d-9928-b05e46c63fe8",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "e3b8fb8b-5979-4b00-811b-f3ae4f7ade72",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "FY",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "9d4d3d10-5316-4a41-ac15-a8df42b1905d",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "8c28448a-aff1-413e-b4c7-76070295e7f2"
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "SUM({Electronic products!Total},{Services})",
+                                "isDefScalar": false,
+                                "labels": [
+                                    "stock"
+                                ],
+                                "name": "Revenue",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "d3b36649-654f-442c-82f1-9a161bfb05f5",
+                                "valid": true
+                            },
+                            {
+                                "alias": "1",
+                                "annotations": {},
+                                "expression": "{Revenue Breakup!Revenue}/{Revenue Breakup!Revenue}.lag(1)-1",
+                                "isDefScalar": false,
+                                "labels": [
+                                    "Revenue"
+                                ],
+                                "name": "yoy growth",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "4918c0d9-f2b1-4d89-873d-9c15408e3c49",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Electronic products",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "d8762c17-8958-4c34-89ff-7e67d25f68cb",
+                                "valid": true
+                            },
+                            {
+                                "annotations": {},
+                                "labels": [],
+                                "name": "Electronic products",
+                                "nodetype": 5,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "isDefScalar": false,
+                                        "labels": [
+                                            "assumption"
+                                        ],
+                                        "name": "iPhone",
+                                        "nodetype": 7,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "",
+                                                "name": "proj",
+                                                "type": 0,
+                                                "uuid": "5e8b1556-bbd2-4349-b72c-070f68bee0b6"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "",
+                                                "name": "hist",
+                                                "type": 0,
+                                                "uuid": "e5172609-35c2-4407-8abb-b5292d7e2832"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "3c071c04-db5b-4c27-8562-22a7fda6dbb8",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "isDefScalar": false,
+                                        "labels": [],
+                                        "name": "iPad",
+                                        "nodetype": 7,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "{iPad}[proj].lag(1)*({iPad}[hist]/{iPad}[hist].lag(1)).average()",
+                                                "name": "proj",
+                                                "type": 0,
+                                                "uuid": "6955d53d-3537-42d7-8d32-9e1e27fe7687"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "",
+                                                "name": "hist",
+                                                "type": 0,
+                                                "uuid": "f276b063-4bb3-431b-831b-6999ebe83107"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "f19fac1e-ce61-4a5b-b1c6-c683feba04fe",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "isDefScalar": false,
+                                        "labels": [],
+                                        "name": "Mac",
+                                        "nodetype": 7,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "",
+                                                "name": "proj",
+                                                "type": 0,
+                                                "uuid": "ae9223be-7f38-4ff6-a188-a1548fa4017b"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "",
+                                                "name": "hist",
+                                                "type": 0,
+                                                "uuid": "1f2f06ac-39bd-4cdc-b55e-cfec9b278796"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "b93e5341-07e2-4d43-8ee5-82002b4c034b",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "isDefScalar": false,
+                                        "labels": [],
+                                        "name": "Total",
+                                        "nodetype": 7,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "{iPhone}[hist]+{iPad}[hist]+{Mac}[hist]",
+                                                "name": "hist",
+                                                "type": 0,
+                                                "uuid": "9d5691a5-14f0-459a-8830-49bbe0d0a551"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "{iPhone}[proj] + {iPad}[proj] + {Mac}[proj]",
+                                                "name": "proj",
+                                                "type": 0,
+                                                "uuid": "c022d008-d81c-4d02-97ea-5303e2cf0c86"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "c908fdc8-222e-4384-bf42-6e318ead45aa",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "cadce69b-f0ad-469d-8469-afedcde17308"
+                            },
+                            {
+                                "alias": "2",
+                                "annotations": {},
+                                "expression": "{Electronic products!Total}",
+                                "isDefScalar": false,
+                                "labels": [
+                                    "Total"
+                                ],
+                                "name": "yoy growth",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "ce9de119-17bf-42f8-965f-4f9495ecee04",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Services",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "hist",
+                                        "type": 0,
+                                        "uuid": "bb8e4b80-f3f1-47a3-92bf-566e6c09737b"
+                                    },
+                                    {
+                                        "annotations": {},
+                                        "expression": "{Services}[proj].lag(1)*(1 + {Control!Revenue Breakup!yoy growth@3})",
+                                        "name": "proj",
+                                        "type": 0,
+                                        "uuid": "ee0d9307-1218-4bf8-b8de-4b3989a821fa"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "0609c061-2d55-4cc5-93b5-ffda1ea998b0",
+                                "valid": true
+                            },
+                            {
+                                "alias": "3",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": true,
+                                "labels": [
+                                    "service_growth",
+                                    "assumption"
+                                ],
+                                "name": "yoy growth",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "f3b51065-0157-4250-a9ca-f57eb1db9fd3",
+                                "valid": true
+                            }
+                        ],
+                        "uuid": "12583bee-5688-49e7-9dc9-9b3c88396d2b"
+                    },
+                    {
+                        "annotations": {},
+                        "labels": [],
+                        "name": "Income Statement",
+                        "nodetype": 3,
+                        "subnodes": [],
+                        "uuid": "2f30531f-dd79-4346-ace9-4417fa9a542f"
+                    },
+                    {
+                        "annotations": {},
+                        "headerStub": "us mn",
+                        "labels": [],
+                        "name": "Income Statement",
+                        "nodetype": 4,
+                        "subnodes": [
+                            {
+                                "annotations": {},
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2017",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "2d59443f-4754-4ecf-b495-95e05ada2d71",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "aee740a5-bf58-42f8-99f6-dbb9370a1d91",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "a1acef4e-3bb3-4bc9-90d3-04a9147c5dd0",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "bae82c88-abf2-448b-95f9-0535407d03cd",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [
+                                            "strategy",
+                                            "CHECK"
+                                        ],
+                                        "name": "FY",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Income Statement!2017!Q1}+{Income Statement!2017!Q2}+{Income Statement!2017!Q3}+{Income Statement!2017!Q4}",
+                                                "name": "stock",
+                                                "type": 0,
+                                                "uuid": "d4b451a2-ab60-4cdb-b477-8e149bae1436"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Income Statement!2017!Q4}",
+                                                "name": "current",
+                                                "type": 0,
+                                                "uuid": "541090a9-f61f-454d-897e-04fa1b7eff3d"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "c855ed9c-e6a4-442b-a1cf-7d55a9af5c2d",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "69802cb0-9a9a-455f-a164-61b278721e3a"
+                            },
+                            {
+                                "annotations": {},
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2018",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "6d830bc3-42e2-44ef-a107-2dc85b2883e7",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "5ac0e6e8-b139-4963-876f-b76405e38b67",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "6e05b116-b573-443b-b0de-edc08e4915f1",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "4577f0c1-e745-436a-956c-99d40b12ae14",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [
+                                            "strategy",
+                                            "CHECK"
+                                        ],
+                                        "name": "FY",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Income Statement!2018!Q1}+{Income Statement!2018!Q2}+{Income Statement!2018!Q3}+{Income Statement!2018!Q4}",
+                                                "name": "stock",
+                                                "type": 0,
+                                                "uuid": "faab57fe-1ece-46b0-867b-a2487fabc28d"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Income Statement!2018!Q4}",
+                                                "name": "current",
+                                                "type": 0,
+                                                "uuid": "04bd737c-7164-4fc2-9bd2-209dd329bd12"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "ad9ebb2b-66b4-472b-8ddd-523f13554767",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "d2bafee9-ada2-4543-ab13-e6411e670ef4"
+                            },
+                            {
+                                "annotations": {},
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2019",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "f77200e1-3bb4-456b-a1c6-06ded9279872",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "57e6cef4-3333-4576-a7e3-976736beaaf1",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "ca96b003-f1c0-4c11-b56c-09cb4c85639f",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "0d54cd05-8535-47ea-873d-0546478e3bc3",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [
+                                            "strategy",
+                                            "CHECK"
+                                        ],
+                                        "name": "FY",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Income Statement!2019!Q1}+{Income Statement!2019!Q2}+{Income Statement!2019!Q3}+{Income Statement!2019!Q4}",
+                                                "name": "stock",
+                                                "type": 0,
+                                                "uuid": "ea409ff0-76b2-4453-99d2-f464ba8a9253"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Income Statement!2019!Q4}",
+                                                "name": "current",
+                                                "type": 0,
+                                                "uuid": "2cb496bf-ed14-4f96-b548-8b1f6269a5ac"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "ac254fb4-befc-49df-8d56-86137c50b203",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "28a867d6-110f-4ff4-8f9c-65889eaf803a"
+                            },
+                            {
+                                "annotations": {},
+                                "labels": [
+                                    "proj"
+                                ],
+                                "name": "2020",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "0ffffc85-1e70-4165-af87-427b4b77bb67",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "7cf69b32-2193-4aee-841e-15718b400b4a",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "1640c752-7e87-40e8-883c-46d4bab66cf5",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "583fc654-6279-400f-8f13-ff3695ce36c9",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "FY",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "0e647eb3-3725-411a-895c-748803199ac8",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "d2af92a6-6690-420a-b7fc-de6ccf9b49f7"
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [
+                                    "current"
+                                ],
+                                "name": "Cost of Sales",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "hist",
+                                        "type": 0,
+                                        "uuid": "1f60048b-3bea-4b97-b658-770a8020f1e1"
+                                    },
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "proj",
+                                        "type": 0,
+                                        "uuid": "cd8e3368-6dee-4a36-a31b-ed805974b7e2"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "9d82b73d-70b4-4ddf-9017-14c6681f7be1",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [
+                                    "current"
+                                ],
+                                "name": "Operating Expenses",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "hist",
+                                        "type": 0,
+                                        "uuid": "0e9b8db6-ab4a-4523-a2c0-584a89a40ab1"
+                                    },
+                                    {
+                                        "annotations": {},
+                                        "expression": "{Revenue Breakup!Revenue} * {as %revenue}[hist].average()",
+                                        "name": "proj",
+                                        "type": 0,
+                                        "uuid": "f1a9d53d-cfb5-4e02-aa6d-1d2f6b959aca"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "7c1acef6-c930-47b0-93c4-28405e2427bd",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{Operating Expenses}/{Revenue Breakup!Revenue}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "as %revenue",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "hist",
+                                        "type": 0,
+                                        "uuid": "08f4ee88-5679-4f3d-8ce7-389afca9a011"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "939f9cd5-64ba-40f4-9885-5833820cfb27",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{Revenue Breakup!Revenue} - {Operating Expenses}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Operating Income",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "fb5f6f0b-4b9a-447c-b410-b1a8c005cdda",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Total Interest & Other Income",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "hist",
+                                        "type": 0,
+                                        "uuid": "7aae5c17-0d87-4eb9-98a8-3b21df96c793"
+                                    },
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "proj",
+                                        "type": 0,
+                                        "uuid": "15d23b16-16e7-4b00-8bb1-b5ec043e95ef"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "22eeb49b-fbfc-40f9-ac30-503a5e94d770",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{Operating Income} + {Total Interest & Other Income}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Pretax Income",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "7e44e76c-7532-4a93-95ac-f06a7573efb8",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": true,
+                                "labels": [],
+                                "name": "tax rate",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "78884f70-e35c-44ec-a1a6-f942a27e3c9c",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{Operating Income} * {tax rate}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "tax",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "702b150b-2a8e-4982-8120-32fc6463f63d",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{Pretax Income} - {tax}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Net Income",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "04788fa4-b10c-461e-abec-fdfed1b9abcc",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{Revenue Breakup!Revenue} - {Cost of Sales}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Gross Profit",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "bf2b77fd-fc60-4790-85ad-f467582b1079",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{Gross Profit} / {Revenue Breakup!Revenue}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Gross Margin",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "1d5e2f45-bf95-4e93-918e-480ad5406405",
+                                "valid": true
+                            }
+                        ],
+                        "uuid": "07fad1be-7150-4a2c-9155-91f4dbe3d57c"
+                    }
+                ],
+                "uuid": "02590530-def4-482b-a94b-f83cfcabd51d"
+            }
+        ],
+        "uuid": "1eec5d3a-84d2-4b55-b2cd-f78fb0737569"
+    },
+    "formulaManager": [],
+    "modifierManager": [
+        {
+            "font": {
+                "bold": true,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "d3b36649-654f-442c-82f1-9a161bfb05f5"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "4918c0d9-f2b1-4d89-873d-9c15408e3c49"
+        },
+        {
+            "font": {
+                "bold": true,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "d8762c17-8958-4c34-89ff-7e67d25f68cb"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 3,
+                "italic": true,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": true,
+                "thousandsSeparator": true
+            },
+            "uuid": "3c071c04-db5b-4c27-8562-22a7fda6dbb8"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 3,
+                "italic": true,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": true,
+                "thousandsSeparator": true
+            },
+            "uuid": "f19fac1e-ce61-4a5b-b1c6-c683feba04fe"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "b93e5341-07e2-4d43-8ee5-82002b4c034b"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "c908fdc8-222e-4384-bf42-6e318ead45aa"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "ce9de119-17bf-42f8-965f-4f9495ecee04"
+        },
+        {
+            "font": {
+                "bold": true,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "0609c061-2d55-4cc5-93b5-ffda1ea998b0"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "f3b51065-0157-4250-a9ca-f57eb1db9fd3"
+        },
+        {
+            "font": {
+                "bold": true,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "9d82b73d-70b4-4ddf-9017-14c6681f7be1"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "7c1acef6-c930-47b0-93c4-28405e2427bd"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "939f9cd5-64ba-40f4-9885-5833820cfb27"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "fb5f6f0b-4b9a-447c-b410-b1a8c005cdda"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "22eeb49b-fbfc-40f9-ac30-503a5e94d770"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "7e44e76c-7532-4a93-95ac-f06a7573efb8"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "78884f70-e35c-44ec-a1a6-f942a27e3c9c"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "702b150b-2a8e-4982-8120-32fc6463f63d"
+        },
+        {
+            "font": {
+                "bold": true,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "04788fa4-b10c-461e-abec-fdfed1b9abcc"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "bf2b77fd-fc60-4790-85ad-f467582b1079"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "1d5e2f45-bf95-4e93-918e-480ad5406405"
+        }
+    ],
+    "sourceManager": [],
+    "templateSet": {
+        "standardHeaders": []
+    }
+}

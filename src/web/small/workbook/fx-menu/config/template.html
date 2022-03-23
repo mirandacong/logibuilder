@@ -1,0 +1,13 @@
+<button class="config-btn fx-menu-button" (menuClosed)="setOpened(false)" (menuOpened)="setOpened(true)"
+  (mouseenter)="onHoverButton()" [disabled]="readonly" [matMenuTriggerFor]="menu"
+  [ngClass]="{&quot;opened&quot;: isOpened}">配置</button>
+<mat-menu #menu="matMenu">
+  <button class="sub-btn" (click)="onClickLabelManagement($event)" [disableRipple]="isEmpty"
+    [ngClass]="{&quot;disabled&quot;: isEmpty}" mat-menu-item>
+    <mat-icon class="icon-left-viw" [style.visibility]="&quot;hidden&quot;" [svgIcon]="&quot;ic_label_manage&quot;">
+    </mat-icon><span>标签管理</span>
+  </button>
+  <button class="sub-btn" (click)="onManageHeader()" mat-menu-item>
+    <mat-icon class="icon-left-viw"></mat-icon><span>配置表头</span>
+  </button>
+</mat-menu>

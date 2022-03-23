@@ -1,0 +1,18 @@
+<span class="logi-table-filter-column-title">
+  <ng-template [ngTemplateOutlet]="contentTemplate"></ng-template></span>
+<ng-container *ngIf="!customFilter; else extraTemplate">
+  <button [class.active]="isChecked" [matMenuTriggerFor]="filterMenu" (click)="$event.stopPropagation()" (menuClosed)="confirm()" fontIcon="more_vert" logi-icon-button></button>
+  <mat-menu class="logi-table-filter-dropdown" #filterMenu="matMenu"><span class="logi-table-filter-trigger">
+      <div *ngIf="!filterMultiple; else multipleView">
+        <logi-radio-group class="radio-group">
+          <logi-radio-button class="btn" *ngFor="let f of listOfParsedFilter; trackBy: trackByValue" [checked]="f.checked" (change$)="check(f)" [value]="f" (click)="$event.stopPropagation()">{{ f.text }}</logi-radio-button>
+        </logi-radio-group>
+      </div>
+      <div class="logi-table-filter-dropdown-btns">
+        <button logi-button (click)="reset()" [disabled]="!isChecked">reset</button>
+        <button logi-button (click)="confirm()">confirm</button>
+      </div></span></mat-menu>
+</ng-container>
+<ng-template #multipleView>
+  <logi-checkbox class="check-box" *ngFor="let f of listOfParsedFilter; trackBy: trackByValue" [checked]="f.checked" (change$)="check(f)" (click)="$event.stopPropagation()">{{ f.text }}</logi-checkbox>
+</ng-template>

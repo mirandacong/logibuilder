@@ -1,0 +1,191 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette';
+
+@use '../shared' as editor;
+
+$placeholder: rgba(0, 0, 0, 0.38);
+$empty-flag: rgba(0, 0, 0, 0.12);
+$green: rgba(19, 172, 89, 1);
+$sheet-bkg: rgba(250, 250, 250, 1);
+$dropzone-placeholder: rgba(229, 144, 53, 1);
+$block-border: 2px solid $green;
+$border-selected: 1px solid $green;
+$circle-border: 2px solid $sheet-bkg;
+
+$row-block-margin: 0 8px 8px 7px;
+$row-input-width: 132px;
+$node-type-margin: 8px 32px 8px 0;
+$node-type-height: 16px;
+
+$circle-size: 7px;
+$zindex: 1;
+$dropzone-height: 8px;
+$dropzone-circle-margin: 1px 0 0 9px;
+$dropzone-line-margin: 3px 8px 3px 6px;
+$dropzone-line-height: 2px;
+
+$border-selected-radius: 4px 4px 0 0;
+$selected-background-color: rgba(19, 172, 89, 0.08);
+
+$empty-wrapper-margin-bottom: 8px;
+$empty-wrapper-margin-top: 8px;
+$empty-flag-margin: -8px 15px 10px 12px;
+$empty-flag-width: 1px;
+$empty-circle-margin-left: -3px;
+$empty-circle-margin-top: 14px;
+$empty-circle-border: 2px solid $sheet-bkg;
+$empty-circle-width: 3px;
+$empty-circle-height: 3px;
+
+/* Used when dragging nodes starts */
+.dragging-elements-fade-away {
+    /* stylelint-disable-next-line */
+    opacity: 0.38;
+}
+:host {
+    @include editor.row-col-host;
+}
+
+.tree-flag-top-part {
+    @include editor.tree-flag-top-part;
+
+    .circle {
+        @include editor.tree-flag-circle-green;
+    }
+}
+.tree-flag-bottom-part {
+    @include editor.tree-flag-bottom-part;
+}
+.last-node-flag-style {
+    /* stylelint-disable-next-line */
+    background-color: rgba(218, 218, 218, 1);
+}
+.block-wrapper {
+    @include shared.element-display-flex(column);
+    margin-left: 10px;
+}
+
+.row-block {
+    align-items: center;
+
+    display: flex;
+
+    border: 1px solid transparent;
+    border-bottom: $block-border;
+
+    white-space: nowrap;
+
+    .collapsed-btn {
+        color: $green;
+    }
+    .ref-name-input {
+        @include editor.node-ref-name(12px);
+        flex: 1;
+        /* stylelint-disable-next-line */
+        width: unset;
+        background: none;
+
+        &.name-focused, &.expr-focused, &.stub-focused {
+            border-left: $border-selected;
+            border-right: $border-selected;
+            background-color: $sheet-bkg;
+            caret-color: $green;
+        }
+    }
+
+    &.selected {
+        border: $border-selected;
+        border-bottom: $block-border;
+        border-radius: $border-selected-radius;
+        background-color: $selected-background-color;
+    }
+}
+
+.node-type {
+    margin: $node-type-margin;
+    height: $node-type-height;
+    line-height: $node-type-height;
+    @include shared.set-font(12px, bold,$color:$green);
+}
+
+.collapsed {
+    display: none;
+}
+
+.empty-wrapper {
+    display: flex;
+    margin-bottom: $empty-wrapper-margin-bottom;
+    margin-top: $empty-wrapper-margin-top;
+}
+
+.empty-flag {
+    position: relative;
+    top: 0;
+
+    margin: $empty-flag-margin;
+    width: $empty-flag-width;
+
+    background-color: $empty-flag;
+
+    .empty-circle {
+        /* stylelint-disable-next-line */
+        position: absolute;
+
+        margin-left: $empty-circle-margin-left;
+        margin-top: $empty-circle-margin-top;
+        border: $empty-circle-border;
+        border-radius: 50%;
+        width: $empty-circle-width;
+        height: $empty-circle-height;
+
+        background-color: $empty-flag;
+    }
+}
+
+.empty-block {
+    @include shared.set-font(14px);
+
+    color: $placeholder
+}
+
+span.menu-shortcut {
+    @include editor.shortcut-key;
+}
+
+.block-drag-icon {
+    cursor: pointer;
+    color: $green;
+}
+
+.drag-icon {
+    margin-top: 6px;
+    cursor: pointer;
+    color: palette.logi-black(0.38);
+}
+
+.dropzone {
+    padding-top: $dropzone-height;
+}
+
+.drop-placeholder {
+    display: flex;
+
+    .drop-circle {
+        z-index: $zindex;
+
+        margin: $dropzone-circle-margin;
+        border: $circle-border;
+        border-radius: 50%;
+        @include shared.size($circle-size, $circle-size);
+
+        background-color: $dropzone-placeholder
+    }
+
+    .drop-line {
+        margin: $dropzone-line-margin;
+        width: 100%;
+        height: $dropzone-line-height;
+        background-color: $dropzone-placeholder
+    }
+}

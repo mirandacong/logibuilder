@@ -1,0 +1,9 @@
+<span class="logi-group-input-prefix logi-group-input-affix">
+    <mat-icon class="logi-input-icon" *ngIf="prefixIcon" [svgIcon]="prefixIcon"></mat-icon>
+</span>
+<span class="logi-input-wrapper" [class.with-prefix]="prefixIcon" [class.with-suffix]="suffixIcon">
+    <ng-content></ng-content>
+</span>
+<span class="logi-group-input-suffix logi-group-input-affix">
+    <mat-icon class="logi-input-icon" *ngIf="suffixIcon" [svgIcon]="suffixIcon"></mat-icon>
+</span>

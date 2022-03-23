@@ -1,0 +1,25 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+@mixin logi-tree-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    $color-primary: theming.logi-color($primary);
+    $bg-node-hover: rgba($color-primary, 0.12);
+
+    .logi-tree-node {
+        &.selected {
+            background-color: $bg-node-hover;
+        }
+    }
+    .logi-tree-node-selected-circle.selected {
+        border-color: $color-primary;
+    }
+    .logi-tree-node-selected-dot {
+        background-color: $color-primary;
+    }
+    .mat-icon.logi-tree-node-leaf-icon.selected {
+        color: $color-primary;
+    }
+}

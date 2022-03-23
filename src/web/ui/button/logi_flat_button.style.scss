@@ -1,0 +1,11 @@
+@use '../core/styles/shared';
+
+.logi-flat-button.loading {
+    cursor: default;
+    pointer-events: none;
+}
+
+.logi-flat-button .spinner {
+    display: inline-block;
+    margin-right: 8px;
+}

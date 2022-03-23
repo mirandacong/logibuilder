@@ -1,0 +1,4 @@
+<button class="button" [disabled]="false" [matRippleColor]="'rgba(19,172,89,0.12)'" [ngClass]="{&quot;focused&quot;: nameFocus, &quot;selected&quot;: !nameFocus &amp;&amp; selected}" matRipple>
+  <div class="input-label" #labeltext (blur)="nameBlur()" (dblclick)="onDblclick()" [attr.contenteditable]="nameFocus" [ngClass]="{&quot;focused&quot;: nameFocus, &quot;selected&quot;: !nameFocus &amp;&amp; selected}" spellcheck="false"></div>
+  <mat-icon class="close-icon" *ngIf="!nameFocus &amp;&amp; selected" (click)="removeLabel()" [ngClass]="{&quot;selected&quot;: !nameFocus &amp;&amp; selected}" svgIcon="ic_close"></mat-icon>
+</button>

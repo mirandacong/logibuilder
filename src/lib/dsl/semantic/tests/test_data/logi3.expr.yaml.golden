@@ -1,0 +1,1843 @@
+---
+cellInfos:
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q1
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q1
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q2
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q2
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q3
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q3
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q4
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q4
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!FY
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!FY
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q1
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q1
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q2
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q2
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q3
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q3
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q4
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q4
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!FY
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!FY
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q1
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q1
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q2
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q2
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q3
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q3
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q4
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q4
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!FY
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!FY
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q1
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q1
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q2
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q2
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q3
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q3
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q4
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q4
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row4-
+        expr: '{row1} + {row2}'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!FY
+            row: Control!Revenue Breakup!row2
+        op:
+          rootOp: add
+          subOpInfos:
+            - 0
+            - 1
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!FY
+      row: Control!Revenue Breakup!row4
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q1
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2017!Q1
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q1
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q2
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2017!Q2
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q2
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q3
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2017!Q3
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q3
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q4
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2017!Q4
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q4
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!FY
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2017!FY
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!FY
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q1
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2018!Q1
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q1
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q2
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2018!Q2
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q2
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q3
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2018!Q3
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q3
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q4
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2018!Q4
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q4
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!FY
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2018!FY
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!FY
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q1
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2019!Q1
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q1
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q2
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2019!Q2
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q2
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q3
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2019!Q3
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q3
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q4
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2019!Q4
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q4
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!FY
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2019!FY
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!FY
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q1
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2020!Q1
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q1
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q2
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2020!Q2
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q2
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q3
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2020!Q3
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q3
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q4
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2020!Q4
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q4
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row5-
+        expr: 'sum({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!FY
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2020!FY
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: sum
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!FY
+      row: Control!Revenue Breakup!row5
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q1
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2017!Q1
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q1
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q2
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2017!Q2
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q2
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q3
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2017!Q3
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q3
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!Q4
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2017!Q4
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q4
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2017!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2017!FY
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2017!FY
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!FY
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q1
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2018!Q1
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q1
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q2
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2018!Q2
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q2
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q3
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2018!Q3
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q3
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!Q4
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2018!Q4
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q4
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2018!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2018!FY
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2018!FY
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!FY
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q1
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2019!Q1
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q1
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q2
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2019!Q2
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q2
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q3
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2019!Q3
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q3
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!Q4
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2019!Q4
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q4
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2019!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2019!FY
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2019!FY
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!FY
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q1
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q1
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2020!Q1
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q1
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q2
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q2
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2020!Q2
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q2
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q3
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q3
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2020!Q3
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q3
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!Q4
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!Q4
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2020!Q4
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q4
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row6-
+        expr: 'average({row1}, {row2}, {row3})'
+        inNodes:
+          - col: Control!Revenue Breakup!2020!FY
+            row: Control!Revenue Breakup!row1
+          - col: Control!Revenue Breakup!2020!FY
+            row: Control!Revenue Breakup!row2
+          - col: Control!Revenue Breakup!2020!FY
+            row: Control!Revenue Breakup!row3
+        op:
+          rootOp: average
+          subOpInfos:
+            - 0
+            - 1
+            - 2
+          type: Composite
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!FY
+      row: Control!Revenue Breakup!row6
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q1
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q2
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q3
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q4
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!FY
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q1
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q2
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q3
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q4
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!FY
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q1
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q2
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q3
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q4
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!FY
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q1
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q2
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q3
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q4
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row8-
+        expr: '1'
+        inNodes: []
+        op:
+          type: Atomic
+          value: 1
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!FY
+      row: Control!Revenue Breakup!row8
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2017!Q1
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q1
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2017!Q2
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q2
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2017!Q3
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q3
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2017!Q4
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!Q4
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2017!FY
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2017!FY
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2018!Q1
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q1
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2018!Q2
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q2
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2018!Q3
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q3
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2018!Q4
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!Q4
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2018!FY
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2018!FY
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2019!Q1
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q1
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2019!Q2
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q2
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2019!Q3
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q3
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2019!Q4
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!Q4
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2019!FY
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2019!FY
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2020!Q1
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q1
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2020!Q2
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q2
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2020!Q3
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q3
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2020!Q4
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!Q4
+      row: Control!Revenue Breakup!row9
+  - formulaList:
+      - castFrom: Control!Revenue Breakup!row9-
+        expr: '{sheet1!Revenue Breakup!row1}'
+        inNodes:
+          - col: sheet1!Revenue Breakup!2020!FY
+            row: sheet1!Revenue Breakup!row1
+        op:
+          image: id
+          type: Atomic
+        priority: 3
+        type: FX
+    pos:
+      col: Control!Revenue Breakup!2020!FY
+      row: Control!Revenue Breakup!row9
+fbInNodes:
+  Control!Revenue Breakup!2017!FY: []
+  Control!Revenue Breakup!2017!Q1: []
+  Control!Revenue Breakup!2017!Q2: []
+  Control!Revenue Breakup!2017!Q3: []
+  Control!Revenue Breakup!2017!Q4: []
+  Control!Revenue Breakup!2018!FY: []
+  Control!Revenue Breakup!2018!Q1: []
+  Control!Revenue Breakup!2018!Q2: []
+  Control!Revenue Breakup!2018!Q3: []
+  Control!Revenue Breakup!2018!Q4: []
+  Control!Revenue Breakup!2019!FY: []
+  Control!Revenue Breakup!2019!Q1: []
+  Control!Revenue Breakup!2019!Q2: []
+  Control!Revenue Breakup!2019!Q3: []
+  Control!Revenue Breakup!2019!Q4: []
+  Control!Revenue Breakup!2020!FY: []
+  Control!Revenue Breakup!2020!Q1: []
+  Control!Revenue Breakup!2020!Q2: []
+  Control!Revenue Breakup!2020!Q3: []
+  Control!Revenue Breakup!2020!Q4: []
+  Control!Revenue Breakup!row1: []
+  Control!Revenue Breakup!row10: []
+  Control!Revenue Breakup!row2: []
+  Control!Revenue Breakup!row3: []
+  Control!Revenue Breakup!row4:
+    - Control!Revenue Breakup!row1
+    - Control!Revenue Breakup!row2
+  Control!Revenue Breakup!row5:
+    - Control!Revenue Breakup!row1
+    - Control!Revenue Breakup!row2
+    - Control!Revenue Breakup!row3
+  Control!Revenue Breakup!row6:
+    - Control!Revenue Breakup!row1
+    - Control!Revenue Breakup!row2
+    - Control!Revenue Breakup!row3
+  Control!Revenue Breakup!row7: []
+  Control!Revenue Breakup!row8: []
+  Control!Revenue Breakup!row9:
+    - sheet1!Revenue Breakup!row1
+  sheet1!Revenue Breakup!2017!FY: []
+  sheet1!Revenue Breakup!2017!Q1: []
+  sheet1!Revenue Breakup!2017!Q2: []
+  sheet1!Revenue Breakup!2017!Q3: []
+  sheet1!Revenue Breakup!2017!Q4: []
+  sheet1!Revenue Breakup!2018!FY: []
+  sheet1!Revenue Breakup!2018!Q1: []
+  sheet1!Revenue Breakup!2018!Q2: []
+  sheet1!Revenue Breakup!2018!Q3: []
+  sheet1!Revenue Breakup!2018!Q4: []
+  sheet1!Revenue Breakup!2019!FY: []
+  sheet1!Revenue Breakup!2019!Q1: []
+  sheet1!Revenue Breakup!2019!Q2: []
+  sheet1!Revenue Breakup!2019!Q3: []
+  sheet1!Revenue Breakup!2019!Q4: []
+  sheet1!Revenue Breakup!2020!FY: []
+  sheet1!Revenue Breakup!2020!Q1: []
+  sheet1!Revenue Breakup!2020!Q2: []
+  sheet1!Revenue Breakup!2020!Q3: []
+  sheet1!Revenue Breakup!2020!Q4: []
+  sheet1!Revenue Breakup!row1: []

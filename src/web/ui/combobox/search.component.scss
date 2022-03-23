@@ -1,0 +1,25 @@
+@use '../core/styles/shared';
+
+.logi-combobox-single .logi-combobox-search {
+    position: absolute;
+    left: 16px;
+    right: 36px;
+    top: 0;
+    bottom: 0;
+}
+.logi-combobox-multiple .logi-combobox-search {
+    margin-left: 4px;
+}
+.logi-combobox-multiple .logi-combobox-trigger-empty .logi-combobox-search {
+    margin-left: 12px;
+}
+
+.logi-combobox-search-input {
+    width: 100%;
+    margin: 0;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    appearance: none;
+    outline: none;
+}

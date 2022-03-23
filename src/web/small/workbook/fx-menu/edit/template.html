@@ -1,0 +1,30 @@
+<button class="edit-btn fx-menu-button" (menuClosed)="setOpened(false)" (menuOpened)="setOpened(true)"
+  (mouseenter)="onHoverButton()" [matMenuTriggerFor]="menu" [disabled]="readonly"
+  [ngClass]="{&quot;opened&quot;: isOpened}">编辑</button>
+<mat-menu #menu="matMenu">
+  <button class="edit-sub-module" (click)="onClickUndo($event)" [disableRipple]="!(canUndo() | async)"
+    [ngClass]="{&quot;disabled&quot;:!(canUndo() | async)}" mat-menu-item>
+    <mat-icon class="icon-view" svgIcon="ic_edit_undo"></mat-icon><span>撤销</span><span class="short">Ctrl+Z</span>
+  </button>
+  <button class="edit-sub-module" (click)="onClickRedo($event)" [disableRipple]="!(canRedo() | async)"
+    [ngClass]="{&quot;disabled&quot;:!(canRedo() | async)}" mat-menu-item>
+    <mat-icon class="icon-view" svgIcon="ic_edit_redo"></mat-icon><span>重做</span><span class="short">Ctrl+Y</span>
+  </button>
+  <button class="edit-sub-module" (click)="onClickCut($event)" [disableRipple]="isEmpty"
+    [ngClass]="{&quot;disabled&quot;:isEmpty}" mat-menu-item>
+    <mat-icon class="icon-view" svgIcon="ic_edit_cut"></mat-icon><span>剪切</span><span class="short">Ctrl+X</span>
+  </button>
+  <button class="edit-sub-module" (click)="onClickCopy($event)" [disableRipple]="isEmpty"
+    [ngClass]="{&quot;disabled&quot;:isEmpty}" mat-menu-item>
+    <mat-icon class="icon-view" svgIcon="ic_edit_copy"></mat-icon><span>复制</span><span class="short">Ctrl+C</span>
+  </button>
+  <button class="edit-sub-module" (click)="onClickPaste($event)" [disableRipple]="isEmpty"
+    [ngClass]="{&quot;disabled&quot;:isEmpty}" mat-menu-item>
+    <mat-icon class="icon-view" svgIcon="ic_edit_paste"></mat-icon><span>粘贴</span><span class="short">Ctrl+V</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button class="edit-sub-module level-down-btn" (click)="$event.stopPropagation()" [disableRipple]="true"
+    [ngClass]="{&quot;disabled&quot;:true}" mat-menu-item>
+    <mat-icon class="icon-view" svgIcon="ic_search"></mat-icon><span>查找</span>
+  </button>
+</mat-menu>

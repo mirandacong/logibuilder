@@ -1,0 +1,16 @@
+<div class="slice-part editor-slices" *ngIf="node.sliceExprs.length &gt; 0">
+  <div class="slice-expr-item" *ngFor="let slice of node.sliceExprs; let i=index">
+    <div class="slice-container" #container>
+      <logi-fb-tag class="fb-tag" [readonly]="true" [type]="slice.type"></logi-fb-tag>
+      <div class="selection-block">
+        <div class="left">
+          <div class="ref-name-input" [ngClass]="{&quot;empty&quot; : slice.name.trim() === &quot;&quot;}">
+            {{slice.name.trim() === '' ? '切片' : slice.name}}</div>
+        </div>
+        <div class="right">
+          <logi-equal class="equal"></logi-equal><span class="editor" [innerHTML]="getEquations(slice)"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

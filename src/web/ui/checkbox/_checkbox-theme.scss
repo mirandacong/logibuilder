@@ -1,0 +1,17 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+@mixin logi-checkbox-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    .logi-checkbox-indeterminate, .logi-checkbox-checked {
+        .logi-checkbox-background {
+            background-color: theming.logi-color($primary);
+        }
+    }
+
+    .logi-checkbox-mixedmark {
+        background-color: shared.$base-white;
+    }
+}

@@ -1,0 +1,25 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette';
+
+:host {
+    position: relative;
+
+    box-shadow: 0 2px 4px palette.logi-black(0.16);
+    border-radius: 4px;
+    height: 24px;
+    padding: 4px 8px;
+
+    background-color: palette.logi-white(1);
+    cursor: pointer;
+
+    font-size: 14px;
+    line-height: 24px;
+    font-family: shared.$monospace-font;
+    color: palette.logi-black(0.38);
+}
+
+.part.current {
+    font-weight: bold;
+    color: palette.aris-brand();
+}

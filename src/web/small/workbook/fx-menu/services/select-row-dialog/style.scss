@@ -1,0 +1,19 @@
+@use 'src/web/assets/styles/shared';
+
+:host {
+    @include shared.common-mat-dialog;
+}
+
+.input-field {
+    margin-bottom: 24px;
+
+    .label {
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+}
+
+.row-input {
+    cursor: default;
+    color: shared.$base-brand;
+}

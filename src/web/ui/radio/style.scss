@@ -1,0 +1,141 @@
+@use '../core/styles/shared';
+
+$radio-container-size: 32px;
+$radio-container-middle-size: 24px;
+$radio-container-small-size: 12px;
+$logi-radio-size: 50%;
+$logi-radio-ripple-radius: 16px;
+$logi-toggle-padding: 8px !default;
+
+.logi-radio-container {
+    position: relative;
+    flex-shrink: 0;
+    display: inline-block;
+    border-radius: 50%;
+    box-sizing: border-box;
+    width: $radio-container-size;
+    height: $radio-container-size;
+}
+
+.logi-radio-button[size='middle'] .logi-radio-container {
+    width: $radio-container-middle-size;
+    height: $radio-container-middle-size;
+}
+
+.logi-radio-button {
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover:not(.logi-radio-disabled) {
+        .logi-radio-container {
+            background-color: shared.$black-4;
+        }
+    }
+}
+
+.logi-radio-persistent-ripple {
+    transform: none;
+    width: 100%;
+    height: 100%;
+}
+
+.logi-radio-input {
+    bottom: 0;
+    left: 50%;
+}
+.logi-radio-label {
+    @include shared.user-select(none);
+    align-items: center;
+    display: inline-flex;
+    width: 100%;
+    cursor: pointer;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.logi-radio-inner-circle {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: scale(0.001);
+    transition: transform ease 280ms, background-color ease 280ms;
+    border-radius: 50%;
+    box-sizing: border-box;
+    width: $logi-radio-size;
+    height: $logi-radio-size;
+}
+
+.logi-radio-outer-circle {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transition: border-color ease 280ms;
+    box-sizing: border-box;
+    width: $logi-radio-size;
+    height: $logi-radio-size;
+    border: {
+        width: 2px;
+        color: rgba(0, 0, 0, 0.6);
+        radius: 50%;
+        style: solid;
+    }
+}
+
+.logi-radio-checked {
+    .logi-radio-inner-circle {
+        transform: scale(0.5);
+    }
+}
+.logi-radio-disabled {
+    .logi-radio-inner-circle {
+        background-color: shared.$black-38;
+    }
+    .logi-radio-outer-circle {
+        border-color: shared.$black-38;
+    }
+    .logi-radio-label {
+        cursor: default;
+    }
+    .logi-radio-label-content {
+        color: shared.$black-60
+    }
+}
+
+.logi-radio-label-content {
+    @include shared.user-select(auto);
+    order: 0;
+    display: inline-block;
+    padding-left: $logi-toggle-padding;
+    padding-right: 0;
+    line-height: inherit;
+
+    [dir='rtl'] & {
+        padding-left: 0;
+        padding-right: $logi-toggle-padding;
+    }
+}
+
+.logi-radio-label-content.logi-radio-label-before {
+    order: -1;
+    padding-left: 0;
+    padding-right: $logi-toggle-padding;
+
+    [dir='rtl'] & {
+        padding-left: $logi-toggle-padding;
+        padding-right: 0;
+    }
+}
+
+.logi-radio-ripple {
+    position: absolute;
+    z-index: 1;
+    top: calc(50% - #{$logi-radio-ripple-radius});
+    left: calc(50% - #{$logi-radio-ripple-radius});
+    border-radius: 50%;
+    width: $logi-radio-ripple-radius * 2;
+    height: $logi-radio-ripple-radius * 2;
+    pointer-events: none;
+
+    .logi-ripple-element:not(.logi-radio-persistent-ripple) {
+        opacity: 0.12;
+    }
+}

@@ -1,0 +1,46 @@
+@use '../core/styles/palette.scss';
+
+@use '../core/styles/shared';
+
+$height: 32px;
+
+.check-btn {
+    margin-left: auto;
+}
+.logi-tree-host {
+    flex-direction: column;
+    display: flex;
+}
+.mat-tree.logi-tree-root {
+    overflow-y: auto;
+    height: calc(100% - 36px);
+}
+.mat-tree-node.logi-tree-node {
+    position: relative;
+    padding: 0 8px;
+    cursor: pointer;
+    min-height: $height;
+    &:hover {
+        background-color: shared.$bg-hover;
+    }
+    &.hidden {
+        display: none;
+    }
+}
+
+.logi-tree-node-indent-line {
+    /* stylelint-disable-next-line */
+    position: absolute;
+    width: 1px;
+    height: $height;
+    background-color: palette.logi-black(0.16);
+}
+
+.mat-icon.logi-tree-node-icon {
+    margin: 0 4px;
+    width: 18px;
+    height: 32px;
+    font-size: 18px;
+    line-height: 32px;
+    color: shared.$font-color-base;
+}

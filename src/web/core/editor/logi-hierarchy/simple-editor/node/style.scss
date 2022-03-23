@@ -1,0 +1,13 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette';
+
+:host {
+    color: shared.$font-color-darker;
+}
+.container {
+    display: flex;
+}
+.main {
+    color: shared.$base-blue;
+}

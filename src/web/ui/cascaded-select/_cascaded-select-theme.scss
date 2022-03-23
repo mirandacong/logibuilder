@@ -1,0 +1,30 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+@mixin logi-cascaded-select-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    $color-primary: theming.logi-color($primary);
+    $color-hover: theming.logi-color($primary, 0.04);
+    $color-activated: theming.logi-color($primary, 0.12);
+
+    .logi-cascaded-select-menu-item {
+        &:hover {
+            background-color: $color-hover;
+        }
+
+        &.activated {
+            background-color: $color-activated;
+
+            .logi-cascaded-select-option-content {
+                font-weight: bold;
+                color: $color-primary;
+            }
+        }
+    }
+
+    .logi-cascaded-select .mat-ripple-element {
+        background-color: $color-activated;
+    }
+}

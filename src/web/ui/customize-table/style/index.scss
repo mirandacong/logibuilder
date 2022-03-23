@@ -1,0 +1,698 @@
+/* stylelint-disable */
+@use './size.scss';
+
+@use './bordered.scss';
+
+@use '../../core/styles/shared';
+
+@use '../../core/styles/palette';
+
+@use './patch.scss';
+
+@use './rtl.scss';
+
+$background: shared.$base-white;
+$font-size-base: 14px;
+$font-variant-base: tabular-nums;
+$font-feature-settings-base: 'tnum';
+$cover-grey: palette.logi-color(palette.$logi-grey, 100, 1);
+$row-select-bg: #E8EFF7;
+$box-shadow-left: inset 10px 0 8px -8px rgba(0, 0, 0, 0.1);
+$box-shadow-right: inset -10px 0 8px -8px rgba(0, 0, 0, 0.1);
+$header-bg: rgba(245,245,245);
+$hover-bg: rgb(226,226,226);
+
+@mixin reset-component {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: $font-size-base;
+    font-variant: $font-variant-base;
+    list-style: none;
+    font-feature-settings: $font-feature-settings-base;
+}
+// mixins for clearfix
+// ------------------------
+@mixin clearfix() {
+    // https://github.com/ant-design/ant-design/issues/21301#issuecomment-583955229
+    &::before {
+        content: '';
+        display: table;
+    }
+    &::after {
+        // https://github.com/ant-design/ant-design/issues/21864
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+@mixin operation-unit {
+    color: shared.$base-blue;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:focus, &:hover {
+        color: shared.$bg-hover;
+    }
+
+    &:active {
+        color: shared.$bg-active;
+    }
+}
+
+.logi-table-wrapper {
+    position: relative;
+    clear: both;
+    display: block;
+    color: palette.logi-black(0.87);
+    max-width: 100%;
+    @include clearfix;
+}
+
+.loading-shape {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+
+    &.bg {
+        background-color: palette.logi-black(0.15);
+    }
+}
+.logi-table {
+    position: relative;
+    border-radius: 4px;
+    @include reset-component;
+    background-color: shared.$base-white;
+    font-size: 14px;
+    height: calc(100% - 56px);
+    &.withoutPage{
+        height: 100%;
+    }
+
+    // https://github.com/logi-design/logi-design/issues/17611
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 4px 4px 0 0;
+        width: 100%;
+        text-align: left;
+    }
+    &-custom-scrollbar {
+        flex:1;
+    }
+
+    // ============================= Cell =============================
+    &-thead > tr > th, &-tbody > tr > td, tfoot > tr > th, tfoot > tr > td {
+        position: relative;
+        overflow-wrap: break-word;
+        height: 48px;
+        padding: 0 16px;
+    }
+
+    &-cell-ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-break: keep-all;
+
+        // Fixed first or last should special process
+        &.logi-table-cell-fix-left-last, &.logi-table-cell-fix-right-first {
+            overflow: visible;
+
+            .logi-table-cell-content {
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    // ============================ Title =============================
+    &-title {
+        align-items: center;
+        display: flex;
+        height: 48px;
+        padding: 0 16px;
+    }
+
+    // ============================ Footer ============================
+    &-footer {
+        align-items: center;
+        display: flex;
+        height: 48px;
+        padding: 0 16px;
+        background-color: shared.$base-white;
+        color: palette.logi-black(0.87);
+    }
+
+    // ============================ Header ============================
+    &-thead {
+        > tr {
+            > th {
+                transition: background 0.3s ease;
+                border-bottom: shared.$border-base;
+                height: 48px;
+                background-color: $header-bg;
+                font-size: 12px;
+                font-weight: bold;
+                text-align: left;
+                color: palette.logi-black(0.6);
+
+                &[colspan]:not([colspan='1']) {
+                    text-align: center;
+                }
+                &.logi-table-cell-fix-left, .logi-table-cell-fix-right {
+                    background-color: $cover-grey;
+                }
+            }
+        }
+
+        > tr:not(:last-child) > th {
+            &[colspan] {
+                border-bottom: 0;
+            }
+        }
+    }
+
+    // ============================= Body =============================
+    &-tbody {
+        > tr {
+            > td {
+                transition: background 0.3s;
+                border-bottom: shared.$border-base;
+
+                // ========================= Nest Table ===========================
+                > .logi-table-wrapper:only-child {
+                    .logi-table {
+                        margin: -16px -16px -16px (16px +
+                        12px * 1.4);
+
+                        &-tbody > tr:last-child > td {
+                            border-bottom: 0;
+
+                            &:first-child, &:last-child {
+                                border-radius: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.logi-table-row:hover {
+                > td {
+                    background-color: shared.$bg-hover;
+                    &.logi-table-cell-fix-left, &.logi-table-cell-fix-right {
+                        background-color: $cover-grey;
+                    }
+                }
+            }
+            &.logi-table-row.selected {
+                > td {
+                    &.logi-table-cell-fix-left, &.logi-table-cell-fix-right {
+                        background-color: $row-select-bg;
+                    }
+                    background-color: shared.$brand-12;
+                }
+            }
+            &.logi-table-row-selected {
+                > td {
+                    background-color: shared.$brand-12;
+                }
+
+                &:hover {
+                    > td {
+                        background-color: shared.$black-4;
+                    }
+                }
+            }
+        }
+    }
+
+    // =========================== Summary ============================
+    tfoot {
+        > tr {
+            > th, > td {
+                border-bottom: shared.$border-base;
+            }
+        }
+    }
+
+    // ========================== Pagination ==========================
+    &-pagination.logi-pagination {
+        margin: 16px 0;
+    }
+
+    &-pagination {
+        display: flex;
+        background-color: transparent;
+
+        &-left {
+            justify-content: flex-start;
+        }
+
+        &-center {
+            justify-content: center;
+        }
+
+        &-right {
+            justify-content: flex-end;
+        }
+    }
+
+    // ================================================================
+    // =                           Function                           =
+    // ================================================================
+
+    // ============================ Sorter ============================
+    &-thead th.logi-table-column-has-sorters {
+        transition: all 0.3s;
+        padding: 0;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $hover-bg;
+        }
+    }
+
+    &-thead th.logi-table-column-sort {
+        background-color: palette.logi-color(palette.$logi-grey, 100);
+    }
+    td &-column-sort {
+        background-color: palette.logi-color(palette.$logi-grey, 50);
+    }
+
+    &-column-sorters-with-tooltip {
+        display: inline-block;
+        width: 100%;
+    }
+
+    &-column-sorters {
+        align-items: center;
+        display: inline-flex;
+        padding: 0 16px;
+    }
+
+    &-column-sorter {
+        margin-bottom: -0.15em;
+        margin-left: 3px;
+        margin-top: 0.15em;
+        color: shared.$black-24;
+
+        &-full {
+            margin-bottom: 0;
+            margin-top: -0.2em;
+        }
+
+        &-inner {
+            flex-direction: column;
+            align-items: center;
+            display: inline-flex;
+        }
+
+        mat-icon {
+            width: 14px;
+            height: 14px;
+            cursor: pointer;
+        }
+        &-up, &-down {
+            font-size: 11px;
+
+            &.active {
+                color: shared.$base-blue;
+            }
+        }
+
+        &-up + &-down {
+            margin-top: -0.3em;
+        }
+    }
+
+    // ============================ Filter ============================
+    &-filter-column {
+        align-items: center;
+        display: flex;
+        margin: -16px;
+    }
+
+    &-filter-column-title {
+        flex: auto;
+        padding: 0 2.3em 0 16px;
+    }
+
+    // Remove padding when sorter also provided
+    &-thead tr th.logi-table-column-has-sorters {
+        .logi-table-filter-column {
+            margin: 0;
+        }
+
+        .logi-table-filter-column-title {
+            padding: 0 2.3em 0 0;
+        }
+    }
+
+    &-filter-trigger-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        flex: none;
+        align-items: stretch;
+        align-self: stretch;
+        display: flex;
+        transition: background-color 0.3s;
+        cursor: pointer;
+
+        &-open, &:hover, .logi-table-thead th.logi-table-column-has-sorters:hover &:hover {
+            background-color: $hover-bg;
+        }
+    }
+
+    &-filter-trigger {
+        display: block;
+        transition: color 0.3s;
+        font-size: 12px;
+        color: shared.$font-color-darker;
+        .check-box {
+            display: flex;
+            height: 24px;
+            padding-left: 24px;
+            line-height: 24px;
+            &:hover {
+                background-color: shared.$bg-hover;
+            }
+        }
+
+        mat-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &.active {
+            color: shared.$base-blue;
+        }
+        .radio-group {
+            flex-direction: column;
+            display: flex;
+            padding: 0 18px;
+        }
+    }
+
+    // Dropdown
+    &-filter-dropdown {
+        @include reset-component;
+
+        // Reset menu
+        .logi-dropdown-menu {
+            // https://github.com/logi-design/logi-design/issues/4916
+            // https://github.com/logi-design/logi-design/issues/19542
+            overflow-x: hidden;
+            box-shadow: none;
+            border: 0;
+            max-height: 264px;
+        }
+        &.mat-menu-panel {
+            max-height: unset;
+            min-height: unset;
+            min-width: unset;
+        }
+        box-shadow: 0 3px 6px -4px palette.logi-black(0.12), 0 6px 16px 0 palette.logi-black(0.08), 0 9px 28px 8px palette.logi-black(0.06);
+
+        border-radius: 4px;
+        background-color: shared.$base-white;
+
+        min-width: 120px;
+
+        &-submenu > ul {
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-height: calc(100vh - 130px);
+        }
+
+        // Checkbox
+        &, &-submenu {
+            .logi-checkbox-wrapper + span {
+                padding-left: 8px;
+            }
+        }
+
+        // Operation
+        &-btns {
+            justify-content: space-between;
+            display: flex;
+            overflow: hidden;
+            margin-top: 8px;
+            border-top: shared.$border-base;
+            padding: 0 8px;
+            background-color: inherit;
+        }
+    }
+
+    // ========================== Selections ==========================
+    .logi-table-selection-col {
+        width: 32px;
+    }
+
+    table tr th &-selection-column, table tr td &-selection-column {
+        padding-left: 8px;
+        padding-right: 8px;
+        text-align: center;
+
+        .logi-radio-wrapper {
+            margin-right: 0;
+        }
+    }
+
+    &-selection {
+        position: relative;
+        flex-direction: column;
+        display: inline-flex;
+
+        &-extra {
+            position: absolute;
+            z-index: 1;
+            top: -8px;
+            transition: all 0.3s;
+            margin-inline-start: 100%;
+            padding-inline-start: 8px;
+            cursor: pointer;
+
+            mat-icon {
+                font-size: 10px;
+                color: shared.$black-60;
+
+                &:hover {
+                    color: shared.$black-87;
+                }
+            }
+        }
+    }
+
+    // ========================== Expandable ==========================
+    &-expand-icon-col {
+        width: 48px;
+    }
+
+    &-row-expand-icon-cell {
+        text-align: center;
+    }
+
+    &-row-indent {
+        float: left;
+        height: 1px;
+    }
+
+    tr &-expanded-row {
+        &, &:hover {
+            > td {
+                background-color: shared.$base-white;
+            }
+        }
+
+        // https://github.com/logi-design/logi-design/issues/25573
+        .logi-descriptions-view table {
+            width: auto;
+        }
+    }
+
+    // With fixed
+    .logi-table-expanded-row-fixed {
+        position: relative;
+        margin: 0 -16px;
+        padding: 0 16px;
+    }
+
+    // ========================= Placeholder ==========================
+    &-tbody > &-placeholder {
+        text-align: center;
+        .logi-table-empty & {
+            color: shared.$font-color-base;
+        }
+        &:hover {
+            > td {
+                background-color: $background;
+            }
+        }
+    }
+
+    // ============================ Fixed =============================
+    &-cell-fix-left, &-cell-fix-right {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        background-color: shared.$base-white;
+    }
+
+    &-cell-fix-left-first::after, &-cell-fix-left-last::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        right: 0;
+        transform: translateX(100%);
+        transition: box-shadow 0.3s;
+        width: 30px;
+        pointer-events: none;
+    }
+    &-cell-fix-right-first::after, &-cell-fix-right-last::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        left: 0;
+        transform: translateX(-100%);
+        transition: box-shadow 0.3s;
+        width: 30px;
+        pointer-events: none;
+    }
+
+    .logi-table-container {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            transition: box-shadow 0.3s;
+            width: 30px;
+            pointer-events: none;
+        }
+
+        &::before {
+            left: 0;
+        }
+        &::after {
+            right: 0;
+        }
+        .logi-table-body {
+            flex: 1;
+        }
+    }
+    &-header {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+    }
+
+    &-ping-left {
+        &:not(.logi-table-has-fix-left) .logi-table-container {
+            position: relative;
+
+            // &::before {
+            //     box-shadow: $box-shadow-left;
+            // }
+        }
+
+        .logi-table-cell-fix-left-first::after, .logi-table-cell-fix-left-last::after {
+            box-shadow: $box-shadow-left;
+        }
+    }
+
+    &-ping-right {
+        &:not(.logi-table-has-fix-right) .logi-table-container {
+            position: relative;
+
+            // &::after {
+            //     box-shadow: $box-shadow-right;
+            // }
+        }
+
+        .logi-table-cell-fix-right-first::after, .logi-table-cell-fix-right-last::after {
+            box-shadow: $box-shadow-right;
+        }
+    }
+    &-sticky {
+        &-header {
+            position: sticky;
+            z-index: 3;
+        }
+        &-scroll {
+            position: sticky;
+            z-index: 3;
+            bottom: 0;
+            align-items: center;
+            display: flex;
+            opacity: 0.6;
+            border-top: shared.$border-base;
+            background-color: palette.logi-white(0.8);
+            &:hover {
+                transform-origin: center bottom;
+            }
+            &-bar {
+                border-radius: 4px;
+                height: 8px;
+                background-color: palette.logi-black(0.35);
+                &:hover {
+                    background-color: palette.logi-black(0.8);
+                }
+                &-active {
+                    background-color: palette.logi-black(0.8);
+                }
+            }
+        }
+    }
+}
+
+.logi-table-hide-scrollbar {
+    scrollbar-color: $header-bg $header-bg;
+    &::-webkit-scrollbar {
+        background-color: $header-bg;
+    }
+}
+
+.logi-table.logi-table-small {
+    .logi-table-hide-scrollbar {
+        scrollbar-color: shared.$base-white shared.$base-white;
+        &::-webkit-scrollbar {
+            background-color: transparent;
+        }
+    }
+}
+
+@media all and (-ms-high-contrast: none) {
+    .logi-table {
+        &-ping-left {
+            .logi-table-cell-fix-left-last::after {
+                box-shadow: none !important;
+            }
+        }
+        &-ping-right {
+            .logi-table-cell-fix-right-first::after {
+                box-shadow: none !important;
+            }
+        }
+    }
+}

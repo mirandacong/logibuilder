@@ -1,0 +1,32 @@
+@use '../all-ui-theme';
+
+@use '../../styles/global';
+
+@use '../../styles/palette';
+
+$primary: (
+    default: map-get(palette.$aris-brand, 600),
+    lighter: map-get(palette.$aris-brand, 200),
+    /**
+     * The contrast color.
+     * For example, the flat button font color will use the
+     * contrast color of its background color
+     */
+    default-contrast: palette.logi-white(1),
+);
+
+$warn: (
+    default: map-get(palette.$logi-red, 600),
+    default-contrast: palette.logi-white(1),
+);
+
+$theme: (
+    primary: $primary,
+    warn: $warn,
+    background: (
+        hover: palette.logi-black(0.04),
+        focused-border: map-get($primary, default),
+    ),
+);
+
+@include all-ui-theme.logi-ui-theme($theme);

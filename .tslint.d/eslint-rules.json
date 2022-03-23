@@ -1,0 +1,168 @@
+{
+    "extends": [
+        "tslint-eslint-rules"
+    ],
+    "rules": {
+        "array-bracket-spacing": [
+            true,
+            "never",
+            {
+                "arraysInArrays": false,
+                "objectsInArrays": false,
+                "singleValue": false
+            }
+        ],
+        "block-spacing": [
+            true,
+            "never"
+        ],
+        "brace-style": [
+            true,
+            "1tbs",
+            {
+                "allowSingleLine": false
+            }
+        ],
+        "comment-format": [
+            true,
+            "check-space"
+        ],
+        "handle-callback-err": [
+            true,
+            "^(err|error|anySpecificError)$",
+            {
+                "allowProperties": false
+            }
+        ],
+        "no-constant-condition": [
+            true,
+            {
+                "checkLoops": false
+            }
+        ],
+        "no-control-regex": true,
+        "no-duplicate-case": true,
+        "no-empty-character-class": true,
+        "no-ex-assign": true,
+        "no-extra-boolean-cast": true,
+        "no-extra-semi": true,
+        "no-inner-declarations": [
+            true,
+            "functions"
+        ],
+        "no-invalid-regexp": true,
+        "no-multi-spaces": [
+            true,
+            {
+                "exceptions": {
+                    "BinaryExpression": false,
+                    "OtherException": "true|false",
+                    "PropertyAssignment": false,
+                    "VariableAssignment": false
+                }
+            }
+        ],
+        "no-regex-spaces": true,
+        "no-unexpected-multiline": true,
+        "object-curly-spacing": [
+            true,
+            "never"
+        ],
+        "sort-imports": false,
+        "space-in-parens": [
+            true,
+            "never"
+        ],
+        "ter-arrow-body-style": [
+            true,
+            "as-needed",
+            {
+                "requireReturnForObjectLiteral": true
+            }
+        ],
+        "ter-arrow-parens": [
+            true,
+            "as-needed"
+        ],
+        "ter-arrow-spacing": [
+            true,
+            {
+                "after": true,
+                "before": true
+            }
+        ],
+        "ter-computed-property-spacing": [
+            true,
+            "never"
+        ],
+        "ter-func-call-spacing": [
+            true,
+            "never"
+        ],
+        "ter-indent": [
+            true,
+            4,
+            {
+                "outerIIFEBody": 2
+            },
+            {
+                "FunctionExpression": {
+                    "body": 2,
+                    "parameters": 2
+                }
+            },
+            {
+                "FunctionDeclaration": {
+                    "body": 2,
+                    "parameters": 2
+                }
+            },
+            {
+                "MemberExpression": 2
+            },
+            {
+                "SwitchCase": 0
+            },
+            {
+                "VariableDeclarator": 2
+            }
+        ],
+        "ter-max-len": [
+            true,
+            {
+                "code": 80,
+                "ignoreImports": true,
+                "ignorePattern": "^\\s*(let|const)\\s.+=\\s*require\\s*\\(",
+                "ignoreRegExpLIterals": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true,
+                "ignoreTrailingComments": true,
+                "ignoreUrls": true,
+                "tabWidth": 4
+            }
+        ],
+        "ter-newline-after-var": false,
+        "ter-no-irregular-whitespace": [
+            true
+        ],
+        "ter-no-mixed-spaces-and-tabs": {
+            "type": "spaces"
+        },
+        "ter-no-proto": true,
+        "ter-no-script-url": true,
+        "ter-no-self-compare": true,
+        "ter-no-sparse-arrays": [
+            true
+        ],
+        "ter-no-tabs": true,
+        "ter-padded-blocks": [
+            false,
+            "never"
+        ],
+        "ter-prefer-arrow-callback": [
+            true
+        ],
+        "valid-jsdoc": false,
+        "valid-typeof": true
+    }
+}

@@ -1,0 +1,173 @@
+@use '../theme';
+
+$docs-font: 'Roboto', serif;
+$note-font: 'Roboto Medium';
+
+.docs-markdown {
+    flex-direction: column;
+
+    display: flex;
+
+    overflow-y: scroll;
+
+    box-sizing: border-box;
+    height: 100%;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 88px;
+
+    font-family: theme.$font-family;
+}
+
+img {
+    display: block;
+    margin: 10px 0;
+    max-width: 90% !important;
+}
+h1 {
+    font-size: 34px;
+    line-height: 40px;
+}
+h2 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+h4 {
+    opacity: 0.6;
+
+    font-size: 16px;
+    line-height: 24px;
+    font-family: $docs-font;
+    font-weight: 400;
+}
+
+h1, h2, h3 {
+    opacity: 0.87;
+    font-family: $docs-font;
+    font-weight: 400;
+}
+
+a {
+    opacity: 1;
+
+    padding: 10px;
+
+    line-height: 30px;
+    font-weight: 500;
+    color: rgba(65, 120, 184, 1);
+
+    text-decoration: none;
+}
+
+a, li, ol, ul {
+    font-size: 16px;
+    line-height: 2.4rem;
+    font-weight: 400;
+
+    letter-spacing: 0.03rem;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+}
+a::selection {
+    opacity: 8;
+    line-height: 30px;
+    font-weight: 500;
+    color: rgba(65, 120, 184, 1);
+}
+a:hover {
+    text-decoration-line: underline;
+}
+
+p {
+    opacity: 0.87;
+
+    font-size: 16px;
+    line-height: 24px;
+    font-family: $docs-font;
+    font-weight: 400;
+}
+
+code {
+    opacity: 1;
+
+    font-size: 14px;
+    line-height: 24px;
+    font-family: $note-font;
+    font-weight: 500;
+    color: rgba(19, 172, 89, 1);
+}
+
+pre {
+    display: block;
+
+    overflow-x: auto;
+
+    margin: 18px auto;
+    border: 0.5px solid rgba(0, 0, 0, 0.03);
+    border-radius: 5px;
+    padding: 0 10px;
+
+    background: rgba(0, 0, 0, 0.06);
+
+    font-size: 18px;
+    line-height: 1.6em;
+
+    white-space: pre-wrap;
+
+    code {
+        border-radius: 2px;
+        padding: 0 3px;
+    }
+}
+
+table {
+    margin: 24px 0 24px 10px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 2px;
+
+    background: #FAFAFA;
+
+    thead {
+        tr {
+            border-color: inherit;
+            vertical-align: inherit;
+
+            th {
+                border-bottom: 1px solid #DBDBDB;
+                padding: 8px 24px;
+
+                background: rgba(219, 219, 219, 0.4);
+
+                font-size: 12px;
+                line-height: 28px;
+                font-weight: 500;
+                text-align: left;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                border-bottom: 1px solid #DBDBDB;
+                padding: 16px;
+
+                line-height: 24px;
+                font-weight: 400;
+                text-align: left;
+
+                letter-spacing: 0.3px;
+                vertical-align: top;
+            }
+        }
+    }
+}

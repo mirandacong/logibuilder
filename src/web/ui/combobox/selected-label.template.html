@@ -1,0 +1,9 @@
+<span class='logi-selected-label-content' [matTooltip]='label||""'>
+    <ng-container
+        *ngTemplateOutlet='labelContentTpl ? labelContentTpl : default; context: {$implicit: labelContentTplContext}'>
+    </ng-container>
+    <ng-template #default>{{ label }}</ng-template>
+</span>
+<mat-icon class='logi-selected-label-delete-icon' *ngIf='deletable && !isExceedTag' svgIcon='ic_close'
+    (click)='onDelete($event)'>
+</mat-icon>

@@ -1,0 +1,148 @@
+@use '../core/styles/shared';
+@use 'sass:math';
+
+$outline-border: 1px solid currentColor;
+$line-height: 24px;
+$infix-padding: 16px;
+$label-float-scale: 0.75;
+$label-translate-y: -$line-height;
+
+.logi-form-field {
+    position: relative;
+    display: flex;
+
+    .logi-input-element {
+        font-size: 14px;
+    }
+}
+
+.logi-form-field-wrapper {
+    position: relative;
+    flex: auto;
+}
+
+.logi-form-field-flex {
+    align-items: center;
+    display: inline-flex;
+    box-sizing: border-box;
+    width: 100%;
+    height: 36px;
+    padding: 0 16px;
+}
+
+.logi-form-field-infix {
+    position: relative;
+    flex: auto;
+    display: flex;
+    padding: $infix-padding 0;
+}
+
+.logi-form-field-outline {
+    display: flex;
+    pointer-events: none;
+    @include shared.logi-fill;
+}
+
+.logi-form-field-outline-start, .logi-form-field-outline-end {
+    border: $outline-border;
+    min-width: 5px;
+}
+
+.logi-form-field-outline-start {
+    border-right-style: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.logi-form-field-outline-end {
+    flex-grow: 1;
+    border-left-style: none;
+    border-radius: 0 4px 4px 0;
+}
+
+.logi-form-field-outline-gap {
+    border: $outline-border;
+    border-left-style: none;
+    border-right-style: none;
+    border-radius: 0.000001px;
+}
+.logi-form-field-should-float .logi-form-field-outline-gap {
+    border-top-color: transparent;
+}
+
+.logi-form-field-outline-thick {
+    opacity: 0;
+    .logi-form-field-outline-start, .logi-form-field-outline-end, .logi-form-field-outline-gap {
+        border-width: 2px;
+    }
+}
+
+.logi-form-field.logi-focused, .logi-form-field.logi-form-field-invalid {
+    .logi-form-field-outline {
+        opacity: 0;
+        transition: opacity 100ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .logi-form-field-outline-thick {
+        opacity: 1;
+    }
+}
+
+.logi-form-field:not(.logi-form-field-disabled) .logi-form-field-flex:hover {
+    .logi-form-field-outline {
+        transition: color 600ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+}
+
+/*****  lable *****/
+.logi-form-field-label-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    display: flex;
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.logi-form-field-label {
+    display: block;
+    transform-origin: 0 0;
+    transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1), color 400ms cubic-bezier(0.25, 0.8, 0.25, 1), width 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 16px;
+}
+
+.logi-form-field-should-float .logi-form-field-label {
+    transform: translateY($label-translate-y) scale($label-float-scale);
+    width: math.div(100%, $label-float-scale);
+}
+
+/**** hint & error *****/
+.logi-form-field-subscript-wrapper {
+    position: absolute;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 16px;
+    font-size: 12px;
+    line-height: 16px;
+}
+.logi-form-field-validation-error {
+    padding: 0 16px;
+}
+
+/***** prefix & suffix *****/
+.logi-form-field-prefix, .logi-form-field-suffix {
+    align-items: center;
+    display: flex;
+
+    .mat-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+.logi-form-field-prefix {
+    margin-right: $infix-padding;
+}
+.logi-form-field-suffix {
+    margin-left: $infix-padding;
+}

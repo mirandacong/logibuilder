@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <g id="ic_arrow_dropdown" transform="translate(72 102) rotate(180)">
+    <g id="ic_area" transform="translate(54 84)" fill="rgba(255,255,255,0)" stroke="rgba(0,0,0,0.12)" stroke-width="1">
+      <rect width="18" height="18" stroke="none"/>
+      <rect x="0.5" y="0.5" width="17" height="17" fill="none"/>
+    </g>
+    <path id="Icon_material-add" data-name="Icon material-add" d="M14.25,9.75H9.75v4.5H8.25V9.75H3.75V8.25h4.5V3.75h1.5v4.5h4.5Z" transform="translate(54.1 84)" opacity="1"/>
+  </g>
+</svg>

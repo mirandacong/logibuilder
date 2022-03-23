@@ -1,0 +1,232 @@
+@use 'src/web/assets/styles/typography';
+
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette';
+
+$white: palette.logi-white(1);
+$low-black: palette.logi-black(0.12);
+$four-black: palette.logi-black(0.16);
+$around-box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+
+/* stylelint-disable-next-line */
+::ng-deep {
+    .logi-config-header-menu {
+        box-shadow: 0 12px 24px $four-black;
+        width: 240px;
+        padding: 8px 0;
+    }
+}
+.sub-btn {
+    width: 84px;
+}
+
+.mat-menu-item {
+    height: 35px;
+    line-height: 35px;
+}
+.column-block, .column {
+    margin-left: 0;
+}
+
+:host {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    /* stylelint-disable-next-line */
+    ::ng-deep {
+        .change-name-input {
+            top: 0 !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+
+            padding: 0 !important;
+
+            font-size: 14px !important;
+            font-weight: 400 !important;
+        }
+    }
+
+    .title-header {
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        box-shadow: shared.$box-shadow;
+        padding: 0 24px 0 16px;
+        min-height: 64px;
+
+        .left, .right {
+            align-items: center;
+            display: flex;
+        }
+
+        .header-title {
+            @include shared.set-font(20px, bold, 'Noto Sans SC');
+            margin-left: 16px;
+            height: 29px;
+            line-height: 29px;
+        }
+
+        .flat-button {
+            margin-left: 8px;
+        }
+    }
+
+    .title {
+        opacity: 1;
+
+        margin: 22px 0 8px;
+
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 400;
+        color: palette.logi-black(0.6);
+    }
+    .default {
+        display: none;
+        font-size: 18px;
+    }
+    .is-default {
+        display: inline-block;
+
+        margin-right: 8px;
+        width: 18px;
+        height: 18px;
+
+        line-height: 18px;
+        color: palette.logi-black(0.6);
+    }
+    .block {
+        flex-direction: row;
+        display: flex;
+        height: calc(100% - 64px - 32px);
+        padding: 16px;
+    }
+    .block-left {
+        /* stylelint-disable-next-line */
+        flex-wrap: nowrap;
+
+        overflow: auto;
+
+        margin-right: 16px;
+        box-shadow: $around-box-shadow;
+        border: 1px solid shared.$black-12;
+        border-radius: 4px;
+        padding: 8px 0;
+        min-width: 240px;
+    }
+    .block-right {
+        position: relative;
+        box-shadow: $around-box-shadow;
+        border: 1px solid shared.$black-12;
+        border-radius: 4px;
+        width: calc(100% - 280px);
+        height: calc(100% - 34px);
+        padding: 16px;
+    }
+    .right-title {
+        @include shared.set-font(20px, bold);
+        margin-bottom: 16px;
+        height: 29px;
+        line-height: 29px;
+        color: shared.$black-87
+    }
+    .empty-block {
+        margin: auto;
+        @include shared.set-font(14px,$color:palette.logi-black(0.6));
+    }
+
+    .name {
+        position: relative;
+        overflow: hidden;
+        width: 216px;
+        text-overflow: ellipsis;
+        @include shared.set-font(14px, 400);
+    }
+    .standard-headers {
+        flex-direction: row;
+        align-items: center;
+
+        display: flex;
+
+        height: 32px;
+        padding: 0 8px 0 16px;
+        .more {
+            display: none;
+        }
+        &:hover {
+            background-color: palette.logi-black(0.04);
+            .more {
+                display: inline-block;
+            }
+        }
+        &.active {
+            background-color: palette.aris-brand(0.08);
+            font-weight: bold;
+            color: map-get(palette.$aris-brand, 600);
+            .more {
+                display: inline-block;
+            }
+            .is-default {
+                color: palette.aris-brand();
+            }
+            .name {
+                font-weight: bold;
+                color: palette.aris-brand();
+            }
+        }
+    }
+
+    .icon-button {
+        margin: 4px 0 4px auto;
+    }
+
+    .combine-button {
+        margin: 16px;
+    }
+
+    .selection {
+        position: relative;
+        flex-wrap: wrap;
+        display: flex;
+        width: calc(100% - 34px);
+    }
+
+    .preview {
+        @include typography.logi-head-6-typography;
+        height: calc(100% - 206px);
+        color: palette.logi-black(0.87);
+    }
+    .preview-block {
+        overflow: auto;
+
+        border: 1px solid $low-black;
+        border-radius: 4px;
+        width: calc(100% - 34px);
+        height: calc(100% - 50px);
+        padding: 16px;
+
+        background-color: $white;
+    }
+    .btns {
+        justify-content: flex-end;
+        display: flex;
+        margin-top: 24px;
+    }
+    .cancel {
+        margin-right: 8px;
+    }
+}
+
+::ng-deep .logi-config-hearder-dialog {
+    mat-dialog-container {
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+}

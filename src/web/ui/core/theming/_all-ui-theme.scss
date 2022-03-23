@@ -1,0 +1,39 @@
+@use '../../button/button-theme';
+@use '../../button-toggle/button-toggle-theme';
+@use '../../checkbox/checkbox-theme';
+@use '../../combobox/combobox-theme';
+@use '../../form-field/form-field-theme';
+@use '../../input/input-theme';
+@use '../../menu/menu-theme';
+@use '../../radio/radio-theme';
+@use '../../scrollbar/scrollbar-theme';
+@use '../../cascaded-select/cascaded-select-theme';
+@use '../../select/select-theme';
+@use '../../slider/slider-theme';
+@use '../../spinner/spinner-theme';
+@use '../../switch/switch-theme';
+@use '../../tabs/tabs-theme';
+@use '../../tag/tag-theme';
+@use '../../tree/tree-theme';
+@use '../../customize-table/style/table-theme.scss';
+
+@mixin logi-ui-theme($theme) {
+    @include button-theme.logi-button-theme($theme);
+    @include button-toggle-theme.logi-button-toggle-theme($theme);
+    @include checkbox-theme.logi-checkbox-theme($theme);
+    @include combobox-theme.logi-combobox-theme($theme);
+    @include form-field-theme.logi-form-field-theme($theme);
+    @include input-theme.logi-input-theme($theme);
+    @include menu-theme.logi-menu-theme($theme);
+    @include radio-theme.logi-radio-theme($theme);
+    @include scrollbar-theme.logi-scrollbar-theme($theme);
+    @include select-theme.logi-select-theme($theme);
+    @include slider-theme.logi-slider-theme($theme);
+    @include spinner-theme.logi-spinner-theme($theme);
+    @include switch-theme.logi-switch-theme($theme);
+    @include tabs-theme.logi-tabs-theme($theme);
+    @include tree-theme.logi-tree-theme($theme);
+    @include cascaded-select-theme.logi-cascaded-select-theme($theme);
+    @include tag-theme.logi-tag-theme($theme);
+    @include table-theme.logi-table-theme($theme)
+}

@@ -1,0 +1,81 @@
+@use '../core/styles/shared';
+
+$hover-bg: rgba(0, 0, 0, 0.04);
+$disabled-bg: $hover-bg;
+$icon-color: rgba(0, 0, 0, 0.6);
+
+.logi-select-input {
+    display: block;
+}
+
+.logi-select-input-container {
+    position: relative;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.logi-select-input-element {
+    padding: 8px;
+    font-size: 12px;
+}
+.logi-search-select-input {
+    .logi-select-input-element {
+        padding-right: 36px;
+    }
+}
+
+.logi-select-input-search-icon {
+    position: absolute;
+    right: 8px;
+    color: $icon-color;
+}
+
+.logi-dropdown-select-input {
+    .logi-select-input-element {
+        border: none;
+        height: 24px;
+        &:focus {
+            border-style: solid;
+            border-width: 2px;
+        }
+    }
+
+    .logi-select-input-arrow-icon {
+        flex-shrink: 0;
+        width: 12px;
+        cursor: pointer;
+    }
+
+    &.logi-disabled {
+        .logi-select-input-arrow-icon {
+            cursor: default;
+        }
+        .logi-select-input-element, .logi-select-input-arrow-icon {
+            background-color: $disabled-bg;
+            pointer-events: none;
+        }
+    }
+
+    &:not(.logi-focused) .logi-select-input-container:hover {
+        .logi-select-input-element, .logi-select-input-arrow-icon {
+            background-color: $hover-bg;
+        }
+    }
+}
+
+.logi-select-input-panel.mat-autocomplete-panel {
+    margin: 8px 0;
+    max-height: 320px;
+    min-width: 72px;
+
+    .mat-option {
+        height: 32px;
+        font-size: 12px;
+        line-height: 32px;
+
+        &.selected {
+            font-weight: bold;
+        }
+    }
+}

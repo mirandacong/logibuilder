@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto"), url("regular.ttf") format("truetype");
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: local("Roboto Medium"), url("medium.ttf") format("truetype")
+}

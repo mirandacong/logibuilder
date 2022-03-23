@@ -1,0 +1,121 @@
+@ 1 @
+CONSTANT '1'
+WS ' '
+OP '+'
+WS ' '
+CONSTANT '2'
+WS ' '
+OP '+'
+Err UNEXPECTED_END ''
+
+@ 2 @
+Err UNRECORGNIZED '{a'
+
+@ 3 @
+Err UNRECORGNIZED '{ab'
+WS ' '
+OP '+'
+WS ' '
+CONSTANT '4'
+WS ' '
+OP '-'
+WS ' '
+CONSTANT '5'
+
+@ 4 @
+BRA '('
+REF '{a}'
+WS ' '
+OP '/'
+WS ' '
+REF '{a}'
+METHOD '.lag'
+BRA '('
+CONSTANT '1'
+KET ')'
+Err EXPECTED ')'
+
+@ 5 @
+REF '{a}'
+WS ' '
+OP '+'
+WS ' '
+Err UNRECORGNIZED '.'
+REF '{b}'
+
+@ 6 @
+FUNC 'SUM'
+BRA '('
+REF '{a}'
+OP '::'
+Err UNRECORGNIZED ':'
+REF '{b}'
+KET ')'
+
+@ 7 @
+CONSTANT '2.32'
+WS ' '
+OP '+'
+Err UNRECORGNIZED '*'
+WS ' '
+CONSTANT '9'
+
+@ 8 @
+FUNC 'SUM'
+Err UNRECORGNIZED '   '
+Err UNEXPECTED_END ''
+
+@ 9 @
+FUNC 'AVERAGE'
+Err UNEXPECTED_END ''
+
+@ 10 @
+Err UNRECORGNIZED '!'
+Err UNEXPECTED_END ''
+
+@ 11 @
+BRA '('
+Err EXPECTED ')'
+
+@ 12 @
+Err UNRECORGNIZED '!'
+BRA '('
+Err UNRECORGNIZED ','
+Err UNEXPECTED_END ''
+Err EXPECTED ')'
+
+@ 13 @
+REF '{a}'
+METHOD '.lag'
+Err UNEXPECTED_END ''
+
+@ 14 @
+FUNC 'MAX'
+BRA '('
+CONSTANT '1'
+COMMA ','
+WS ' '
+Err UNRECORGNIZED '{Ref'
+KET ')'
+
+@ 15 @
+BRA '('
+BRA '('
+WS ' '
+CONSTANT '1'
+OP '+'
+WS ' '
+CONSTANT '2'
+WS ' '
+OP '*'
+WS ' '
+CONSTANT '3'
+Err EXPECTED ')'
+Err EXPECTED ')'
+
+@ 16 @
+Err UNRECORGNIZED '{a'
+WS ' '
+OP '+'
+WS ' '
+REF '{a}'

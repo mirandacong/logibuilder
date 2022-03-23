@@ -1,0 +1,188 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette';
+
+@use '../shared' as editor;
+
+$green: map-get(palette.$logi-green, 600);
+$sheet-bkg: rgba(250, 250, 250, 1);
+$placeholder: rgba(0, 0, 0, 0.38);
+$empty-flag: rgba(0, 0, 0, 0.12);
+$title-border: 2px solid $green;
+$block-border: 1px solid $green;
+$column-block-margin: 0 8px 8px 11px;
+$column-input-width: 132px;
+$node-type-margin: 8px 32px 8px 0;
+$node-type-height: 16px;
+$title-radius: 4px 4px 0 0;
+$title-bkg: rgba(19, 172, 89, 0.08);
+
+$circle-size: 7px;
+$zindex: 1;
+$dropzone-height: 8px;
+$dropzone-circle-margin: 1px 0 0 9px;
+$dropzone-line-margin: 3px 8px 3px 6px;
+$dropzone-line-height: 2px;
+$circle-border: 2px solid $sheet-bkg;
+$dropzone-placeholder: rgba(229, 144, 53, 1);
+
+/* Used when dragging nodes starts */
+.dragging-elements-fade-away {
+    /* stylelint-disable-next-line */
+    opacity: 0.38;
+}
+
+:host {
+    @include editor.row-col-host;
+}
+.tree-flag-top-part {
+    @include editor.tree-flag-top-part;
+
+    .circle {
+        @include editor.tree-flag-circle-green;
+    }
+}
+.tree-flag-bottom-part {
+    @include editor.tree-flag-bottom-part;
+}
+.last-node-flag-style {
+    /* stylelint-disable-next-line */
+    background-color: rgba(218, 218, 218, 1);
+}
+
+.menu-btn {
+    margin: 0 5px 0 auto;
+    color: palette.logi-black(0.6);
+}
+
+.column-block {
+    @include shared.element-display-flex(column);
+    margin-left: 10px;
+}
+
+.column-block-title {
+    align-items: center;
+
+    display: flex;
+
+    border: 1px solid transparent;
+    border-bottom: $title-border;
+    border-radius: $title-radius;
+    &.selected {
+        border: $block-border;
+        border-bottom: $title-border;
+        border-radius: $title-radius;
+        height: 100%;
+
+        background-color: $title-bkg;
+    }
+    &.name-focused, &.expr-focused, &.stub-focused {
+        background-color: map-get(palette.$logi-grey, 50);
+    }
+}
+
+.collapsed-btn {
+    color: $green;
+}
+.column-refname-input {
+    width: 100%;
+    background: none;
+    @include editor.node-ref-name(12px);
+
+    &.name-focused, &.expr-focused, &.stub-focused {
+        border-left: $block-border;
+        border-right: $block-border;
+        background-color: $sheet-bkg;
+        caret-color: $green;
+    }
+    &.compact-input-name {
+        padding: 0;
+    }
+}
+
+.node-type {
+    margin: $node-type-margin;
+    height: $node-type-height;
+    line-height: $node-type-height;
+    @include shared.set-font(12px, bold,$color:$green);
+}
+
+.collapsed {
+    display: none;
+}
+
+.empty-wrapper {
+    display: flex;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.empty-flag {
+    position: relative;
+    top: 0;
+
+    margin: -8px 15px 10px 12px;
+    width: 1px;
+
+    background-color: $empty-flag;
+
+    .empty-circle {
+        position: absolute;
+        top: 0;
+
+        margin-left: -3px;
+        margin-top: 14px;
+        border: 2px solid $sheet-bkg;
+        border-radius: 50%;
+        width: 3px;
+        height: 3px;
+
+        background-color: $empty-flag;
+    }
+}
+
+.empty-block {
+    @include shared.set-font(14px);
+
+    color: $placeholder
+}
+
+span.menu-shortcut {
+    @include editor.shortcut-key;
+}
+
+.drag-icon {
+    margin-top: 6px;
+    cursor: pointer;
+    color: palette.logi-black(0.38);
+}
+
+.block-drag-icon {
+    cursor: pointer;
+    color: $green;
+}
+.dropzone {
+    padding-top: $dropzone-height;
+}
+
+.drop-placeholder {
+    display: flex;
+
+    .drop-circle {
+        z-index: $zindex;
+
+        margin: $dropzone-circle-margin;
+        border: $circle-border;
+        border-radius: 50%;
+        @include shared.size($circle-size, $circle-size);
+
+        background-color: $dropzone-placeholder
+    }
+
+    .drop-line {
+        margin: $dropzone-line-margin;
+        width: 100%;
+        height: $dropzone-line-height;
+        background-color: $dropzone-placeholder
+    }
+}

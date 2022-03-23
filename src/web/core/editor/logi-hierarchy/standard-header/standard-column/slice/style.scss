@@ -1,0 +1,98 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/core/editor/logi-hierarchy/shared' as editor;
+
+$equal-margin-right: 10px;
+$input-padding: 9px 6px 9px 8px;
+$input-name-color: #009FBF;
+
+:host {
+    flex: 1;
+    flex-direction: column;
+    align-self: center;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+}
+
+.slice-container {
+    display: flex;
+    width: 100%;
+
+    &.selected {
+        border: shared.$border-selected;
+        background-color: shared.$brand-8;
+    }
+}
+
+.selection-block {
+    position: relative;
+    flex: 1;
+    align-items: center;
+
+    display: flex;
+
+    .left {
+        align-self: flex-start;
+        max-width: 50%;
+    }
+
+    .ref-name-input {
+        overflow: hidden;
+
+        margin-left: 32px;
+        @include editor.node-ref-name(14px);
+        padding: $input-padding;
+
+        background: none;
+        cursor: pointer;
+
+        color: $input-name-color;
+
+        max-width: calc(100% - 32px);
+        text-overflow: ellipsis;
+
+        @include shared.set-place-holder-color;
+        &.empty {
+            color: shared.$black-38;
+            user-select: none;
+        }
+    }
+    .right {
+        flex: 1;
+        align-items: baseline;
+        display: flex;
+    }
+    .editor {
+        padding-left: 7px;
+    }
+}
+.fb-tag {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    left: -19px;
+}
+
+.slice-part {
+    flex: 1;
+    align-self: center;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    .slice-expr-item {
+        @include editor.slice-expr-item;
+        width: auto;
+    }
+}
+
+/* The fx with index in slices should display correctly in compact view */
+.editor-slices {
+    flex-direction: column;
+    display: flex;
+}

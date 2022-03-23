@@ -1,0 +1,48 @@
+<logi-combobox-trigger cdk-overlay-origin [class.no-border]='noborder' #origin='cdkOverlayOrigin'
+    (click)='togglePanel()' [placeholder]='placeholder' [ripple]='ripple' [innerLabel]='innerLabel'
+    [maxShowTagCount]='maxShowTagCount' [selectedOptions]='selectedOptions' [panelOpen]='panelOpen'
+    [showSearch]='showSearch' [mode]='mode' [disabled]='disabled' (searchChange$)='onSearchChange($event)'
+    (deleleSelected$)='onDeleteSelected($event)' (keydown)='onKeydown($event)'>
+</logi-combobox-trigger>
+<div class='logi-combobox-icon'>
+    <mat-icon class='logi-combobox-arrow-icon' [svgIcon]='dropdownIcon'></mat-icon>
+</div>
+<ng-template (attach)='onAttach()' (backdropClick)='setOpenState(false)'
+    [cdkConnectedOverlayPanelClass]='customPanelClass' [cdkConnectedOverlayOpen]='panelOpen'
+    [cdkConnectedOverlayOrigin]='origin' [cdkConnectedOverlayWidth]='panelWidth' cdk-connected-overlay
+    cdkConnectedOverlayBackdropClass='cdk-overlay-transparent-backdrop' cdkConnectedOverlayHasBackdrop>
+    <div class='logi-combobox-panel' [ngClass]='panelClass'>
+        <ng-container *ngIf='loading; else contentView'>
+            <logi-spinner class='logi-combobox-panel-loading-view'></logi-spinner>
+        </ng-container>
+        <ng-template #contentView>
+            <div class='logi-combobox-panel-empty-view' *ngIf='scrollItems.length === 0; else optionsView'>
+                <div class='logi-combobox-panel-empty-text'>{{emptyText}}</div>
+            </div>
+            <ng-template #optionsView>
+                <div class='logi-combobox-panel-options'>
+                    <cdk-virtual-scroll-viewport class='logi-combobox-virtual-scroll-viewport' [itemSize]='itemSize'
+                        [style.height.px]="scrollItems.length * itemSize"
+                        [style.max-height.px]="itemSize * maxItemLength" [maxBufferPx]="itemSize * maxItemLength"
+                        [minBufferPx]="itemSize * maxItemLength" (scrolledIndexChange)="onScrolledIndexChange($event)">
+                        <ng-template cdkVirtualFor [cdkVirtualForTemplateCacheSize]='0' [cdkVirtualForOf]='scrollItems'
+                            [cdkVirtualForTrackBy]='trackScrollItem' let-item>
+                            <ng-container [ngSwitch]='item.type'>
+                                <logi-inner-option-group *ngSwitchCase='"group"' [label]='item.groupLabel'>
+                                </logi-inner-option-group>
+                                <logi-inner-option *ngSwitchCase='"item"' [template]='item.template'
+                                    [value]='item.value' [activatedValue]='activatedValue' [label]='item.label'
+                                    [disabled]='item.disabled' [selectedValues]='valueList' [compareWith]='compareWith'
+                                    [multiple]='multiple' (click$)='onItemClick($event)'>
+                                </logi-inner-option>
+                            </ng-container>
+                        </ng-template>
+                    </cdk-virtual-scroll-viewport>
+                </div>
+                <div #panel_actions class="logi-combobox-panel-actions-container">
+                    <ng-content select="logi-combobox-panel-actions"></ng-content>
+                </div>
+            </ng-template>
+        </ng-template>
+    </div>
+</ng-template>

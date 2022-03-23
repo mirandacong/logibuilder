@@ -1,0 +1,25 @@
+@use 'src/web/assets/styles/shared.scss';
+
+@use 'src/web/assets/styles/palette.scss';
+.text-box {
+    display: flex;
+    margin-bottom: 22px;
+    span {
+        line-height: 20px;
+        @include shared.set-font(14px,$color:palette.logi-black(0.6));
+    }
+    .name {
+        line-height: 20px;
+        @include shared.set-font(14px,bold);
+    }
+}
+.check-box {
+    .checkbox {
+        line-height: 20px;
+        @include shared.set-font(14px,$color:palette.logi-black(0.6));
+    }
+    li {
+        height: 32px;
+        list-style: none;
+    }
+}

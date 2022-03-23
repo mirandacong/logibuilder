@@ -1,0 +1,284 @@
+@use './style/common.scss';
+
+$drag-preview-bg: #FFFFFF;
+$drag-preview-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+$nav-bar-box-shadow: 2px 0 4px rgba(0, 0, 0, 0.16);
+$scroll-button-color: rgba(0, 0, 0, 0.24);
+$icon-target-color: rgba(0, 0, 0, 0.6);
+$icon-target-disabled-color: rgba(0, 0, 0, 0.24);
+
+.cdk-drag-preview {
+    box-shadow: $drag-preview-box-shadow;
+    background-color: $drag-preview-bg;
+}
+.cdk-drag-placeholder {
+    opacity: 0.38;
+}
+
+/************************* Common ****************************/
+.logi-tabs-bar {
+    position: relative;
+    display: block;
+    transition: padding 0.3s common.$ease-in-out;
+    outline: none;
+}
+.logi-tabs-nav-container {
+    position: relative;
+    flex: 1;
+    /* stylelint-disable-next-line */
+    overflow: hidden;
+    transition: padding 0.3s common.$ease-in-out;
+    margin-bottom: -1px;
+    box-sizing: border-box;
+    font-size: common.$tabs-title-font-size;
+    white-space: nowrap;
+    @include common.clearfix;
+}
+.logi-tabs-nav-wrap {
+    /* stylelint-disable-next-line */
+    overflow: hidden;
+}
+.logi-tabs-nav-scroll {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+}
+.logi-tabs-nav {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s common.$ease-in-out;
+    margin: 0;
+    box-sizing: border-box;
+    padding-left: 0;
+    list-style: none;
+}
+.logi-tabs-ink-bar {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    transform-origin: 0 0;
+    border-radius: 4px 4px 0 0;
+    box-sizing: border-box;
+    width: 0;
+    height: 2px;
+}
+.logi-tabs-hidden-ink-bar {
+    /* stylelint-disable-next-line */
+    display: none !important;
+}
+.logi-tabs-tab-prev, .logi-tabs-tab-next {
+    /* stylelint-disable-next-line */
+    position: absolute;
+    z-index: 2;
+    /* stylelint-disable-next-line */
+    align-items: center;
+    display: none;
+    /* stylelint-disable-next-line */
+    transition: width 0.3s common.$ease-in-out, opacity 0.3s common.$ease-in-out, color 0.3s common.$ease-in-out;
+    border: 0;
+    width: 0;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: center;
+    color: $scroll-button-color;
+    pointer-events: none;
+    user-select: none;
+
+    &.logi-tabs-tab-arrow-show {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        opacity: 1;
+        width: 18px;
+        height: 100%;
+        pointer-events: auto;
+    }
+}
+.logi-tabs-tab-prev-icon, .logi-tabs-tab-next-icon {
+    width: 18px;
+    height: 18px;
+    .logi-tabs-tab-prev-icon-target, .logi-tabs-tab-next-icon-target {
+        /* stylelint-disable-next-line */
+        width: inherit;
+        /* stylelint-disable-next-line */
+        height: inherit;
+        color: $icon-target-color;
+    }
+}
+.logi-tabs-tab-btn-disabled {
+    cursor: not-allowed;
+    .logi-tabs, .logi-tabs:hover {
+        color: common.$black-12;
+    }
+    .logi-tabs-tab-prev-icon-target, .logi-tabs-tab-next-icon-target {
+        /* stylelint-disable-next-line */
+        width: inherit;
+        /* stylelint-disable-next-line */
+        height: inherit;
+        color: $icon-target-disabled-color;
+    }
+}
+
+/****************** small & large size **********************/
+.logi-tabs-large-bar {
+    .logi-tabs-nav-container {
+        font-size: common.$tabs-title-font-size-lg;
+    }
+    .logi-tabs-tab {
+        padding: common.$tabs-horizontal-padding-lg;
+    }
+}
+
+.logi-tabs-small-bar {
+    .logi-tabs-nav-container {
+        font-size: common.$tabs-title-font-size-sm;
+    }
+    .logi-tabs-tab {
+        padding: common.$tabs-horizontal-padding-sm;
+    }
+}
+
+/****************** Horizontal (top & bottom) ****************/
+.logi-tabs-top-bar, .logi-tabs-bottom-bar {
+    display: flex;
+    .logi-tabs-scrolling {
+        padding-left: common.$tabs-scrolling-size;
+        padding-right: common.$tabs-scrolling-size;
+    }
+    .logi-tabs-ink-bar-animated {
+        /* stylelint-disable-next-line */
+        transition: transform 0.3s common.$ease-in-out, width 0.2s common.$ease-in-out, left 0.3s common.$ease-in-out;
+    }
+    .logi-tabs-nav-container-scrolling {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    .logi-tabs-tab-prev {
+        top: 0;
+        left: 0;
+    }
+    .logi-tabs-tab-next {
+        top: 0;
+        right: 0;
+    }
+}
+
+/*************************** Top *****************************/
+.logi-tabs-top-bar {
+    border-bottom: common.$border-base;
+}
+
+/*************************** Bottom *****************************/
+.logi-tabs-bottom-bar {
+    border-top: common.$border-base;
+
+    .logi-tabs-nav-container {
+        margin-bottom: 0;
+    }
+    .logi-tabs-ink-bar {
+        top: 0;
+        bottom: 1px;
+    }
+}
+
+/********************* Vertical (left & right) ******************/
+.logi-tabs-left-bar, .logi-tabs-right-bar {
+    z-index: 2;
+    box-shadow: $nav-bar-box-shadow;
+    border-bottom: 0;
+    height: calc(100% - 16px);
+
+    .logi-tabs-nav-container {
+        margin-bottom: 0;
+        height: 100%;
+
+        .logi-tabs.logi-tabs-nav-container-scrolling {
+            padding: common.$tabs-scrolling-size 0;
+        }
+    }
+    .logi-tabs-nav-wrap {
+        margin-bottom: 0;
+        height: 100%;
+    }
+    .logi-tabs-nav {
+        width: 100%;
+    }
+    .logi-tabs-nav-scroll {
+        width: auto;
+    }
+    .logi-tabs-nav-container-scrolling {
+        padding-bottom: 32px;
+        padding-top: 32px;
+    }
+    .logi-tabs-tab-prev {
+        top: 0;
+        left: 0;
+    }
+    .logi-tabs-tab-next {
+        bottom: 0;
+        right: 0;
+    }
+    .logi-tabs-ink-bar {
+        top: 0;
+        bottom: auto;
+        left: auto;
+        width: 2px;
+        height: 0;
+    }
+    .logi-tabs-tab-arrow-show {
+        width: 100%;
+        height: common.$tabs-scrolling-size;
+    }
+    .logi-tabs-tab {
+        float: none;
+        display: block;
+        border: none;
+
+        .logi-tabs:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .logi-tabs-extra-content {
+        text-align: center;
+    }
+}
+
+/*************************** Left *****************************/
+.logi-tabs-left-bar {
+    /* stylelint-disable-next-line */
+    float: left;
+    margin-bottom: 0;
+    margin-right: -1px;
+    border-right: common.$border-base;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    .logi-tabs-nav-container {
+        margin-right: -1px;
+    }
+    .logi-tabs-nav-wrap {
+        margin-right: -1px;
+    }
+    .logi-tabs-ink-bar {
+        right: 1px;
+    }
+}
+
+/*************************** Right *****************************/
+.logi-tabs-right-bar {
+    /* stylelint-disable-next-line */
+    float: right;
+    margin-bottom: 0;
+    margin-left: -1px;
+    border-left: common.$border-base;
+    .logi-tabs-nav-container {
+        margin-left: -1px;
+    }
+    .logi-tabs-nav-wrap {
+        margin-left: -1px;
+    }
+    .logi-tabs-ink-bar {
+        left: 1px;
+    }
+}

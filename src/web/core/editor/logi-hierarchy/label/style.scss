@@ -1,0 +1,41 @@
+@use 'src/web/assets/styles/shared';
+
+$label-text-color: rgba(19, 172, 89, 1);
+$label-bkg: rgba(19, 172, 89, 0.12);
+$label-text-standard-color: rgba(0, 159, 191, 1);
+$label-standard-bkg: rgba(0, 159, 191, 0.12);
+$alias-bkg: rgba(65, 120, 184, 0.12);
+$alias-color: rgba(65, 120, 184, 1);
+$datatype-bkg: rgba(229, 144, 53, 0.12);
+$datatype-text: rgba(229, 144, 53, 1);
+
+.label-tags {
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    border-radius: 44px;
+    height: 18px;
+    padding: 0 8px;
+    @include shared.set-font(12px, bold);
+    line-height: 18px;
+}
+
+.label {
+    background-color: $label-bkg;
+    color: $label-text-color;
+}
+
+.standard {
+    background-color: $label-standard-bkg;
+    color: $label-text-standard-color;
+}
+
+.datatype {
+    background-color: $datatype-bkg;
+    color: $datatype-text;
+}
+
+.alias {
+    background-color: $alias-bkg;
+    color: $alias-color;
+}

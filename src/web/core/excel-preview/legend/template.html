@@ -1,0 +1,28 @@
+<div class="legend" *ngIf="dragBoundary !== undefined" #legend_btn [cdkDragBoundary]="dragBoundary" cdkDrag
+    matTooltip="单元格图例" matTooltipPosition="left" (cdkDragStarted)='dragStart()' (cdkDragReleased)='dragEnd()'>
+    <button class="btn" (click)="clickLegend()" icon="{{isAttach() ? &quot;ic_close&quot;:&quot;ic_help&quot;}}"
+        logi-icon-button></button>
+</div>
+<ng-template cdk-portal>
+    <div class="overlay">
+        <div class="title">单元格图例</div>
+        <div class="block">
+            <mat-list>
+                <mat-list-item *ngFor="let c of contenList;trackBy:trackBy">
+                    <div class="list-block">
+                        <div class="example" [style.color]="c.color">{{c.example}}</div>
+                        <div class="explain">{{c.explain}}</div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+            <mat-list>
+                <mat-list-item *ngFor="let b of backgroundList;trackBy:trackBy">
+                    <div class="list-block">
+                        <div class="example" [ngClass]="b.color"></div>
+                        <div class="explain">{{b.explain}}</div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+</ng-template>

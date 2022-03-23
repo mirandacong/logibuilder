@@ -1,0 +1,12 @@
+---
+
+# The producer version information of hierarchy graph. Get more information
+# about version in 'protos/version_def.proto'.
+
+producer_version:
+    producer: 1
+    min_consumer: 1
+    bad_consumers: []
+consumer_version:
+    consumer: 1
+    min_producer: 1

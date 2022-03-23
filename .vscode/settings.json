@@ -1,0 +1,182 @@
+{
+    "[proto3]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false
+    },
+    "[starlark]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false
+    },
+    "[typescript]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false
+    },
+    "[yaml]": {
+        "editor.tabSize": 4
+    },
+    "breadcrumbs.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderIndicators": true,
+    "diffEditor.renderSideBySide": true,
+    "editor.autoSurround": "languageDefined",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true,
+        "source.fixAll.tslint": true
+    },
+    "editor.codeLens": true,
+    "editor.colorDecorators": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorStyle": "line",
+    "editor.detectIndentation": false,
+    "editor.dragAndDrop": true,
+    "editor.emptySelectionClipboard": true,
+    "editor.fastScrollSensitivity": 20,
+    "editor.folding": true,
+    "editor.foldingStrategy": "auto",
+    "editor.formatOnSave": true,
+    "editor.hideCursorInOverviewRuler": false,
+    "editor.highlightActiveIndentGuide": true,
+    "editor.hover.delay": 200,
+    "editor.hover.enabled": true,
+    "editor.hover.sticky": true,
+    "editor.insertSpaces": true,
+    "editor.largeFileOptimizations": true,
+    "editor.letterSpacing": 0.2,
+    "editor.lightbulb.enabled": true,
+    "editor.lineHeight": 22,
+    "editor.links": true,
+    "editor.matchBrackets": "always",
+    "editor.minimap.enabled": true,
+    "editor.minimap.maxColumn": 40,
+    "editor.minimap.renderCharacters": true,
+    "editor.minimap.showSlider": "always",
+    "editor.minimap.side": "left",
+    "editor.mouseWheelScrollSensitivity": 4,
+    "editor.mouseWheelZoom": true,
+    "editor.occurrencesHighlight": true,
+    "editor.overviewRulerBorder": true,
+    "editor.parameterHints.cycle": false,
+    "editor.parameterHints.enabled": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderFinalNewline": true,
+    "editor.renderIndentGuides": true,
+    "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "all",
+    "editor.roundedSelection": true,
+    "editor.rulers": [
+        72,
+        80
+    ],
+    "editor.selectionHighlight": true,
+    "editor.showFoldingControls": "always",
+    "editor.showUnused": true,
+    "editor.smoothScrolling": true,
+    "editor.snippetSuggestions": "bottom",
+    "editor.suggest.showIcons": true,
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 4,
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "editor.wordWrap": "off",
+    "editor.wordWrapColumn": 80,
+    "eslint.format.enable": true,
+    "eslint.options": {
+        "configFile": ".repoconf.d/linter/es/.eslintrc.json",
+        "extensions": [
+            ".js",
+            ".ts"
+        ],
+        "rulePaths": [
+            "/opt/linters/runfiles/logi_it/linters/es/rules"
+        ]
+    },
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 9,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "bazel-out": true
+    },
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.watcherExclude": {
+        "**/.git/": true,
+        "**/bazel-out/**": true,
+        "**/build/**": true,
+        "**/node_modules/**": true
+    },
+    "git.autofetch": true,
+    "git.confirmSync": true,
+    "git.ignoreLimitWarning": true,
+    "go.useLanguageServer": true,
+    "javascript.validate.enable": true,
+    "jsonnet.libPaths": [
+        "${workspaceFolder}"
+    ],
+    "path-intellisense.mappings": {
+        "//": "${workspaceFolder}",
+        "@": "${workspaceFolder}/build/external/",
+        "logi/": "${workspaceFolder}/build/external/logi",
+        "logi_base/": "${workspaceFolder}/build/external/logi_base",
+        "logi_build/": "${workspaceFolder}/build/external/logi_build",
+        "logi_deploy/": "${workspaceFolder}/build/external/logi_deploy",
+        "logi_it/": "${workspaceFolder}/build/external/logi_it"
+    },
+    "python.languageServer": "Pylance",
+    "restructuredtext.languageServer.disabled": true,
+    "search.exclude": {
+        "**/bazel-out": true,
+        "**/node_modules": true
+    },
+    "stylelint.configFile": "./.repoconf.d/linter/css/.stylelintrc.json",
+    "stylelint.configOverrides": {
+        "defaultSeverity": "warning"
+    },
+    "trailing-spaces.trimOnSave": true,
+    "tslint.configFile": "./tslint.json",
+    "typescript.check.npmIsInstalled": true,
+    "typescript.format.enable": false,
+    "typescript.format.insertSpaceAfterCommaDelimiter": true,
+    "typescript.format.insertSpaceAfterConstructor": true,
+    "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+    "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+    "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
+    "typescript.format.semicolons": "remove",
+    "typescript.implementationsCodeLens.enabled": true,
+    "typescript.locale": "en",
+    "typescript.preferences.importModuleSpecifier": "auto",
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.preferences.renameShorthandProperties": true,
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.reportStyleChecksAsWarnings": true,
+    "typescript.suggest.autoImports": true,
+    "typescript.suggest.completeFunctionCalls": true,
+    "typescript.suggest.enabled": true,
+    "typescript.suggest.paths": true,
+    "typescript.suggestionActions.enabled": true,
+    "typescript.surveys.enabled": false,
+    "typescript.tsc.autoDetect": "off",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.tsserver.log": "terse",
+    "typescript.tsserver.trace": "messages",
+    "typescript.tsserver.useSeparateSyntaxServer": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.validate.enable": true,
+    "vim.easymotion": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.leader": ",",
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
+    "workbench.activityBar.visible": true,
+    "workbench.sideBar.location": "left",
+    "workbench.statusBar.visible": true
+}

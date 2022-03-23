@@ -1,0 +1,20 @@
+<div class="logi-tabs-extra-content" *ngIf="tabBarExtraStartContent" style="float:&quot;left&quot;">
+  <ng-template [ngTemplateOutlet]="tabBarExtraStartContent"></ng-template>
+</div>
+<div class="logi-tabs-nav-container" #nav_container_element [class.logi-tabs-nav-container-scrolling]="showPaginationControls">
+  <div class="logi-tabs-nav-wrap">
+    <div class="logi-tabs-nav-scroll" #scroll_list_element>
+      <div class="logi-tabs-nav" #nav_list_element (cdkObserveContent)="onContentChanges" [class.logi-tabs-nav-animated]="animated">
+        <div class="logi-tabs-nav-content">
+          <ng-content></ng-content>
+        </div>
+        <div [animated]="animated" [positionMode]="positionMode" [style.display]="hiddenInkBar ? &quot;none&quot; : &quot;block&quot;" logi-tabs-ink-bar></div>
+      </div>
+    </div>
+  </div><span class="logi-tabs-tab-prev" (click)="scrollHeader(&quot;before&quot;)" [class.logi-tabs-tab-arrow-show]="showPaginationControls" [class.logi-tabs-tab-btn-disabled]="disableScrollBefore"><span class="logi-tabs-tab-prev-icon">
+      <mat-icon class="logi-tabs-tab-prev-icon-target" [svgIcon]="positionMode === 'horizontal' ? 'ic_arrow_drop_left' : 'ic_arrow_drop_up'"></mat-icon></span></span><span class="logi-tabs-tab-next" (click)="scrollHeader(&quot;after&quot;)" [class.logi-tabs-tab-arrow-show]="showPaginationControls" [class.logi-tabs-tab-btn-disabled]="disableScrollAfter"><span class="logi-tabs-tab-next-icon">
+      <mat-icon class="logi-tabs-tab-next-icon-target" [svgIcon]="positionMode === 'horizontal' ? 'ic_arrow_drop_right' : 'ic_arrow_drop_down'"></mat-icon></span></span>
+</div>
+<div class="logi-tabs-extra-content" *ngIf="tabBarExtraEndContent" style="float:&quot;right&quot;">
+  <ng-template [ngTemplateOutlet]="tabBarExtraEndContent"></ng-template>
+</div>

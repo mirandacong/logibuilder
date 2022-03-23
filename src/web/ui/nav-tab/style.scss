@@ -1,0 +1,52 @@
+@use '../core/styles/shared';
+
+$nav-item-hover-bg: rgba(0, 0, 0, 0.08);
+$nav-item-selected-bg: rgba(65, 120, 184, 0.12);
+
+.nav-bar {
+    display: flex;
+
+    .logi-flat-button {
+        position: relative;
+
+        border-radius: 0;
+        width: 88px;
+        height: 64px;
+
+        background-color: transparent;
+
+        line-height: 64px;
+        color: shared.$base-white;
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            transition: width 0.4s;
+
+            margin: auto;
+            width: 0;
+            height: 2px;
+
+            background-color: shared.$base-white;
+        }
+    }
+
+    .logi-flat-button.active {
+        &::after {
+            width: 24px;
+        }
+    }
+
+    .logi-white-nav {
+        background-color: shared.$base-white;
+        color: shared.$base-blue;
+        &::after {
+            background-color: shared.$base-blue;
+        }
+    }
+}

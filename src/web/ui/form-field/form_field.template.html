@@ -1,0 +1,38 @@
+<div class="logi-form-field-wrapper">
+    <div class="logi-form-field-flex" #connection_container
+        (click)='control.onContainerClick && control.onContainerClick($event)'>
+        <!-- for outline(border) -->
+        <div class="logi-form-field-outline">
+            <div class="logi-form-field-outline-start"></div>
+            <div class="logi-form-field-outline-gap"></div>
+            <div class="logi-form-field-outline-end"></div>
+        </div>
+        <div class="logi-form-field-outline logi-form-field-outline-thick">
+            <div class="logi-form-field-outline-start"></div>
+            <div class="logi-form-field-outline-gap"></div>
+            <div class="logi-form-field-outline-end"></div>
+        </div>
+
+        <div class="logi-form-field-prefix" *ngIf="prefixChildren.length">
+            <ng-content select="[logiPrefix]"></ng-content>
+        </div>
+
+        <div class="logi-form-field-infix" #inputContainer>
+            <ng-content></ng-content>
+            <span class="logi-form-field-label-wrapper">
+                <label #label_el class="logi-form-field-label" *ngIf="hasLabel()">
+                    <span>{{label}}</span>
+                </label>
+            </span>
+        </div>
+
+        <div class="logi-form-field-suffix" *ngIf="suffixChildren.length">
+            <ng-content select="[logiSuffix]"></ng-content>
+        </div>
+    </div>
+
+    <div class="logi-form-field-subscript-wrapper">
+        <div class='logi-form-field-validation-error' [@transitionMessages]="subscriptAnimationState"
+            *ngIf='hasError()'>{{errorMsg}}</div>
+    </div>
+</div>

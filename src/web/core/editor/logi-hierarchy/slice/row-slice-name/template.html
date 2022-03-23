@@ -1,0 +1,27 @@
+<div class="ref-name-input" (click)="openSuggest()" [ngClass]="{&quot;empty&quot; : slice.name.trim() === &quot;&quot;}">{{slice.name.trim() === '' ? '切片' : slice.name}}</div>
+<ng-template #suggest>
+  <div class="slice-suggestion-panel" #suggestion>
+    <div class="top-not-bol" *ngIf="!canBoolean">
+      <div class="left">
+        <button class="close-btn" (click)="currOption=&quot;&quot;;closeSuggest()" icon="ic_close" logi-icon-button small></button>
+        <div class="slice-name">{{currOption}}</div>
+      </div>
+      <div class="boolean" (click)="addBoolean()">添加布尔运算</div>
+    </div>
+    <div class="top-can-bol" *ngIf="canBoolean" (keydown)="onSpansKeydown($event)">
+      <div class="spans-block">
+        <div class="spans-input" #spans (mousedown)="selectOffset($event,spansList.length-1)" contenteditable="true"><span class="seat" (mousedown)="selectOffset($event,-1)" contenteditable="false"></span><span *ngFor="let s of spansList;let i = index;trackBy: trackByReturnItem" #span (mousedown)="selectOffset($event,i)" [ngClass]="{&quot;name&quot;:s.type === spanType.NAME}" contenteditable="false">{{s.text}}&nbsp;</span></div>
+        <button class="close-btn" (click)="clearnSpans()" contenteditable="false" icon="ic_close" logi-icon-button small></button>
+      </div>
+      <div class="btns">
+        <div class="btn" *ngFor="let b of bolList;trackBy: trackByReturnItem" (click)="addName(b)">{{b}}</div>
+      </div>
+    </div>
+    <div class="option-block" (keydown)="onKeydown($event)">
+      <input [formControl]="autoCompleteControl" [placeholder]="&quot;搜索标签或列名称&quot;" [type]="&quot;text&quot;" logi-input>
+      <div class="options" #option>
+        <mat-option class="suggest-item" *ngFor="let option of options; trackBy: trackByReturnItem" #item (click)="onSelectOption($event, option)" [ngClass]="{&quot;choosed&quot;:(isChoosed(option)&amp;&amp;!canBoolean),&quot;selected&quot;:(keyboardOption===option)}">{{option}}</mat-option>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,23 @@
+<div class="selection">
+  <div class="date">
+    <div class="caption">最近财报日</div>
+    <div class="date-picker">
+      <input class="date-picker-input" (click)="picker.open()" (dateChange)="onFinancialDateChange($event)" [matDatepicker]="picker" [placeholder]="datePlaceholder" [value]="curDate" matInput>
+      <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker class="test-selector" #picker [panelClass]="&quot;date-picker&quot;"></mat-datepicker>
+    </div>
+  </div>
+  <div class="interval">
+    <div class="caption">频率</div>
+    <logi-select class="multi-selection" (valueChange$)="onFreqChange($event)" [value]="selectedFreqList" mode="multiple">
+      <logi-option *ngFor="let freq of dropFreqList" [label]="freq.text" [value]="freq">{{freq.text}}</logi-option>
+    </logi-select>
+  </div>
+</div>
+<div class="year-range" *ngIf="datepicker !== undefined &amp;&amp; datepicker.headerInfos.length !== 0">
+  <ng-container *ngFor="let headerInfo of datepicker.headerInfos; trackBy:trackByReturnItem">
+    <div class="hy"><span class="caption">{{headerInfo.frequency | pickerTitle}}</span>
+      <logi-picker-header class="pick-header" (headerInfoChange$)="onHeaderInfoChange($event)" [headerInfo]="headerInfo"></logi-picker-header>
+    </div>
+  </ng-container>
+</div>

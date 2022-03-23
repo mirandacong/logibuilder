@@ -1,0 +1,5 @@
+export {LogiTableComponent, LogiTablePageChangeParams} from './component'
+export {LogiTableModule} from './module'
+export {ColumnDefDirective} from './column_def.directive'
+export * from './sort_change_event'
+export * from './sort_info'

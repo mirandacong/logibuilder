@@ -1,0 +1,17 @@
+a[logi-tab-link] {
+    &::before {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: transparent;
+    }
+}
+
+logi-tabset, logi-tabs-nav {
+    display: block;
+}

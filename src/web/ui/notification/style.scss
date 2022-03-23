@@ -1,0 +1,92 @@
+@use '../core/styles/palette.scss';
+
+@use '../core/styles/shared.scss';
+
+$box-shadow-color: palette.logi-black(0.16);
+$white: palette.logi-white(1);
+$error-color: map-get(palette.$logi-red, 600);
+$warning-color: map-get(palette.$logi-orange, 600);
+$success-color: map-get(palette.$logi-green, 600);
+$info-color: palette.logi-black(0.6);
+
+$secondary-color: rgba(0, 0, 0, 0.88);
+
+/* stylelint-disable */
+::ng-deep {
+    .logi-notification {
+        position: absolute;
+        top: 56px;
+        left: calc(50% - 200px);
+        margin: 0;
+        box-shadow: 0 8px 16px $box-shadow-color !important;
+        padding: 0 !important;
+        background-color: $white !important;
+        max-width: none !important;
+    }
+    /* stylelint-enable */
+}
+
+:host {
+    display: block;
+
+    border-radius: 4px;
+    width: 400px;
+
+    background-color: $white;
+}
+
+.container {
+    display: flex;
+    padding: 14px 16px;
+}
+
+.icon {
+    margin-right: 16px;
+    margin-top: 1px;
+    width: 18px;
+    height: 18px;
+}
+
+.message {
+    flex: 1;
+}
+
+.main {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.secondary {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 18px;
+    color: $secondary-color;
+}
+
+/*
+* here is icon and message color
+*/
+.container.error {
+    .icon, .main {
+        color: $error-color;
+    }
+}
+.container.warning {
+    .icon, .main {
+        color: $warning-color;
+    }
+}
+.container.success {
+    .icon, .main {
+        color: $success-color;
+    }
+}
+.container.info {
+    .icon {
+        transform: rotate(180deg);
+        color: $info-color;
+    }
+    .main {
+        color: $info-color;
+    }
+}

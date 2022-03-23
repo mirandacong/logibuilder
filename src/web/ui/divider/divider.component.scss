@@ -1,0 +1,8 @@
+@use '../core/styles/shared';
+:host {
+    display: block;
+    margin: 8px 0;
+    width: 100%;
+    height: 1px;
+    background-color: shared.$black-12;
+}

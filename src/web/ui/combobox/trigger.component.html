@@ -1,0 +1,26 @@
+<div class='logi-combobox-inner-label' *ngIf='innerLabel'>{{innerLabel}}</div>
+<div class='logi-combobox-selected-content' [ngSwitch]='mode'>
+    <ng-container *ngSwitchCase='"default"'>
+        <logi-selected-label *ngIf='isShowSingleSelect' [deletable]='false'
+            [label]='selectedOptions[0].label || selectedOptions[0].value'>
+        </logi-selected-label>
+        <logi-combobox-search *ngIf='showSearch' (composingChange$)='onCompositionChange($event)'
+            (searchChange$)='onSearchChange($event)'>
+        </logi-combobox-search>
+    </ng-container>
+    <!--多选-->
+    <ng-container *ngSwitchDefault>
+        <logi-selected-label *ngFor='let option of slicedOptions' (delete$)='onDeleteSelected(option)'
+            [deletable]='true' [isExceedTag]='option.isExceedTag' [disabled]='option.disabled || disabled'
+            [label]='option.label || option.value'>
+        </logi-selected-label>
+        <logi-combobox-search *ngIf='showSearch' (composingChange$)='onCompositionChange($event)'
+            (searchChange$)='onSearchChange($event)'>
+        </logi-combobox-search>
+    </ng-container>
+    <div class='logi-combobox-placeholder' *ngIf='isShowPlaceholder'>{{placeholder}}</div>
+</div>
+<div class='logi-combobox-ripple' matRipple [matRippleDisabled]='!ripple || disabled'
+    [matRippleTrigger]='getHostElement()'>
+</div>
+<div class='logi-combobox-focus-overlay' *ngIf='ripple'></div>

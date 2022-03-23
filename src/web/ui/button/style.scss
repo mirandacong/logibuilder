@@ -1,0 +1,56 @@
+@use '../core/styles/shared';
+
+@use './button-base';
+
+/* ****************************** button base *********************************/
+.logi-button, .logi-stroked-button, .logi-flat-button, .logi-icon-button, .logi-icon-text-button {
+    @include button-base.logi-button-base;
+
+    .logi-button-wrapper > * {
+        vertical-align: middle;
+    }
+}
+
+.logi-button-ripple, .logi-button-focus-overlay {
+    @include shared.logi-fill;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+/* Default opacity of focus overlay is 0 */
+@include button-base.focus-overlay-opacity(0);
+
+/*****************************************************************************   */
+
+/******************************** button hover ********************************/
+@mixin hover-config($opacity: 0.04) {
+    &:hover:not([disabled]) {
+        @include button-base.focus-overlay-opacity($opacity);
+    }
+}
+.logi-button, .logi-icon-button {
+    @include hover-config;
+}
+
+.logi-flat-button {
+    @include hover-config(0.08);
+}
+
+.logi-icon-text-button {
+    @include hover-config;
+}
+
+.logi-icon-text-button.stroke {
+    @include hover-config(0);
+}
+
+/*****************************************************************************   */
+
+.logi-button-base.logi-button-small {
+    border-radius: 12px;
+    height: 24px;
+    line-height: 24px;
+}
+.logi-button-base.logi-stroked.logi-button-small {
+    line-height: 22px;
+}

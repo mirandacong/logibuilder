@@ -1,0 +1,523 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+$ref-input-height: 20px;
+$ref-input-width: 67px;
+$ref-line-height: 25px;
+$ref-min-width: 80px;
+$ref-max-width: 100px;
+$ref-min-height: 20px;
+$slice-min-width: 30px;
+$column-name-input-width: 50px;
+$column-name-input-height: 15px;
+
+$badge-radius: 44px;
+$badge-blue: rgba(65, 120, 184, 0.08);
+$input-color: rgba(0, 0, 0, 0.87);
+$input-padding: 9px 6px 9px 8px;
+$input-name-color: #009FBF;
+$placeholder: rgba(0, 0, 0, 0.38);
+
+@mixin row-col {
+    /* Used when dragging nodes starts */
+    .dragging-elements-fade-away {
+        /* stylelint-disable-next-line */
+        opacity: 0.38;
+    }
+
+    .fb-container {
+        @include node-container;
+        position: relative;
+    }
+    :host {
+        @include row-col-host;
+    }
+
+    .tree-flag-top-part {
+        @include tree-flag-top-part;
+
+        .circle {
+            @include tree-flag-circle-blue;
+        }
+    }
+    .tree-flag-bottom-part {
+        @include tree-flag-bottom-part;
+    }
+    .last-node-flag-style {
+        /* stylelint-disable-next-line */
+        background-color: rgba(218, 218, 218, 1);
+    }
+    .flag-color {
+        @include flag-color;
+    }
+
+    .modifier-icon {
+        position: absolute;
+        right: 30px;
+        opacity: 0;
+    }
+
+    .menu-btn {
+        @include menu-btn;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        opacity: 0;
+    }
+
+    .fb-tag {
+        position: absolute;
+        top: 10px;
+        left: -26px;
+
+        &.compact {
+            position: static;
+            margin-left: 10px;
+        }
+    }
+
+    .label-container {
+        @include label-container;
+        background-color: palette.logi-green(0.12);
+        color: map-get(palette.$logi-green, 600);
+    }
+
+    .label-content {
+        @include label-content;
+    }
+
+    span.menu-shortcut {
+        @include shortcut-key;
+    }
+    .node-identifier {
+        @include node-identifier;
+
+        .ref-name {
+            @include node-ref-name(14px);
+            @include row-col-input;
+            .input-name {
+                display: inline-block;
+            }
+            .input-name:not(:empty) {
+                display: inline;
+
+                margin-right: 8px;
+                border: none;
+
+                min-height: 100%;
+            }
+            /* stylelint-disable-next-line */
+            .input-name:empty::before {
+                content: attr(placeholder);
+                color: palette.logi-black(0.38);
+            }
+            .input-name:focus {
+                caret-color: palette.aris-brand();
+                outline: none;
+            }
+        }
+    }
+}
+
+@mixin row-col-host {
+    display: flex;
+    margin: 0 0 8px 12px;
+}
+
+@mixin menu-max-height {
+    .menu-wrapper.logi-config-header-menu {
+        overflow: auto;
+        max-height: 400px;
+    }
+}
+
+@mixin show-menu-btn {
+    .modifier-icon {
+        opacity: 1;
+    }
+    .menu-btn {
+        opacity: 1;
+    }
+}
+
+@mixin node-container {
+    flex: 1;
+
+    display: flex;
+
+    border: 1px solid palette.logi-black(0.12);
+    border-radius: 4px;
+    height: 100%;
+    margin-left: 10px;
+
+    background-color: palette.logi-white(1);
+
+    &:hover {
+        background-color: palette.logi-black(0.04);
+        @include show-menu-btn;
+    }
+
+    &.selected {
+        border: shared.$border-selected;
+        background-color: palette.aris-brand(0.08);
+        @include show-menu-btn;
+    }
+}
+
+@mixin compact-container {
+    border-radius: 44px;
+    flex: none;
+    padding-right: 4px;
+}
+
+@mixin node-identifier {
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    padding: 0 16px 0 8px;
+    max-width: 360px;
+    min-width: 120px;
+    &.name-focused, &.expr-focused, &.stub-focused {
+        border-left: shared.$border-selected;
+        border-right: shared.$border-selected;
+        background-color: palette.logi-white(1);
+    }
+}
+
+@mixin compact-identifier {
+    border-radius: 44px 0 0 44px;
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    min-width: auto;
+    /* stylelint-disable-next-line */
+    overflow: hidden;
+}
+
+/* Used in node input. */
+@mixin node-ref-name($size, $padding: 8px 6px 10px 8px) {
+    padding: $padding;
+    border: none;
+    @include shared.set-font($size, 400);
+    width: 100%;
+
+    color: $input-color;
+
+    outline: none;
+}
+
+@mixin slice-name-input {
+    /* stylelint-disable-next-line */
+    overflow: hidden;
+
+    margin-left: 32px;
+    @include node-ref-name(14px);
+    padding: $input-padding;
+
+    background: none;
+    cursor: pointer;
+
+    color: $input-name-color;
+
+    max-width: calc(100% - 32px);
+    text-overflow: ellipsis;
+
+    @include shared.set-place-holder-color;
+    &.empty {
+        color: palette.logi-black(0.38);
+        user-select: none;
+    }
+}
+
+@mixin slice-suggestion-panel {
+    margin-left: 14px;
+    box-shadow: 0 12px 24px palette.logi-black(0.16);
+    width: 100%;
+    height: calc(100% - 16px);
+    padding: 8px 8px 9px;
+    display: flex;
+    flex-flow: column;
+    background-color: palette.logi-white(1);
+    .input {
+        height: 32px;
+    }
+    .options {
+        flex: 1;
+        overflow: auto;
+        margin-top: 8px;
+        height: 128px;
+        .suggest-item {
+            @include shared.set-font(14px);
+            height: 32px;
+        }
+        .item-selected, :hover {
+            font-weight: bold;
+            color: shared.$base-brand;
+        }
+        .choosed {
+            color: palette.logi-black(0.38);
+        }
+        .selected {
+            color: palette.aris-brand();
+        }
+    }
+}
+
+@mixin row-col-input {
+    align-self: flex-start;
+
+    display: inline;
+
+    padding: 8px 6px 8px 0;
+
+    max-width: 100%;
+    min-height: 16px;
+    word-break: break-all;
+}
+
+@mixin compact-input {
+    align-self: center;
+    padding: 4px 0;
+    padding-left: 16px;
+    /* stylelint-disable-next-line  */
+    overflow: hidden;
+    &.name-focused, &.expr-focused, &.stub-focused {
+        border-left: shared.$border-selected;
+        border-right: shared.$border-selected;
+        background-color: palette.logi-white(1);
+    }
+}
+
+@mixin compact-input-name {
+    .compact-focused:not(:empty) {
+        min-width: auto;
+    }
+    .compact-focused:empty::before {
+        min-width: auto;
+    }
+    .compact-focused:focus {
+        min-width: auto;
+    }
+}
+
+@mixin menu-text {
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: 400;
+    color: palette.logi-black(0.87);
+}
+
+@mixin label-container {
+    align-self: flex-start;
+
+    display: inline-block;
+
+    /* Retain margin for text in input. */
+    margin-right: 8px;
+    border-radius: 44px;
+    padding: 0 8px;
+    height: 18px;
+    line-height: 18px;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    @include shared.set-font(12px, bold);
+}
+
+@mixin label-content {
+    margin-right: 8px;
+
+    /* stylelint-disable-next-line  */
+    flex-wrap: wrap;
+    align-self: flex-start;
+
+    display: inline-flex;
+}
+
+@mixin compact-label {
+    /* stylelint-disable-next-line */
+    margin: 0 0 0 8px !important;
+}
+
+@mixin formula {
+    position: relative;
+    top: 0;
+    flex: 1;
+    align-items: center;
+
+    display: flex;
+
+    border-left: 1px solid palette.logi-black(0.12);
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to bottom,
+    palette.logi-black(0.12) 0 11px, transparent 11px,
+    transparent 27px,
+    palette.logi-black(0.12) 27px,
+    palette.logi-black(0.12) 100%);
+    margin-right: 34px;
+
+    .equal {
+        margin-left: 26px;
+        margin-top: 10px;
+        height: calc(100% - 10px);
+        padding: 0 6px;
+    }
+
+    &.name-focused, &.expr-focused, &.stub-focused {
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to bottom,
+        shared.$base-blue 0 11px, transparent 11px, transparent 27px,
+        shared.$base-blue 27px, shared.$base-blue 100%);
+        border-left: shared.$border-selected;
+        background-color: palette.logi-white(1);
+
+        /* Used for "fx" overlapping border effect */
+        .right-border {
+            @include formula-right-border;
+        }
+    }
+}
+
+@mixin slice-expr-item {
+    position: relative;
+    top: 0;
+    align-items: center;
+
+    display: flex;
+
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to bottom,
+    palette.logi-black(0.12) 0 11px, transparent 11px,
+    transparent 27px,
+    palette.logi-black(0.12) 27px,
+    palette.logi-black(0.12) 100%);
+    border-left: shared.$border-base;
+    width: 100%;
+    height: 100%;
+
+    &.name-focused, &.expr-focused, &.stub-focused {
+        /* Use negative margin to avoid border overlapping. */
+        margin-bottom: -1px;
+        margin-left: -1px;
+        margin-top: -1px;
+        border: shared.$border-selected;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to bottom,
+        shared.$base-blue 0 11px, transparent 11px, transparent 27px,
+        shared.$base-blue 27px, shared.$base-blue 100%);
+
+        background-color: palette.logi-white(1);
+    }
+}
+
+@mixin compact-formula {
+    border-left: none;
+}
+
+@mixin formula-hide {
+    flex: none;
+}
+
+@mixin formula-edit {
+    flex: 1;
+    align-self: center;
+    height: 100%;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin formula-right-border {
+    width: 1px;
+    height: 100%;
+    background-color: shared.$base-blue;
+}
+
+@mixin shortcut-key {
+    position: absolute;
+    right: 16px;
+    @include shared.set-font(14px, bold);
+    color: palette.logi-black(0.38);
+}
+
+@mixin menu-btn {
+    &.formula-hide-menu {
+        margin: 6px auto;
+    }
+}
+
+/* The line in the front of each row/col/rowBlock/colBlock is drawed by two
+    parts, which are divided by position of drag-icon. */
+@mixin tree-flag-top-part {
+    position: relative;
+    top: 0;
+    height: 16px;
+    margin: 0 -1px 0 0;
+    width: 1px;
+    background-color: shared.$base-blue;
+}
+
+@mixin tree-flag-bottom-part {
+    position: relative;
+    top: 0;
+    margin-top: 23px;
+    margin-bottom: -8px;
+    width: 1px;
+    background-color: shared.$base-blue;
+}
+
+/* The footer of each table. */
+@mixin tree-flag-empty {
+    position: relative;
+    top: 0;
+    margin: -8px 10px 22px 0;
+    width: 1px;
+    background-color: palette.logi-black(0.12);
+}
+
+@mixin tree-flag-circle-blue($size: 3px) {
+    position: absolute;
+    top: 16px;
+    left: -3px;
+
+    border: 2px solid map-get(palette.$logi-grey, 50);
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+
+    background-color: shared.$base-blue;
+}
+
+@mixin tree-flag-circle-green($size:3px) {
+    position: absolute;
+    top: 16px;
+    left: -3px;
+
+    border: 2px solid map-get(palette.$logi-grey, 50);
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+
+    background-color: palette.logi-green();
+}
+
+@mixin tree-flag-circle-empty {
+    position: absolute;
+    top: 23px;
+    left: -3px;
+
+    border: 2px solid map-get(palette.$logi-grey, 50);
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+
+    background-color: palette.logi-black(0.12);
+}
+
+@mixin flag-color {
+    background-color: palette.logi-green();
+}

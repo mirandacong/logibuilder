@@ -1,0 +1,124 @@
+$t-constant-color: #757575;
+$ref-expr: #4178B8;
+$t-undef-color: #DA2947 !important;
+$t-identifier-color: #E59035;
+$t-symbol-color: #000;
+$t-op-padding: 0 3px;
+$t-filter-margin: 0 2px;
+$t-filter-color: white;
+$t-filter-bgcolor: #8A85AD;
+$t-self: #000;
+$t-other-sheet: #243A66;
+$t-this-sheet: #4178B8;
+$t-selector: #009FBF;
+$t-square: #009FBF;
+$family: 'Roboto mono', '-apple-system', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+
+%base-font {
+    font-size: 14px;
+    font-family: $family;
+}
+
+/* stylelint-disable-next-line */
+::ng-deep {
+    .t-constant {
+        @extend %base-font;
+        font-weight: bold;
+        color: $t-constant-color;
+    }
+
+    .t-ref, .t-ref-expr, .t-colon, .t-slash {
+        @extend %base-font;
+        color: $ref-expr;
+    }
+
+    .t-path {
+        font-size: 12px;
+        font-family: $family;
+        color: rgba(117, 117, 117, 1);
+    }
+
+    /* TODO (kai): Used in undefined reference */
+    .t-undef, .t-func-error {
+        @extend %base-font;
+        color: $t-undef-color;
+    }
+
+    .t-self {
+        @extend %base-font;
+        background-color: rgba(0, 0, 0, 0.12);
+        color: $t-self;
+    }
+
+    .t-this-sheet {
+        @extend %base-font;
+        font-weight: bold;
+    }
+
+    .t-other-sheet {
+        @extend %base-font;
+        background-color: rgba(36, 58, 102, 0.12);
+        font-weight: bold;
+        color: $t-other-sheet;
+    }
+
+    .t-identifier {
+        @extend %base-font;
+        font-weight: bold;
+        color: $t-identifier-color;
+    }
+
+    .t-comma, .t-colon, .t-dot, .t-double-bar, .t-equal {
+        @extend %base-font;
+        padding: 0 4px;
+        font-weight: bold;
+        color: $t-symbol-color;
+    }
+    .t-braket {
+        color: $t-symbol-color;
+        @extend %base-font;
+    }
+
+    .t-selector {
+        font-size: 12px;
+        font-family: $family;
+        color: $t-selector;
+    }
+
+    .t-square {
+        @extend %base-font;
+        color: $t-square;
+    }
+    .t-label {
+        @extend %base-font;
+        color: rgba(19, 172, 89, 1);
+    }
+
+    .t-tag {
+        font-size: 12px;
+        font-family: $family;
+        color: rgba(19, 172, 89, 1);
+    }
+
+    /* TODO (kai): Use space token instead of padding */
+    .t-op {
+        @extend %base-font;
+        padding: $t-op-padding;
+    }
+
+    .t-filter {
+        @extend %base-font;
+        margin: $t-filter-margin;
+        background-color: $t-filter-bgcolor;
+        color: $t-filter-color;
+    }
+
+    .t-trace-hint.hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .t-ws-seq {
+        @extend %base-font;
+    }
+}

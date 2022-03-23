@@ -1,0 +1,1 @@
+export {executeSpreadjsCommand} from './execute'

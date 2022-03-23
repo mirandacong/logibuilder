@@ -1,0 +1,59 @@
+/* stylelint-disable */
+@use '../../core/styles/shared';
+
+$bg-color: palette.logi-color(palette.$logi-grey, 100, 1);
+
+// ================================================================
+// =                         Border Radio                         =
+// ================================================================
+.logi-table {
+    /* title + table */
+    &-title {
+        border-radius: 4px 4px 0 0;
+    }
+
+    &-title + &-container {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+        table > thead > tr:first-child {
+            th:first-child {
+                border-radius: 0;
+            }
+
+            th:last-child {
+                border-radius: 0;
+            }
+        }
+    }
+
+    /* table */
+    &-container {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
+        table > thead > tr:first-child {
+            th:first-child {
+                border-top-left-radius: 4px;
+                background-color: $bg-color;
+            }
+
+            th:last-child {
+                border-top-right-radius: 4px;
+                background-color: $bg-color;
+            }
+        }
+        .empty-page {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: calc(100% - 49px);
+        }
+    }
+
+    /* table + footer */
+    &-footer {
+        border-radius: 0 0 4px 4px;
+    }
+}

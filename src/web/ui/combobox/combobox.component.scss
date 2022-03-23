@@ -1,0 +1,91 @@
+@use '../core/styles/shared';
+@use './combobox-size';
+
+$panel-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+
+.logi-combobox {
+    position: relative;
+    display: inline-block;
+    color: shared.$black-87;
+    cursor: pointer;
+
+    &.logi-combobox-disabled {
+        cursor: not-allowed;
+    }
+}
+
+@include combobox-size.logi-combobox-size('.logi-combobox', (
+    font-size: 14px,
+    trigger-height: 36px,
+    arrow-icon-size: 24px,
+    selected-label-height: 28px,
+    selected-label-delete-icon-size: 16px,
+));
+
+@include combobox-size.logi-combobox-size('.logi-combobox.logi-combobox-small', (
+    font-size: 12px,
+    trigger-height: 24px,
+    arrow-icon-size: 18px,
+    selected-label-height: 18px,
+    selected-label-delete-icon-size: 12px,
+));
+
+@include combobox-size.logi-combobox-size('.logi-combobox.logi-combobox-large', (
+    font-size: 16px,
+    trigger-height: 48px,
+    arrow-icon-size: 32px,
+    selected-label-height: 36px,
+    selected-label-delete-icon-size: 22px,
+));
+
+.logi-combobox-icon {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    font-size: 0;
+    transform: translateY(-50%);
+    color: shared.$font-color-base;
+    pointer-events: none;
+}
+
+.logi-combobox-panel {
+    flex-direction: column;
+    display: flex;
+    overflow: auto;
+    box-shadow: $panel-shadow;
+    border-radius: 4px;
+    width: 100%;
+    padding: 8px 0;
+    background-color: shared.$base-white;
+    font-family: shared.$base-font;
+    max-height: 256px;
+    min-width: 64px;
+}
+
+.logi-combobox-panel-loading-view {
+    height: 128px;
+}
+
+.logi-combobox-virtual-scroll-viewport {
+    .cdk-virtual-scroll-content-wrapper {
+        right: 0;
+    }
+}
+
+.logi-combobox-panel-empty-text {
+    color: shared.$font-color-base;
+    font-size: 14px;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 16px;
+}
+.logi-combobox-panel-actions {
+    display: block;
+    margin-top: 8px;
+    border-top: shared.$border-base;
+    height: 32px;
+    padding: 0 16px;
+    padding-top: 8px;
+    @include shared.set-font(14px);
+    line-height: 32px;
+}

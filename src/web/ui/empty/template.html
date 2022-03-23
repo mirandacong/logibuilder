@@ -1,0 +1,9 @@
+<div class='container'>
+    <ng-container *ngIf='imgUrl.length; else defaultImg'>
+        <img class='empty-image' [src]="imgUrl">
+    </ng-container>
+    <ng-template #defaultImg>
+        <logi-empty-default-img class='empty-image'></logi-empty-default-img>
+    </ng-template>
+    <div class="prompt">{{message}}</div>
+</div>

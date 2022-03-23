@@ -1,0 +1,7 @@
+<div class="title">编辑多项</div>
+<div class="text-line">请输入分项名称，每行一个</div>
+<textarea class="items-input" [formControl]="items" placeholder="分项名称" spellcheck="false"></textarea>
+<div class="btns">
+  <button (click)="onCancel()" logi-button>取消</button>
+  <button (click)="setForecast()" logi-flat-button>确定</button>
+</div>

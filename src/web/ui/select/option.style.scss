@@ -1,0 +1,40 @@
+@use '../core/styles/shared';
+
+$disable-color: rgba(0, 0, 0, 0.24);
+
+.logi-option {
+    position: relative;
+    align-items: center;
+    display: flex;
+    height: 32px;
+    padding: 0 16px;
+    cursor: pointer;
+    font-size: 14px;
+    color: shared.$black-87;
+
+    &:hover:not(.logi-option-disabled) {
+        background-color: shared.$bg-hover;
+    }
+
+    &.logi-option-disabled {
+        cursor: not-allowed;
+        color: $disable-color;
+    }
+}
+
+.logi-option-container {
+    flex: auto;
+    @include shared.logi-overflow-ellipsis;
+}
+
+.logi-option.logi-selected .logi-option-container {
+    font-weight: bold;
+}
+
+.logi-option-ripple {
+    @include shared.logi-fill;
+}
+
+.logi-option-selected-icon {
+    flex-shrink: 0;
+}

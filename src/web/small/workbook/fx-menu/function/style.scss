@@ -1,0 +1,49 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+@use '../shared.scss' as top;
+
+.edit-sub-module {
+    @include shared.size(32px, 240px);
+    padding: 0;
+    line-height: 32px;
+}
+.file-button {
+    @include shared.size(32px, 240px);
+    line-height: 32px;
+}
+
+.short {
+    float: right;
+
+    margin-right: 16px;
+    margin-top: 8px;
+
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: bold;
+    color: palette.logi-black(0.38);
+}
+
+.edit-btn {
+    @include top.top-button;
+}
+.disable-btn {
+    color: palette.logi-white(0.38);
+    pointer-events: none;
+}
+.opened {
+    @include top.opened;
+}
+.disabled {
+    color: palette.logi-black(0.38);
+
+    &:hover {
+        background-color: palette.logi-white(0);
+        cursor: auto;
+    }
+}
+.disabled > *:first-child {
+    color: palette.logi-black(0.12);
+}

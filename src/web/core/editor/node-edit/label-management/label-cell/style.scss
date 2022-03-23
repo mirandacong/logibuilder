@@ -1,0 +1,80 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+$add-button-size: 24px;
+
+:host {
+    flex-direction: column;
+    display: flex;
+}
+
+@mixin base-hover {
+    &:hover {
+        background-color: palette.logi-green(0.24);
+    }
+}
+
+@mixin base-label {
+    margin-right: 8px;
+    border-radius: 24px;
+    padding: 2px 8px;
+    background-color: palette.logi-green(0.12);
+    @include base-hover();
+    outline: none;
+}
+
+.button {
+    /* stylelint-disable-next-line */
+    align-items: center;
+    display: inline-flex;
+    border: 1px solid transparent;
+    @include base-label();
+    &.focused {
+        border: 1px solid palette.logi-green();
+        padding-right: 20px;
+        background-color: palette.logi-white(0.12);
+    }
+    &.selected {
+        border: 1px solid transparent;
+        background-color: palette.logi-green();
+    }
+}
+
+.input-label {
+    display: inline;
+
+    padding-right: 7px;
+
+    cursor: text;
+    @include shared.set-font(12px, bold, shared.$base-font);
+
+    line-height: 14px;
+    color: palette.logi-green();
+
+    outline: none;
+    &.focused {
+        font-weight: 400;
+        color: palette.logi-black(0.87);
+    }
+    &.selected {
+        color: palette.logi-white(1);
+    }
+}
+
+.close-icon {
+    width: 12px;
+    height: 12px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+    color: palette.logi-green();
+    &:hover {
+        border-radius: 50%;
+        background-color: palette.logi-green(0.24);
+    }
+    &.selected {
+        color: palette.logi-white(1);
+    }
+}

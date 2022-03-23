@@ -1,0 +1,18 @@
+<ht mat-dialog-title>清除输入数据</ht>
+<mat-dialog-content>
+  <div class="text-box"><span>请选择</span>
+    <div class="name">{{info[0]}}</div><span>需要清除输入数据的逻辑式类型</span>
+  </div>
+  <div class="check-box">
+    <logi-checkbox class="checkbox" (change$)="setAll($event.checked)" [checked]="allComplete">所有数据</logi-checkbox>
+    <ul>
+      <li *ngFor="let t of typeList;trackBy:trackBy">
+        <logi-checkbox class="checkbox" (change$)="updateAllComplete(t,$event.checked)" [checked]="t.completed">{{t.name}}</logi-checkbox>
+      </li>
+    </ul>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="footer" align="end">
+  <button class="cancel" (click)="onCancel()" logi-button>取消</button>
+  <button class="ok" (click)="clean()" logi-flat-button>清除</button>
+</mat-dialog-actions>

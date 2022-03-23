@@ -1,0 +1,71 @@
+@use '../core/styles/shared';
+
+.logi-combobox-trigger {
+    position: relative;
+    display: flex;
+    border: shared.$border-base;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    align-items: center;
+    &.no-border {
+        border: none;
+    }
+}
+.logi-combobox:not(.logi-combobox-disabled, .ng-invalid) .logi-combobox-trigger {
+    &:not(.no-border):hover {
+        border-color: shared.$black-24;
+    }
+}
+.logi-combobox.ng-invalid .logi-combobox-trigger {
+    border-color: shared.$error-color;
+}
+
+.logi-combobox-inner-label {
+    flex-shrink: 0;
+    padding-left: 8px;
+}
+.logi-combobox-selected-content {
+    flex: 1;
+    overflow: hidden;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+}
+.logi-combobox-single .logi-combobox-selected-content {
+    padding-left: 16px;
+    padding-right: 28px;
+}
+
+.logi-combobox-multiple .logi-combobox-selected-content {
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding-left: 4px;
+    padding-right: 28px;
+}
+
+.logi-combobox-placeholder {
+    overflow: hidden;
+    color: shared.$black-38;
+    pointer-events: none;
+}
+.logi-combobox-multiple .logi-combobox-placeholder {
+    position: absolute;
+    left: 16px;
+}
+.logi-combobox-ripple, .logi-combobox-focus-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+.logi-combobox-focus-overlay {
+    opacity: 0;
+    background-color: black;
+}
+.logi-combobox:not(.logi-combobox-disabled):hover .logi-combobox-focus-overlay {
+    opacity: 0.04;
+}

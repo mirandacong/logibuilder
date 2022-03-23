@@ -1,0 +1,28 @@
+<div class="menu-wrapper" [ngClass]="menuClass" tabindex="0">
+    <ul class="dropdown-menu show" #menu style="position: static; float: none;" tabindex="0">
+        <li class='logi-context-menu-item' *ngFor="let menuItem of menuItems; let i = index;" #li
+            [attr.role]="menuItem.divider ? &quot;separator&quot; : undefined"
+            [class.active]="menuItem.isActive &amp;&amp; isMenuItemEnabled(menuItem)"
+            [class.disabled]="!isMenuItemEnabled(menuItem)" [class.divider]="menuItem.divider"
+            [class.dropdown-divider]="useBootstrap4 &amp;&amp; menuItem.divider"
+            [matTooltipClass]="&quot;logi-tooltip&quot;" [matTooltipDisabled]="!menuItem.showToolTip"
+            [matTooltip]="menuItem.text">
+            <span class='logi-context-menu-item-handle' *ngIf="!menuItem.divider &amp;&amp; !menuItem.passive"
+                (click)="onMenuItemSelect(menuItem, $event)" (mouseenter)="onOpenSubMenu(menuItem, $event)"
+                [class.active]="menuItem.isActive &amp;&amp; isMenuItemEnabled(menuItem)"
+                [class.disabled]="useBootstrap4 &amp;&amp; !isMenuItemEnabled(menuItem)"
+                [class.dropdown-item]="useBootstrap4" href>
+                <ng-template [ngTemplateOutletContext]="{ $implicit: item }" [ngTemplateOutlet]="menuItem.template">
+                </ng-template>
+                <mat-icon *ngIf="!!menuItem.subMenu" svgIcon="ic_arrow_drop_right"></mat-icon>
+            </span>
+            <span class="passive" *ngIf="!menuItem.divider &amp;&amp; menuItem.passive" (click)="stopEvent($event)"
+                (contextmenu)="stopEvent($event)"
+                [class.disabled]="useBootstrap4 &amp;&amp; !isMenuItemEnabled(menuItem)"
+                [class.dropdown-item]="useBootstrap4">
+                <ng-template [ngTemplateOutletContext]="{ $implicit: item }" [ngTemplateOutlet]="menuItem.template">
+                </ng-template>
+            </span>
+        </li>
+    </ul>
+</div>

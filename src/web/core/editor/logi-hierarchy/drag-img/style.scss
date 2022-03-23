@@ -1,0 +1,65 @@
+@use 'src/web/assets/styles/shared';
+
+$icon-size: 24px;
+$icon-margin: 8px;
+$white: rgba(255, 255, 255, 1);
+$blue-bkg: rgba(65, 120, 184, 0.12);
+$drag-width: 235px;
+$name-padding: 9px 8px;
+$shadow: 10px 10px 5px rgba(0, 0, 0, 0.16);
+$zindex: 999;
+
+:host {
+    /* stylelint-disable-next-line */
+    position: absolute;
+    z-index: $zindex;
+    align-items: center;
+
+    display: flex;
+
+    box-shadow: $shadow;
+    border-radius: 4px 4px 0 0;
+    width: $drag-width;
+
+    background-color: $white;
+}
+
+.img-container {
+    z-index: $zindex;
+    align-items: center;
+
+    display: flex;
+
+    box-shadow: $shadow;
+    border-radius: 4px 4px 0 0;
+    width: $drag-width;
+
+    background-color: $white;
+}
+.table {
+    color: shared.$base-blue;
+    @include shared.set-font(12px, bold);
+}
+.title {
+    color: rgb(117, 117, 117);
+    @include shared.set-font(12px, bold);
+}
+.block {
+    color: rgba(19, 172, 89, 1);
+    @include shared.set-font(12px, bold);
+}
+.node-name {
+    flex: 1;
+    padding: $name-padding;
+}
+
+.children {
+    margin-right: $icon-margin;
+    border-radius: 50%;
+    @include shared.square-size($icon-size);
+
+    background-color: $blue-bkg;
+
+    text-align: center;
+    color: shared.$base-blue;
+}

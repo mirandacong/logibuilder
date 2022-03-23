@@ -1,0 +1,44 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+$rail-bg: rgba(0, 0, 0, 0.12);
+$track-bg-disabled: rgba(0, 0, 0, 0.24);
+$handle-border-color-disabled: rgba(0, 0, 0, 0.38);
+
+@mixin logi-slider-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    %focused-handle {
+        top: -2px;
+        width: 16px;
+        height: 16px;
+        background-color: theming.logi-color($primary);
+    }
+
+    .logi-slider-rail {
+        background-color: $rail-bg;
+    }
+    .logi-slider-track {
+        background-color: theming.logi-color($primary);
+    }
+    .logi-slider-handle {
+        border-color: theming.logi-color($primary);
+        &.logi-hovered {
+            @extend %focused-handle;
+        }
+    }
+    .logi-slider.logi-disabled {
+        .logi-slider-track {
+            background-color: $track-bg-disabled;
+        }
+        .logi-slider-handle {
+            border-color: $handle-border-color-disabled;
+        }
+    }
+    .logi-slider-wrapper.logi-dragging {
+        .logi-slider-handle:focus {
+            @extend %focused-handle;
+        }
+    }
+}

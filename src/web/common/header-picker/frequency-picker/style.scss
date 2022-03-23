@@ -1,0 +1,224 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+$line-width: 268px;
+$header-width: 296px;
+$border-radius-year: 24px;
+
+$fourteen-black: palette.logi-black(0.16);
+$low-black: palette.logi-black(0.12);
+$background-brand: palette.aris-brand(0.08);
+$brand: map-get(palette.$aris-brand, 600);
+$white: palette.logi-white(1);
+$black: palette.logi-black(1);
+
+@mixin base-picker {
+    max-height: none;
+    max-width: none;
+    box-shadow: 0 12px 24px $fourteen-black;
+    /* stylelint-disable-next-line */
+    min-height: unset;
+    margin-top: 4px;
+}
+
+/* stylelint-disable-next-line */
+::ng-deep {
+    .picker-header-year {
+        margin-left: -30px;
+        @include base-picker;
+    }
+    .picker-header-half-year {
+        @include base-picker;
+    }
+    .picker-header-month {
+        @include base-picker;
+    }
+    .picker-header-quarter {
+        @include base-picker;
+    }
+}
+
+.line {
+    display: flex;
+    max-width: $line-width;
+    min-width: $line-width;
+}
+
+.header {
+    flex-direction: row;
+    align-items: center;
+
+    display: flex;
+
+    border-bottom: 1px solid $low-black;
+
+    max-width: $header-width;
+    min-height: 76px;
+    min-width: $header-width;
+}
+
+.body {
+    padding: 8px 14px 14px;
+}
+
+.years {
+    @include shared.set-font($size: 14px, $weight: 500);
+    flex: 1;
+    margin-left: 24px;
+}
+
+.buttons {
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+
+    display: flex;
+
+    margin-right: 8px;
+}
+
+@mixin base-view {
+    position: relative;
+    /* stylelint-disable-next-line */
+    justify-content: center;
+    /* stylelint-disable-next-line */
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    border: 1px solid transparent;
+    @include shared.set-font($size: 12px);
+}
+
+.year-view {
+    @include base-view;
+    margin: 3px 2px;
+    width: 25%;
+    height: 36px;
+    padding: 0 6px;
+    &.item-active {
+        border-radius: $border-radius-year;
+        background-color: $brand;
+        color: $white;
+    }
+    &:hover {
+        border: 1px $brand solid;
+        border-radius: 24px;
+    }
+}
+
+.background {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    &.over-right {
+        border-radius: $border-radius-year 0 0 $border-radius-year;
+        background-color: $background-brand;
+    }
+    &.over-left {
+        border-radius: 0 $border-radius-year $border-radius-year 0;
+        background-color: $background-brand;
+    }
+    &.item-over {
+        background-color: $background-brand;
+    }
+}
+
+.year {
+    align-items: center;
+
+    display: flex;
+
+    border-bottom: 1px $low-black solid;
+    width: 481px;
+    height: 76px;
+}
+
+.start-year {
+    border-right: 1px $low-black solid;
+    button {
+        position: absolute;
+        left: 16px;
+    }
+}
+.end-year {
+    button {
+        position: absolute;
+        right: 16px;
+    }
+}
+.start-year, .end-year {
+    position: relative;
+    align-items: center;
+
+    display: flex;
+
+    width: 100%;
+    height: 76px;
+    span {
+        opacity: 1;
+
+        margin: auto;
+
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        color: $black;
+    }
+}
+.frequency {
+    display: flex;
+    width: 481px;
+    .start-frequency {
+        border-right: 1px $low-black solid;
+    }
+    .start-frequency, .end-frequency {
+        flex: 1;
+        display: inline-flex;
+        padding: 15px 0;
+
+        &.month {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.other-view {
+    @include base-view;
+    flex: 1;
+    margin: 3px 2px;
+    height: 30px;
+    padding: 0 6px;
+    min-width: 42px;
+    &.item-active {
+        border-radius: $border-radius-year;
+        background-color: $brand;
+        color: $white;
+    }
+    &:hover {
+        border: 1px $brand solid;
+        border-radius: 24px;
+    }
+}
+.other-background {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    &.over-right {
+        border-radius: $border-radius-year 0 0 $border-radius-year;
+        background-color: $background-brand;
+    }
+    &.over-left {
+        border-radius: 0 $border-radius-year $border-radius-year 0;
+        background-color: $background-brand;
+    }
+    &.item-over {
+        background-color: $background-brand;
+    }
+}

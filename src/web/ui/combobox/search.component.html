@@ -1,0 +1,2 @@
+<input #input class='logi-combobox-search-input' [ngModel]='searchKey' (ngModelChange)='onSearchChange($event)'
+    (compositionstart)='onCompositionChange(true)' (compositionend)='onCompositionChange(false)' />

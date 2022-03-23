@@ -1,0 +1,3507 @@
+{
+    "book": {
+        "annotations": {},
+        "labels": [],
+        "name": "Test model",
+        "nodetype": 1,
+        "subnodes": [
+            {
+                "annotations": {},
+                "labels": [],
+                "name": "Control",
+                "nodetype": 2,
+                "subnodes": [
+                    {
+                        "annotations": {},
+                        "headerStub": "us mn",
+                        "labels": [],
+                        "name": "Revenue Breakup",
+                        "nodetype": 4,
+                        "subnodes": [
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2017",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "7795d27e-62fa-4293-ba60-3bc89e24a658",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2018",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "709c3f9a-8f8e-4418-bf4a-25b254462355",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "proj"
+                                ],
+                                "name": "2019",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "709db785-4c46-43f5-94d2-b8a9a0f0cf53",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "proj"
+                                ],
+                                "name": "2020",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "a8754fd2-5257-44e9-a45f-d146624df265",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row1",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "hist",
+                                        "type": 0,
+                                        "uuid": "e6aa1ef7-bbec-4dd3-95cf-7ac6bac43c27"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "fa784f73-acec-4557-b7cb-b59d27d954d4",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row2",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "hist",
+                                        "type": 0,
+                                        "uuid": "e7ee978a-69e7-4068-9b95-182917d9a251"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "ac78827c-0a8d-4981-a66b-16e47e185871",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row3",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "{row1}[hist] + {row2}[hist]",
+                                        "name": "hist",
+                                        "type": 3,
+                                        "uuid": "e9f50c23-80e3-42b8-b312-499b8567efa7"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "c112ba43-256e-41cb-9361-1dc4a405bc47",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{Revenue!row42} + 1",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row4",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 2,
+                                "uuid": "5728ee46-daf4-4df5-b62c-d9b7d4c18382",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "3",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row5",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 1,
+                                "uuid": "acdab44f-8f8a-4ad9-8264-accc8996d165",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row6",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 2,
+                                "uuid": "ee4d33a8-cbaa-45be-8be1-e1ce0b9d02cc",
+                                "valid": true
+                            }
+                        ],
+                        "uuid": "6baa86cb-e980-404c-b655-0accce4d0f1d"
+                    },
+                    {
+                        "annotations": {},
+                        "headerStub": "us mn",
+                        "labels": [],
+                        "name": "Cash flow",
+                        "nodetype": 4,
+                        "subnodes": [
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2016",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "ecbf28c5-65e7-465a-b9f5-a73bdb72c762",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2017",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "af9ccf71-764e-4761-96e8-83651a3c407a",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2018",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "5e267fb1-9399-4707-9eaf-9dc17d2fa4c6",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "proj"
+                                ],
+                                "name": "2019",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "7a42d920-697a-42b6-b584-be84a2c9aeb0",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row1",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "hist",
+                                        "type": 0,
+                                        "uuid": "9197cd3a-ab60-4fc6-ad88-3f45f6bc90b8"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "2bd8c878-a2dc-48f7-a10e-ada6588386d0",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row2",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "hist",
+                                        "type": 0,
+                                        "uuid": "ed7572df-0cc8-400e-9989-be6e69d667b0"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "83840e87-41af-43df-abe1-2cb2bfab177a",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row3",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "{row1}[hist] + {row2}[hist]",
+                                        "name": "hist",
+                                        "type": 0,
+                                        "uuid": "55920e66-c0a3-4d6d-9dd4-54c09333c294"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "07ec6d46-332d-4741-9821-a098a49d265d",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{Revenue!row42} + 1",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row4",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "5dea48ef-6b5f-4242-936c-f5601da544b2",
+                                "valid": true
+                            }
+                        ],
+                        "uuid": "3c02565b-5f28-4a7f-9d15-cd80ec59c581"
+                    },
+                    {
+                        "annotations": {},
+                        "headerStub": "us mn",
+                        "labels": [],
+                        "name": "Revenue",
+                        "nodetype": 4,
+                        "subnodes": [
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2016",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "92a93b69-993c-4b4b-a3d5-f7717042d8db",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2017",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "3c260600-d957-4bb9-8adb-a4fe65433e12",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2018",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "403cb72c-e689-4480-8979-6f344550a028",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "proj"
+                                ],
+                                "name": "2019",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "d42089a4-eab4-474f-bf20-37efbf861217",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row1",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "8da701c4-c22a-4498-95ed-f82a34039e60",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row2",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "a223175b-0a9f-4ab7-87cf-f78e242e7257",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1} + {row2}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row3",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "28d68e9d-4e7e-417b-8d57-8e039a6fd378",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "({row1} + {row2}).sum()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row4",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "7f76aef0-a5cc-425a-8112-c98570608233",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "({row1} + {row2}).lag(1)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row5",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "5a023711-83fd-4919-9dd9-f84a0c50e2ed",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row6",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [
+                                    {
+                                        "annotations": {},
+                                        "expression": "",
+                                        "name": "proj",
+                                        "type": 0,
+                                        "uuid": "dcbd9f83-41ae-47f5-91bf-03b3eb34f450"
+                                    }
+                                ],
+                                "type": 0,
+                                "uuid": "1fab411c-dbc6-4170-8271-f4c59f6f9ffa",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1} + {row2} + {Revenue!row6}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row7",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "3b258cce-ef7c-4dfe-be20-cd48a61e4aa0",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "(sum({row1}, {row2})).average()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row8",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "a399c9aa-74a0-4f35-935e-3ed5a0f4272a",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1} + {row2} + {row1}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row9",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "95c7508e-682c-423d-bedf-1f6f84785598",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row2} + {row1} + {row1}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row10",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "ff90b3d2-ba4c-4567-9cad-6a1b41a3aea1",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{Revenue!row2} + {row1} + {row1} + {row2}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row11",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "ac1cf5c4-5e79-4ee5-8af3-1df5d9098148",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "(sum({row1}, {row2})).average() + 1",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row12",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "da77c232-193b-494b-94f1-79644605fa9a",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "({row1}).average() + ({row2}).average()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row13",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "edd65337-11b0-4def-b190-35c58892b41b",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "3",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row14",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "58d6312c-3e50-43a5-bb9d-d369213d7867",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "3 + 5",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row15",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "adb98298-c869-4175-82c3-c1b00ea97e44",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1} + 5",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row16",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "8928ed0f-71cb-49a9-ab92-1d00ab097b8f",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1} + ({row2}).average()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row17",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "f8efe81f-eea1-422f-93d6-ac8967675f16",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1} + {Revenue2!row1}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row18",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "6c73d7c2-ddd5-4a5d-88f8-fd0ec16a61df",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row6}[proj]",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row19",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "f874a148-89a3-43ba-a358-71abf80576c7",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1} + {row6}[proj]",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row20",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "48842429-7c10-48d9-898b-95f01dc35ced",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "sum({row1}, {row2})",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row21",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "7552fad3-eccc-427b-9734-d11174abf0c8",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "sum({row1}, {row2}, {row6})",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row22",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "dea7dece-82a3-4759-b8c7-f24b38d4a38a",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row23",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "d470f319-9924-4c4e-8105-6324bd3092df",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}/{row1}.lag(1)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row24",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "02e68bf2-7699-4e16-abf1-83dbfa4b548f",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}/{row1}.lag(1)-1",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row25",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "134f0eec-cc47-466f-8e1e-ef361f134651",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "max({row1}, {Revenue!row2})",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row26",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "98246ff9-104a-4dbf-a6d6-069a73800d30",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "max({row1}, 3)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row27",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "32aab30c-7841-41a9-aa04-338bd7e3d3d8",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "min({row1}, {Revenue!row2})",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row28",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "edd14d9a-00dd-40d6-b9e6-9a7608358b7f",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "min({row1}, 3)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row29",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "f1cd6071-e5b4-4c96-a641-f4a09f284f61",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "power({row1}.average(), {Revenue!row2}.average())",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row30",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "7d3dc14b-c869-40ca-a14e-d1b45a899af1",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "power({row1}.average(), 2)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row31",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "69a299c9-3c14-40c7-93b5-0b8cbebc21ab",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "log({row1}.average(), {Revenue!row2}.average())",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row32",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "21dcdad3-a3c4-4e1d-93c9-62d0fa7d800e",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "log({row1}.average(), 2)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row33",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "e40e86e8-1356-4781-9c0f-ff33e4272fab",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "sin(0)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row34",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "fe2fdc44-dd44-4dc4-91e7-bf3493d9b32c",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "sin({row1}.average())",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row35",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "7eeb5c9b-956a-40e5-93f3-496c176d947f",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "cos(0)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row36",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "9819559f-1514-4b22-85a3-6615a0e5bc8f",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "cos({row1}.average())",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row37",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "396dedca-1aba-466e-ae7a-fbfdb0e9fdac",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "irr({row1})",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row38",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "cdcff250-f376-402a-8efd-f30a9cc914e9",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "npv(0.1, {row1})",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row39",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "daa4a568-16cd-42a7-8e53-9320484d6b7d",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.max()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row40",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "4c38e936-7e75-4f62-9fbd-9c00799c4085",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.min()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row41",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "d1216bc7-6056-4563-a654-d77549d185c6",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "round(5.45, 1)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row42",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "8c940b58-3c22-418a-9a9c-b71d9c388c22",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "({row1} + {row2}).lead(1)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row43",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "91ca45ea-d930-4463-9727-70ec531708f0",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.diff(1)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row44",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "a4e78234-9d73-4c20-9881-b0132c912644",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.growth()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row45",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "8ac3a728-dfd4-4bb3-82d0-16dc0c519666",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "({row1} / {row1}.lag(1)).average()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row46",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "bee92da3-9f5b-44dd-8f24-844b4d395e30",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "({row1} + {row2}).lag(1Y)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row47",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "83bcd9b8-8b0a-4721-bbbf-73110a77eda3",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.year()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row48",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "40078a0b-0bf3-4da0-8908-1be0fcec1fc6",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.day()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row49",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "6387fdeb-1755-4fc5-9ae9-8c40f1dd8669",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "({row1} + {row2}).year()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row50",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "e914f6d9-1523-4b2a-8322-f1c66987aa5c",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "({row1} + {row2}).day()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row51",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "9c6d013f-b11f-489c-bd34-e49e6d3f2d72",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "IFERROR({row1} / 0, 0)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row52",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "331d1f36-395a-4d80-8c79-088165681f29",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row53}.LINEAR(1, 4)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row53",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "3315bc6e-e22e-480f-ad95-3eb63b793e1d",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "AVERAGEIFV({row1}, {Revenue!row2})",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row54",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "a5b973ab-2512-4bc5-af6a-e296e80275b2",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.AVERAGEIFV()",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row55",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "8a23512b-b08a-4d03-967b-23682dae5cac",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "IFERROR({row1} / {Revenue!row2}, NULL)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row56",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "d67ac96e-8e35-49c3-9a22-7a7cded06993",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "IF({row53} <= 2, 0, 1)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row57",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "c08ada3e-4f5a-42e7-b80f-2c76ed15d72d",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "DATE(2020, 7, 21)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row58",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "0b0c195f-6c41-4a85-b3be-660734831215",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "XIRR({row1}, {Revenue!row2})",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row59",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "d4459601-3dab-4c50-8a14-6d097cf4c3c8",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "XNPV(0.9, {row1}, {Revenue!row2})",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row60",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "02aaba9f-3f2a-4aa3-9de7-4f2609b82005",
+                                "valid": true
+                            }
+                        ],
+                        "uuid": "52f12eec-eb70-4b2a-aa3e-1ff84f9af856"
+                    },
+                    {
+                        "annotations": {},
+                        "headerStub": "us mn",
+                        "labels": [],
+                        "name": "Revenue2",
+                        "nodetype": 4,
+                        "subnodes": [
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2017",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "f38eaa99-afb7-427f-9025-bf7b5428f210",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "hist"
+                                ],
+                                "name": "2018",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "561d1d7e-1283-45c4-924e-18a0599242e4",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "proj"
+                                ],
+                                "name": "2019",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "4542994e-4d87-45e9-9b0f-91093e45db5c",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "labels": [
+                                    "proj"
+                                ],
+                                "name": "2020",
+                                "nodetype": 8,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "0dedbd26-0a0c-4e66-8fbb-e24cf8715573",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row1",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "7cd0c1f3-1d77-40ee-bc8c-e46a96dd7d2e",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row2",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "427248f7-2d9e-4f72-bb58-e39574f5c8c3",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1} + {row2}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row3",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "0b5621c8-bb93-4a63-9ffd-e4a63edb0154",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row4",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "079cc9ba-0947-4ab6-a4ed-9bc77cbcad63",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "sum({row1}, {row2}, {row4})",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row5",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "c5ac1f29-a868-49dc-bb0d-e8bbf9a5bdf5",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.lag(1Y)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row6",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "45141e7a-aec5-4a50-8966-738df5ad9183",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.lag(1Q)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row7",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "a9729713-b9af-4ed5-90be-b17621b286c7",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.lag(1HY)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row8",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "3f6d1860-29a7-47cb-861e-4cf03a31109c",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.lag(2Q)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row9",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "f6a44e39-6510-48df-b03f-e2f7276e5be9",
+                                "valid": true
+                            },
+                            {
+                                "annotations": {},
+                                "labels": [],
+                                "name": "block1",
+                                "nodetype": 5,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "{Revenue!row46} + 1",
+                                        "isDefScalar": false,
+                                        "labels": [],
+                                        "name": "resolve_test_row",
+                                        "nodetype": 7,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "322c3411-377e-46aa-9b93-c980a4e2bef5",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "967657d2-6c34-4c3d-8dcc-dff2bb228d5b"
+                            }
+                        ],
+                        "uuid": "fc7d8c0f-f27c-42e1-99ff-7ba1982deb27"
+                    },
+                    {
+                        "annotations": {},
+                        "headerStub": "us mn",
+                        "labels": [],
+                        "name": "Table5",
+                        "nodetype": 4,
+                        "subnodes": [
+                            {
+                                "annotations": {},
+                                "labels": [],
+                                "name": "2017",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "cc0d5f13-5cca-4193-9184-670aa7395eb5",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "6404d5b2-7fe4-4ca4-87b5-6db3d24eb090",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "693b3121-e368-492d-aebb-50b224185a15",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "a145a2a3-cd6a-40ca-be1a-97415dba7ddb",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "FY",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Q1} + {Q2} + {Q3} + {Q4}",
+                                                "name": "stock",
+                                                "type": 0,
+                                                "uuid": "ec839338-9038-48c9-a153-a4410f429246"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Q4}",
+                                                "name": "current",
+                                                "type": 0,
+                                                "uuid": "48f244f1-e4dd-42ef-aa8c-73603ea75c04"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "a888673b-2693-40d0-a9b9-4e644a39ce62",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "79c2f56e-1efd-42b8-9884-8b28cc6e6180"
+                            },
+                            {
+                                "annotations": {},
+                                "labels": [],
+                                "name": "2018",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "a0938f25-aa4b-48a9-9c3c-d0417d003afe",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "281ac2e3-9a3a-4cff-8799-7ee4b7b721d9",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "b69e2090-db0e-4697-8dff-99385ac3f68a",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "958799c9-02ec-491e-a9b3-de69bdd9f4c0",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "FY",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Q1} + {Q2} + {Q3} + {Q4}",
+                                                "name": "stock",
+                                                "type": 0,
+                                                "uuid": "4cd35a03-d17d-47df-9182-3b4a630bc015"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Q4}",
+                                                "name": "current",
+                                                "type": 0,
+                                                "uuid": "fca93c23-2bae-4b87-b398-c6a56ce9d6eb"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "f6f9f650-3998-4f3e-8aae-bd41f472e42f",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "139d3f57-dcec-4f0c-96db-1fbb7aa6130d"
+                            },
+                            {
+                                "annotations": {},
+                                "labels": [],
+                                "name": "2019",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "624da370-7753-464b-b97d-e83c0d681a08",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "c325b00a-f4d9-43ad-8fc2-6b45821a42cd",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "f56a6785-7e91-4d59-a733-cceea521c7b4",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "30551dac-fdf7-4404-9ad9-8fd4d03c2bd6",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "FY",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Q1} + {Q2} + {Q3} + {Q4}",
+                                                "name": "stock",
+                                                "type": 0,
+                                                "uuid": "ff503eab-fdec-45a7-bd61-db9cf8c11fee"
+                                            },
+                                            {
+                                                "annotations": {},
+                                                "expression": "{Q4}",
+                                                "name": "current",
+                                                "type": 0,
+                                                "uuid": "49feecb2-4814-4050-a91c-41647191e38f"
+                                            }
+                                        ],
+                                        "type": 0,
+                                        "uuid": "6225eca8-0696-4f4f-a065-c0280bb87b11",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "0afbae92-9ae5-4d62-82fe-7a36d00206f4"
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [
+                                    "stock"
+                                ],
+                                "name": "row1",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "31b1789a-91f7-41c9-81d4-6e4d2f670043",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [
+                                    "current"
+                                ],
+                                "name": "row2",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "00101a24-ea0b-4f07-ab19-c1009875907d",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1} + {row2}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row3",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "15a36a6f-63ac-43a4-81b0-3b6167e9e1b4",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row4",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "bf8ad289-ae9e-489b-9d5b-cb2e0b5a5eb8",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "sum({row1}, {row2}, {row4})",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row5",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "a7124849-7b71-499c-9284-b1104a6acaf8",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.lag(1Y)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row6",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "81411dce-c69e-4566-92eb-b06d3925d98b",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.lag(1Q)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row7",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "c35d1f27-f04b-4ce3-b288-ffacf1bc5cee",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.lag(1HY)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row8",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "977b3762-b120-487a-a69e-7de1ff061834",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1}.lag(2Q)",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "row9",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "152964f6-ca53-48a1-a471-08d8ca2e231e",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1} + {row2}",
+                                "isDefScalar": false,
+                                "labels": [
+                                    "stock"
+                                ],
+                                "name": "row10",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "397eb021-e8a7-49e0-8e78-1dd2be25ddc0",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{row1} + {row2}",
+                                "isDefScalar": false,
+                                "labels": [
+                                    "current"
+                                ],
+                                "name": "row11",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "4f94a3ad-ab20-4b9a-b307-a797e5672bd1",
+                                "valid": true
+                            }
+                        ],
+                        "uuid": "1f014270-9365-491b-bcc0-2bfb35fd631b"
+                    }
+                ],
+                "uuid": "3f764c34-065c-4686-8907-0e6f12cbb8f6"
+            }
+        ],
+        "uuid": "7ac0061e-6699-4fde-b93f-4dca4d13370a"
+    },
+    "formulaManager": [],
+    "modifierManager": [
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "fa784f73-acec-4557-b7cb-b59d27d954d4"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "ac78827c-0a8d-4981-a66b-16e47e185871"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "c112ba43-256e-41cb-9361-1dc4a405bc47"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "5728ee46-daf4-4df5-b62c-d9b7d4c18382"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "acdab44f-8f8a-4ad9-8264-accc8996d165"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "ee4d33a8-cbaa-45be-8be1-e1ce0b9d02cc"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "2bd8c878-a2dc-48f7-a10e-ada6588386d0"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "83840e87-41af-43df-abe1-2cb2bfab177a"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "07ec6d46-332d-4741-9821-a098a49d265d"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "5dea48ef-6b5f-4242-936c-f5601da544b2"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "8da701c4-c22a-4498-95ed-f82a34039e60"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "a223175b-0a9f-4ab7-87cf-f78e242e7257"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "28d68e9d-4e7e-417b-8d57-8e039a6fd378"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "7f76aef0-a5cc-425a-8112-c98570608233"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "5a023711-83fd-4919-9dd9-f84a0c50e2ed"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "1fab411c-dbc6-4170-8271-f4c59f6f9ffa"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "3b258cce-ef7c-4dfe-be20-cd48a61e4aa0"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "a399c9aa-74a0-4f35-935e-3ed5a0f4272a"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "95c7508e-682c-423d-bedf-1f6f84785598"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "ff90b3d2-ba4c-4567-9cad-6a1b41a3aea1"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "ac1cf5c4-5e79-4ee5-8af3-1df5d9098148"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "da77c232-193b-494b-94f1-79644605fa9a"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "edd65337-11b0-4def-b190-35c58892b41b"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "58d6312c-3e50-43a5-bb9d-d369213d7867"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "adb98298-c869-4175-82c3-c1b00ea97e44"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "8928ed0f-71cb-49a9-ab92-1d00ab097b8f"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "f8efe81f-eea1-422f-93d6-ac8967675f16"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "6c73d7c2-ddd5-4a5d-88f8-fd0ec16a61df"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "f874a148-89a3-43ba-a358-71abf80576c7"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "48842429-7c10-48d9-898b-95f01dc35ced"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "7552fad3-eccc-427b-9734-d11174abf0c8"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "dea7dece-82a3-4759-b8c7-f24b38d4a38a"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "d470f319-9924-4c4e-8105-6324bd3092df"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "02e68bf2-7699-4e16-abf1-83dbfa4b548f"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "134f0eec-cc47-466f-8e1e-ef361f134651"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "98246ff9-104a-4dbf-a6d6-069a73800d30"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "32aab30c-7841-41a9-aa04-338bd7e3d3d8"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "edd14d9a-00dd-40d6-b9e6-9a7608358b7f"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "f1cd6071-e5b4-4c96-a641-f4a09f284f61"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "7d3dc14b-c869-40ca-a14e-d1b45a899af1"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "69a299c9-3c14-40c7-93b5-0b8cbebc21ab"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "21dcdad3-a3c4-4e1d-93c9-62d0fa7d800e"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "e40e86e8-1356-4781-9c0f-ff33e4272fab"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "fe2fdc44-dd44-4dc4-91e7-bf3493d9b32c"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "7eeb5c9b-956a-40e5-93f3-496c176d947f"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "9819559f-1514-4b22-85a3-6615a0e5bc8f"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "396dedca-1aba-466e-ae7a-fbfdb0e9fdac"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "cdcff250-f376-402a-8efd-f30a9cc914e9"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "daa4a568-16cd-42a7-8e53-9320484d6b7d"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "4c38e936-7e75-4f62-9fbd-9c00799c4085"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "d1216bc7-6056-4563-a654-d77549d185c6"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "8c940b58-3c22-418a-9a9c-b71d9c388c22"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "91ca45ea-d930-4463-9727-70ec531708f0"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "a4e78234-9d73-4c20-9881-b0132c912644"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "8ac3a728-dfd4-4bb3-82d0-16dc0c519666"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "bee92da3-9f5b-44dd-8f24-844b4d395e30"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "83bcd9b8-8b0a-4721-bbbf-73110a77eda3"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "40078a0b-0bf3-4da0-8908-1be0fcec1fc6"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "6387fdeb-1755-4fc5-9ae9-8c40f1dd8669"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "e914f6d9-1523-4b2a-8322-f1c66987aa5c"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "9c6d013f-b11f-489c-bd34-e49e6d3f2d72"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "331d1f36-395a-4d80-8c79-088165681f29"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "3315bc6e-e22e-480f-ad95-3eb63b793e1d"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "a5b973ab-2512-4bc5-af6a-e296e80275b2"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "8a23512b-b08a-4d03-967b-23682dae5cac"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "d67ac96e-8e35-49c3-9a22-7a7cded06993"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "c08ada3e-4f5a-42e7-b80f-2c76ed15d72d"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "0b0c195f-6c41-4a85-b3be-660734831215"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "d4459601-3dab-4c50-8a14-6d097cf4c3c8"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "02aaba9f-3f2a-4aa3-9de7-4f2609b82005"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "7cd0c1f3-1d77-40ee-bc8c-e46a96dd7d2e"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "427248f7-2d9e-4f72-bb58-e39574f5c8c3"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "0b5621c8-bb93-4a63-9ffd-e4a63edb0154"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "079cc9ba-0947-4ab6-a4ed-9bc77cbcad63"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "c5ac1f29-a868-49dc-bb0d-e8bbf9a5bdf5"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "45141e7a-aec5-4a50-8966-738df5ad9183"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "a9729713-b9af-4ed5-90be-b17621b286c7"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "3f6d1860-29a7-47cb-861e-4cf03a31109c"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "f6a44e39-6510-48df-b03f-e2f7276e5be9"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "322c3411-377e-46aa-9b93-c980a4e2bef5"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "31b1789a-91f7-41c9-81d4-6e4d2f670043"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "00101a24-ea0b-4f07-ab19-c1009875907d"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "15a36a6f-63ac-43a4-81b0-3b6167e9e1b4"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "bf8ad289-ae9e-489b-9d5b-cb2e0b5a5eb8"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "a7124849-7b71-499c-9284-b1104a6acaf8"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "81411dce-c69e-4566-92eb-b06d3925d98b"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "c35d1f27-f04b-4ce3-b288-ffacf1bc5cee"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "977b3762-b120-487a-a69e-7de1ff061834"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "152964f6-ca53-48a1-a471-08d8ca2e231e"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "397eb021-e8a7-49e0-8e78-1dd2be25ddc0"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "4f94a3ad-ab20-4b9a-b307-a797e5672bd1"
+        }
+    ],
+    "sourceManager": [
+        {
+            "col": "7795d27e-62fa-4293-ba60-3bc89e24a658",
+            "row": "fa784f73-acec-4557-b7cb-b59d27d954d4",
+            "source": {
+                "value": "a"
+            }
+        },
+        {
+            "col": "709c3f9a-8f8e-4418-bf4a-25b254462355",
+            "row": "fa784f73-acec-4557-b7cb-b59d27d954d4",
+            "source": {
+                "value": "b"
+            }
+        },
+        {
+            "col": "709db785-4c46-43f5-94d2-b8a9a0f0cf53",
+            "row": "fa784f73-acec-4557-b7cb-b59d27d954d4",
+            "source": {
+                "value": "c"
+            }
+        },
+        {
+            "col": "a8754fd2-5257-44e9-a45f-d146624df265",
+            "row": "fa784f73-acec-4557-b7cb-b59d27d954d4",
+            "source": {
+                "value": "d"
+            }
+        }
+    ],
+    "templateSet": {
+        "standardHeaders": []
+    }
+}

@@ -1,0 +1,8 @@
+$active-tab-bg: rgba(65, 120, 184, 0.12);
+
+/** Used only for left tabs nav **/
+.logi-panel-style-tabs {
+    > .logi-tabs-bar .logi-tabs-tab-active {
+        background-color: $active-tab-bg;
+    }
+}

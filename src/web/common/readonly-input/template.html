@@ -1,0 +1,2 @@
+<span class="name-input" (dblclick)="onDblclick()">{{name}}</span>
+<input class="change-name-input" #input_el (blur)="onConfirm($event)" (keyup.enter)="onConfirm($event)" [formControl]="control" [ngClass]="{&quot;show&quot;: showInput}">

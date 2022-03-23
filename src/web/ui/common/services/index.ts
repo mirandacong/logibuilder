@@ -1,0 +1,1 @@
+export {ResizeService} from './resize'

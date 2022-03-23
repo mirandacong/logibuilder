@@ -1,0 +1,10 @@
+<button class="help-btn fx-menu-button" (menuClosed)="setOpened(false)" (menuOpened)="setOpened(true)"
+  (mouseenter)="onHoverButton()" [matMenuTriggerFor]="menu" [ngClass]="{&quot;opened&quot;: isOpened}">帮助</button>
+<mat-menu #menu="matMenu">
+  <div class="btns" *ngFor="let btn of helpList;trackBy:trackBy">
+    <button class="sub-btn" (click)="onHelpButton(btn,$event)" [disableRipple]="btn.disabled"
+      [ngClass]="{&quot;disabled&quot;:btn.disabled}" mat-menu-item>
+      <mat-icon class="icon-left-view"></mat-icon><span class="text">{{btn.text}}</span>
+    </button>
+  </div>
+</mat-menu>

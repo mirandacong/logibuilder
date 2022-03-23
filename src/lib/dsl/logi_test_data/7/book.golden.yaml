@@ -1,0 +1,5231 @@
+---
+annotations: {}
+labels: []
+name: DCF Model
+nodetype: 1
+subnodes:
+- annotations: {}
+  labels: []
+  name: DCF模型
+  nodetype: 2
+  subnodes:
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: DCF估值模型
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: 利润表
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: 利润表
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 营业收入
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{营业收入}.LAG(1Y)*(1+{DCF模型!利润表!增长率})'
+        name: proj
+        type: 0
+      sources:
+      - 0.29744
+      - 0.56595
+      - 4.75
+      - 24.43
+      - 50.96
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - 营业收入
+      modifier: '-'
+      name: 增长率
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{营业收入}/{营业收入}.LAG(1)-1'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{假设!利润表假设!营业收入增长率}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 营业税费
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{营业收入}*{%营业收入@1}'
+        name: proj
+        type: 0
+      sources:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+    - alias: '1'
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - 营业税费
+      modifier: '-'
+      name: '%营业收入'
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{营业税费}/{营业收入}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{%营业收入@1}.AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '---'
+      name: 营业成本
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{营业收入}*{%营业收入@2}'
+        name: proj
+        type: 0
+      sources:
+      - 0.1378
+      - 0.18602
+      - 2.88
+      - 17.9
+      - 37.65
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+    - alias: '2'
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - 营业成本
+      modifier: '-'
+      name: '%营业收入'
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{营业成本}/{营业收入}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{假设!利润表假设!营业成本%营业收入}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{营业收入}-{营业税费}-{营业成本}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 毛利
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '---'
+      name: 营业费用
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!营业费用}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{营业收入}*{%营业收入@3}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: '3'
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - 营业费用
+      modifier: '-'
+      name: '%营业收入'
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{营业费用}/{营业收入}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{假设!利润表假设!营业费用%营业收入}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{毛利}-{营业费用}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 营业利润
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 财务费用
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{财务费用}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources:
+      - 0
+      - 0
+      - 0.06886
+      - 0.10126
+      - 0.27966
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - 财务费用
+      modifier: '-'
+      name: '%有息负债'
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{财务费用}/{资产负债表!其中 有息负债}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{财务费用}/{资产负债表!其中 有息负债}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '---'
+      name: 非经常性损益
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!非经常性损益}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{非经常性损益}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{利润表!营业利润}-{财务费用}+{非经常性损益}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 税前利润
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '---'
+      name: 所得税
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{税前利润}*{有效税率}'
+        name: proj
+        type: 0
+      sources:
+      - 0.30934
+      - 0.01851
+      - 0.1554
+      - 0.13889
+      - 0.30934
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: 有效税率
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{所得税}/{税前利润}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources:
+      -
+      -
+      -
+      -
+      -
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{税前利润}-{所得税}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 净利润
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{净利润}-{少数股东权益}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 归属于股东的净利润
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 少数股东权益
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{净利润}*{%净利润}'
+        name: proj
+        type: 0
+      sources:
+      - -0.02884
+      - -0.0736
+      - -0.01027
+      - -0.0206
+      - -0.09815
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - 少数股东权益
+      modifier: '-'
+      name: '%净利润'
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{少数股东权益}/{净利润}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{%净利润}.AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: 资产负债表
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: 资产负债表
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{流动资产小计}+{非流动资产小计}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 总资产
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      labels: []
+      modifier: ''
+      name: 流动资产小计
+      nodetype: 5
+      subnodes:
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: 现金及现金等价物
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{现金流量表!年末现金及现金等价物余额}'
+          name: proj
+          type: 0
+        sources:
+        - 12.18
+        - 10.21
+        - 5.71
+        - 13.99
+        - 2.82
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: 应收账款
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!营运资金!应收账款}'
+          name: proj
+          type: 0
+        sources:
+        - 0.0107
+        - 0.00106
+        - 0.38501
+        - 0.91373
+        - 3.65
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: 存货
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!营运资金!存货}'
+          name: proj
+          type: 0
+        sources:
+        - 0
+        - 0
+        - 1.52
+        - 4.42
+        - 5.96
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: 金融资产
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!杂项!金融资产}'
+          name: proj
+          type: 0
+        sources:
+        - 0
+        - 0
+        - 0.103
+        - 0.041
+        - 17.37
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: '---'
+        name: 其他流动资产
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!杂项!其他流动资产}'
+          name: proj
+          type: 0
+        sources:
+        - 0.14994
+        - 0.14824
+        - 0.39835
+        - 0.78924
+        - 3.23
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({流动资产小计!现金及现金等价物},{流动资产小计!应收账款},{流动资产小计!存货},{流动资产小计!金融资产},{流动资产小计!其他流动资产})
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 流动资产小计
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      labels: []
+      modifier: ''
+      name: 非流动资产小计
+      nodetype: 5
+      subnodes:
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: 固定资产
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!固定资产!固定资产净值}'
+          name: proj
+          type: 0
+        sources:
+        - 0.0418
+        - 0.06546
+        - 0.05065
+        - 0.06274
+        - 0.0888
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: 投资
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!杂项!非金融投资}'
+          name: proj
+          type: 0
+        sources:
+        - 1.71
+        - 1.96
+        - 5.67
+        - 10.14
+        - 26.03
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: 无形资产及商誉
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!CAPEX!无形资产}'
+          name: proj
+          type: 0
+        sources:
+        - 0
+        - 0
+        - 0.19123
+        - 0.19123
+        - 0.27006
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: '---'
+        name: 其他非流动资产
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!CAPEX!其他非流动资产}'
+          name: proj
+          type: 0
+        sources:
+        - 0
+        - 1.1
+        - 2.77
+        - 0.55921
+        - 0.39372
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({非流动资产小计!固定资产},{非流动资产小计!投资},{非流动资产小计!无形资产及商誉},{非流动资产小计!其他非流动资产})
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 非流动资产小计
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{流动负债合计}+{非流动负债合计}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 总负债
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{流动负债合计!短期借款}+{非流动负债合计!长期借款}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 其中 有息负债
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      labels: []
+      modifier: ''
+      name: 流动负债合计
+      nodetype: 5
+      subnodes:
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: 应付账款
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!营运资金!应付账款}'
+          name: proj
+          type: 0
+        sources:
+        - 0.03653
+        - 0.03751
+        - 1.26
+        - 3.23
+        - 9.03
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: 短期借款
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!融资!短期借款}'
+          name: proj
+          type: 0
+        sources:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 17
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: '---'
+        name: 其他短期负债
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!杂项!其他短期负债}'
+          name: proj
+          type: 0
+        sources:
+        - 1.18
+        - 1.82
+        - 2.28
+        - 2.57
+        - 6.31
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({流动负债合计!应付账款},{流动负债合计!短期借款},{流动负债合计!其他短期负债})
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 流动负债合计
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      labels: []
+      modifier: ''
+      name: 非流动负债合计
+      nodetype: 5
+      subnodes:
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: 长期借款
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!融资!长期借款}'
+          name: proj
+          type: 0
+        sources:
+        - 0
+        - 0
+        - 2
+        - 0
+        - 0
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: '---'
+        name: 其他非流动负债
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{细项分解!杂项!其他非流动负债}'
+          name: proj
+          type: 0
+        sources:
+        - 0.19706
+        - 0.07019
+        - 0.06566
+        - 0.07682
+        - 0.11677
+        -
+        -
+        -
+        -
+        -
+        -
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({非流动负债合计!长期借款},{非流动负债合计!其他非流动负债})
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 非流动负债合计
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 所有者权益合计
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!所有者权益合计}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{所有者权益合计}.LAG(1Y)+{利润表!净利润}+{细项分解!融资!股权融资} - {现金流量表!已付股息}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{总资产}-{总负债}-{所有者权益合计}'
+      is_def_scalar: false
+      labels: []
+      modifier: +++
+      name: check
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: 现金流量表
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: 现金流量表
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{经营活动现金流入}-{经营活动现金流出}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 经营活动现金净流量
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 经营活动现金流入
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!经营活动现金流入}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!经营活动现金流量!间接法经营活动现金流入}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 经营活动现金流出
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!经营活动现金流出}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!经营活动现金流量!经营活动现金流出}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: -{新增或出售固定资产}-{净新增投资}+{其他投资活动现金流量}
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 投资活动现金净流量
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 新增或出售固定资产
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!新增或出售固定资产}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!固定资产!新增或出售固定资产}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 净新增投资
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!净新增投资}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!CAPEX!投资活动净新增投资}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 其他投资活动现金流量
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!其他投资活动现金流量}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '0'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{借款净增加}+{股权融资}+{利息净收入}-{DCF模型!现金流量表!已付股息}+{收到的其他与筹资活动有关的现金}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 筹资活动现金净流量
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 借款净增加
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!贷款净增加}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!融资!借款净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 股权融资
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{假设!投融资假设!股权融资}'
+        name: proj
+        type: 0
+      sources:
+      - 10.61
+      - 0
+      - 0.0017
+      - 14.69
+      - 0.52979
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 利息净收入
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!利息净收入}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '- {利润表!财务费用}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 已付股息
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!融资!股息支付}'
+        name: proj
+        type: 0
+      sources:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 收到的其他与筹资活动有关的现金
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!收到其他与筹资活动相关的现金}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!杂项!其他债务净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{经营活动现金净流量}+{投资活动现金净流量}+{筹资活动现金净流量}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 现金及现金等价物增加或减少
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{资产负债表!流动资产小计!现金及现金等价物}.LAG(1Y)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 年初现金及现金等价物余额
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 汇率变化对现金及现金等价物的影响及其他现金流量
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!汇率变化对现金及现金等价物的影响及其他现金流量}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{利润表!非经常性损益}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{年初现金及现金等价物余额}+{现金及现金等价物增加或减少}+{汇率变化对现金及现金等价物的影响及其他现金流量}'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 年末现金及现金等价物余额
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: FCF
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: FCF
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{利润表!营业利润}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: EBIT
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!固定资产!折旧}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 非付现成本
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!营运资金!营运资金总额}-{细项分解!营运资金!营运资金总额}.lag(1Y)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 营运资金变化
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!CAPEX!CAPEX}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: CAPEX
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{EBIT}-{DCF模型!利润表!所得税}+{非付现成本}-{营运资金变化}-{CAPEX}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: FCF
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{假设!DCF假设!永续增长率}'
+      is_def_scalar: true
+      labels: []
+      modifier: ''
+      name: 永续增长率
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{假设!DCF假设!WACC}'
+      is_def_scalar: true
+      labels: []
+      modifier: ''
+      name: WACC
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: npv({WACC}, {FCF}) + ({FCF}[end] * (1 + {永续增长率} ) / ((power(1 +
+          {WACC}, 6)) * ({WACC} - {永续增长率})))
+      is_def_scalar: true
+      labels: []
+      modifier: ++
+      name: EV
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{EV}-{资产负债表!其中 有息负债}[last]'
+      is_def_scalar: true
+      labels: []
+      modifier: --
+      name: Equity Value
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: true
+      labels: []
+      modifier: --
+      name: Share No.
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 120.28
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Equity Value}/{Share No.}'
+      is_def_scalar: true
+      labels: []
+      modifier: +
+      name: Share Price
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+- annotations: {}
+  labels: []
+  name: 假设
+  nodetype: 2
+  subnodes:
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: DCF假设
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: DCF假设
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: true
+      labels: []
+      modifier: ''
+      name: WACC
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.1
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: true
+      labels: []
+      modifier: ''
+      name: 永续增长率
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.05
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: 利润表假设
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: 利润表假设
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: 营业收入增长率
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!利润表!增长率}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources:
+      -
+      -
+      -
+      -
+      -
+      - 1
+      - 0.8
+      - 0.6
+      - 0.4
+      - 0.2
+      - 0.1
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: 营业成本%营业收入
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!利润表!%营业收入@2}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources:
+      -
+      -
+      -
+      -
+      -
+      - 0.6
+      - 0.6
+      - 0.6
+      - 0.6
+      - 0.6
+      - 0.6
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: 营业费用%营业收入
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!利润表!%营业收入@3}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources:
+      -
+      -
+      -
+      -
+      -
+      - 0.2
+      - 0.2
+      - 0.2
+      - 0.2
+      - 0.2
+      - 0.2
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: 有效税率
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!利润表!有效税率}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources:
+      -
+      -
+      -
+      -
+      -
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: 资产负债表假设
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: 资产负债表假设
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 维持现金
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources:
+      -
+      -
+      -
+      -
+      -
+      - 2
+      - 2
+      - 2
+      - 2
+      - 2
+      - 2
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: 投融资假设
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: 投融资假设
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 股权融资
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!现金流量表!股权融资}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources:
+      -
+      -
+      -
+      -
+      -
+      - 10
+      - 10
+      - 10
+      - 10
+      - 10
+      - 10
+      subnodes: []
+      type: 0
+- annotations: {}
+  labels: []
+  name: 细项分解
+  nodetype: 2
+  subnodes:
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: CAPEX
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: CAPEX
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!固定资产!新增或出售固定资产}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 新增或出售固定资产
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 无形资产净增加
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!非流动资产小计!无形资产及商誉} - {DCF模型!资产负债表!非流动资产小计!无形资产及商誉}.lag(1Y)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{无形资产净增加}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 无形资产
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!非流动资产小计!无形资产及商誉}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!CAPEX!无形资产}.LAG(1Y)+{无形资产净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 其他非流动资产净增加
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!非流动资产小计!其他非流动资产} - {DCF模型!资产负债表!非流动资产小计!其他非流动资产}.lag(1Y)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{其他非流动资产净增加}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 其他非流动资产
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!非流动资产小计!其他非流动资产}[hist]'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!CAPEX!其他非流动资产}.LAG(1Y)+{其他非流动资产净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{新增或出售固定资产}+{其他非流动资产净增加}+{杂项!非金融投资净增加}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: CAPEX
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 投资活动净新增投资
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!现金流量表!净新增投资}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{杂项!金融资产净增加}+{杂项!非金融投资净增加}+{其他非流动资产净增加}+{杂项!其他流动资产净增加}+{无形资产净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: 融资
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: 融资
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 短期借款净增加
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!流动负债合计!短期借款} - {DCF模型!资产负债表!流动负债合计!短期借款}.lag(1Y)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{短期借款净增加}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 短期借款
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!流动负债合计!短期借款}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!融资!短期借款}.LAG(1Y)+{短期借款净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 长期借款净增加
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!非流动负债合计!长期借款} - {DCF模型!资产负债表!非流动负债合计!长期借款}.lag(1Y)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{长期借款净增加}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 长期借款
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!非流动负债合计!长期借款}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!融资!长期借款}.LAG(1Y)+{长期借款净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{短期借款净增加}+{长期借款净增加}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 借款净增加
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 股权融资
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!现金流量表!股权融资}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{假设!投融资假设!股权融资}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 股息支付
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!现金流量表!已付股息}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!融资!股息支付}[hist].average()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 维持现金
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '0'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{假设!资产负债表假设!维持现金}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: MAX({维持现金} - {DCF模型!现金流量表!年末现金及现金等价物余额}, 0)
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 现金缺口
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: 营运资金
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: 营运资金
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 应收账款
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!流动资产小计!应收账款}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{DCF模型!利润表!营业收入}*{%营业收入@1}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: '1'
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - 应收账款
+      modifier: '-'
+      name: '%营业收入'
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{细项分解!营运资金!应收账款}/{DCF模型!利润表!营业收入}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{%营业收入@1}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 存货
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!流动资产小计!存货}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{DCF模型!利润表!营业收入}*{%营业收入@2}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: '2'
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - 存货
+      modifier: '-'
+      name: '%营业收入'
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{细项分解!营运资金!存货}/{DCF模型!利润表!营业收入}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{%营业收入@2}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 应付账款
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!流动负债合计!应付账款}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{DCF模型!利润表!营业成本}*{%营业成本}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - 应付账款
+      modifier: '-'
+      name: '%营业成本'
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{细项分解!营运资金!应付账款}/{DCF模型!利润表!营业成本}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{%营业成本}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!营运资金!应收账款}+{细项分解!营运资金!存货}-{细项分解!营运资金!应付账款}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 营运资金总额
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: 固定资产
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: 固定资产
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 固定资产净值
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!非流动资产小计!固定资产}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!固定资产!固定资产净值}.LAG(1Y)-{细项分解!固定资产!折旧}+{细项分解!固定资产!新增或出售固定资产}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 折旧
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!固定资产!折旧}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources:
+      - 0.01
+      - 0.01
+      - 0.01
+      - 0.01
+      - 0.01
+      -
+      -
+      -
+      -
+      -
+      -
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - 折旧
+      modifier: --
+      name: '%前一年固定资产'
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{细项分解!固定资产!折旧}/{细项分解!固定资产!固定资产净值}.LAG(1Y)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!固定资产!折旧}/{细项分解!固定资产!固定资产净值}.LAG(1Y)'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 新增或出售固定资产
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{Data Prepare!Data Prepare!新增或出售固定资产}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!固定资产!新增或出售固定资产}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - 新增或出售固定资产
+      modifier: '-'
+      name: '%前一年固定资产净值'
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{细项分解!固定资产!新增或出售固定资产}/{细项分解!固定资产!固定资产净值}.LAG(1Y)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!固定资产!新增或出售固定资产}/{细项分解!固定资产!固定资产净值}.LAG(1Y)'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: 经营活动现金流量间接法调整
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: 经营活动现金流量
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{DCF模型!利润表!营业收入}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 营业收入
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{DCF模型!利润表!营业税费}'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 营业税费
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!营运资金!应收账款}-{细项分解!营运资金!应收账款}.LAG(1Y)'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 应收账款增加
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{营业收入}-{营业税费}-{应收账款增加}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 间接法经营活动现金流入
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{DCF模型!利润表!营业成本}'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 营业成本
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{DCF模型!利润表!营业费用}'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 营业费用
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{DCF模型!利润表!所得税}'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 所得税
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!营运资金!存货}-{细项分解!营运资金!存货}.lag(1Y)'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 存货增加
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!固定资产!折旧}'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 折旧
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!营运资金!应付账款}-{细项分解!营运资金!应付账款}.lag(1Y)'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 应付账款增加
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{营业成本}+{营业费用}+{所得税}+{存货增加}-{折旧}-{应付账款增加}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 间接法经营活动现金流出
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 间接法计算误差
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{间接法经营活动现金流入} -{间接法经营活动现金流出}-{Data Prepare!Data Prepare!经营活动现金流量}[hist]'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '0'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!经营活动现金流量!间接法经营活动现金流入}-{细项分解!经营活动现金流量!间接法计算误差}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 经营活动现金流入
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{间接法经营活动现金流出}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: 经营活动现金流出
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: 杂项
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: 杂项
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      - last
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2021'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2022'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2023'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      - end
+      modifier: ''
+      name: '2024'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 金融资产
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!流动资产小计!金融资产}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!杂项!金融资产}.LAG(1Y)+{金融资产净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 金融资产净增加
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{细项分解!杂项!金融资产}-{细项分解!杂项!金融资产}.LAG(1Y)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{金融资产净增加}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 非金融投资
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!非流动资产小计!投资}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!杂项!非金融投资}.LAG(1Y)+{非金融投资净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 非金融投资净增加
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{细项分解!杂项!非金融投资}-{细项分解!杂项!非金融投资}.LAG(1Y)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{非金融投资净增加}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 其他流动资产
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!流动资产小计!其他流动资产}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!杂项!其他流动资产}.LAG(1Y)+{其他流动资产净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 其他流动资产净增加
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{细项分解!杂项!其他流动资产}-{细项分解!杂项!其他流动资产}.LAG(1Y)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{其他流动资产净增加}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 其他短期负债
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!流动负债合计!其他短期负债}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!杂项!其他短期负债}.LAG(1Y)+{其他短期负债净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 其他短期负债净增加
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{细项分解!杂项!其他短期负债}-{细项分解!杂项!其他短期负债}.LAG(1Y)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{其他短期负债净增加}[hist].AVERAGE()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 其他非流动负债
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{DCF模型!资产负债表!非流动负债合计!其他非流动负债}'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{细项分解!杂项!其他非流动负债}.LAG(1Y)+{其他非流动负债净增加}'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 其他非流动负债净增加
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{细项分解!杂项!其他非流动负债}-{细项分解!杂项!其他非流动负债}.LAG(1Y)'
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{其他非流动负债净增加}.LAG(1Y)'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{其他非流动负债净增加}+{其他短期负债净增加}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: 其他债务净增加
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+- annotations: {}
+  labels: []
+  name: Data Prepare
+  nodetype: 2
+  subnodes:
+  - annotations: {}
+    header_stub: ''
+    labels: []
+    name: Data Prepare
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2014'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2015'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({销售费用},{管理费用},{研发费用},{其他营业费用})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 营业费用
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 销售费用
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.54014
+      - 0.80787
+      - 1.13
+      - 2.01
+      - 4.55
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 管理费用
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.58951
+      - 0.91797
+      - 1.64
+      - 4.6
+      - 7.53
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 研发费用
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.3413
+      - 0.76153
+      - 1.09
+      - 1.26
+      - 2.19
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 其他营业费用
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.54241
+      - 0.26143
+      - 0.24679
+      - 0.11855
+      - 0.02502
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: ''
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({公允价值变动及减值准备},{其他收入},{营业外收入})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 非经常性损益
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 公允价值变动及减值准备
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0.26248
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 其他收入
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.82738
+      - 0.14702
+      - 0.12787
+      - 0.52389
+      - 0.28334
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 营业外收入
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0
+      - 0
+      - 0.04567
+      - 4e-05
+      - 0.12432
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: ''
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{新增固定资产}-{出售固定资产}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 新增或出售固定资产
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 新增固定资产
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.03481
+      - 0.08736
+      - 0.0214
+      - 0.05731
+      - 0.06102
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: 出售固定资产
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.00118
+      - 0
+      - 0.00076
+      - 0.00013
+      - 0.00048
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{新增投资}-{减少投资}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 净新增投资
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 新增投资
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0
+      - 0
+      - 3.5
+      - 5.39
+      - 32.75
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 减少投资
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: ''
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 筹资活动现金流量
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 10.61
+      - 0
+      - 1.93
+      - 12.48
+      - 17.08
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{筹资活动现金流量}-{DCF模型!现金流量表!借款净增加}-{DCF模型!现金流量表!股权融资}-{DCF模型!现金流量表!利息净收入}+{DCF模型!现金流量表!已付股息}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 收到其他与筹资活动相关的现金
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 经营活动现金流量
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - -0.55387
+      - -1.17
+      - -2.26
+      - -0.70272
+      - 3.96
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!经营活动现金流量!间接法经营活动现金流入}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 经营活动现金流入
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: -{经营活动现金流量}+{Data Prepare!Data Prepare!经营活动现金流入}
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 经营活动现金流出
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{细项分解!经营活动现金流量!间接法计算误差}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 经营活动现金流量间接法计算误差
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 投资活动现金流量
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.35177
+      - -4.21
+      - -1.59
+      - -12.11
+      - -23.96
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{投资活动现金流量}+{Data Prepare!Data Prepare!净新增投资}+{Data Prepare!Data
+          Prepare!新增或出售固定资产}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 其他投资活动现金流量
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{已收利息}-{已付利息}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 利息净收入
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 已收利息
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.14874
+      - 0.14164
+      - 0.09088
+      - 0.08836
+      - 0.32486
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 已付利息
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0
+      - 0
+      - 0.06584
+      - 0.10428
+      - 0.10624
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{新增贷款}-{偿还贷款}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 贷款净增加
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 新增贷款
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0
+      - 0
+      - 2
+      - 5.96
+      - 23.04
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 偿还贷款
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0
+      - 0
+      - 0.00735
+      - 7.96
+      - 6.04
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{DCF模型!资产负债表!流动资产小计!现金及现金等价物}-{DCF模型!资产负债表!流动资产小计!现金及现金等价物}.lag(1Y)
+          - {DCF模型!现金流量表!现金及现金等价物增加或减少}[hist]'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 汇率变化对现金及现金等价物的影响及其他现金流量
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: ''
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({股本总额},{股份溢价},{资本储备及其他储备},{未分配利润},{少数股东权益},{其他权益})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 所有者权益合计
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 股本总额
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.72305
+      - 0.72305
+      - 0.72481
+      - 0.86617
+      - 1.03
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 股份溢价
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 18.64
+      - 18.64
+      - 19.07
+      - 72.56
+      - 199.67
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 资本储备及其他储备
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0.95766
+      - 1.83
+      - 3.03
+      - -35.59
+      - -159.95
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 未分配利润
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - -7.06
+      - -8.98
+      - -11.05
+      - -12.03
+      - -12.81
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 少数股东权益
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - -0.58729
+      - -0.66089
+      - -0.58174
+      - -0.57191
+      - -0.57693
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: 其他权益
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      subnodes: []
+      type: 0

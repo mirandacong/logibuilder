@@ -1,0 +1,131 @@
+@use '../core/styles/shared';
+@use './select-size';
+
+$panel-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+
+.logi-select {
+    display: inline-block;
+}
+
+.logi-select-trigger {
+    position: relative;
+    align-items: center;
+    display: flex;
+    border: shared.$border-base;
+    border-radius: 4px;
+    box-sizing: border-box;
+    min-height: 36px;
+    &.no-border {
+        border: none;
+    }
+    &:not(.no-border):hover {
+        border-color: shared.$black-24;
+    }
+}
+
+.logi-select-placeholder {
+    opacity: 0.38;
+    cursor: default;
+}
+
+.logi-select-content {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 28px 0 16px;
+}
+
+.logi-select-multiple .logi-select-content {
+    flex-wrap: wrap;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 4px;
+
+    .logi-select-placeholder {
+        padding-left: 12px;
+    }
+}
+
+.logi-select-multiple .logi-selected-label {
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 8px;
+}
+
+.logi-select-icon {
+    position: absolute;
+    right: 4px;
+    font-size: 0;
+    line-height: 0;
+    color: shared.$font-color-base;
+}
+
+.logi-select-panel {
+    flex-direction: column;
+    display: flex;
+    overflow: auto;
+    box-shadow: $panel-shadow;
+    border-radius: 4px;
+    width: 100%;
+    padding: 8px 0;
+    background-color: shared.$base-white;
+    font-family: shared.$base-font;
+    max-height: 256px;
+    min-width: 64px;
+
+    .empty-view {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 64px;
+        font-size: 14px;
+        color: shared.$black-38;
+    }
+}
+.logi-select-panel-search-container {
+    margin-bottom: 8px;
+    padding: 0 16px;
+}
+.logi-select-panel-options {
+    flex: 1;
+    overflow-y: auto;
+}
+.logi-select-panel-actions {
+    display: block;
+    margin-top: 8px;
+    border-top: shared.$border-base;
+    height: 32px;
+    padding: 0 16px;
+    padding-top: 8px;
+    font-size: 14px;
+    line-height: 32px;
+    color: shared.$black-87;
+}
+
+.logi-select-virtual-scroll-viewport {
+    height: 256px;
+}
+@include select-size.logi-select-size('.logi-select', (
+    font-size: 14px,
+    trigger-height: 36px,
+    arrow-icon-size: 24px,
+    selected-label-height: 28px,
+    selected-label-delete-icon-size: 16px,
+));
+
+@include select-size.logi-select-size('.logi-select.logi-select-small', (
+    font-size: 12px,
+    trigger-height: 24px,
+    arrow-icon-size: 18px,
+    selected-label-height: 18px,
+    selected-label-delete-icon-size: 12px,
+));
+
+@include select-size.logi-select-size('.logi-select.logi-select-large', (
+    font-size: 16px,
+    trigger-height: 48px,
+    arrow-icon-size: 32px,
+    selected-label-height: 36px,
+    selected-label-delete-icon-size: 22px,
+));

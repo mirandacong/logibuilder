@@ -1,0 +1,14 @@
+<ng-container *ngIf="dataSource.length !== 0; else empty">
+    <div class="row" *ngFor="let item of dataSource;" (click)="handleChange(item)" [class.selected]="item.checked"
+        [style.cursor]="!item.disabled ? &quot;pointer&quot; : &quot;not-allowed&quot;">
+        <div class="name">{{item.name}}</div>
+        <logi-checkbox class="item" (change$)="handleChange(item)" (click)="$event.stopPropagation()"
+            [checked]="item.checked" [disabled]="item.disabled"></logi-checkbox>
+    </div>
+</ng-container>
+<ng-template #empty>
+    <div class="empty">
+        <mat-icon class="icon" svgIcon="ic_file_empty"></mat-icon>
+        <div class="message">暂无数据</div>
+    </div>
+</ng-template>

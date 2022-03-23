@@ -1,0 +1,52 @@
+<button class="edit-btn fx-menu-button" (menuClosed)="setOpened(false)" (menuOpened)="setOpened(true)"
+  (mouseenter)="onHoverButton()" [disabled]="readonly" [matMenuTriggerFor]="menu"
+  [ngClass]="{&quot;opened&quot;: isOpened}">逻辑式</button>
+<mat-menu #menu="matMenu">
+  <button class="edit-sub-module add-row" (click)="onClickAddBtn($event)"
+    [disableRipple]="isRowView() ? addRowDisable : addColDisable"
+    [ngClass]="{&quot;disabled&quot;:isRowView()?addRowDisable : addColDisable}" mat-menu-item>
+    <mat-icon class="icon-view-multi add-btn" svgIcon="ic_add_row"></mat-icon>
+    <span>{{isRowView()?'添加行':'添加列'}}</span><span class="short">Ctrl+I</span>
+  </button>
+  <button class="edit-sub-module add-rows-btn" (click)="$event.stopPropagation()" [class.button-ripple-round]="true"
+    [matMenuTriggerFor]="add_rows" mat-menu-item>
+    <mat-icon class="icon-view-multi add-btn"></mat-icon><span>{{isRowView()?'更多添加行选项':'更多添加列选项'}}</span>
+  </button>
+  <mat-menu #add_rows="matMenu">
+    <button class="node-button file-button" (click)="onClickAddMore()"
+      [disabled]="isRowView()?addRowDisable : addColDisable" mat-menu-item>{{isRowView()?'批量添加行':'批量添加列'}}</button>
+    <button class="node-button file-button" (click)="onAddSeparator()"
+      [disabled]="isRowView()?addRowDisable : addColDisable" mat-menu-item>{{isRowView()?'添加分隔行':'添加分隔列'}}</button>
+  </mat-menu>
+  <button class="edit-sub-module add-clip-btn" (click)="$event.stopPropagation()" [class.button-ripple-round]="true"
+    [disabled]="readonly" [matMenuTriggerFor]="add_clip" mat-menu-item>
+    <mat-icon class="icon-view-multi add-btn" svgIcon="ic_add_snippet"></mat-icon><span>常用公式</span>
+  </button>
+  <mat-menu #add_clip="matMenu">
+    <button class="node-button file-button" *ngFor="let s of addSnippetItems;trackBy:trackBy"
+      (click)="onInsertSnippet(s)" [disabled]="s.disabled" mat-menu-item>{{s.text}}</button>
+  </mat-menu>
+  <button class="edit-sub-module add-node-btn" (click)="$event.stopPropagation()" (mouseenter)="onClickAddListBtn()"
+    [class.button-ripple-round]="true" [matMenuTriggerFor]="add_menu" mat-menu-item>
+    <mat-icon class="icon-view-multi add-btn" svgIcon="ic_add_node"></mat-icon><span>添加其他节点</span>
+  </button>
+  <mat-menu #add_menu="matMenu">
+    <button class="node-button file-button" *ngFor="let item of addItems;trackBy:trackBy"
+      (click)="onClickItem(item, $event)" [disableRipple]="item.disabled"
+      [ngClass]="{&quot;disabled&quot;:item.disabled}" mat-menu-item>{{item.text}}</button>
+  </mat-menu>
+  <button class="edit-sub-module" (click)="onClickRemove($event)" [disableRipple]="isEmpty"
+    [ngClass]="{&quot;disabled&quot;:isEmpty}" mat-menu-item>
+    <mat-icon class="icon-view-multi" svgIcon="ic_remove"></mat-icon><span>删除节点</span>
+  </button>
+  <button class="edit-sub-module" (click)="onClickEditLabel($event)" [disableRipple]="!canEditLabel"
+    [ngClass]="{&quot;disabled&quot;: !canEditLabel }" mat-menu-item>
+    <mat-icon class="icon-view"></mat-icon><span>设置标签</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button class="edit-sub-module" *ngFor="let button of nodeEditItems;trackBy:trackBy"
+    (click)="onClickEditItems(button, $event)" [disableRipple]="button.disabled"
+    [ngClass]="{&quot;disabled&quot;:button.disabled}" mat-menu-item>
+    <mat-icon class="icon-view" svgIcon="{{button.icon}}"></mat-icon><span>{{button.text}}</span>
+  </button>
+</mat-menu>

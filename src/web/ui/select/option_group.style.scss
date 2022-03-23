@@ -1,0 +1,21 @@
+@use '../core/styles/shared';
+
+$color-label: rgba(0, 0, 0, 0.38);
+
+.logi-option-group {
+    display: block;
+
+    &:not(:first-of-type) {
+        margin-top: 8px;
+        border-top: shared.$border-base;
+        padding-top: 8px;
+    }
+}
+
+.logi-option-group-label {
+    height: 32px;
+    padding-left: 16px;
+    font-size: 12px;
+    line-height: 32px;
+    color: $color-label;
+}

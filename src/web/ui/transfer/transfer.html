@@ -1,0 +1,22 @@
+<div class="left">
+  <div class="header">
+    <div class="title">{{config.leftTitle}}</div>
+    <div class="count"></div>
+  </div>
+  <div class="body">
+    <logi-transfer-list class="list" (select$)="handleLeftSelect($event)" [dataSource]="leftDataSource" [direction]="direction.LEFT"></logi-transfer-list>
+  </div>
+</div>
+<div class="buttons">
+  <button class="button-left" (click)="moveToRight()" [disabled]="!leftActive" appearance="stroked" icon="ic_arrow_right" logi-icon-text-button>{{config.toRight}}</button>
+  <button class="button-right" (click)="moveToLeft()" [disabled]="!rightActive" appearance="stroked" icon="ic_arrow_left" logi-icon-text-button>{{config.toLeft}}</button>
+</div>
+<div class="right">
+  <div class="header">
+    <div class="title">{{config.rightTitle}}</div>
+    <div class="count"></div>
+  </div>
+  <div class="body">
+    <logi-transfer-list class="list" (select$)="handleRightSelect($event)" [dataSource]="rightDataSource" [direction]="direction.RIGHT"></logi-transfer-list>
+  </div>
+</div>

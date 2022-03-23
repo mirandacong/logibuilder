@@ -1,0 +1,32 @@
+<div class='logi-cascaded-select-origin' [class.no-border]='noborder' cdkOverlayOrigin #origin="cdkOverlayOrigin"
+    #trigger>
+    <div class='logi-cascaded-select-inner-label'>{{innerLabel}}</div>
+    <div class='logi-cascaded-select-wrapper'>
+        <div class="logi-cascaded-select-label">{{ labelRenderText }}</div>
+        <mat-icon *ngIf='!hideDropdownIcon' class='logi-cascaded-select-dropdown-icon' [svgIcon]='dropdownIcon'>
+        </mat-icon>
+    </div>
+</div>
+<div class='logi-cascaded-select-ripple' matRipple [matRippleDisabled]='!ripple' [matRippleTrigger]='getHostElement()'>
+</div>
+<div class='logi-cascaded-select-focus-overlay' *ngIf='ripple'></div>
+
+<ng-template cdkConnectedOverlay nzConnectedOverlay cdkConnectedOverlayHasBackdrop [cdkConnectedOverlayOrigin]="origin"
+    (backdropClick)="closeMenu()" (detach)="closeMenu()"
+    [cdkConnectedOverlayBackdropClass]='"logi-cascaded-select-backdrop"' [cdkConnectedOverlayOpen]="menuVisible">
+    <div #menu class="logi-cascaded-select-menus">
+        <ul *ngIf="shouldShowEmpty; else hasOptionsTemplate">
+            <li class="logi-cascaded-select-menu-item"></li>
+        </ul>
+        <ng-template #hasOptionsTemplate>
+            <ul *ngFor="let options of columns; let i = index" class="logi-cascaded-select-menu"
+                [style.width.px]='ulWidth'>
+                <li logi-cascaded-select-option class='logi-cascaded-select-menu-item' *ngFor="let option of options"
+                    [class.activated]='isOptionActivated(option, i)' [columnIndex]="i"
+                    [activated]="isOptionActivated(option, i)" [option]="option"
+                    (click)="onOptionClick(option, i, $event)">
+                </li>
+            </ul>
+        </ng-template>
+    </div>
+</ng-template>

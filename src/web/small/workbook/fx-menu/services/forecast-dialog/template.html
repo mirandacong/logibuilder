@@ -1,0 +1,20 @@
+<div class='title'>分项预测</div>
+<div class='operate'>
+    <button logi-icon-text-button size='small' color='secondary' icon='ic_add' (click)='addItem()'>添加</button>
+    <button logi-icon-text-button size='small' color='secondary' icon='ic_add_node'
+        (click)='openEditItems()'>编辑多项</button>
+</div>
+<div class='text-line'>
+    <div class='block-one'>将该行拆分为</div>
+    <div class='block-two'>{{splitList.length}}</div>
+    <div class='.block-one'>行</div>
+</div>
+<div class='inputs' #input_block>
+    <div *ngFor='let split of splitList;let i=index; trackBy: trackByFnReturnItem'>
+        <input class='split-input' [formControl]='splitList[i]' logi-input placeholder='分项{{i+1}}名称'>
+    </div>
+</div>
+<div class='btns' [ngClass]='{"shadow":isScroll}'>
+    <button class='cancel' (click)='onCancel()' logi-button>取消</button>
+    <button (click)='setForecast()' logi-flat-button>确定</button>
+</div>

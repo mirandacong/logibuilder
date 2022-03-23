@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Roboto Mono";
+    src: local("Roboto Mono"), url("regular.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: "Roboto Mono Medium";
+    src: local("Roboto Mono Medium"), url("medium.ttf") format("truetype")
+
+}

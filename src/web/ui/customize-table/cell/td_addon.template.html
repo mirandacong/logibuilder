@@ -1,0 +1,9 @@
+<ng-container *ngIf="logiShowExpand || logiIndentSize &gt; 0">
+    <logi-row-indent [indentSize]="logiIndentSize"></logi-row-indent>
+    <button *ngIf="logiShowExpand" logi-icon-button
+        [icon]="logiExpand ? &quot;ic_arrow_down&quot; : &quot;ic_arrow_right&quot;"
+        (click)="onExpandChange(!logiExpand)" small></button>
+</ng-container>
+<logi-checkbox *ngIf="logiShowCheckbox" (change$)="onCheckedChange($event)" [checked]="logiChecked"
+    [disabled]="logiDisabled" [indeterminate]="logiIndeterminate"></logi-checkbox>
+<ng-content></ng-content>

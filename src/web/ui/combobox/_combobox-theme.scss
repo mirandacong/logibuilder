@@ -1,0 +1,64 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+@mixin logi-combobox-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    $color-primary: theming.logi-color($primary);
+    $bg-disabled: rgba(0, 0, 0, 0.04);
+    $color-icon-disabled: rgba(0, 0, 0, 0.38);
+    $color-text-disabled: rgba(0, 0, 0, 0.24);
+    $bg-label: theming.logi-color($primary, 0.12);
+    $bg-label-disabled: rgba(0, 0, 0, 0.04);
+    $bg-option-ripple: rgba($color-primary, 0.12);
+    $color-label-border: theming.logi-color($primary, 0.24);
+    $color-label-border-disabled: rgba(0, 0, 0, 0.12);
+    $color-label-border-hover: theming.logi-color($primary, 0.6);
+    $color-label-text: $color-primary;
+
+    .logi-combobox.logi-combobox-disabled {
+        background-color: $bg-disabled;
+        color: $color-text-disabled;
+
+        .logi-combobox-icon {
+            color: $color-icon-disabled;
+        }
+    }
+
+    .logi-combobox-single .logi-selected-label {
+        &.logi-selected-label-disabled {
+            color: $color-icon-disabled;
+        }
+    }
+
+    .logi-combobox-multiple .logi-selected-label {
+        border-color: $color-label-border;
+        background-color: $bg-label;
+        color: $color-label-text;
+        &:hover {
+            border-color: $color-label-border-hover;
+        }
+        &.logi-selected-label-disabled {
+            border-color: $color-label-border-disabled;
+            background-color: $bg-label-disabled;
+            color: $color-icon-disabled;
+        }
+    }
+
+    .logi-inner-option.logi-option-selected {
+        .logi-inner-option-container {
+            color: $color-primary;
+        }
+        .logi-inner-option-selected-icon {
+            color: $color-primary;
+        }
+    }
+
+    .logi-option-ripple .mat-ripple-element {
+        background-color: $bg-option-ripple;
+    }
+    .logi-combobox .mat-ripple-element {
+        background-color: $bg-option-ripple;
+    }
+}

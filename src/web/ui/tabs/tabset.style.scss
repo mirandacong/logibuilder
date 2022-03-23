@@ -1,0 +1,84 @@
+@use './style/common.scss';
+
+// No animation
+@mixin tabs-no-animation() {
+    > .logi-tabs-content-animated {
+        transform: none !important;
+        margin-left: 0 !important;
+    }
+    > .logi-tabs-tabpane-inactive {
+        @include common.tabs-hidden-content();
+    }
+}
+
+.logi-tabs {
+    @include common.reset-component;
+    @include common.clearfix;
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+/******************* Tabs content **********************************/
+// Create an empty element to avoid margin collapsing
+// https://github.com/logi-design/logi-design/issues/18103
+.logi-tabs-content::before {
+    content: '';
+    display: block;
+    overflow: hidden;
+}
+
+.logi-tabs-top-content, .logi-tabs-bottom-content {
+    display: flex;
+    height: calc(100% - 32px);
+}
+.logi-tabs-left-content, .logi-tabs-right-content {
+    @include tabs-no-animation();
+    overflow: hidden;
+    margin-top: 0 !important;
+    height: 100% !important;
+}
+
+.logi-tabs-right-content {
+    border-right: common.$border-width-base common.$border-style-base common.$border-color-split;
+    padding-right: common.$padding-lg;
+}
+.logi-tabs-tabpane {
+    outline: none;
+}
+.logi-tabs-tabpane-common {
+    width: 100%;
+    height: 100%;
+
+    > .logi-tabs-tabpane {
+        opacity: 1;
+        transition: opacity 0.45s;
+        height: 100%;
+    }
+
+    > .logi-tabs-tabpane-inactive {
+        width: 100%;
+        @include common.tabs-hidden-content();
+    }
+
+    .logi-tabs.logi-tabs-content-animated {
+        flex-direction: row;
+        display: flex;
+        transition: margin-left 0.3s common.$ease-in-out;
+        will-change: margin-left;
+    }
+}
+.logi-tabs-tabpane-extra {
+    width: 100%;
+    height: 100%;
+}
+.logi-tabs-tabpane-active {
+    width: 100%;
+    height: 100%;
+}
+
+.no-flex, .logi-tabs-no-animation {
+    > .logi-tabs-content {
+        @include tabs-no-animation();
+    }
+}

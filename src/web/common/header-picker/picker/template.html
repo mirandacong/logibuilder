@@ -1,0 +1,6 @@
+<div class="box" [matMenuTriggerFor]="pickerMenu"><span class="month">{{start}}</span><span class="text">至</span><span class="month">{{end}}</span>
+  <button class="icon-btn" [icon]="&quot;ic_calendar&quot;" logi-icon-button></button>
+</div>
+<mat-menu #pickerMenu="matMenu" [class]="getMenuClass(info.frequency)">
+  <logi-frequency-picker (headerInfoChange$)="onHeaderInfoChange($event)" [headerInfo]="info"></logi-frequency-picker>
+</mat-menu>

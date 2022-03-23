@@ -1,0 +1,280 @@
+---
+annotations: {}
+labels: []
+name: Style template
+nodetype: 1
+subnodes:
+- annotations: {}
+  labels: []
+  name: Control
+  nodetype: 2
+  subnodes:
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: Title + 2
+    nodetype: 3
+    subnodes:
+    - annotations: {}
+      labels: []
+      modifier: ''
+      name: Title + 1
+      nodetype: 3
+      subnodes:
+      - annotations: {}
+        labels: []
+        modifier: ''
+        name: Main title
+        nodetype: 3
+        subnodes: []
+  - annotations: {}
+    header_stub: Header name
+    labels: []
+    name: Style tamplate table
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      labels: []
+      name: '2017'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q5
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{SOURCE()}'
+      is_def_scalar: false
+      labels: []
+      modifier: '---'
+      name: Underline
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{SOURCE()}'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: Indent
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{SOURCE()}'
+      is_def_scalar: false
+      labels: []
+      modifier: '-'
+      name: Italic indent+1 %
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{SOURCE()}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Normal
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{SOURCE()}'
+      is_def_scalar: false
+      labels: []
+      modifier: ++
+      name: Bold
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{SOURCE()}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Bold indent
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{SOURCE()}'
+      is_def_scalar: false
+      labels: []
+      modifier: +++
+      name: SPLITTER
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: SOURCE()
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 32
+      - 32
+      - 32
+      - 32
+      - 32
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: INPUT()
+      nodetype: 7
+      slice_exprs: []
+      sources:
+      - 32
+      - 32
+      - 32
+      - 32
+      - 32
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: SOURCE() empty
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: INPUT() empty
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: true
+      labels: []
+      modifier: ''
+      name: scalar no num
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: true
+      labels: []
+      modifier: ''
+      name: scalar empty
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: 1/2
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: default
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: empty cell
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0

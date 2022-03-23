@@ -1,0 +1,194 @@
+@use './common.scss';
+$tabs-card-gutter: 2px;
+$tabs-card-horizontal-padding: 8px common.$padding-md;
+$background-color-light: hsv(0, 0, 98%);
+$tabs-card-head-background: $background-color-light;
+$component-background: #FFF;
+$tabs-card-active-color: common.$primary-color;
+$tabs-card-tab-active-border-top: 2px solid transparent;
+$heading-color: fade(#000, 85%);
+$tabs-title-font-size: common.$font-size-base;
+$tabs-title-font-size-lg: common.$font-size-lg;
+$tabs-title-font-size-sm: common.$font-size-base;
+$tabs-card-height: 40px;
+// card style
+.logi-tabs {
+    .logi-tabs.logi-tabs-card .logi-tabs-card-bar .logi-tabs-ink-bar {
+        visibility: hidden;
+    }
+    .logi-tabs.logi-tabs-card .logi-tabs-card-bar .logi-tabs-tab {
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+        margin: 0;
+        margin-right: $tabs-card-gutter;
+        border: common.$border-width-base common.$border-style-base common.$border-color-split;
+        border-radius: common.$border-radius-base common.$border-radius-base 0 0;
+        padding: $tabs-card-horizontal-padding;
+
+        background: $tabs-card-head-background;
+
+        line-height: 22px;
+    }
+    .logi-tabs.logi-tabs-card .logi-tabs-card-bar .logi-tabs-tab-active {
+        border-bottom: common.$border-width-base solid $component-background;
+        border-color: common.$border-color-split;
+        background: $component-background;
+        color: $tabs-card-active-color;
+
+        .logi-tabs::before {
+            border-top: $tabs-card-tab-active-border-top;
+        }
+    }
+    .logi-tabs.logi-tabs-small .logi-tabs-card-bar .logi-tabs-tab {
+        padding: $tabs-card-horizontal-padding-sm;
+    }
+    .logi-tabs.logi-tabs-card .logi-tabs-card-bar .logi-tabs-tab-disabled {
+        color: common.$black-12;
+    }
+    .logi-tabs.logi-tabs-card .logi-tabs-card-bar .logi-tabs-tab-inactive {
+        padding: 0;
+    }
+    .logi-tabs.logi-tabs-card .logi-tabs-card-bar .logi-tabs-nav-wrap {
+        margin-bottom: 0;
+    }
+    .logi-tabs.logi-tabs-card .logi-tabs-card-bar .logi-tabs-tab .logi-tabs-close-x {
+        overflow: hidden;
+
+        transition: all 0.3s;
+
+        margin-left: 3px;
+        margin-right: -5px;
+        width: 16px;
+        height: common.$font-size-base;
+
+        font-size: common.$font-size-sm;
+        color: common.$text-color-secondary;
+
+        vertical-align: middle;
+        .logi-tabs:hover {
+            color: $heading-color;
+        }
+    }
+
+    .logi-tabs.logi-tabs-card .logi-tabs-card-content > .logi-tabs-tabpane, .logi-tabs.logi-tabs-editable-card .logi-tabs-card-content > .logi-tabs-tabpane {
+        transition: none !important;
+        .logi-tabs-inactive {
+            overflow: hidden;
+        }
+    }
+
+    .logi-tabs.logi-tabs-card .logi-tabs-card-bar .logi-tabs-tab:hover .logiicon-close {
+        opacity: 1;
+    }
+
+    .logi-tabs-extra-content {
+        line-height: $tabs-title-font-size * common.$line-height-base + extract(common.$tabs-horizontal-padding, 1) *
+            2;
+
+        .logi-tabs-new-tab {
+            position: relative;
+
+            transition: all 0.3s;
+
+            border: common.$border-width-base common.$border-style-base common.$border-color-split;
+            border-radius: common.$border-radius-base;
+            width: 20px;
+            height: 20px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+            line-height: 20px;
+            text-align: center;
+            color: common.$text-color;
+            .logi-tabs:hover {
+                border-color: $tabs-card-active-color;
+                color: $tabs-card-active-color;
+            }
+            svg {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+
+                margin: auto;
+            }
+        }
+    }
+
+    .logi-tabs.logi-tabs-large .logi-tabs-extra-content {
+        line-height: $tabs-title-font-size-lg * common.$line-height-base +
+            extract(common.$tabs-horizontal-padding-lg, 1) * 2;
+    }
+
+    .logi-tabs.logi-tabs-small .logi-tabs-extra-content {
+        line-height: $tabs-title-font-size-sm * common.$line-height-base +
+            extract(common.$tabs-horizontal-padding-sm, 1) * 2;
+    }
+
+    .logi-tabs.logi-tabs-card .logi-tabs-extra-content {
+        line-height: $tabs-card-height;
+    }
+
+    .logi-tabs-vertical.logi-tabs-card .logi-tabs-card-bar.logi-tabs-left-bar, .logi-tabs-vertical.logi-tabs-card .logi-tabs-card-bar.logi-tabs-right-bar {
+        .logi-tabs-nav-container {
+            height: 100%;
+        }
+        .logi-tabs-tab {
+            margin-bottom: common.$margin-sm;
+            border-bottom: $border-base;
+            .logi-tabs-active {
+                padding-bottom: 4px;
+            }
+            .logi-tabs:last-child {
+                margin-bottom: common.$margin-sm;
+            }
+        }
+        .logi-tabs-new-tab {
+            width: 90%;
+        }
+    }
+
+    .logi-tabs-vertical.logi-tabs-card.logi-tabs-left .logi-tabs-card-bar.logi-tabs-left-bar {
+        .logi-tabs-nav-wrap {
+            margin-right: 0;
+        }
+        .logi-tabs-tab {
+            margin-right: 1px;
+            border-right: 0;
+            border-radius: common.$border-radius-base 0 0 common.$border-radius-base;
+            .logi-tabs-active {
+                margin-right: -1px;
+                padding-right: common.$padding-md + 2px;
+            }
+        }
+    }
+
+    .logi-tabs-vertical.logi-tabs-card.logi-tabs-right .logi-tabs-card-bar.logi-tabs-right-bar {
+        .logi-tabs-nav-wrap {
+            margin-left: 0;
+        }
+        .logi-tabs-tab {
+            margin-left: 1px;
+            border-left: 0;
+            border-radius: 0 common.$border-radius-base common.$border-radius-base 0;
+            .logi-tabs-active {
+                margin-left: -1px;
+                padding-left: common.$padding-md + 2px;
+            }
+        }
+    }
+
+    .logi-tabs .logi-tabs-card-bar.logi-tabs-bottom-bar .logi-tabs-tab {
+        border-bottom: $border-base;
+        border-top-color: common.$border-color-split;
+        border-radius: 0 0 common.$border-radius-base common.$border-radius-base;
+        height: auto;
+    }
+
+    .logi-tabs .logi-tabs-card-bar.logi-tabs-bottom-bar .logi-tabs-tab-active {
+        border-top-color: $component-background;
+        color: common.$primary-color;
+    }
+}

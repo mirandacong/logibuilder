@@ -1,0 +1,80 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette';
+
+.legend {
+    box-shadow: 0 2px 4px shared.$black-16;
+    border-radius: 50%;
+    background-color: shared.$base-white;
+}
+
+::ng-deep {
+    .logi-excel-preview-legend {
+        .mat-list-base {
+            padding-top: 12 !important;
+        }
+        .mat-list-base .mat-list-item .mat-list-item-content {
+            padding: 0;
+        }
+        .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+            height: 26px;
+        }
+    }
+}
+:host {
+    ::ng-deep {
+        .logi-icon-button-icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+.btn {
+    @include shared.size(36px,36px);
+}
+
+.overlay {
+    box-shadow: 0 2px 4px shared.$black-16;
+    border-radius: 4px;
+    width: 360px;
+    padding: 16px;
+
+    background-color: shared.$base-white;
+}
+.title {
+    @include shared.set-font($weight:bold,$color:rgba(112, 112, 112, 1));
+    line-height: 18px;
+}
+.block {
+    display: flex;
+    height: 138px;
+}
+.list-block {
+    display: flex;
+    width: 180px;
+}
+.example {
+    margin-right: 24px;
+
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+    &.facts {
+        @include shared.size(18px,30px);
+        background-color: map-get(palette.$logi-grey, 100);
+    }
+    &.assumption {
+        border: 1px dashed map-get(palette.$logi-aqua, 600);
+        @include shared.size(16px,29px);
+        background-color: map-get(palette.$logi-aqua, 50);
+    }
+    &.scalar {
+        @include shared.size(18px,30px);
+        background-color: map-get(palette.$logi-orange, 50);
+    }
+}
+
+.explain {
+    @include shared.set-font();
+    line-height: 18px;
+}

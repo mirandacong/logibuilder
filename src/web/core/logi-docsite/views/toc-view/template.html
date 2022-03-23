@@ -1,0 +1,7 @@
+<div class="toc-inner">
+  <ul class="toc-list">
+    <ng-container *ngFor="let toc of tocList; let i = index">
+      <li [class.active]="i===activeIndex" [ngClass]="toc.level"><a [href]="toc.href">{{toc.title}}</a></li>
+    </ng-container>
+  </ul>
+</div>

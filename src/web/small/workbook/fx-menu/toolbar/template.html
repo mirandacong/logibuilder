@@ -1,0 +1,70 @@
+<div class="btn" *ngFor="let btn of simpleEditList;trackBy:trackByFn" matTooltip="{{btn.text}}">
+    <button class="icon-button" (click)="onClickToolbarButton (btn.icon)" [disabled]="btn.disabled || readonly"
+        color="secondary" logi-button rippleCentered>
+        <mat-icon class="icon-button-icon" [svgIcon]="btn.icon"></mat-icon>
+    </button>
+</div>
+<div class="divider"></div>
+<div class="btn">
+    <button class="icon-button add-row" (click)="onClickAdd()"
+        [disabled]="(rowText? addRowDisable : addColDisable)|| readonly" color="secondary" logi-button
+        matTooltip="{{rowText ? &quot;添加行(Ctrl+I)&quot;:&quot;添加列(Ctrl+I)&quot;}}" rippleCentered>
+        <mat-icon class="icon-button-icon" [svgIcon]="toolbarBtnType.ADD"></mat-icon>
+        <div class="tip">{{rowText ? "添加行":"添加列"}}</div>
+    </button>
+    <button class="icon-button icon-tiny-button add-more-row" [disabled]="readonly" [matMenuTriggerFor]="add_rows"
+        color="secondary" logi-button matTooltip="{{rowText ? &quot;更多添加行选项&quot;:&quot;更多添加列选项&quot;}}" rippleCentered>
+        <mat-icon class="icon-tiny-button-icon" [svgIcon]="toolbarBtnType.DROP_DOWN"></mat-icon>
+    </button>
+</div>
+<div class="btn" matTooltip="常用公式">
+    <button class="icon-button add-node" (click)="onClickAddListBtn()" (menuClosed)="setSnippetOpened(false)"
+        (menuOpened)="setSnippetOpened(true)" [disabled]="readonly" [matMenuTriggerFor]="add_clip"
+        [ngClass]="{&quot;opened&quot;: isSnippetOpened}" color="secondary" logi-button rippleCentered>
+        <mat-icon class="icon-button-icon" [svgIcon]="toolbarBtnType.INSERT_CLIP"></mat-icon>
+        <div class="tip">常用公式</div>
+    </button>
+</div>
+<div class="btn" matTooltip="插入其他节点">
+    <button class="icon-button add-node" (click)="onClickAddListBtn()" (menuClosed)="setOpened(false)"
+        (menuOpened)="setOpened(true)" [disabled]="readonly" [matMenuTriggerFor]="add_node"
+        [ngClass]="{&quot;opened&quot;: isOpened}" color="secondary" logi-button rippleCentered>
+        <mat-icon class="icon-button-icon" [svgIcon]="toolbarBtnType.ADD_NODE"></mat-icon>
+        <div class="tip">添加其他</div>
+    </button>
+</div>
+<div class="btn" *ngFor="let btn of nodeEditList;trackBy:trackByFn" matTooltip="{{btn.text}}">
+    <button class="icon-button" (click)="onClickToolbarButton(btn.icon)" [disabled]="btn.disabled || readonly"
+        color="secondary" logi-button rippleCentered>
+        <mat-icon class="icon-button-icon" [svgIcon]="btn.icon"></mat-icon>
+        <div class="tip">{{btn.text}}</div>
+    </button>
+</div>
+<div class="divider"></div>
+<div class="btn" matTooltip="查找">
+    <button class="icon-button add-node" [disabled]="true" color="secondary" logi-button rippleCentered>
+        <mat-icon class="icon-button-icon" [svgIcon]="toolbarBtnType.SEARCH"></mat-icon>
+    </button>
+</div>
+<div class="btn" matTooltip="刷新">
+    <button class="icon-button add-node" (click)="onClickToolbarButton(toolbarBtnType.REFRESH)" [disabled]="readonly"
+        color="secondary" logi-button rippleCentered>
+        <mat-icon class="icon-button-icon" [svgIcon]="toolbarBtnType.REFRESH"></mat-icon>
+    </button>
+</div>
+<mat-menu #add_node="matMenu" [class]="&quot;file-menu-panel&quot;">
+    <button class="menu-button" *ngFor="let item of addItems;trackBy:trackByFn" (click)="onClickItem(item)"
+        [disabled]="item.disabled || readonly" mat-menu-item>{{item.text}}</button>
+</mat-menu>
+<mat-menu #add_clip="matMenu" [class]="&quot;file-menu-panel&quot;">
+    <button class="menu-button" *ngFor="let item of addSnippetItems;trackBy:trackByFn" (click)="onInsertSnippet(item)"
+        [disabled]="item.disabled || readonly" mat-menu-item>{{item.text}}</button>
+</mat-menu>
+<mat-menu #add_rows="matMenu">
+    <button class="menu-button" (click)="onClickAddMore()"
+        [disabled]="(rowText? addRowDisable : addColDisable) || readonly" mat-menu-item>{{rowText ?
+        "批量添加行":"批量添加列"}}</button>
+    <button class="menu-button" (click)="onAddSeparator()"
+        [disabled]="(rowText? addRowDisable : addColDisable) || readonly" mat-menu-item>{{rowText ?
+        "添加分隔行":"添加分隔列"}}</button>
+</mat-menu>

@@ -1,0 +1,100 @@
+@use 'src/web/assets/styles/shared';
+:host {
+    align-items: center;
+    display: flex;
+    border-radius: 0 0 4px;
+    width: 96px;
+    height: 100%;
+    cursor: pointer;
+    color: shared.$font-color-base;
+    &.is-show-info, &:hover {
+        position: relative;
+        z-index: 1005;
+        /* stylelint-disable-next-line */
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+    &:active {
+        background-color: shared.$bg-active;
+    }
+}
+/* stylelint-disable-next-line */
+::ng-deep {
+    .logi-error-info-mat-tab-container {
+        .mat-tab-label {
+            height: 32px;
+            padding: 0 16px;
+            min-width: 0;
+            @include shared.set-font();
+        }
+        .mat-tab-label-active {
+            opacity: 1;
+            font-weight: bold;
+            color: shared.$base-brand;
+        }
+        &.mat-primary .mat-ink-bar {
+            background-color: shared.$base-brand;
+        }
+    }
+}
+.error-icon {
+    margin-left: 10px;
+    margin-right: 6px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+}
+.error-text {
+    margin-left: 1px;
+    margin-right: 8px;
+}
+.error-count.has-error {
+    color: shared.$error-color;
+}
+.error-info-container {
+    overflow: hidden;
+    box-shadow: shared.$base-box-shadow;
+    border-radius: 4px;
+    width: 100%;
+    height: calc(100% - 16px);
+    padding: 8px 0;
+    background-color: shared.$base-white;
+    @include shared.set-font($color: shared.$font-color-base);
+    .error-item-container {
+        flex-direction: column;
+        display: flex;
+        overflow: scroll;
+        width: 100%;
+        height: 423px;
+        padding: 8px 0;
+    }
+    .error-item {
+        margin-bottom: 4px;
+        padding: 8px 16px;
+        cursor: pointer;
+        &.is-selected {
+            background-color: shared.$bg-hover;
+        }
+        &:hover {
+            background-color: shared.$bg-hover;
+        }
+        &:active {
+            background-color: shared.$bg-active;
+        }
+        .error-msg {
+            margin-bottom: 4px;
+            font-size: 14px;
+            color: shared.$error-color;
+        }
+    }
+    .close-btn {
+        position: absolute;
+        z-index: 1;
+        top: 16px;
+        right: 8px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 18px;
+        height: 18px;
+    }
+}

@@ -1,0 +1,32 @@
+$nav-bg: #EEE;
+$border: 1px solid rgba(0, 0, 0, 0.12);
+$active-tab-bg: #FFFFFF;
+
+/** Used only for bottom tabs nav **/
+.logi-sheet-style-tabs {
+    > .logi-tabs-bar {
+        background-color: $nav-bg;
+        .logi-tabs-tab-active {
+            background-color: $active-tab-bg;
+        }
+        .logi-tabs-bottom-bar {
+            border-top: none;
+        }
+        .logi-tabs-nav-container {
+            padding: 0 54px 0 0;
+        }
+        .logi-tabs-nav-content {
+            height: 32px;
+        }
+        .logi-tabs-tab-prev {
+            left: initial;
+            right: 26px;
+        }
+        .logi-tabs-tab {
+            border-right: $border;
+        }
+    }
+    .logi-tabs-content {
+        height: calc(100% - 33px);
+    }
+}

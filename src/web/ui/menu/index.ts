@@ -1,0 +1,6 @@
+export {LogiMenuModule} from './module'
+export {LogiMenuComponent} from './component'
+export {LogiMenuContentDirective} from './content.directive'
+export {LogiContextmenuTriggerDirective} from './contextmenu_trigger.directive'
+export {LogiMenuTriggerDirective} from './click_trigger.directive'
+export {LogiMenuItemDirective} from './item.directive'

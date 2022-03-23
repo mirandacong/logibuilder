@@ -1,0 +1,19 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+@use '../shared' as editor;
+
+@include editor.row-col;
+
+.formula {
+    @include editor.formula;
+
+    .formula-edit {
+        @include editor.formula-edit;
+    }
+}
+
+.input-name:not(.valid-name) {
+    color: shared.$error-color;
+}

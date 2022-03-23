@@ -1,0 +1,50 @@
+<div class='logi-select-trigger' [class.no-border]='noborder' #origin='cdkOverlayOrigin' (click)='togglePanel()'
+    cdk-overlay-origin>
+    <ng-container [ngSwitch]='mode'>
+        <div class='logi-select-content' *ngSwitchCase='"default"'>
+            <logi-selected-label *ngIf='selectedOption' [deletable]='false' [disabled]='disabled'
+                [option]='selectedOption' [labelContentTpl]='labelContentTpl'
+                [labelContentTplContext]='selectedOption.value'>
+            </logi-selected-label>
+            <div class='logi-select-placeholder' *ngIf='empty'>{{placeholder}}</div>
+        </div>
+        <div class='logi-select-content' *ngSwitchDefault>
+            <logi-selected-label *ngFor='let option of selectedOptions' (deleteOption$)='onDeleteOption($event)'
+                [deletable]='true' [disabled]='disabled' [option]='option'></logi-selected-label>
+            <div class='logi-select-placeholder' *ngIf='empty'>{{placeholder}}</div>
+        </div>
+    </ng-container>
+    <div class='logi-select-icon'>
+        <mat-icon class='logi-select-arrow-icon' [svgIcon]='dropdownIcon'></mat-icon>
+    </div>
+</div>
+<ng-template (attach)='onAttach()' (backdropClick)='closePanel()' [cdkConnectedOverlayPanelClass]='customPanelClass'
+    [cdkConnectedOverlayOpen]='panelOpen' [cdkConnectedOverlayOrigin]='origin' [cdkConnectedOverlayWidth]='triggerWidth'
+    cdk-connected-overlay cdkConnectedOverlayBackdropClass='cdk-overlay-transparent-backdrop'
+    cdkConnectedOverlayHasBackdrop>
+    <div class='logi-select-panel' [ngClass]='panelClass'>
+        <div class='empty-view' *ngIf='(options.length === 0) && (virtualScrollItems.length === 0); else optionsView'>
+            {{emptyText}}</div>
+        <ng-template #optionsView>
+            <div class='logi-select-panel-search-container' *ngIf='searchable'>
+                <logi-group-input suffixIcon='ic_search'>
+                    <input logi-input (input)='onSearch($any($event.target).value)'>
+                </logi-group-input>
+            </div>
+            <div class='logi-select-panel-options'>
+                <cdk-virtual-scroll-viewport class='logi-select-virtual-scroll-viewport'
+                    *ngIf='virtualScrollItems.length !== 0; else outerOptions' [itemSize]='virtualScrollItemSize'>
+                    <logi-option *cdkVirtualFor='let item of virtualScrollItems' [value]='item.value'
+                        [label]='item.label' (selectChange$)='onVirtualScrollSelectChange($event)'>{{item.label}}
+                    </logi-option>
+                </cdk-virtual-scroll-viewport>
+                <ng-template #outerOptions>
+                    <ng-content></ng-content>
+                </ng-template>
+            </div>
+            <div #panel_actions class='logi-select-panel-acitons-container' [class.not-empty]='hasPanelActions()'>
+                <ng-content select='logi-select-panel-actions'></ng-content>
+            </div>
+        </ng-template>
+    </div>
+</ng-template>

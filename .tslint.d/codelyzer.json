@@ -1,0 +1,97 @@
+{
+    "rules": {
+        "component-class-suffix": [
+            true,
+            "Component"
+        ],
+        "component-max-inline-declarations": [
+            true,
+            {
+                "animations": 20,
+                "styles": 8,
+                "template": 5
+            }
+        ],
+        "component-selector": [
+            true,
+            "element",
+            [
+                "logi"
+            ],
+            "kebab-case"
+        ],
+        "contextual-decorator": true,
+        "contextual-lifecycle": true,
+        "directive-class-suffix": [
+            true,
+            "Directive"
+        ],
+        "directive-selector": [
+            true,
+            "attribute",
+            [
+                "logi"
+            ],
+            "kebab-case"
+        ],
+        "import-destructuring-spacing": false,
+        "no-attribute-decorator": true,
+        "no-conflicting-lifecycle": true,
+        "no-forward-ref": true,
+        "no-host-metadata-property": false,
+        "no-input-prefix": [
+            true,
+            "can",
+            "is",
+            "should"
+        ],
+        "no-input-rename": true,
+        "no-inputs-metadata-property": true,
+        "no-lifecycle-call": true,
+        "no-output-native": true,
+        "no-output-on-prefix": true,
+        "no-output-rename": true,
+        "no-outputs-metadata-property": true,
+        "no-pipe-impure": true,
+        "no-queries-metadata-property": true,
+        "no-unused-css": true,
+        "pipe-prefix": true,
+        "prefer-inline-decorator": false,
+        "prefer-on-push-component-change-detection": false,
+        "prefer-output-readonly": true,
+        "relative-url-prefix": true,
+        "template-accessibility-alt-text": true,
+        "template-accessibility-elements-content": false,
+        "template-accessibility-label-for": false,
+        "template-accessibility-tabindex-no-positive": true,
+        "template-accessibility-table-scope": true,
+        "template-accessibility-valid-aria": false,
+        "template-banana-in-box": false,
+        "template-click-events-have-key-events": false,
+        "template-conditional-complexity": [
+            false,
+            4
+        ],
+        "template-cyclomatic-complexity": [
+            false,
+            6
+        ],
+        "template-i18n": [
+            false,
+            "check-id",
+            "check-text"
+        ],
+        "template-mouse-events-have-key-events": true,
+        "template-no-any": false,
+        "template-no-autofocus": false,
+        "template-no-call-expression": false,
+        "template-no-distracting-elements": true,
+        "template-no-negated-async": true,
+        "template-use-track-by-function": false,
+        "use-component-selector": true,
+        "use-component-view-encapsulation": true,
+        "use-lifecycle-interface": true,
+        "use-pipe-decorator": true,
+        "use-pipe-transform-interface": true
+    }
+}

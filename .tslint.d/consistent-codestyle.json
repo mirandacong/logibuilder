@@ -1,0 +1,138 @@
+{
+    "rules": {
+        "early-exit": [
+            true,
+            {
+                "ignore-constructor": true,
+                "max-length": 4
+            }
+        ],
+        "ext-curly": true,
+        "naming-convention": [
+            true,
+            {
+                "format": "strictCamelCase",
+                "leadingUnderscore": "forbid",
+                "trailingUnderscore": "forbid",
+                "type": "variable"
+            },
+            {
+                "format": "strictCamelCase",
+                "leadingUnderscore": "always",
+                "modifiers": [
+                    "private",
+                    "readonly"
+                ],
+                "type": "variable"
+            },
+            {
+                "format": [
+                    "UPPER_CASE"
+                ],
+                "modifiers": [
+                    "global"
+                ],
+                "type": "variable"
+            },
+            {
+                "format": "strictCamelCase",
+                "leadingUnderscore": "always",
+                "trailingUnderscore": "forbid",
+                "type": "function"
+            },
+            {
+                "format": "strictCamelCase",
+                "leadingUnderscore": "always",
+                "trailingUnderscore": "forbid",
+                "type": "function"
+            },
+            {
+                "format": "strictCamelCase",
+                "leadingUnderscore": "forbid",
+                "modifiers": [
+                    "export"
+                ],
+                "trailingUnderscore": "forbid",
+                "type": "function"
+            },
+            {
+                "format": "UPPER_CASE",
+                "modifiers": [
+                    "const",
+                    "static"
+                ],
+                "type": "property"
+            },
+            {
+                "modifiers": [
+                    "const",
+                    "protected",
+                    "static"
+                ],
+                "prefix": "__",
+                "suffix": "__",
+                "type": "property"
+            },
+            {
+                "modifiers": [
+                    "const",
+                    "private",
+                    "static"
+                ],
+                "prefix": "__",
+                "suffix": "__",
+                "type": "property"
+            },
+            {
+                "format": "UPPER_CASE",
+                "type": "enumMember"
+            },
+            {
+                "format": "strictCamelCase",
+                "type": "method"
+            },
+            {
+                "format": "strictCamelCase",
+                "leadingUnderscore": "always",
+                "modifiers": [
+                    "protected"
+                ],
+                "type": "method"
+            },
+            {
+                "format": "strictCamelCase",
+                "leadingUnderscore": "always",
+                "modifiers": [
+                    "private"
+                ],
+                "type": "method"
+            },
+            {
+                "filter": "^toJSON$",
+                "format": null,
+                "type": "method"
+            },
+            {
+                "format": "StrictPascalCase",
+                "type": "type"
+            }
+        ],
+        "no-accessor-recursion": true,
+        "no-collapsible-if": true,
+        "no-else-after-return": true,
+        "no-return-undefined": true,
+        "no-static-this": true,
+        "no-unnecessary-else": true,
+        "no-unnecessary-type-annotation": false,
+        "no-var-before-return": true,
+        "object-shorthand-properties-first": false,
+        "parameter-properties": [
+            true,
+            "all-or-none",
+            "member-access",
+            "readonly"
+        ],
+        "prefer-const-enum": true,
+        "prefer-while": true
+    }
+}

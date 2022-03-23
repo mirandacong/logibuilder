@@ -1,0 +1,11 @@
+<h2 cdkDrag cdkDragHandle cdkDragRootElement=".cdk-overlay-pane" mat-dialog-title>选择来源行</h2>
+<mat-dialog-content>
+  <div class="input-field">
+    <div class="label">请在视图中选择来源行</div>
+    <input class="row-input" [formControl]="rowsControl" readonly logi-input>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="cancel" logi-button (click)="onCancel()">取消</button>
+  <button class="ok" logi-flat-button (click)="onConfirm()">确定</button>
+</mat-dialog-actions>

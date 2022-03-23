@@ -1,0 +1,33 @@
+@0,0,0,0@
+```(
+book Test model
+    sheet Control
+
+        table Revenue Breakup
+            header period
+                stub us mn
+                2017 | 2018 | 2019 | 2020
+                    Q1 | Q2 | Q3 | Q4 | FY
+
+            row1 = source()
+            row2 = source()
+            row3 = source()
+
+            row4 = {row1} + {row2}
+
+            row5 = sum({row1}, {row2}, {row3})
+
+            row6 = average({row1}, {row2}, {row3})
+            row7 = input()
+            row8 = 1
+            row9 = {row1: Test model/sheet1/Revenue Breakup}
+    sheet sheet1
+
+        table Revenue Breakup
+            header period
+                stub us mn
+                2017 | 2018 | 2019 | 2020
+                    Q1 | Q2 | Q3 | Q4 | FY
+
+            row1 = source()
+)```

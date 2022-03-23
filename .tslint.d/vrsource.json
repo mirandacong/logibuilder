@@ -1,0 +1,83 @@
+{
+    "rules": {
+        "conditional-expression-parens": false,
+        "ext-variable-name": [
+            true,
+            [
+                "class",
+                "pascal"
+            ],
+            [
+                "interface",
+                "pascal"
+            ],
+            [
+                "parameter",
+                "camel"
+            ],
+            [
+                "property",
+                "static",
+                "public",
+                "upper"
+            ],
+            [
+                "property",
+                "static",
+                "protected",
+                "upper",
+                "require-leading-underscore",
+                "require-trailing-underscore"
+            ],
+            [
+                "property",
+                "static",
+                "private",
+                "upper",
+                "require-leading-underscore",
+                "require-trailing-underscore",
+                {
+                    "regex": "^__.*__$"
+                }
+            ],
+            [
+                "property",
+                "private",
+                "camel",
+                "require-leading-underscore"
+            ],
+            [
+                "property",
+                "protected",
+                "camel"
+            ],
+            [
+                "method",
+                "private",
+                "camel",
+                "require-leading-underscore"
+            ],
+            [
+                "method",
+                "protected",
+                "camel"
+            ],
+            [
+                "function",
+                "camel"
+            ]
+        ],
+        "literal-spacing": false,
+        "max-params": [
+            true,
+            3
+        ],
+        "prefer-case-blocks": false,
+        "prefer-literal": [
+            true,
+            "object",
+            "function",
+            "array"
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+<div class="logi-select-input-container" #origin="matAutocompleteOrigin" matAutocompleteOrigin>
+    <input class="logi-select-input-element" #trigger="matAutocompleteTrigger" [disabled]="disabled"
+        [matAutocompleteConnectedTo]="origin" [matAutocomplete]="auto" [placeholder]="placeholder" logi-input>
+    <mat-icon class="logi-select-input-search-icon" *ngIf="searchSelect" (click)="onClearInput()"
+        [svgIcon]="getSearchIcon()"></mat-icon>
+    <mat-icon class="logi-select-input-arrow-icon" *ngIf="dropdownSelect" (click)="onClickArrow($event)"
+        svgIcon="ic_arrow_drop_down"></mat-icon>
+</div>
+<mat-autocomplete #auto="matAutocomplete" [class]="&quot;logi-select-input-panel&quot;" autoActiveFirstOption>
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">{{option}}</mat-option>
+</mat-autocomplete>

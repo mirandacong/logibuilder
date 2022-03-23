@@ -1,0 +1,35 @@
+@use '../theme';
+
+$font-color: #444;
+$gray-back: rgba(0, 0, 0, 0.04);
+$menu-item-height: 36px;
+
+.menu-item {
+
+    justify-content: space-between;
+    align-items: center;
+
+    overflow-wrap: break-word;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 24px;
+
+    cursor: pointer;
+
+    line-height: 2.1rem;
+    font-family: theme.$font-family;
+    text-align: left;
+    color: $font-color;
+
+    text-decoration: none;
+    word-wrap: break-word;
+}
+
+a:hover {
+    color: theme.$theme-color;
+}
+
+.menu-item:hover {
+    background-color: $gray-back;
+}

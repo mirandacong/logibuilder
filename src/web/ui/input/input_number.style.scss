@@ -1,0 +1,103 @@
+@use '../core/styles/shared';
+
+$color: shared.$black-87;
+$color-disabled: rgba(0, 0, 0, 0.38);
+$border: shared.$border-base;
+$border-hover: 1px solid rgba(0, 0, 0, 0.38);
+
+.logi-input-number-wrapper {
+    align-items: center;
+    display: inline-flex;
+    border: $border;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 144px;
+    min-width: 144px;
+    position: relative;
+
+    &.logi-disabled {
+        pointer-events: none;
+    }
+
+    &:not(.logi-focused):hover {
+        border: $border-hover;
+    }
+}
+
+.logi-input-number-element {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    text-align: center;
+    color: $color;
+    outline: none;
+
+    &:disabled {
+        background-color: transparent;
+        color: $color-disabled;
+    }
+}
+.logi-icon-button.logi-input-number-button {
+    position: absolute;
+}
+
+@mixin logi-input-number-size($config) {
+    $input-height: map-get($config, input-height);
+    $button-size: map-get($config, button-size);
+    $icon-size: map-get($config, icon-size);
+    $font-size: map-get($config, font-size);
+    $button-offset: 6px;
+
+    .logi-input-number-element {
+        font-size: $font-size;
+        height: $input-height;
+        width: 100%;
+        padding: 0 ($button-size + $button-offset);
+    }
+    .logi-icon-button.logi-input-number-button {
+        width: $button-size;
+        height: $button-size;
+        line-height: $button-size;
+        &.subtract {
+            left: $button-offset;
+        }
+        &.add {
+            right: $button-offset;
+        }
+        .logi-icon-button-icon {
+            width: $icon-size;
+            height: $icon-size;
+            line-height: $icon-size;
+        }
+    }
+}
+@include logi-input-number-size(
+    (
+        input-height: 34px,
+        button-size: 32px,
+        icon-size: 24px,
+        font-size: 14px,
+    )
+);
+
+.logi-input-number-small {
+    @include logi-input-number-size(
+        (
+            input-height: 22px,
+            button-size: 20px,
+            icon-size: 14px,
+            font-size: 12px,
+        )
+    );
+}
+
+.logi-input-number-large {
+    @include logi-input-number-size(
+        (
+            input-height: 46px,
+            button-size: 36px,
+            icon-size: 26px,
+            font-size: 16px,
+        )
+    );
+}

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Noto Sans SC';
+    src: local('Noto Sans SC'), /* stylelint-disable-line */
+        url('regular.otf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans SC Medium';
+    src: local('Noto Sans SC Medium'), /* stylelint-disable-line */
+        url('medium.otf') format('opentype');
+}

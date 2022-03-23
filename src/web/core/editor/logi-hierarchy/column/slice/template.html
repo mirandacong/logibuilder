@@ -1,0 +1,5 @@
+<div class="slice-part editor-slices" *ngIf="node.sliceExprs.length &gt; 0">
+  <div class="slice-expr-item" *ngFor="let slice of node.sliceExprs; let i=index; trackBy:trackByFnReturnItem">
+    <logi-editor-slice class="logi-slice" [node]="node" [sliceExpr]="slice"></logi-editor-slice>
+  </div>
+</div>

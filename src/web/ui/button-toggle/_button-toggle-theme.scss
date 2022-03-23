@@ -1,0 +1,13 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+@mixin logi-button-toggle-theme($theme) {
+    $primary: map-get($theme, primary);
+
+    $color-primary: theming.logi-color($primary);
+
+    .logi-button-toggle-button.logi-button-toggle-button-selected {
+        color: $color-primary;
+    }
+}

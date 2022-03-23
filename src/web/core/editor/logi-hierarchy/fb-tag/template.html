@@ -1,0 +1,12 @@
+<div class="container" [class.empty]="empty" [ngClass]="getTypeClass(type)">
+    <span>{{value}}</span>
+    <mat-icon class="menu-icon" *ngIf="!readonly" (mousedown)="onMouseDown($event)" [matMenuTriggerFor]="typeMenu"
+        svgIcon="ic_arrow_drop_down"></mat-icon>
+</div>
+<mat-menu #typeMenu="matMenu" [class]="&quot;tag-menu-panel&quot;">
+    <ng-container *ngFor="let item of items;trackBy: trackBy">
+        <button class="menu-item-btn" (click)="onSelectType(item.type)" mat-menu-item>
+            <div class="type-item-value" [ngClass]="getTypeClass(item.type)">{{ item.value }}</div>
+        </button>
+    </ng-container>
+</mat-menu>

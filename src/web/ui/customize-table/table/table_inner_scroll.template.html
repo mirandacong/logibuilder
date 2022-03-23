@@ -1,0 +1,36 @@
+<ng-container *ngIf="showEmpty$ | async;else tableContent">
+    <ng-template [ngTemplateOutlet]="tableHeaderTemplate"></ng-template>
+    <logi-empty class="logi-customize-table-empty-page" #tablebodyelement [message]="noResult"></logi-empty>
+</ng-container>
+<ng-template #tableContent>
+    <ng-container *ngIf='!virtualTemplate;else virtualScroll'>
+        <ng-template [ngTemplateOutlet]="tableHeaderTemplate"></ng-template>
+        <div #tablebodyelement [class]="&quot;logi-table-body&quot;">
+            <table [contentTemplate]="contentTemplate" [listOfColWidth]="listOfColWidth"
+                [tableLayout]="&quot;fixed&quot;" logi-table-content></table>
+        </div>
+    </ng-container>
+</ng-template>
+<ng-template #virtualScroll>
+    <cdk-virtual-scroll-viewport *ngIf="virtualTemplate" [itemSize]="virtualItemSize"
+        [style.height]="data.length ? '100%' : noDateVirtualHeight">
+        <ng-template [ngTemplateOutlet]="tableHeaderTemplate"></ng-template>
+        <div class="logi-table-body" #tablebodyelement>
+            <table [listOfColWidth]="listOfColWidth" [tableLayout]="&quot;fixed&quot;" logi-table-content>
+                <tbody>
+                    <ng-container *cdkVirtualFor="let item of data; let i = index; trackBy: virtualForTrackBy">
+                        <ng-template [ngTemplateOutletContext]="{ $implicit: item, index: i }"
+                            [ngTemplateOutlet]="virtualTemplate"></ng-template>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </cdk-virtual-scroll-viewport>
+</ng-template>
+<ng-template #tableHeaderTemplate>
+    <div #tableheaderelement [class]="&quot;logi-table-header logi-table-hide-scrollbar&quot;"
+        [ngStyle]="{top: virtualScrollOffset}">
+        <table [listOfColWidth]="listOfColWidth" [tableLayout]="&quot;fixed&quot;" [theadTemplate]="theadTemplate"
+            logi-table-content></table>
+    </div>
+</ng-template>

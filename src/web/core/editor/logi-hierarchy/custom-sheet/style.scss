@@ -1,0 +1,32 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette';
+:host {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+}
+.btns {
+    display: flex;
+    margin-top: 16px;
+}
+.transfer-logi-btn {
+    margin-right: 8px;
+}
+
+.icon {
+    width: 40px;
+    height: 36px;
+    color: shared.$black-12;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 400;
+    color: shared.$font-color-base;
+}

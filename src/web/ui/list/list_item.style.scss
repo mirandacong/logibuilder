@@ -1,0 +1,46 @@
+@use '../core/styles/shared';
+
+$color-disabled: rgba(0, 0, 0, 0.38);
+$bg-nav-list-item-hover: rgba(0, 0, 0, 0.04);
+
+.logi-list-item {
+    align-items: center;
+    display: flex;
+    border: none;
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    min-height: 32px;
+    outline: none;
+}
+
+.logi-list-item-content {
+    position: relative;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+    height: inherit;
+    padding: 0 24px;
+    min-height: 32px;
+}
+
+.logi-list-item-ripple {
+    @include shared.logi-fill;
+    pointer-events: none;
+}
+
+.logi-nav-list, .logi-action-list {
+    .logi-list-item[disabled] {
+        color: $color-disabled;
+        pointer-events: none;
+    }
+
+    .logi-list-item:not([disabled]) {
+        cursor: pointer;
+        &:hover {
+            background-color: $bg-nav-list-item-hover;
+        }
+    }
+}

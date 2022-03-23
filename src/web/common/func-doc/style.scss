@@ -1,0 +1,138 @@
+@use 'src/web/assets/styles/shared';
+
+$width: 240px;
+$header-height: 64px;
+$bg-hover: rgba(65, 120, 184, 0.08);
+
+:host {
+    flex-flow: column;
+
+    display: flex;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    @include shared.set-font(20px, bold, shared.$base-font);
+    cursor: move;
+    color: shared.$black-87;
+}
+.block {
+    display: flex;
+    margin: 24px 0;
+    height: 469px;
+}
+.func-doc-nav {
+    margin-right: 16px;
+    border: shared.$border-base;
+    border-radius: 4px;
+    width: $width;
+    padding: 8px 0;
+
+    font-size: 14px;
+    color: shared.$font-color-darker;
+
+    .body {
+        overflow-y: auto;
+        height: 100%;
+    }
+
+    .tree-node {
+        height: 32px;
+        cursor: pointer;
+        min-height: 32px;
+
+        &:hover {
+            background-color: $bg-hover;
+        }
+        &.selected {
+            background-color: rgba(0, 0, 0, 0.02);
+            font-weight: bold;
+            color: shared.$base-brand;
+        }
+    }
+}
+
+.expand-btn {
+    margin: 0 4px 0 16px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+
+    .expand-btn-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.func-doc-content {
+    overflow-y: auto;
+    border: shared.$border-base;
+    width: 776px;
+    padding: 24px;
+}
+
+.btn-box {
+    justify-content: flex-end;
+    display: flex;
+}
+
+.md-content {
+    font-size: 14px;
+
+    /* Cover the style that generate by markdown html */
+    ::ng-deep {
+        h1, h2 {
+            position: relative;
+            font-size: 14px;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        h2::before {
+            content: '';
+
+            position: absolute;
+            top: 8px;
+            left: -10px;
+
+            display: inline-block;
+
+            border-radius: 50%;
+            width: 4px;
+            height: 4px;
+
+            background-color: shared.$base-brand;
+        }
+
+        img {
+            margin-top: 8px;
+            width: 100%;
+        }
+
+        table {
+            border-collapse: collapse;
+            font-size: 12px;
+            text-align: left;
+        }
+        th, td {
+            padding: 2px 6px;
+            word-break: break-word;
+        }
+        tr {
+            height: 24px;
+        }
+        thead th {
+            border-bottom: shared.$border-base;
+            border-top: shared.$border-base;
+        }
+        tbody > tr:last-child td {
+            border-bottom: shared.$border-base;
+        }
+    }
+}

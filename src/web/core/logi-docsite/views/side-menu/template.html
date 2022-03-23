@@ -1,0 +1,3 @@
+<div *ngFor="let node of menuGroup.group"><a class="menu-item" *ngIf="isNavItem(node)" [routerLink]="node.url">{{node.title}}</a>
+  <logi-menu-item *ngIf="!isNavItem(node)" [node]="node"></logi-menu-item>
+</div>

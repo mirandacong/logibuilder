@@ -1,0 +1,570 @@
+.mat-dialog-title {
+    margin-bottom: 24px !important;
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, .87)
+}
+
+.mat-dialog-content {
+    padding-bottom: 24px !important
+}
+
+.mat-dialog-actions {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: auto !important
+}
+
+.mat-dialog-actions button {
+    margin-left: 8px !important
+}
+
+.mat-icon svg {
+    pointer-events: none
+}
+
+.logi-button-base.logi-primary {
+    color: #b40014
+}
+
+.logi-button-base.logi-secondary {
+    color: rgba(0, 0, 0, .6)
+}
+
+.logi-button-base.logi-warn {
+    color: #da2947
+}
+
+.logi-button-base.logi-flat {
+    color: #fff
+}
+
+.logi-button-base[disabled] {
+    color: rgba(0, 0, 0, .38)
+}
+
+.logi-button-base.logi-button-dark-theme:not(.logi-warn) {
+    color: #fff
+}
+
+.logi-button-base.logi-button-dark-theme[disabled]:not(.logi-warn) {
+    color: rgba(255, 255, 255, .38)
+}
+
+.logi-button-base.logi-flat {
+    background-color: #b40014
+}
+
+.logi-button-base.logi-flat.logi-warn {
+    background-color: #da2947
+}
+
+.logi-button-base.logi-flat[disabled] {
+    background-color: rgba(0, 0, 0, .12)
+}
+
+.logi-button-base.logi-stroked:hover:not([disabled]).logi-primary {
+    border-color: #b40014
+}
+
+.logi-button-base.logi-stroked:hover:not([disabled]).logi-secondary {
+    border-color: rgba(0, 0, 0, .6)
+}
+
+.logi-button-base.logi-stroked:hover:not([disabled]).logi-warn {
+    border-color: #da2947
+}
+
+.logi-button-base.logi-stroked:hover:not([disabled]).logi-button-dark-theme.logi-primary {
+    border-color: #fff
+}
+
+.logi-button-base.logi-stroked:hover:not([disabled]).logi-button-dark-theme.logi-secondary {
+    border-color: #fff
+}
+
+.logi-button-base.logi-stroked.logi-button-dark-theme.logi-primary,
+.logi-button-base.logi-stroked.logi-button-dark-theme.logi-secondary {
+    border-color: #fff
+}
+
+.logi-button-base.logi-stroked.logi-button-dark-theme.logi-warn {
+    border-color: #da2947
+}
+
+.logi-button-base.logi-stroked.logi-button-dark-theme[disabled]:not(.logi-warn) {
+    border-color: rgba(255, 255, 255, .38)
+}
+
+.logi-button-base.logi-primary .logi-button-focus-overlay {
+    background-color: #b40014
+}
+
+.logi-button-base.logi-secondary .logi-button-focus-overlay {
+    background-color: #000
+}
+
+.logi-button-base.logi-warn .logi-button-focus-overlay {
+    background-color: #da2947
+}
+
+.logi-button-base[disabled] .logi-button-focus-overlay {
+    background-color: transparent
+}
+
+.logi-button-base.logi-button-dark-theme:not(.logi-warn) .logi-button-focus-overlay {
+    background-color: #fff !important
+}
+
+.logi-button-base.logi-stroked .logi-button-focus-overlay {
+    background-color: transparent
+}
+
+.logi-button-base.logi-flat .logi-button-focus-overlay {
+    background-color: #fff
+}
+
+.logi-button .mat-ripple-element,
+.logi-stroked-button .mat-ripple-element,
+.logi-icon-button .mat-ripple-element,
+.logi-icon-text-button .mat-ripple-element {
+    opacity: .12;
+    background-color: currentColor
+}
+
+.logi-button.logi-primary .mat-ripple-element,
+.logi-stroked-button.logi-primary .mat-ripple-element,
+.logi-icon-button.logi-primary .mat-ripple-element,
+.logi-icon-text-button.logi-primary .mat-ripple-element {
+    background-color: #b40014
+}
+
+.logi-button.logi-secondary .mat-ripple-element,
+.logi-stroked-button.logi-secondary .mat-ripple-element,
+.logi-icon-button.logi-secondary .mat-ripple-element,
+.logi-icon-text-button.logi-secondary .mat-ripple-element {
+    background-color: #000
+}
+
+.logi-button.logi-warn .mat-ripple-element,
+.logi-stroked-button.logi-warn .mat-ripple-element,
+.logi-icon-button.logi-warn .mat-ripple-element,
+.logi-icon-text-button.logi-warn .mat-ripple-element {
+    background-color: #da2947
+}
+
+.logi-button.logi-button-dark-theme:not(.logi-warn) .mat-ripple-element,
+.logi-stroked-button.logi-button-dark-theme:not(.logi-warn) .mat-ripple-element,
+.logi-icon-button.logi-button-dark-theme:not(.logi-warn) .mat-ripple-element,
+.logi-icon-text-button.logi-button-dark-theme:not(.logi-warn) .mat-ripple-element {
+    background-color: #fff
+}
+
+.logi-button-base.logi-flat .mat-ripple-element {
+    background-color: rgba(255, 255, 255, .32)
+}
+
+.logi-flat-button.loading.loading {
+    background-color: rgba(0, 0, 0, .12);
+    color: rgba(0, 0, 0, .38) !important
+}
+
+.logi-flat-button.loading .spinner circle {
+    stroke: rgba(0, 0, 0, .38)
+}
+
+.logi-button-base {
+    font-size: 14px;
+    font-family: "Roboto", "-apple-system", "PingFang FC", "Microsoft YaHei", "sans-serif";
+    font-weight: bold
+}
+
+.logi-button-toggle-button.logi-button-toggle-button-selected {
+    color: #b40014
+}
+
+.logi-checkbox-indeterminate .logi-checkbox-background,
+.logi-checkbox-checked .logi-checkbox-background {
+    background-color: #b40014
+}
+
+.logi-checkbox-mixedmark {
+    background-color: #fff
+}
+
+.logi-combobox.logi-combobox-disabled {
+    background-color: rgba(0, 0, 0, .04);
+    color: rgba(0, 0, 0, .24)
+}
+
+.logi-combobox.logi-combobox-disabled .logi-combobox-icon {
+    color: rgba(0, 0, 0, .38)
+}
+
+.logi-combobox-single .logi-selected-label.logi-selected-label-disabled {
+    color: rgba(0, 0, 0, .38)
+}
+
+.logi-combobox-multiple .logi-selected-label {
+    border-color: rgba(180, 0, 20, .24);
+    background-color: rgba(180, 0, 20, .12);
+    color: #b40014
+}
+
+.logi-combobox-multiple .logi-selected-label:hover {
+    border-color: rgba(180, 0, 20, .6)
+}
+
+.logi-combobox-multiple .logi-selected-label.logi-selected-label-disabled {
+    border-color: rgba(0, 0, 0, .12);
+    background-color: rgba(0, 0, 0, .04);
+    color: rgba(0, 0, 0, .38)
+}
+
+.logi-inner-option.logi-option-selected .logi-inner-option-container {
+    color: #b40014
+}
+
+.logi-inner-option.logi-option-selected .logi-inner-option-selected-icon {
+    color: #b40014
+}
+
+.logi-option-ripple .mat-ripple-element {
+    background-color: rgba(180, 0, 20, .12)
+}
+
+.logi-combobox .mat-ripple-element {
+    background-color: rgba(180, 0, 20, .12)
+}
+
+.logi-form-field-validation-error {
+    color: #da2947
+}
+
+.logi-form-field-label {
+    color: rgba(0, 0, 0, .38)
+}
+
+.logi-form-field-prefix,
+.logi-form-field-suffix {
+    color: rgba(0, 0, 0, .38)
+}
+
+.logi-form-field-outline {
+    color: rgba(0, 0, 0, .12)
+}
+
+.logi-form-field-invalid .logi-form-field-outline-thick {
+    color: #da2947
+}
+
+.logi-form-field-invalid .logi-form-field-label {
+    color: #da2947
+}
+
+.logi-form-field-disabled .logi-form-field-flex {
+    background-color: rgba(0, 0, 0, .04)
+}
+
+.logi-form-field-disabled .logi-form-field-prefix,
+.logi-form-field-disabled .logi-form-field-suffix {
+    color: rgba(0, 0, 0, .24)
+}
+
+.logi-form-field.logi-focused .logi-form-field-prefix,
+.logi-form-field.logi-focused .logi-form-field-suffix {
+    color: rgba(0, 0, 0, .6)
+}
+
+.logi-form-field.logi-focused:not(.logi-form-field-invalid) .logi-form-field-outline-thick {
+    color: #000
+}
+
+.logi-form-field.logi-focused:not(.logi-form-field-invalid) .logi-form-field-label {
+    color: #000
+}
+
+.logi-form-field:not(.logi-form-field-disabled):not(.logi-focused):not(.logi-form-field-invalid) .logi-form-field-flex:hover .logi-form-field-outline {
+    color: rgba(0, 0, 0, .6)
+}
+
+.logi-input-number-wrapper.logi-focused {
+    border-color: #000
+}
+
+.logi-input-number-wrapper.logi-focused .logi-input-number-element {
+    caret-color: #b40014
+}
+
+.logi-select-input-panel .mat-option.selected {
+    color: #b40014
+}
+
+.logi-dropdown-select-input .logi-select-input-element:focus {
+    border-color: #000
+}
+
+.logi-active-input-button.active {
+    color: #b40014 !important
+}
+
+textarea.logi-input-element {
+    resize: vertical
+}
+
+.logi-textarea-count::after {
+    content: attr(data-count);
+    pointer-events: none;
+    white-space: nowrap;
+    float: right;
+    color: rgba(0, 0, 0, .38);
+    font-size: 14px
+}
+
+.logi-input-element {
+    border: 1px solid rgba(0, 0, 0, .12);
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 36px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-family: "Roboto", "-apple-system", "PingFang FC", "Microsoft YaHei", "sans-serif";
+    outline: none;
+    color: rgba(0, 0, 0, .87);
+    caret-color: #b40014
+}
+
+.logi-input-element.logi-large {
+    height: 56px;
+    font-size: 16px
+}
+
+.logi-input-element.logi-small {
+    height: 24px;
+    font-size: 12px
+}
+
+.logi-input-element.logi-disabled {
+    border: 1px solid rgba(0, 0, 0, .12);
+    background-color: rgba(0, 0, 0, .04);
+    color: rgba(0, 0, 0, .38);
+    pointer-events: none
+}
+
+.logi-input-element.logi-disabled::placeholder {
+    color: rgba(0, 0, 0, .38)
+}
+
+.logi-input-element:hover {
+    border-color: rgba(0, 0, 0, .6)
+}
+
+.logi-input-element:focus {
+    border-width: 2px
+}
+
+.logi-input-element.ng-touched.ng-invalid {
+    border-width: 2px
+}
+
+.logi-input-element:focus {
+    border-color: #000
+}
+
+.logi-input-element.ng-invalid {
+    border-color: #da2947
+}
+
+.ng-invalid .logi-input-element {
+    caret-color: #da2947
+}
+
+.logi-menu-item:hover:not([disabled]) {
+    background-color: rgba(0, 0, 0, .04)
+}
+
+.logi-radio-checked .logi-radio-inner-circle {
+    background-color: #b40014
+}
+
+.logi-radio-checked .logi-radio-outer-circle {
+    border-color: #b40014
+}
+
+.logi-radio-checked:hover:not(.logi-radio-disabled) {
+    background-color: rgba(180, 0, 20, .04)
+}
+
+.logi-scrollbar-thumb-vertical,
+.logi-scrollbar-thumb-horizontal {
+    background-color: rgba(0, 0, 0, .12)
+}
+
+.logi-scrollbar-thumb-vertical:hover,
+.logi-scrollbar-thumb-horizontal:hover {
+    background-color: rgba(0, 0, 0, .38)
+}
+
+.logi-scrollbar-thumb-vertical.logi-scrollbar-thumb-dragging,
+.logi-scrollbar-thumb-horizontal.logi-scrollbar-thumb-dragging {
+    background-color: rgba(0, 0, 0, .6)
+}
+
+.logi-select.logi-select-disabled {
+    background-color: rgba(0, 0, 0, .04);
+    color: rgba(0, 0, 0, .24);
+    pointer-events: none
+}
+
+.logi-select.logi-select-disabled .logi-select-icon {
+    color: rgba(0, 0, 0, .38)
+}
+
+.logi-select-single .logi-selected-label.logi-selected-label-disabled {
+    color: rgba(0, 0, 0, .38)
+}
+
+.logi-select-multiple .logi-selected-label {
+    border-color: rgba(180, 0, 20, .24);
+    background-color: rgba(180, 0, 20, .12);
+    color: #b40014
+}
+
+.logi-select-multiple .logi-selected-label:hover {
+    border-color: rgba(180, 0, 20, .6)
+}
+
+.logi-select-multiple .logi-selected-label.logi-selected-label-disabled {
+    border-color: rgba(0, 0, 0, .12);
+    background-color: rgba(0, 0, 0, .04);
+    color: rgba(0, 0, 0, .38)
+}
+
+.logi-option.logi-selected .logi-option-container {
+    color: #b40014
+}
+
+.logi-option.logi-selected .logi-option-selected-icon {
+    color: #b40014
+}
+
+.logi-option-ripple .mat-ripple-element {
+    background-color: rgba(180, 0, 20, .12)
+}
+
+.logi-slider-wrapper.logi-dragging .logi-slider-handle:focus,
+.logi-slider-handle.logi-hovered {
+    top: -2px;
+    width: 16px;
+    height: 16px;
+    background-color: #b40014
+}
+
+.logi-slider-rail {
+    background-color: rgba(0, 0, 0, .12)
+}
+
+.logi-slider-track {
+    background-color: #b40014
+}
+
+.logi-slider-handle {
+    border-color: #b40014
+}
+
+.logi-slider.logi-disabled .logi-slider-track {
+    background-color: rgba(0, 0, 0, .24)
+}
+
+.logi-slider.logi-disabled .logi-slider-handle {
+    border-color: rgba(0, 0, 0, .38)
+}
+
+.logi-spinner-element circle {
+    stroke: #b40014 !important
+}
+
+.logi-switch.logi-checked:hover:not(.logi-disabled) .logi-switch-persistent-ripple {
+    background-color: rgba(180, 0, 20, .04)
+}
+
+.logi-switch.logi-checked .logi-switch-thumb {
+    background-color: #b40014
+}
+
+.logi-switch.logi-checked .logi-switch-bar {
+    background-color: rgba(180, 0, 20, .38)
+}
+
+.logi-switch.logi-checked.logi-disabled .logi-switch-thumb {
+    background-color: #9ccaec
+}
+
+.logi-switch.logi-checked.logi-disabled .logi-switch-bar {
+    background-color: rgba(180, 0, 20, .24)
+}
+
+.logi-tabs-ink-bar {
+    background-color: #b40014
+}
+
+.logi-tabs-bar .logi-tabs-tab-active {
+    color: #b40014
+}
+
+.logi-tree-node.selected {
+    background-color: rgba(180, 0, 20, .12)
+}
+
+.logi-tree-node-selected-circle.selected {
+    border-color: #b40014
+}
+
+.logi-tree-node-selected-dot {
+    background-color: #b40014
+}
+
+.mat-icon.logi-tree-node-leaf-icon.selected {
+    color: #b40014
+}
+
+.logi-cascaded-select-menu-item:hover {
+    background-color: rgba(180, 0, 20, .04)
+}
+
+.logi-cascaded-select-menu-item.activated {
+    background-color: rgba(180, 0, 20, .12)
+}
+
+.logi-cascaded-select-menu-item.activated .logi-cascaded-select-option-content {
+    font-weight: bold;
+    color: #b40014
+}
+
+.logi-cascaded-select .mat-ripple-element {
+    background-color: rgba(180, 0, 20, .12)
+}
+
+.logi-tag-base {
+    border-color: rgba(180, 0, 20, .12);
+    background-color: rgba(180, 0, 20, .24);
+    color: #b40014
+}
+
+.logi-tag-base:hover:not([disabled]) {
+    border-color: rgba(180, 0, 20, .6)
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    color: #b40014
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #b40014
+}
+
+.cdk-overlay-container .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: #b40014
+}

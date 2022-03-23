@@ -1,0 +1,15 @@
+// @ts-nocheck
+import {menuParse} from '@logi/src/web/core/logi-docsite/tools/gen_menu'
+
+const ROOT_NODE = menuParse({{ menu }})
+export const PREFIX = '{{ prefix }}'
+
+export interface FuncCategoryNode {
+    readonly title: string
+    readonly url?: string
+    readonly group?: FuncCategoryNode[]
+}
+
+export function getFuncList(): FuncCategoryNode[] {
+    return ROOT_NODE.group
+}

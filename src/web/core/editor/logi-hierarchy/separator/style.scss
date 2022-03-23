@@ -1,0 +1,17 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette';
+
+@use '../shared' as editor;
+
+@include editor.row-col;
+.node-identifier {
+    width: calc(100% - 80px);
+    /* stylelint-disable-next-line */
+    max-width: unset;
+    /* stylelint-disable-next-line */
+    min-width: unset;
+    .input-name {
+        width: 100%;
+    }
+}

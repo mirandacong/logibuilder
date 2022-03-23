@@ -1,0 +1,83 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+@use '../../shared' as editor;
+
+$scalar-bkg: rgba(229, 144, 53, 0.12);
+$scalar-text: rgba(229, 144, 53, 1);
+
+$normal-border: 1px solid rgba(0, 0, 0, 0.12);
+$border-selected: 1px solid shared.$base-blue;
+$green: rgba(19, 172, 89, 1);
+$hover-bkg: rgba(0, 0, 0, 0.04);
+$selected-bkg: rgba(65, 120, 184, 0.08);
+$sheet-bkg: rgba(250, 250, 250, 1);
+$white: rgba(255, 255, 255, 1);
+
+$row-margin: 8px 8px 0 7px;
+$row-input-width: 84px;
+$normal-radius: 4px;
+$rounded-radius: 44px;
+$label-text: rgba(19, 172, 89, 1);
+$label-bkg: rgba(19, 172, 89, 0.12);
+$label-num-margin: 7px 8px 7px 7px;
+$label-padding: 2px 8px;
+
+:host {
+    flex: 1;
+    flex-direction: column;
+    align-self: center;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+}
+
+.slice-part {
+    flex: 1;
+    flex-direction: column;
+    align-self: center;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    .slice-expr-item {
+        @include editor.slice-expr-item;
+
+        .compact-edit-slice {
+            margin-left: -5px;
+        }
+    }
+
+    /* In compact view, hide the formula border, which also indicates the
+    line over fx. */
+    .no-left-border {
+        border-left: none;
+
+        /* Ensure fx of slices displaying correctively */
+        /* stylelint-disable-next-line */
+        min-height: 0;
+
+        &.name-focused, &.expr-focused, &.stub-focused {
+            /* stylelint-disable-next-line */
+            margin: 0;
+            border: none;
+            background: none;
+        }
+    }
+    /* stylelint-disable-next-line */
+    & > *:last-child {
+        /* stylelint-disable-next-line */
+        margin-right: 0;
+    }
+}
+
+/* The fx with index in slices should display correctly in compact view */
+.compact-slices {
+    /* stylelint-disable-next-line */
+    flex-direction: row;
+}

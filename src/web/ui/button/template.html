@@ -1,0 +1,10 @@
+<span class='logi-button-wrapper' matTooltip='{{tooltip}}' [matTooltipDisabled]='disabled'>
+    <mat-spinner class='spinner' *ngIf='isFlatButton && loading' [diameter]='16' [strokeWidth]='2'></mat-spinner>
+    <mat-icon class='logi-icon-button-icon' *ngIf='isIconButton' [svgIcon]='icon'>{{fontIcon}}</mat-icon>
+    <span class='logi-button-text'>
+        <ng-content></ng-content>
+    </span>
+</span>
+<div class='logi-button-ripple' matRipple [matRippleColor]='rippleColor' [matRippleCentered]='rippleCentered'
+    [matRippleDisabled]='isRippleDisabled()' [matRippleTrigger]='getHostElement()'></div>
+<div class='logi-button-focus-overlay'></div>

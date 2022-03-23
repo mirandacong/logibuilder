@@ -1,0 +1,159 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+@use '../../shared' as editor;
+
+$border-selected: 1px solid shared.$base-blue;
+
+/* Used when dragging nodes starts */
+.dragging-elements-fade-away {
+    /* stylelint-disable-next-line */
+    opacity: 0.38;
+}
+:host {
+    @include editor.row-col-host;
+    ::ng-deep {
+        .label-item {
+            background-color: rgba(0, 159, 191, 0.12) !important;
+            color: #009FBF !important;
+        }
+    }
+}
+.tree-flag-top-part {
+    @include editor.tree-flag-top-part;
+    .circle {
+        @include editor.tree-flag-circle-blue(7px);
+        box-sizing: border-box;
+    }
+}
+.in-dialog {
+    margin-left: 0 !important;
+}
+.tree-flag-bottom-part {
+    @include editor.tree-flag-bottom-part;
+}
+.last-node-flag-style {
+    background-color: rgba(218, 218, 218, 1);
+}
+.flag-color {
+    @include editor.flag-color;
+}
+.last-element-flag {
+    margin: 0 10px 0 0;
+    height: 20px;
+}
+
+.modifier-icon {
+    position: absolute;
+    right: 30px;
+    opacity: 0;
+}
+
+.menu-btn {
+    @include editor.menu-btn;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    opacity: 0;
+}
+.column-refname-container {
+    @include editor.node-container;
+    position: relative;
+}
+
+/* Rounded shape border when in compact view. */
+.rounded-border {
+    @include editor.compact-container;
+}
+.compact-label {
+    @include editor.compact-label;
+}
+.node-identifier {
+    @include editor.node-identifier;
+
+    .ref-name {
+        @include editor.node-ref-name(14px);
+        @include editor.row-col-input;
+        .input-name {
+            display: inline-block;
+        }
+        .input-name:not(:empty) {
+            display: inline;
+
+            margin-right: 8px;
+            border: none;
+
+            min-height: 100%;
+        }
+        /* stylelint-disable-next-line */
+        .input-name:empty::before {
+            content: attr(placeholder);
+            color: palette.logi-black(0.38);
+        }
+        .input-name:focus {
+            caret-color: palette.aris-brand();
+            outline: none;
+        }
+        @include editor.compact-input-name;
+    }
+    .compact-ref-name {
+        @include editor.compact-input;
+    }
+}
+
+.compact-identifier {
+    @include editor.compact-identifier;
+    /* stylelint-disable-next-line */
+    & > * :last-child {
+        /* stylelint-disable-next-line */
+        margin-right: 0;
+    }
+}
+
+.fb-tag {
+    position: absolute;
+    top: 8px;
+    left: -19px;
+
+    &.compact {
+        position: static;
+        margin-left: 10px;
+    }
+}
+
+.formula {
+    @include editor.formula;
+
+    .formula-edit {
+        @include editor.formula-edit;
+    }
+}
+
+/* Used for "fx" overlapping border effect */
+.right-border {
+    @include editor.formula-right-border;
+}
+.compact-formula {
+    @include editor.compact-formula;
+}
+
+span.menu-shortcut {
+    @include editor.shortcut-key;
+}
+
+.column-label-container {
+    @include editor.label-container;
+    background-color: palette.logi-aqua(0.12);
+    color: map-get(palette.$logi-aqua, 600);
+    &:first-child {
+        margin-left: 8px;
+    }
+}
+
+.column-label-content {
+    @include editor.label-content;
+    &:first-child {
+        margin-left: 8px;
+    }
+}

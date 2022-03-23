@@ -1,0 +1,25 @@
+<label #label class="logi-checkbox-layout">
+    <div class="logi-checkbox-inner-container"
+        [class.logi-checkbox-inner-container-no-side-margin]='!checkboxLabel.textContent || !checkboxLabel.textContent.trim()'>
+        <input type="text" class="logi-checkbox-input cdk-visually-hidden" #input (change)='onChange($event)'
+            (click)='onInputClick($event)' [checked]='checked' [disabled]='disabled' [indeterminate]='indeterminate'
+            type='checkbox'>
+        <div class="logi-checkbox-ripple" [matRippleCentered]='true'
+            [matRippleColor]='checked ? "rgba(65, 120, 184, 0.12)" : "rgba(0, 0, 0, 0.12)"'
+            [matRippleDisabled]='isRippleDisabled()' [matRippleRadius]='20' [matRippleTrigger]='label' matRipple>
+            <div class="logi-ripple-element logi-checkbox-persistent-ripple"></div>
+        </div>
+        <div class="logi-checkbox-frame"></div>
+        <div class="logi-checkbox-background">
+            <svg class="logi-checkbox-checkmark" focusable='false' version='1.1' viewBox='0 0 24 24'
+                xml:space='preserve'>
+                <path class="logi-checkbox-checkmark-path" d='M4.1,12.7 9,17.6 20.3,6.3' fill='none' stroke='white'>
+                </path>
+            </svg>
+            <div class="logi-checkbox-mixedmark"></div>
+        </div>
+    </div>
+    <div #checkboxLabel class="logi-checkbox-label">
+        <ng-content></ng-content>
+    </div>
+</label>

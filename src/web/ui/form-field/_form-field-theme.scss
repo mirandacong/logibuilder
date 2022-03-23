@@ -1,0 +1,67 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+@mixin logi-form-field-theme($theme) {
+    $primary: map-get($theme, primary);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+
+    $main-color: theming.logi-color($primary);
+    $focused-color: map-get($background, focused-border);
+    $error-color: theming.logi-color($warn);
+    $label-color: rgba(0, 0, 0, 0.38);
+    $outline-color: rgba(0, 0, 0, 0.12);
+    $outline-color-hover: rgba(0, 0, 0, 0.6);
+    $bg-disabled: rgba(0, 0, 0, 0.04);
+    $icon-color: rgba(0, 0, 0, 0.38);
+    $icon-color-focused: rgba(0, 0, 0, 0.6);
+    $icon-color-disabled: rgba(0, 0, 0, 0.24);
+
+    .logi-form-field-validation-error {
+        color: $error-color;
+    }
+    .logi-form-field-label {
+        color: $label-color;
+    }
+    .logi-form-field-prefix, .logi-form-field-suffix {
+        color: $icon-color;
+    }
+    .logi-form-field-outline {
+        color: $outline-color;
+    }
+    .logi-form-field-invalid {
+        .logi-form-field-outline-thick {
+            color: $error-color;
+        }
+        .logi-form-field-label {
+            color: $error-color;
+        }
+    }
+    .logi-form-field-disabled {
+        .logi-form-field-flex {
+            background-color: $bg-disabled;
+        }
+        .logi-form-field-prefix, .logi-form-field-suffix {
+            color: $icon-color-disabled;
+        }
+    }
+    .logi-form-field.logi-focused {
+        .logi-form-field-prefix, .logi-form-field-suffix {
+            color: $icon-color-focused;
+        }
+    }
+    .logi-form-field.logi-focused:not(.logi-form-field-invalid) {
+        .logi-form-field-outline-thick {
+            color: $focused-color;
+        }
+        .logi-form-field-label {
+            color: $focused-color;
+        }
+    }
+    .logi-form-field:not(.logi-form-field-disabled):not(.logi-focused):not(.logi-form-field-invalid) .logi-form-field-flex:hover {
+        .logi-form-field-outline {
+            color: $outline-color-hover;
+        }
+    }
+}

@@ -1,0 +1,225 @@
+@use '../core/styles/shared';
+
+@use '../core/theming/theming';
+
+$logi-icon-button-color: rgba(0, 0, 0, 0.6);
+
+$disabled-bg: rgba(0, 0, 0, 0.12);
+$black-12: rgba(0, 0, 0, 0.38);
+$white: white;
+
+$dark-disabled-color: rgba(255, 255, 255, 0.38);
+
+@mixin _logi-button-focus-overlay-color($theme) {
+    $primary: map-get($theme, primary);
+    $warn: map-get($theme, warn);
+
+    $secondary-bg: rgba(0, 0, 0);
+
+    &.logi-primary .logi-button-focus-overlay {
+        background-color: theming.logi-color($primary);
+    }
+    &.logi-secondary .logi-button-focus-overlay {
+        background-color: $secondary-bg;
+    }
+    &.logi-warn .logi-button-focus-overlay {
+        background-color: theming.logi-color($warn);
+    }
+    &[disabled] .logi-button-focus-overlay {
+        background-color: transparent;
+    }
+}
+
+@mixin _logi-button-ripple-color($theme, $hue, $opacity) {
+    $primary: map-get($theme, primary);
+    $warn: map-get($theme, warn);
+
+    $secondary-ripple-bg: rgba(0, 0, 0);
+
+    &.logi-primary .mat-ripple-element {
+        background-color: theming.logi-color($primary, $hue, $opacity);
+    }
+
+    &.logi-secondary .mat-ripple-element {
+        background-color: $secondary-ripple-bg;
+    }
+
+    &.logi-warn .mat-ripple-element {
+        background-color: theming.logi-color($warn, $hue, $opacity);
+    }
+}
+
+@mixin _logi-button-theme-property($theme, $property, $hue) {
+    $primary: map-get($theme, primary);
+    $warn: map-get($theme, warn);
+    $foreground: (
+        disabled-button: $black-12,
+    );
+    $background: (
+        disabled-button: $disabled-bg,
+    );
+
+    &.logi-primary {
+        #{$property}: theming.logi-color($primary, $hue);
+    }
+    &.logi-warn {
+        #{$property}: theming.logi-color($warn, $hue);
+    }
+
+    &.logi-primary, &.logi-warn, &[disabled] {
+        &[disabled] {
+            $palette: if($property == 'color', $foreground, $background);
+            #{$property}: theming.logi-color($palette, disabled-button);
+        }
+    }
+}
+
+@mixin _logi-button-theme-border-color($theme) {
+    $primary: map-get($theme, primary);
+    $warn: map-get($theme, warn);
+
+    $secondary-border-color: rgba(0, 0, 0, 0.6);
+
+    &.logi-primary {
+        border-color: theming.logi-color($primary);
+    }
+    &.logi-secondary {
+        border-color: $secondary-border-color;
+    }
+    &.logi-warn {
+        border-color: theming.logi-color($warn);
+    }
+    &.logi-button-dark-theme {
+        &.logi-primary {
+            border-color: $white;
+        }
+        &.logi-secondary {
+            border-color: $white;
+        }
+    }
+}
+
+@mixin logi-button-theme($theme) {
+    $primary: map-get($theme, primary);
+    $warn: map-get($theme, warn);
+
+    $color-primary: theming.logi-color($primary);
+    $color-secondary: rgba(0, 0, 0, 0.6);
+    $color-warn: theming.logi-color($warn);
+    $color-disabled-text: rgba(0, 0, 0, 0.38);
+    $color-disabled-bg: rgba(0, 0, 0, 0.12);
+    $white: white;
+
+    /*  text color */
+    .logi-button-base.logi-primary {
+        color: $color-primary;
+    }
+    .logi-button-base.logi-secondary {
+        color: $color-secondary;
+    }
+    .logi-button-base.logi-warn {
+        color: $color-warn;
+    }
+    .logi-button-base.logi-flat {
+        color: $white;
+    }
+    .logi-button-base[disabled] {
+        color: $color-disabled-text;
+    }
+    .logi-button-base.logi-button-dark-theme {
+        &:not(.logi-warn) {
+            color: $white;
+        }
+        &[disabled]:not(.logi-warn) {
+            color: $dark-disabled-color;
+        }
+    }
+
+    /* background color */
+    .logi-button-base.logi-flat {
+        background-color: $color-primary;
+        &.logi-warn {
+            background-color: $color-warn;
+        }
+        &[disabled] {
+            background-color: $color-disabled-bg;
+        }
+    }
+
+    /* hover border color */
+    .logi-button-base.logi-stroked {
+        &:hover:not([disabled]) {
+            @include _logi-button-theme-border-color($theme);
+        }
+        &.logi-button-dark-theme {
+            &.logi-primary, &.logi-secondary {
+                border-color: $white;
+            }
+            &.logi-warn {
+                border-color: $color-warn;
+            }
+            &[disabled]:not(.logi-warn) {
+                border-color: $dark-disabled-color;
+            }
+        }
+    }
+
+    /* hover background color */
+    .logi-button-base {
+        @include _logi-button-focus-overlay-color($theme);
+        &.logi-button-dark-theme:not(.logi-warn) {
+            .logi-button-focus-overlay {
+                background-color: $white !important;
+            }
+        }
+    }
+    .logi-button-base.logi-stroked {
+        .logi-button-focus-overlay {
+            background-color: transparent;
+        }
+    }
+    .logi-button-base.logi-flat {
+        .logi-button-focus-overlay {
+            background-color: $white;
+        }
+    }
+
+    /* ripple background color */
+    .logi-button, .logi-stroked-button, .logi-icon-button, .logi-icon-text-button {
+        .mat-ripple-element {
+            opacity: 0.12;
+            background-color: currentColor;
+        }
+        @include _logi-button-ripple-color($theme, default, 1);
+
+        &.logi-button-dark-theme:not(.logi-warn) {
+            .mat-ripple-element {
+                background-color: $white;
+            }
+        }
+    }
+    .logi-button-base.logi-flat {
+        .mat-ripple-element {
+            background-color: rgba(shared.$base-white, 0.32);
+        }
+    }
+
+    /* others */
+    .logi-flat-button.loading {
+        &.loading {
+            background-color: $disabled-bg;
+            color: $black-12 !important;
+        }
+        .spinner circle {
+            stroke: $black-12;
+        }
+    }
+
+    /* The font config.
+     * TODO (kai): Move this to typography mixin like material button */
+    .logi-button-base {
+        font-size: 14px;
+        font-family: shared.$base-font;
+        font-weight: bold;
+    }
+}

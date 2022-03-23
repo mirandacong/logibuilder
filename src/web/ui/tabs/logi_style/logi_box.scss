@@ -1,0 +1,23 @@
+$tab-nav-bg: rgba(0, 0, 0, 0.04);
+$tab-active-bg: white;
+
+/** Used only for top tabs nav **/
+.logi-box-style-tabs {
+    .logi-tabs-top-bar {
+        border-bottom: none;
+    }
+    .logi-tabs-nav-content {
+        align-items: center;
+        display: flex;
+        border-radius: 4px;
+        box-sizing: border-box;
+        height: 36px;
+        padding: 4px;
+        background-color: $tab-nav-bg;
+    }
+    .logi-tabs-tab-active {
+        border-radius: 4px;
+        background-color: $tab-active-bg;
+        min-height: 28px;
+    }
+}

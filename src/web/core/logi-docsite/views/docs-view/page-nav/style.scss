@@ -1,0 +1,29 @@
+@use '../../theme';
+
+$docs-font: 'Roboto', serif;
+$note-font: 'Roboto Medium';
+
+.btn {
+    opacity: 1;
+
+    border: 1px solid rgba(65, 120, 184, 1);
+    border-radius: 4px;
+    width: 88px;
+    height: 36px;
+    padding: 0 15px;
+
+    background: rgba(255, 255, 255, 1);
+
+    font-size: 14px;
+    line-height: 21px;
+    font-family: $docs-font;
+    font-weight: 500;
+    color: rgba(65, 120, 184, 1);
+}
+
+span {
+    margin: 8px;
+}
+button:hover {
+    border: 1px solid #5C82CE;
+}

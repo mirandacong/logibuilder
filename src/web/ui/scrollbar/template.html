@@ -1,0 +1,9 @@
+<div #viewport class='logi-scrollbar-viewport'>
+    <ng-content></ng-content>
+</div>
+<ng-container *ngIf='!disabled'>
+    <logi-scrollbar-vertical *ngIf='verticalScrollable' [class.with-horizontal]='horizontalScrollable'>
+    </logi-scrollbar-vertical>
+    <logi-scrollbar-horizontal *ngIf='horizontalScrollable' [class.with-vertical]='verticalScrollable'>
+    </logi-scrollbar-horizontal>
+</ng-container>

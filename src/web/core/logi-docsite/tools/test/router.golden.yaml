@@ -1,0 +1,7 @@
+---
+urls:
+- src/web/core/logi-docsite/tools/test/examples/ex
+- src/web/core/logi-docsite/tools/test/examples/foo/bar
+- src/web/core/logi-docsite/tools/test/examples/foo/cat
+- src/web/core/logi-docsite/tools/test/examples/foo/foo1/bar
+- src/web/core/logi-docsite/tools/test/examples/foo/foo1/cat

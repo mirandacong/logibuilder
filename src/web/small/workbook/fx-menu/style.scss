@@ -1,0 +1,52 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+$header-height: 64px;
+$white-color: palette.logi-white(1);
+$maximize-margin: 4px 8px;
+$file-btn-padding: 0 17px;
+$drag: drag;
+$no-drag: no-drag;
+$mat-dialog-container: 0 24px 48px rgba(0, 0, 0, 0.16);
+$mat-dialog-container-border-radius: 4px;
+$white: rgba(255, 255, 255, 1);
+
+:host {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.menu {
+    display: flex;
+    border-bottom: shared.$border-base;
+    height: 31px;
+}
+
+::ng-deep {
+    .file-menu-panel .mat-menu-item {
+        padding: 0 16px 0 40px;
+    }
+    .mat-menu-item .mat-icon {
+        margin: 0 8px 2px !important;
+    }
+    .mat-divider {
+        margin: 8px 0 !important;
+    }
+    .mat-menu-panel {
+        min-height: fit-content;
+    }
+}
+
+.btns {
+    flex-direction: row;
+    display: flex;
+}
+
+.toolbar {
+    border-bottom: shared.$border-base;
+    height: 43px;
+    background-color: palette.logi-white(1);
+    color: palette.logi-black(0.38);
+}

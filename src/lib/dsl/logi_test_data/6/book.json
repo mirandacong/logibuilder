@@ -1,0 +1,687 @@
+{
+    "book": {
+        "annotations": {},
+        "labels": [],
+        "name": "Style template",
+        "nodetype": 1,
+        "subnodes": [
+            {
+                "annotations": {},
+                "labels": [],
+                "name": "Control",
+                "nodetype": 2,
+                "subnodes": [
+                    {
+                        "annotations": {},
+                        "labels": [],
+                        "name": "Title + 2",
+                        "nodetype": 3,
+                        "subnodes": [
+                            {
+                                "annotations": {},
+                                "labels": [],
+                                "name": "Title + 1",
+                                "nodetype": 3,
+                                "subnodes": [
+                                    {
+                                        "annotations": {},
+                                        "labels": [],
+                                        "name": "Main title",
+                                        "nodetype": 3,
+                                        "subnodes": [],
+                                        "uuid": "9c39817e-4f85-4597-b821-f78652c06219"
+                                    }
+                                ],
+                                "uuid": "f84b153c-a8f7-47f6-ae52-b87a8b9cba44"
+                            }
+                        ],
+                        "uuid": "88659157-54ef-4629-8ba9-c7c7cbe497d0"
+                    },
+                    {
+                        "annotations": {},
+                        "headerStub": "Header name",
+                        "labels": [],
+                        "name": "Style tamplate table",
+                        "nodetype": 4,
+                        "subnodes": [
+                            {
+                                "annotations": {},
+                                "labels": [],
+                                "name": "2017",
+                                "nodetype": 6,
+                                "subnodes": [
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q1",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "d69e6f37-0d37-4a6b-90e3-7518a43039e0",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q2",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "15aff81a-00f9-4a07-a990-2e416c03ee07",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q3",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "bfb8d561-9f27-4907-88ba-16ba89825bdc",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q4",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "517018e1-bde6-48bb-a4a1-5ce0aca36b81",
+                                        "valid": true
+                                    },
+                                    {
+                                        "alias": "",
+                                        "annotations": {},
+                                        "expression": "",
+                                        "labels": [],
+                                        "name": "Q5",
+                                        "nodetype": 8,
+                                        "separator": false,
+                                        "sliceExprs": [],
+                                        "type": 0,
+                                        "uuid": "270ded4e-95e4-44e0-96a8-359bcef2949c",
+                                        "valid": true
+                                    }
+                                ],
+                                "uuid": "f932736f-1941-4787-b5ff-646f6f2c9119"
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{SOURCE()}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Underline",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "844306c8-629a-4f6e-a488-e64b69a651c7",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{SOURCE()}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Indent",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "f0fa1d56-f9be-4a8b-acb9-ec26214eb1de",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{SOURCE()}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Italic indent+1 %",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "eb6514d7-976e-4098-8f9b-abbf3e533ff2",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{SOURCE()}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Normal",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "1b04c244-e998-4720-895f-9e4f237830cc",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "separator",
+                                "nodetype": 7,
+                                "separator": true,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "946cfc9a-058d-43a3-95e5-9903d63f9cb2",
+                                "valid": false
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{SOURCE()}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Bold",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "cbf74171-1424-4139-8386-9c25d716f4d5",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{SOURCE()}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "Bold indent",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "5873302a-68a6-4077-acbc-8b9f4fe199c9",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "{SOURCE()}",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "SPLITTER",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "68589954-451c-44c3-96e1-8e93b651fdf7",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "SOURCE()",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "dd0b83ca-3ac4-4c4b-b870-c3d3e6b82109",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "INPUT()",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "24abb173-fe4d-4070-91db-0839012ff292",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "SOURCE() empty",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "1c99a5ae-0fe0-4342-bc84-0d226d2aa90d",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "INPUT() empty",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "9b5ce23b-2c19-4885-b0ba-3f1a42671690",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": true,
+                                "labels": [],
+                                "name": "scalar no num",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "84b12a01-5b9a-4083-86a4-edf83e1d99ec",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": true,
+                                "labels": [],
+                                "name": "scalar empty",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "343cb4f7-dd29-4788-bc4a-c4fda528eee3",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "1/2",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "default",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "ffb1af69-87da-4135-9154-66ae0863658f",
+                                "valid": true
+                            },
+                            {
+                                "alias": "",
+                                "annotations": {},
+                                "expression": "",
+                                "isDefScalar": false,
+                                "labels": [],
+                                "name": "empty cell",
+                                "nodetype": 7,
+                                "separator": false,
+                                "sliceExprs": [],
+                                "type": 0,
+                                "uuid": "e81a2fdb-0b55-436f-8c3d-625ce7e698b3",
+                                "valid": true
+                            }
+                        ],
+                        "uuid": "da110336-7a5a-4edf-828c-1882331a08bc"
+                    }
+                ],
+                "uuid": "bff269e1-73ff-4be8-8d5e-9f596298756e"
+            }
+        ],
+        "uuid": "3595c551-1ff6-4520-b521-4f6a1758f918"
+    },
+    "formulaManager": [],
+    "modifierManager": [
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 2,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "844306c8-629a-4f6e-a488-e64b69a651c7"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "f0fa1d56-f9be-4a8b-acb9-ec26214eb1de"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 2,
+                "italic": true,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": true,
+                "thousandsSeparator": true
+            },
+            "uuid": "eb6514d7-976e-4098-8f9b-abbf3e533ff2"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "1b04c244-e998-4720-895f-9e4f237830cc"
+        },
+        {
+            "font": {
+                "bold": true,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "cbf74171-1424-4139-8386-9c25d716f4d5"
+        },
+        {
+            "font": {
+                "bold": true,
+                "family": "Calibri",
+                "indent": 1,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "5873302a-68a6-4077-acbc-8b9f4fe199c9"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "68589954-451c-44c3-96e1-8e93b651fdf7"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "dd0b83ca-3ac4-4c4b-b870-c3d3e6b82109"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "24abb173-fe4d-4070-91db-0839012ff292"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "1c99a5ae-0fe0-4342-bc84-0d226d2aa90d"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "9b5ce23b-2c19-4885-b0ba-3f1a42671690"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "84b12a01-5b9a-4083-86a4-edf83e1d99ec"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "343cb4f7-dd29-4788-bc4a-c4fda528eee3"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "ffb1af69-87da-4135-9154-66ae0863658f"
+        },
+        {
+            "font": {
+                "bold": false,
+                "family": "Calibri",
+                "indent": 0,
+                "italic": false,
+                "line": 0,
+                "size": 10
+            },
+            "format": {
+                "currency": "",
+                "decimalPlaces": 2,
+                "percent": false,
+                "thousandsSeparator": true
+            },
+            "uuid": "e81a2fdb-0b55-436f-8c3d-625ce7e698b3"
+        }
+    ],
+    "sourceManager": [
+        {
+            "col": "d69e6f37-0d37-4a6b-90e3-7518a43039e0",
+            "row": "dd0b83ca-3ac4-4c4b-b870-c3d3e6b82109",
+            "source": {
+                "value": 32
+            }
+        },
+        {
+            "col": "15aff81a-00f9-4a07-a990-2e416c03ee07",
+            "row": "dd0b83ca-3ac4-4c4b-b870-c3d3e6b82109",
+            "source": {
+                "value": 32
+            }
+        },
+        {
+            "col": "bfb8d561-9f27-4907-88ba-16ba89825bdc",
+            "row": "dd0b83ca-3ac4-4c4b-b870-c3d3e6b82109",
+            "source": {
+                "value": 32
+            }
+        },
+        {
+            "col": "517018e1-bde6-48bb-a4a1-5ce0aca36b81",
+            "row": "dd0b83ca-3ac4-4c4b-b870-c3d3e6b82109",
+            "source": {
+                "value": 32
+            }
+        },
+        {
+            "col": "270ded4e-95e4-44e0-96a8-359bcef2949c",
+            "row": "dd0b83ca-3ac4-4c4b-b870-c3d3e6b82109",
+            "source": {
+                "value": 32
+            }
+        },
+        {
+            "col": "d69e6f37-0d37-4a6b-90e3-7518a43039e0",
+            "row": "24abb173-fe4d-4070-91db-0839012ff292",
+            "source": {
+                "value": 32
+            }
+        },
+        {
+            "col": "15aff81a-00f9-4a07-a990-2e416c03ee07",
+            "row": "24abb173-fe4d-4070-91db-0839012ff292",
+            "source": {
+                "value": 32
+            }
+        },
+        {
+            "col": "bfb8d561-9f27-4907-88ba-16ba89825bdc",
+            "row": "24abb173-fe4d-4070-91db-0839012ff292",
+            "source": {
+                "value": 32
+            }
+        },
+        {
+            "col": "517018e1-bde6-48bb-a4a1-5ce0aca36b81",
+            "row": "24abb173-fe4d-4070-91db-0839012ff292",
+            "source": {
+                "value": 32
+            }
+        },
+        {
+            "col": "270ded4e-95e4-44e0-96a8-359bcef2949c",
+            "row": "24abb173-fe4d-4070-91db-0839012ff292",
+            "source": {
+                "value": 32
+            }
+        }
+    ],
+    "templateSet": {
+        "standardHeaders": []
+    }
+}

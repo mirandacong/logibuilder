@@ -1,0 +1,110 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+@use '../../shared' as editor;
+
+$input-padding: 9px 6px 9px 8px;
+$input-name-color: palette.logi-aqua();
+$normal-color: palette.logi-black(0.6);
+
+.ref-name-input {
+    @include editor.slice-name-input;
+}
+
+.mat-option.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled) {
+    background-color: transparent;
+}
+
+.slice-suggestion-panel {
+    @include editor.slice-suggestion-panel;
+    .top-not-bol {
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        margin-bottom: 8px;
+        height: 32px;
+        .left {
+            align-items: center;
+            display: flex;
+        }
+        .close {
+            margin-right: 2px;
+            width: 18px;
+            color: $normal-color;
+        }
+        .slice-name {
+            @include shared.set-font(14px,$color: $input-name-color);
+        }
+        .boolean {
+            cursor: pointer;
+            line-height: 18px;
+            @include shared.set-font($color:$normal-color);
+        }
+    }
+    .top-can-bol {
+        .spans-block {
+            position: relative;
+        }
+        span {
+            padding: 5px 0;
+            font-size: 14px;
+            line-height: 26px;
+            &.name {
+                color: $input-name-color;
+            }
+        }
+        .spans-input {
+            position: relative;
+            overflow: auto;
+            border: 1px solid palette.logi-black(0.12);
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 8px 36px 8px 16px;
+            font-size: 0;
+            max-height: 94px;
+            min-height: 40px;
+            .seat {
+                position: absolute;
+                left: 15px;
+                display: inline-block;
+                width: 8px;
+                height: 20px;
+                padding: 0;
+            }
+            &:focus {
+                border: 1px solid palette.aris-brand();
+                outline: none;
+            }
+        }
+        .close-btn {
+            position: absolute;
+            top: 9px;
+            right: 9px;
+        }
+        .btns {
+            display: flex;
+            .btn {
+                margin: 8px 8px 8px 0;
+                border: 1px solid palette.logi-black(0.12);
+                border-radius: 24px;
+                width: 44px;
+                height: 24px;
+                background-color: palette.logi-black(0.04);
+                cursor: pointer;
+                line-height: 24px;
+                font-weight: bold;
+                text-align: center;
+                @include shared.set-font($color:$normal-color);
+            }
+        }
+    }
+    .option-block {
+        flex: 1;
+        height: 0;
+    }
+    .options {
+        height: calc(100% - 44px);
+    }
+}

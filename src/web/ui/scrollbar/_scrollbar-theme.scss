@@ -1,0 +1,16 @@
+@mixin logi-scrollbar-theme($theme) {
+    $primary: map-get($theme, primary);
+    $bg-thumb: rgba(0, 0, 0, 0.12);
+    $bg-thumb-hover: rgba(0, 0, 0, 0.38);
+    $bg-thumb-drag: rgba(0, 0, 0, 0.6);
+
+    .logi-scrollbar-thumb-vertical, .logi-scrollbar-thumb-horizontal {
+        background-color: $bg-thumb;
+        &:hover {
+            background-color: $bg-thumb-hover;
+        }
+        &.logi-scrollbar-thumb-dragging {
+            background-color: $bg-thumb-drag;
+        }
+    }
+}

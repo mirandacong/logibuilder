@@ -1,0 +1,8 @@
+<div class="excel-preview-body" #body_csf>
+  <div class="csf-sheet-formula">
+    <div class="cell-address">{{cellRange}}</div>
+    <div class="csf-sheet-formula-bar" #formula_bar contenteditable="true" spellcheck="false"></div>
+  </div>
+  <div class="csf-sheet-container" #container></div>
+  <logi-legend class="legend" [dragBoundary]="body_csf"></logi-legend>
+</div>

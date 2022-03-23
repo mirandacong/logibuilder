@@ -1,0 +1,56 @@
+// View part style.
+
+/* stylelint-disable-next-line */
+::ng-deep {
+    .vp-unknown {
+        color: black;
+    }
+
+    .vp-book {
+        color: #2962FF;
+    }
+
+    .vp-sheet {
+        color: #2979FF;
+    }
+
+    .vp-title {
+        color: #82B1FF;
+    }
+
+    .vp-table {
+        color: #0D47A1;
+    }
+
+    .vp-rowb {
+        color: #1976D2;
+    }
+
+    .vp-row {
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    .vp-rows {
+        color: #64B5F6;
+    }
+
+    .vp-colb {
+        color: black;
+    }
+
+    .vp-col {
+        color: black;
+    }
+
+    .vp-cols {
+        color: black;
+    }
+
+    .vp-func {
+        color: #006400;
+    }
+
+    .vp-dict {
+        color: #7986CB;
+    }
+}

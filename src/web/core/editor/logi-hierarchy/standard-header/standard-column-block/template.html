@@ -1,0 +1,28 @@
+<ng-container *ngIf="!inDialog">
+  <div class="tree-flag-top-part">
+    <div class="circle"></div>
+  </div>
+  <div class="tree-flag-bottom-part" [ngClass]="{&quot;last-node-flag-style&quot;: lastNodeInParent}"></div>
+</ng-container>
+<div class="column-block" [ngClass]="{&quot;in-dialog&quot;: inDialog}">
+  <div class="column-block-title show-border-bottom" [node]="node" logi-node-focusable>
+    <button class="collapsed-btn" (mousedown)="collapseNode(!collapse, $event)" [fontIcon]="collapse ? &quot;chevron_right&quot;:&quot;expand_more&quot;" logi-icon-button></button>
+    <ng-container>
+      <ng-content select="mat-icon"></ng-content>
+      <div class="node-type">组</div>
+    </ng-container>
+    <div class="column-refname-input">{{name}}</div>
+  </div>
+  <div class="dropzone">
+    <div class="empty-wrapper" *ngIf="node.tree.length === 0 &amp;&amp; !collapse">
+      <div class="empty-flag">
+        <div class="empty-circle"></div>
+      </div>
+      <div class="empty-block">空组</div>
+    </div>
+    <div *ngFor="let child of node.tree; let i=index;trackBy:trackBy" #drag_el_ref>
+      <logi-standard-column-block class="subnode" *ngIf="isColumnBlock(child)" [class.collapsed]="collapse" [inDialog]="false" [node]="child"></logi-standard-column-block>
+      <logi-standard-column class="subnode" *ngIf="isColumn(child)" [class.collapsed]="collapse" [col]="child" [inDialog]="false"></logi-standard-column>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<h2 cdkDrag cdkDragHandle cdkDragRootElement=".cdk-overlay-pane" mat-dialog-title>求和</h2>
+<mat-dialog-content>
+  <div class="input-field">
+    <div class="label">来源行</div>
+    <input class="row-input" [formControl]="rowsControl" readonly logi-input>
+    <mat-icon class="add-row-icon" matTooltip="选择来源行" svgIcon="ic_select_row" (click)="onSelectRow()"></mat-icon>
+  </div>
+  <div class="input-field">
+    <div class="label">合计行名称</div>
+    <input [formControl]="nameControl" logi-input>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="cancel" logi-button (click)="onCancel()">取消</button>
+  <button class="ok" logi-flat-button (click)="onConfirm()">确定</button>
+</mat-dialog-actions>

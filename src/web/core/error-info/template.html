@@ -1,0 +1,16 @@
+<mat-icon class="error-icon" svgIcon="ic_help_info"></mat-icon><span class="error-text">错误</span><span class="error-count" [ngClass]="{&quot;has-error&quot;: errorCount &gt; 0}">{{errorCount > 99 ? '99+' : errorCount}}</span>
+<ng-template cdkPortal>
+  <div class="error-info-container">
+    <mat-tab-group class="logi-error-info-mat-tab-container" [animationDuration]="&quot;0ms&quot;" [disablePagination]="true">
+      <mat-tab *ngFor="let tab of tabs;trackBy:trackBy" [label]="tab.label()">
+        <div class="error-item-container">
+          <div class="error-item" *ngFor="let error of tab.errors;trackBy:trackBy" (click)="onClickError(error)" [ngClass]="{&quot;is-selected&quot;:currError !== undefined &amp;&amp; currError.equals(error)}">
+            <div class="error-msg">{{error.errorMsg}}</div>
+            <div class="path">路径: {{error.nodePath}}</div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+    <button class="close-btn" (click)="onTriggerErrorInfo()" icon="ic_close" logi-icon-button></button>
+  </div>
+</ng-template>

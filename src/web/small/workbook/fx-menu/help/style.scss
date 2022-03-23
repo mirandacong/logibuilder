@@ -1,0 +1,45 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+@use '../shared.scss' as top;
+
+.icon-left-view {
+    opacity: 0.6;
+}
+
+.help-btn {
+    @include top.top-button;
+}
+.disable-btn {
+    color: palette.logi-white(0.38);
+    pointer-events: none;
+}
+.sub-btn {
+    width: 240px;
+    height: 32px;
+    padding-left: 0;
+    padding-right: 0;
+
+    line-height: 32px;
+}
+.opened {
+    @include top.opened;
+}
+
+button {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+.disabled {
+    color: palette.logi-black(0.38);
+
+    &:hover {
+        background-color: palette.logi-white(0);
+        cursor: auto;
+    }
+}
+.disabled > *:first-child {
+    color: palette.logi-black(0.12);
+}

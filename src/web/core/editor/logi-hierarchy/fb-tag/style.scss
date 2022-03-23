@@ -1,0 +1,187 @@
+@use 'src/web/assets/styles/shared.scss';
+
+@use 'src/web/assets/styles/palette.scss';
+
+$badge-blue: rgba(65, 120, 184, 0.08);
+
+@mixin tag-color($bg: $badge-blue, $color: shared.$base-blue) {
+    background-color: $bg;
+    color: $color;
+}
+
+/* stylelint-disable-next-line */
+::ng-deep .mat-menu-panel.tag-menu-panel {
+    margin-left: -44px;
+    margin-top: 4px;
+    width: 70px;
+
+    /* Over material style */
+    /* stylelint-disable-next-line */
+    min-width: auto;
+}
+
+:host {
+    @include shared.set-font(12px, bold);
+    display: flex;
+}
+
+.container {
+    align-items: center;
+
+    display: flex;
+
+    border-radius: 44px;
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: max-content;
+    height: 18px;
+    padding: 0 1px 0 7px;
+
+    background-color: palette.logi-black(0.12);
+    cursor: pointer;
+
+    text-align: center;
+    color: palette.logi-black(0.38);
+
+    min-width: 32px;
+
+    &.compact {
+        padding: 0 7px;
+    }
+
+    &.empty {
+        background-color: palette.logi-black(0.12);
+        color: palette.logi-black(0.38);
+        &:hover {
+            background-color: palette.logi-black(0.24);
+        }
+    }
+
+    &.fx {
+        @include tag-color();
+        &:hover {
+            background-color: palette.aris-brand(0.24);
+            color: palette.aris-brand();
+        }
+    }
+
+    &.asm {
+        @include tag-color(
+            palette.logi-aqua(0.12),
+            palette.logi-aqua()
+        );
+        &:hover {
+            background-color: palette.logi-aqua(0.24);
+            color: palette.logi-aqua()
+        }
+    }
+    &.fact {
+        @include tag-color(
+            palette.logi-black(0.12),
+            palette.logi-black(0.87)
+        );
+        &:hover {
+            background-color: palette.logi-black(0.24);
+            color: palette.logi-black(0.87);
+        }
+    }
+    &.cstr {
+        @include tag-color(
+            map-get(palette.$logi-purple, 100),
+            map-get(palette.$logi-purple, 600),
+        );
+        &:hover {
+            background-color: rgba(136, 0, 204, 0.24);
+            color: rgba(136, 0, 204, 1);
+        }
+    }
+}
+
+:host.selected .container {
+    color: palette.logi-white(1);
+    &.empty {
+        background-color: palette.logi-black(0.38);
+    }
+
+    &.fact {
+        background-color: palette.logi-black(0.87);
+        &:hover {
+            background-color: palette.logi-black(0.87);
+        }
+    }
+
+    &.fx {
+        background-color: palette.aris-brand();
+        &:hover {
+            background-color: palette.aris-brand();
+        }
+    }
+
+    &.asm {
+        background-color: palette.logi-aqua();
+        &:hover {
+            background-color: palette.logi-aqua();
+        }
+    }
+
+    &.cstr {
+        background-color: rgba(136, 0, 204, 1);
+        &:hover {
+            background-color: rgba(136, 0, 204, 1);
+        }
+    }
+}
+
+.menu-icon {
+    margin: 0 0 0 2px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    &:hover {
+        background-color: palette.logi-black(0.08);
+    }
+    &.disabled {
+        pointer-events: none;
+    }
+}
+
+.menu-item-btn {
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    height: 32px;
+}
+
+.type-item-value {
+    border-radius: 44px;
+    width: 40px;
+    height: 18px;
+
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+    text-align: center;
+
+    &.fx {
+        @include tag-color();
+    }
+
+    &.asm {
+        @include tag-color(
+            palette.logi-aqua(0.12),
+            palette.logi-aqua()
+        );
+    }
+    &.fact {
+        @include tag-color(
+            palette.logi-black(0.12),
+            palette.logi-black(0.87)
+        );
+    }
+    &.cstr {
+        @include tag-color(
+            map-get(palette.$logi-purple, 100),
+            map-get(palette.$logi-purple, 600),
+        );
+    }
+}

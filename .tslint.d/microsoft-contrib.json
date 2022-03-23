@@ -1,0 +1,123 @@
+{
+    "rules": {
+        "chai-prefer-contains-to-index-of": true,
+        "chai-vague-errors": true,
+        "informative-docs": [
+            true,
+            {
+                "useless-words": [
+                    "a",
+                    "an",
+                    "the",
+                    "text"
+                ]
+            }
+        ],
+        "insecure-random": true,
+        "jquery-deferred-must-complete": true,
+        "max-func-body-length": [
+            true,
+            {
+                "arrow-body-length": 50,
+                "ctor-body-length": 10,
+                "func-body-length": 50,
+                "func-expression-body-length": 10,
+                "method-body-length": 50
+            }
+        ],
+        "mocha-avoid-only": true,
+        "mocha-no-side-effect-code": [
+            true,
+            {
+                "ignore": "^RestDataFactory\\..*"
+            }
+        ],
+        "mocha-unneeded-done": true,
+        "no-backbone-get-set-outside-model": true,
+        "no-banned-terms": true,
+        "no-constant-condition": [
+            true,
+            {
+                "checkLoops": false
+            }
+        ],
+        "no-delete-expression": true,
+        "no-disable-auto-sanitization": true,
+        "no-document-domain": true,
+        "no-document-write": true,
+        "no-empty-line-after-opening-brace": true,
+        "no-exec-script": true,
+        "no-for-in": true,
+        "no-http-string": [
+            true,
+            "http://www.example.com/?.*",
+            "http://www.examples.com/?.*"
+        ],
+        "no-inner-html": true,
+        "no-jquery-raw-elements": true,
+        "no-octal-literal": true,
+        "no-regex-spaces": true,
+        "no-single-line-block-comment": false,
+        "no-string-based-set-immediate": true,
+        "no-string-based-set-interval": true,
+        "no-string-based-set-timeout": true,
+        "no-suspicious-comment": false,
+        "no-typeof-undefined": true,
+        "no-unexternalized-strings": true,
+        "no-unnecessary-field-initialization": true,
+        "no-unnecessary-semicolons": true,
+        "no-unsupported-browser-code": [
+            true,
+            [
+                "IE 11",
+                "Firefox > 40",
+                "Chrome >= 45"
+            ]
+        ],
+        "no-useless-files": true,
+        "no-with-statement": true,
+        "non-literal-fs-path": true,
+        "non-literal-require": true,
+        "possible-timing-attack": true,
+        "prefer-array-literal": true,
+        "prefer-type-cast": false,
+        "promise-must-complete": true,
+        "react-a11y-anchors": true,
+        "react-a11y-aria-unsupported-elements": true,
+        "react-a11y-event-has-role": true,
+        "react-a11y-image-button-has-alt": true,
+        "react-a11y-img-has-alt": true,
+        "react-a11y-input-elements": true,
+        "react-a11y-lang": true,
+        "react-a11y-meta": true,
+        "react-a11y-no-onchange": true,
+        "react-a11y-props": true,
+        "react-a11y-proptypes": true,
+        "react-a11y-required": true,
+        "react-a11y-role": true,
+        "react-a11y-role-has-required-aria-props": true,
+        "react-a11y-role-supports-aria-props": true,
+        "react-a11y-tabindex-no-positive": true,
+        "react-a11y-titles": true,
+        "react-anchor-blank-noopener": true,
+        "react-iframe-missing-sandbox": true,
+        "react-no-dangerous-html": true,
+        "react-this-binding-issue": true,
+        "react-tsx-curly-spacing": true,
+        "react-unused-props-and-state": [
+            true,
+            {
+                "props-interface-regex": "Props$",
+                "state-interface-regex": "State$"
+            }
+        ],
+        "underscore-consistent-invocation": [
+            true,
+            {
+                "style": "static"
+            }
+        ],
+        "use-named-parameter": true,
+        "use-simple-attributes": true
+    }
+}

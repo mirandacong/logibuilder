@@ -1,0 +1,49 @@
+@use '../core/styles/shared';
+
+@use '../core/styles/palette';
+
+.icon {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    color: palette.logi-black(0.24);
+}
+.empty {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.message {
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 400;
+    color: palette.logi-black(0.24);
+}
+
+.row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    height: 32px;
+    padding: 0 16px;
+    .name {
+        @include shared.set-font(14px);
+        height: 20px;
+        line-height: 20px;
+    }
+    &.selected {
+        background-color: palette.aris-brand(0.08);
+        .name {
+            font-weight: bold;
+            color: shared.$base-brand;
+        }
+    }
+    &:hover {
+        background-color: palette.logi-black(0.04);
+    }
+}

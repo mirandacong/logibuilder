@@ -1,0 +1,76 @@
+---
+Book: book[tag1,tag2,key:value]
+subnodes:
+- Sheet: sheet[tag1,tag2,key:value]
+  subnodes:
+  - Title: title[tag1,tag2,key:value]
+    subnodes:
+    - header_stub: ''
+      Table: table1[tag1,tag2,key:value]
+      rows: []
+      cols: []
+  - header_stub: ''
+    Table: table2[tag1,tag2,key:value]
+    rows:
+    - RowBlock: +rowblock
+      subnodes:
+      - RowBlock: +rowblock
+        subnodes:
+        - '---row1[asp]': ''
+          slice_exprs:
+          - proj: ''
+        - row2: ''
+          sources:
+          - 1
+          - 2
+          - 3
+          - 4
+          slice_exprs:
+          - proj: ''
+    - +row[asp]: ''
+      sources:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      slice_exprs:
+      - hist: ''
+    cols:
+    - ColumnBlock: cb1[asp]
+      subnodes:
+      - ColumnBlock: cb2[label]
+        subnodes:
+        - -col1: proj
+          sources:
+          - 1
+          - 2
+          - 3
+          - 4
+          slice_exprs:
+          - cs1: proj
+        - -col2: proj
+          sources:
+          - 1
+          - 2
+          - 3
+          - 4
+          slice_exprs:
+          - cs1: proj
+        - -col3: proj
+          sources:
+          - 1
+          - 2
+          - 3
+          - 4
+          slice_exprs:
+          - cs1: proj
+    - -col: proj
+      sources:
+      - 1
+      - 2
+      - 3
+      - 4
+      slice_exprs:
+      - cs1: proj

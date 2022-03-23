@@ -1,0 +1,136 @@
+@use '../core/styles/shared';
+
+@use '../core/styles/palette';
+
+@mixin tag-palette($col) {
+    border: 1px solid rgba($col, 0.24);
+    background-color: rgba($col, 0.12);
+    color: rgba($col, 1);
+
+    &:hover:not([disabled]) {
+        border-color: rgba($col, 0.6);
+    }
+}
+
+.logi-tag-ripple, .logi-tag-focus-overlay {
+    @include shared.logi-fill;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.logi-tag-base {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    min-height: 24px;
+    outline: none;
+
+    &[disabled] {
+        $col: palette.logi-black(1);
+        border: 1px solid rgba($col, 0.12);
+        background-color: rgba($col, 0.04);
+        cursor: default;
+        color: rgba($col, 0.38);
+    }
+
+    &.logi-tag-blue {
+        $col: map-get(palette.$logi-brand, 600);
+        @include tag-palette($col);
+    }
+
+    &.logi-tag-arisblue {
+        $col: map-get(palette.$aris-brand, 600);
+        @include tag-palette($col)
+    }
+
+    &.logi-tag-green {
+        $col: map-get(palette.$logi-green, 600);
+        @include tag-palette($col)
+    }
+
+    &.logi-tag-orange {
+        $col: map-get(palette.$logi-orange, 600);
+        @include tag-palette($col)
+    }
+
+    &.logi-tag-red {
+        $col: map-get(palette.$logi-red, 600);
+        @include tag-palette($col)
+    }
+
+    &.logi-tag-grey {
+        border: 1px solid palette.logi-black(0.24);
+        background-color: palette.logi-black(0.12);
+        color: map-get(palette.$logi-grey, 600);
+
+        &:hover:not([disabled]) {
+            border-color: palette.logi-black(0.6);
+        }
+    }
+}
+
+.logi-tag-content-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.editable-tag {
+    color: black;
+    &:hover:not([disabled]) {
+        background-color: palette.logi-black(0.04);
+    }
+}
+
+.logi-tag-text {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+    height: 24px;
+
+    .name-input {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-right: 8px;
+        height: 22px !important;
+        text-align: center;
+        min-width: 28px !important;
+    }
+
+    .change-name-input {
+        top: 0 !important;
+        bottom: 0;
+        right: 0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        border-radius: 4px;
+        box-sizing: border-box;
+        height: 22px !important;
+        padding: 0 28px 0 8px !important;
+        text-align: center;
+    }
+}
+
+.mat-icon.logi-tag-icon {
+    margin-right: 4px;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    vertical-align: middle;
+}
+
+.logi-tag-close-icon {
+    display: inline-block;
+    margin-left: 8px;
+}

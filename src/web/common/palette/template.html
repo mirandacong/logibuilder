@@ -1,0 +1,11 @@
+<div class="reset" (click)="resetColor()">
+  <mat-icon class="icon" svgIcon="ic_restart"></mat-icon>
+  <div class="text">重置</div>
+</div>
+<div class="display-div">
+  <div class="palette">
+    <div class="color-cell" *ngFor="let color of palette; let i=index; trackBy: trackByFnReturnItem" (click)="onClick(i)" [style.background-color]="color">
+      <mat-icon class="check" *ngIf="color === curColor" svgIcon="ic_selected"></mat-icon>
+    </div>
+  </div>
+</div>

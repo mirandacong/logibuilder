@@ -1,0 +1,1540 @@
+---
+annotations: {}
+labels: []
+name: Test model
+nodetype: 1
+subnodes:
+- annotations: {}
+  labels: []
+  name: Control
+  nodetype: 2
+  subnodes:
+  - annotations: {}
+    header_stub: us mn
+    labels: []
+    name: Revenue Breakup
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row1
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      sources:
+      - a
+      - b
+      - c
+      - d
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row2
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row3
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{row1}[hist] + {row2}[hist]'
+        name: hist
+        type: 3
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Revenue!row42} + 1'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row4
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 2
+    - alias: ''
+      annotations: {}
+      expression: '3'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row5
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 1
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row6
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 2
+  - annotations: {}
+    header_stub: us mn
+    labels: []
+    name: Cash flow
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row1
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row2
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row3
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: '{row1}[hist] + {row2}[hist]'
+        name: hist
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Revenue!row42} + 1'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row4
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    header_stub: us mn
+    labels: []
+    name: Revenue
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2016'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row1
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row2
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1} + {row2}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row3
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ({row1} + {row2}).sum()
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row4
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ({row1} + {row2}).lag(1)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row5
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row6
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1} + {row2} + {Revenue!row6}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row7
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: (sum({row1}, {row2})).average()
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row8
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1} + {row2} + {row1}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row9
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row2} + {row1} + {row1}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row10
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Revenue!row2} + {row1} + {row1} + {row2}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row11
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: (sum({row1}, {row2})).average() + 1
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row12
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ({row1}).average() + ({row2}).average()
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row13
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '3'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row14
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: 3 + 5
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row15
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1} + 5'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row16
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1} + ({row2}).average()'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row17
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1} + {Revenue2!row1}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row18
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row6}[proj]'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row19
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1} + {row6}[proj]'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row20
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: sum({row1}, {row2})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row21
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: sum({row1}, {row2}, {row6})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row22
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row23
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}/{row1}.lag(1)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row24
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}/{row1}.lag(1)-1'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row25
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: max({row1}, {Revenue!row2})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row26
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: max({row1}, 3)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row27
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: min({row1}, {Revenue!row2})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row28
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: min({row1}, 3)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row29
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: power({row1}.average(), {Revenue!row2}.average())
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row30
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: power({row1}.average(), 2)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row31
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: log({row1}.average(), {Revenue!row2}.average())
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row32
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: log({row1}.average(), 2)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row33
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: sin(0)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row34
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: sin({row1}.average())
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row35
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: cos(0)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row36
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: cos({row1}.average())
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row37
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: irr({row1})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row38
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: npv(0.1, {row1})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row39
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.max()'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row40
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.min()'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row41
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: round(5.45, 1)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row42
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ({row1} + {row2}).lead(1)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row43
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.diff(1)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row44
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.growth()'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row45
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ({row1} / {row1}.lag(1)).average()
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row46
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ({row1} + {row2}).lag(1Y)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row47
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.year()'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row48
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.day()'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row49
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ({row1} + {row2}).year()
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row50
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ({row1} + {row2}).day()
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row51
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: IFERROR({row1} / 0, 0)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row52
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row53}.LINEAR(1, 4)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row53
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: AVERAGEIFV({row1}, {Revenue!row2})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row54
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.AVERAGEIFV()'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row55
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: IFERROR({row1} / {Revenue!row2}, NULL)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row56
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: IF({row53} <= 2, 0, 1)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row57
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: DATE(2020, 7, 21)
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row58
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: XIRR({row1}, {Revenue!row2})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row59
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: XNPV(0.9, {row1}, {Revenue!row2})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row60
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    header_stub: us mn
+    labels: []
+    name: Revenue2
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2017'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - hist
+      modifier: ''
+      name: '2018'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2019'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      expression: ''
+      labels:
+      - proj
+      modifier: ''
+      name: '2020'
+      nodetype: 8
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row1
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row2
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1} + {row2}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row3
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row4
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: sum({row1}, {row2}, {row4})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row5
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.lag(1Y)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row6
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.lag(1Q)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row7
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.lag(1HY)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row8
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.lag(2Q)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row9
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      labels: []
+      modifier: ''
+      name: block1
+      nodetype: 5
+      subnodes:
+      - alias: ''
+        annotations: {}
+        expression: '{Revenue!row46} + 1'
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: resolve_test_row
+        nodetype: 7
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+  - annotations: {}
+    header_stub: us mn
+    labels: []
+    name: Table5
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      labels: []
+      name: '2017'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: FY
+        nodetype: 8
+        slice_exprs:
+        - annotations: {}
+          expression: '{Q1} + {Q2} + {Q3} + {Q4}'
+          name: stock
+          type: 0
+        - annotations: {}
+          expression: '{Q4}'
+          name: current
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - annotations: {}
+      labels: []
+      name: '2018'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: FY
+        nodetype: 8
+        slice_exprs:
+        - annotations: {}
+          expression: '{Q1} + {Q2} + {Q3} + {Q4}'
+          name: stock
+          type: 0
+        - annotations: {}
+          expression: '{Q4}'
+          name: current
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - annotations: {}
+      labels: []
+      name: '2019'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: FY
+        nodetype: 8
+        slice_exprs:
+        - annotations: {}
+          expression: '{Q1} + {Q2} + {Q3} + {Q4}'
+          name: stock
+          type: 0
+        - annotations: {}
+          expression: '{Q4}'
+          name: current
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - stock
+      modifier: ''
+      name: row1
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - current
+      modifier: ''
+      name: row2
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1} + {row2}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row3
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row4
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: sum({row1}, {row2}, {row4})
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row5
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.lag(1Y)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row6
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.lag(1Q)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row7
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.lag(1HY)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row8
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1}.lag(2Q)'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: row9
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1} + {row2}'
+      is_def_scalar: false
+      labels:
+      - stock
+      modifier: ''
+      name: row10
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{row1} + {row2}'
+      is_def_scalar: false
+      labels:
+      - current
+      modifier: ''
+      name: row11
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0

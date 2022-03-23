@@ -1,0 +1,5 @@
+<div class="img-container" [ngClass]="{&quot;multi&quot;:draggingNodesLen &gt; 1}">
+  <mat-icon class="drag-icon" svgIcon="ic_handle" title="drag"></mat-icon>
+  <div class="node-name">{{node.name}}</div>
+  <div class="children" *ngIf="draggingNodesLen &gt; 1">{{draggingNodesLen}}</div>
+</div>

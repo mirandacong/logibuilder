@@ -1,0 +1,41 @@
+@use '../core/styles/shared';
+
+.logi-combobox .logi-selected-label {
+    align-items: center;
+    display: inline-flex;
+    margin: 2px 4px 2px 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.logi-combobox-single.logi-combobox-open .logi-selected-label {
+    color: shared.$black-38;
+}
+
+.logi-combobox-multiple .logi-selected-label {
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 8px;
+
+    &.logi-selected-label-disabled {
+        border-color: rgba(0, 0, 0, 0.12);
+        background-color: rgba(0, 0, 0, 0.04);
+        color: rgba(0, 0, 0, 0.38);
+        pointer-events: none;
+    }
+}
+
+.logi-combobox .logi-selected-label-content {
+    cursor: default;
+    @include shared.logi-overflow-ellipsis;
+}
+.logi-selected-label-exceed .logi-selected-label-content {
+    margin-right: 8px;
+}
+
+.logi-combobox .logi-selected-label-delete-icon {
+    flex-shrink: 0;
+    margin: 0 4px;
+    cursor: pointer;
+}

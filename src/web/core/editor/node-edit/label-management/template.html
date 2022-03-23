@@ -1,0 +1,17 @@
+<div class="title-head" [ngClass]="{&quot;head-overflow&quot;:hasScrollbar()}">标签管理</div>
+<div class="labels-body" #setlabel>
+  <div class="col-title">列标签</div>
+  <div class="cur-labels">
+    <div class="place-holder" *ngIf="colLabels.length === 0">当前没有列标签</div>
+    <div class="current" *ngFor="let label of colLabels; let i=index; trackBy:trackByFnReturnItem">
+      <logi-label-cell class="cur-label" (cellChange$)="onColCellChange($event)" (click)="onColClick(i)" [label]="label" [selected]="colSelected[i]"></logi-label-cell>
+    </div>
+  </div>
+</div>
+<div class="footer" [ngClass]="{&quot;footer-overflow&quot;:hasScrollbar()}">
+  <div class="foot-bubble" *ngIf="showFootText">
+    <div class="foot-text">{{footText}}</div>
+    <div class="count">{{count}}</div>
+  </div>
+  <button class="close" (click)="close()" logi-stroked-button>关闭</button>
+</div>

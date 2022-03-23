@@ -1,0 +1,60 @@
+@use 'src/web/assets/styles/palette.scss';
+
+@use 'src/web/assets/styles/shared.scss';
+
+.title {
+    margin: 24px;
+
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: bold;
+    color: shared.$black-87;
+}
+.operate {
+    display: flex;
+    margin: 24px 0 16px 24px;
+    .add, .edit {
+        margin-right: 8px;
+    }
+}
+.text-line {
+    align-items: center;
+    display: flex;
+    margin-bottom: 8px;
+    padding-left: 24px;
+    .block-one {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        color: shared.$black-87;
+    }
+    .block-two {
+        margin: 0 8px;
+
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        color: shared.$base-brand;
+    }
+}
+.btns {
+    flex-direction: row;
+    justify-content: flex-end;
+    display: flex;
+    padding: 24px;
+    &.shadow {
+        box-shadow: 0 -2px 4px  palette.logi-black(0.16);
+    }
+    .cancel {
+        margin-right: 8px;
+    }
+}
+.inputs {
+    overflow-y: auto;
+    width: 222px;
+    padding: 0 24px;
+    max-height: 406px;
+}
+.split-input {
+    margin-bottom: 8px;
+}

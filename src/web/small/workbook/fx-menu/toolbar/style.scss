@@ -1,0 +1,15 @@
+@use '../shared.scss' as top;
+
+:host {
+    @include top.top-toolbar;
+}
+
+.icon-tiny-button.add-more-row {
+    height: 28px;
+}
+
+.menu-button {
+    width: 240px;
+    height: 32px;
+    line-height: 32px;
+}

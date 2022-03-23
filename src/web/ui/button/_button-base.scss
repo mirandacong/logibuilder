@@ -1,0 +1,44 @@
+@use '../core/styles/shared';
+
+@use '../core/styles/button-common';
+
+$logi-button-padding: 0 16px;
+$logi-button-margin: 0;
+$logi-button-min-width: 64px;
+$logi-button-height: 36px;
+$logi-button-line-height: 36px;
+$logi-button-border-radius: 4px;
+
+@mixin logi-button-base {
+    box-sizing: border-box;
+    position: relative;
+    @include button-common.logi-button-reset;
+
+    /* Make anchors render like buttons */
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+
+    /* size */
+    margin: $logi-button-margin;
+    min-width: $logi-button-min-width;
+    height: $logi-button-height;
+    line-height: $logi-button-line-height;
+    padding: $logi-button-padding;
+    border-radius: $logi-button-border-radius;
+
+    overflow: visible;
+
+    /* stylelint-disable-next-line */
+    &[disabled] {
+        cursor: default;
+    }
+}
+
+@mixin focus-overlay-opacity($opacity) {
+    .logi-button-focus-overlay {
+        opacity: $opacity;
+    }
+}

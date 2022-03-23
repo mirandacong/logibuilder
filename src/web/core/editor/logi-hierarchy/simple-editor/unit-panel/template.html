@@ -1,0 +1,8 @@
+<div class="message">{{info.message}}</div>
+<mat-divider *ngIf="info.resolvedNodes.length &gt; 0"></mat-divider>
+<div class="node" *ngFor="let node of info.resolvedNodes;trackBy:trackBy;let last=last">
+  <logi-node class="other" *ngIf="node.last !== undefined" [uuid]="node.last"></logi-node>
+  <logi-node class="curr" [main]="true" [uuid]="node.node"></logi-node>
+  <logi-node class="other" *ngIf="node.next !== undefined" [uuid]="node.next"></logi-node>
+  <mat-divider *ngIf="!last"></mat-divider>
+</div>

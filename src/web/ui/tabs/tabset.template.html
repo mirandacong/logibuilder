@@ -1,0 +1,36 @@
+<logi-tabs-nav (cdkDropListDropped)="drop($event)" (nextClick)="nextClick.emit()" (prevClick)="prevClick.emit()"
+    [cdkDropListDisabled]="disabledDrop" [cdkDropListOrientation]="tabPositionMode" [hiddenInkBar]="hiddenInkBar"
+    [alwaysShowPaginationControls]="alwaysShowPaginationControls" [animated]="inkBarAnimated" [hideBar]="hideAll"
+    [positionMode]="tabPositionMode" [showPagination]="showPagination" [logiSize]="logiSize"
+    [tabBarExtraEndContent]="tabBarExtraEndContent" [tabBarExtraStartContent]="tabBarExtraStartContent"
+    [tabPosition]="tabPosition" [tabType]="tabType" [ngStyle]="tabBarStyle" [selectedIndex]="selectedIndex!" cdkDropList
+    role="tablist" tabindex="0">
+    <div *ngFor="let tab of listOfLogiTabComponent; let i = index" (cdkDragStarted)="dragStarted(i)"
+        (click)="clickLabel(i, tab.logiDisabled)" [cdkDragBoundary]="dragBoundary" [disabled]="tab.logiDisabled"
+        [class.logi-tabs-tab-active]="selectedIndex == i &amp;&amp; !hideAll" [style.margin-right.px]="tabBarGutter"
+        cdkDrag logi-tab-label role="tab">
+        <ng-container *logiStringTemplateOutlet="tab.label||tab.titleTpl">{{ tab.label }}</ng-container>
+    </div>
+</logi-tabs-nav>
+<logi-split class="logi-tabs-content" #tab_content (dragStart$)="onSplitDragStart()" (dragEnd$)="onSplitDragEnd()"
+    [class.logi-tabs-bottom-content]="tabPosition === 'bottom'" [class.logi-tabs-card-content]="tabType === 'card'"
+    [class.logi-tabs-content-animated]="tabPaneAnimated" [class.logi-tabs-content-no-animated]="!tabPaneAnimated"
+    [class.logi-tabs-left-content]="tabPosition === 'left'" [class.logi-tabs-right-content]="tabPosition === 'right'"
+    [class.logi-tabs-top-content]="tabPosition === 'top'" [direction]="tabPositionMode" [gutterSize]="5"
+    [disabled]="extraMode" [restrictMove]="true">
+    <logi-split-area [size]="extraMode ? 0 : 50">
+        <div class="logi-tabs-tabpane-common"
+            [style.margin-left.%]="tabPositionMode === 'horizontal' &amp;&amp; tabPaneAnimated &amp;&amp; -(selectedIndex || 0) * 100">
+            <div class="logi-tabs-tabpane" *ngFor="let tab of listOfLogiTabComponent; let i = index"
+                [active]="selectedIndex === i &amp;&amp; !hideAll" [content]="tab.template || tab.content"
+                [forceRender]="tab.forceRender"
+                [ngClass]="{&quot;logi-tabs-tabpane-active&quot;:selectedIndex === i &amp;&amp; !hideAll,&quot;logi-tabs-tabpane-inactive&quot;:!(selectedIndex === i &amp;&amp; !hideAll)}"
+                logi-tab-body></div>
+        </div>
+    </logi-split-area>
+    <logi-split-area *ngIf="tabBodyExtraContent" [size]="extraMode ? 100 : 50">
+        <div class="logi-tabs-tabpane-extra">
+            <ng-template [ngTemplateOutlet]="tabBodyExtraContent"></ng-template>
+        </div>
+    </logi-split-area>
+</logi-split>

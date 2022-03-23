@@ -1,0 +1,40 @@
+<div class="tree-flag-top-part" [ngClass]="{&quot;flag-color&quot;:rowBlockChild()}">
+    <div class="circle"></div>
+</div>
+<div class="tree-flag-bottom-part"
+    [ngClass]="{&quot;flag-color&quot;:rowBlockChild(), &quot;last-node-flag-style&quot;: lastNodeInParent}"></div>
+<div class="fb-container" #container [attr.data-node]="node.uuid" [node]="node" logi-node-focusable>
+    <ng-content select="mat-icon"></ng-content>
+    <div class="node-identifier" #name>
+        <div class="ref-name">
+            <div class="input-name" #ref_name (blur)="nameChange()" (focus)="onMouseOverRefName()"
+                (mouseout)="onMouseOutRefName()" (mouseover)="onMouseOverRefName()" [focusType]="focusType.NAME"
+                [ngClass]="{&quot;valid-name&quot;: validName}" [node]="node" [readonly]="readonly" [styleTarget]="name"
+                logi-node-focusable placeholder="行名称" spellcheck="false"></div><span class="label-container"
+                *ngIf="!showLabelContent; else labelContent"
+                [style.display]="node.labels.length === 0 ? &quot;none&quot; : &quot;&quot;">{{labelNums()}}</span>
+        </div>
+    </div>
+    <div class="formula" *ngIf="node.sliceExprs.length &lt;= 0; else sliceView" #expression>
+        <logi-fb-tag class="fb-tag" (typeChange$)="setTagType($event)" [empty]="isEmpty()" [readonly]="readonly"
+            [type]="node.type"></logi-fb-tag>
+        <logi-equal class="equal"></logi-equal>
+        <logi-simple-editor class="formula-edit" [focusType]="focusType.EXPRESSION" [node]="node" [readonly]="readonly"
+            [styleTarget]="expression" logi-node-focusable></logi-simple-editor>
+        <div class="right-border"></div>
+    </div>
+    <button class="menu-btn" *ngIf="!readonly" #settings (click)="dispatchContextmenu($event)" icon='ic_overflow_menu'
+        logi-icon-button></button>
+</div>
+<ng-template #sliceView>
+    <logi-editor-slice-part [node]="node"></logi-editor-slice-part>
+</ng-template>
+<ng-template #labelContent>
+    <ng-container *ngFor="let label of node.labels; trackBy:trackByFnReturnItem">
+        <logi-editor-label class="label-content" [label]="label" [type]="labelType.DATA_TYPE"></logi-editor-label>
+    </ng-container>
+    <logi-editor-label class="label-content" *ngIf="node.alias !== &quot;&quot;" [label]="node.alias"
+        [type]="labelType.ALIAS"></logi-editor-label>
+    <logi-editor-label class="label-content" *ngIf="node.isDefScalar" [label]="&quot;标量&quot;"
+        [type]="labelType.DATA_TYPE"></logi-editor-label>
+</ng-template>

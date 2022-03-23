@@ -1,0 +1,26 @@
+@use '../core/styles/shared';
+
+@use './button-base';
+
+.logi-icon-text-button {
+    padding-left: 12px;
+
+    .logi-icon-button-icon {
+        margin-right: 8px;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+    }
+}
+
+/* Same as logi stroke button */
+.logi-icon-text-button.logi-stroked {
+    border: shared.$border-base;
+
+    /* It has 2px border */
+    line-height: 34px;
+}
+
+.logi-icon-text-button.logi-focused {
+    @include button-base.focus-overlay-opacity(0.12);
+}

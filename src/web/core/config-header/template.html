@@ -1,0 +1,44 @@
+<div class="title-header">
+  <div class="left">
+    <button (click)="onCancel()" icon="ic_close" logi-icon-button small></button>
+    <div class="header-title">配置表头</div>
+  </div>
+  <div class="right">
+    <button (click)="onCancel()" logi-button>取消</button>
+    <button class="flat-button" (click)="onApplyHeader()" [disabled]="standardHeaders.length === 0" [loading]="loading" logi-flat-button>保存</button>
+  </div>
+</div>
+<div class="block">
+  <div class="block-left" #block_left>
+    <div class="standard-headers" *ngFor="let header of standardHeaders; trackBy:trackBy" (click)="setCurr(header)" [ngClass]="{&quot;active&quot;: header.name === currHeader?.name}">
+      <mat-icon class="default" [ngClass]="{&quot;is-default&quot;: isDefault(header)}" svgIcon="ic_flag"></mat-icon>
+      <logi-readonly-input class="name" (change$)="renameHeader($event, header)" [focus]="focusInput &amp;&amp; header.name === currHeader?.name" [matTooltipClass]="&quot;logi-tooltip&quot;" [matTooltip]="header.name" [name]="header.name" [otherNames]="getOtherNames(header)"></logi-readonly-input>
+      <button class="icon-button more" [matMenuTriggerData]="{data:header}" [matMenuTriggerFor]="menu" icon="ic_overflow_menu" logi-icon-button small></button>
+    </div>
+    <button class="combine-button" (click)="addHeader()" appearance="stroked" icon="ic_add" logi-icon-text-button>添加表头</button>
+  </div>
+  <div class="empty-block" *ngIf="standardHeaders.length === 0">暂无已配置表头</div>
+  <div class="block-right" *ngIf="standardHeaders.length !== 0">
+    <div class="right-title">{{currHeader?.name}}</div>
+    <div class="selection">
+      <logi-date-range class="selected" (outputDate$)="handleInfo($event)" [inputDate]="inputDate"></logi-date-range>
+    </div>
+    <div class="preview">
+      <div class="title">表头预览</div>
+      <div class="preview-block">
+        <ng-container *ngFor="let child of nodes; let last=last; trackBy:trackBy">
+          <logi-standard-column class="column" *ngIf="isColumn(child)" [col]="child" [inDialog]="true" [lastNodeInParent]="last"></logi-standard-column>
+          <logi-standard-column-block class="column-block" *ngIf="isColumnBlock(child)" [inDialog]="true" [lastNodeInParent]="last" [node]="child"></logi-standard-column-block>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-menu #menu="matMenu" [class]="&quot;logi-config-header-menu&quot;">
+  <ng-template let-data="data" matMenuContent>
+    <button class="menu-button" (click)="setDefault(data)" mat-menu-item><span class="menu-text">{{isDefault(data) ? "取消默认" : "设为默认"}}</span></button>
+    <button class="menu-button" (click)="focusName(data)" mat-menu-item><span class="menu-text">重命名</span></button>
+    <mat-divider class="divider"></mat-divider>
+    <button class="menu-button" (click)="deleteHeader(data)" mat-menu-item><span class="menu-text">删除</span></button>
+  </ng-template>
+</mat-menu>

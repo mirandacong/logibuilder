@@ -1,0 +1,7 @@
+<div class="container" [class]="notification.type">
+  <mat-icon class="icon" [svgIcon]="icon"></mat-icon>
+  <div class="message">
+    <div class="main">{{ notification.main }}</div>
+    <div class="secondary" *ngIf="notification.secondary">{{ notification.secondary }}</div>
+  </div>
+</div>

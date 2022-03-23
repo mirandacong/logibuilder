@@ -1,0 +1,65 @@
+@use '../core/styles/shared';
+
+$theme-color: shared.$base-brand;
+$invalid-color: shared.$error-color;
+$icon-color: rgba(0, 0, 0, 0.38);
+$focused-icon-color: rgba(0, 0, 0, 0.6);
+
+$disabled-bg: rgba(0, 0, 0, 0.04);
+$disabled-border-color: rgba(0, 0, 0, 0.12);
+
+:host {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    .mat-icon {
+        color: $icon-color;
+    }
+    &.logi-small {
+        .logi-input-icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+:host.logi-focused {
+    .mat-icon {
+        color: $focused-icon-color;
+    }
+}
+
+.logi-group-input-affix {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+
+    display: inline-flex;
+
+    &.logi-group-input-prefix {
+        left: 8px;
+    }
+
+    &.logi-group-input-suffix {
+        right: 8px;
+    }
+}
+
+.logi-input-wrapper {
+    &.with-prefix {
+        ::ng-deep {
+            .logi-input-element {
+                padding-left: 40px;
+                &.logi-small {
+                    padding-left: 34px;
+                }
+            }
+        }
+    }
+    &.with-suffix {
+        ::ng-deep .logi-input-element {
+            padding-right: 40px;
+        }
+    }
+}

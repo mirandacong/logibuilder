@@ -1,0 +1,19 @@
+@ 1 @
+REF '{b\}cccc}'
+
+@ 2 @
+BRA '('
+FUNC 'SUM'
+BRA '('
+REF '{\(\)}'
+KET ')'
+KET ')'
+
+@ 3 @
+FUNC 'SUM'
+BRA '('
+REF '{row1}'
+OP '::'
+REF '{row2}'
+KET ')'
+SLICE '[\[\]]'

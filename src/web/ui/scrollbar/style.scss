@@ -1,0 +1,30 @@
+@use '../core/styles/shared';
+
+@use '../core/styles/scrollbar';
+
+.logi-scrollbar {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    --scrollbar-padding: 8px;
+    --scrollbar-thumb-transition: height ease-out 150ms, width ease-out 150ms;
+    --scrollbar-track-transition: height ease-out 150ms, width ease-out 150ms;
+    --scrollbar-width: 12px;
+}
+
+.logi-scrollbar-viewport {
+    @include shared.logi-fill;
+    overflow: auto;
+}
+
+.logi-scrollbar:not(.logi-scrollbar-disabled) > .logi-scrollbar-viewport {
+    @include scrollbar.hide-scrollbar;
+}
+
+.logi-scrollbar-track {
+    transition: var(--scrollbar-track-transition);
+}
+
+.logi-scrollbar-thumb {
+    transition: var(--scrollbar-thumb-transition);
+}

@@ -1,0 +1,31 @@
+.logi-scrollbar-vertical {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    box-sizing: border-box;
+    width: var(--scrollbar-width);
+    padding: var(--scrollbar-padding) 0;
+
+    &.with-horizontal {
+        bottom: var(--scrollbar-width);
+    }
+}
+
+.logi-scrollbar-track-vertical {
+    justify-content: center;
+    display: flex;
+    width: var(--scrollbar-width);
+    height: 100%;
+}
+
+.logi-scrollbar-thumb-vertical {
+    border-radius: 8px;
+    width: 4px;
+    &:hover {
+        width: 8px;
+    }
+    &.logi-scrollbar-thumb-dragging {
+        width: 8px;
+    }
+}

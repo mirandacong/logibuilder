@@ -1,0 +1,27 @@
+@use 'src/web/assets/styles/shared';
+
+.equal {
+    overflow: hidden;
+    border-radius: 44px;
+    width: 24px;
+    height: 16px;
+    background-color: shared.$black-12;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: 'Noto Sans SC';
+    font-weight: 400;
+    text-align: center;
+    color: shared.$black-60;
+    outline: none;
+
+    @include shared.user-select(none);
+
+    &:hover {
+        background-color: shared.$black-24;
+    }
+
+    &:active {
+        background-color: shared.$black-24;
+    }
+}

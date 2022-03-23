@@ -1,0 +1,122 @@
+.logi-table-wrapper {
+    &-rtl {
+        direction: rtl;
+    }
+}
+
+.logi-table {
+    &-rtl {
+        direction: rtl;
+    }
+
+    table {
+        .logi-table-wrapper-rtl & {
+            text-align: right;
+        }
+    }
+
+    // ============================ Header ============================
+    &-thead {
+        > tr {
+            > th {
+                &[colspan]:not([colspan='1']) {
+                    .logi-table-wrapper-rtl & {
+                        text-align: center;
+                    }
+                }
+
+                .logi-table-wrapper-rtl & {
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    // ============================= Body =============================
+    &-tbody {
+        > tr {
+            // ========================= Nest Table ===========================
+            .logi-table-wrapper:only-child {
+                .logi-table.logi-table-rtl {
+                    margin: -16px (16px + 12px * 1.4) -16px -16px;
+                }
+            }
+        }
+    }
+
+    // ========================== Pagination ==========================
+    &-pagination {
+        &-left {
+            .logi-table-wrapper.logi-table-wrapper-rtl & {
+                justify-content: flex-end;
+            }
+        }
+
+        &-right {
+            .logi-table-wrapper.logi-table-wrapper-rtl & {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // ================================================================
+    // =                           Function                           =
+    // ================================================================
+
+    // ============================ Sorter ============================
+    &-column-sorter {
+        .logi-table-wrapper-rtl & {
+            margin-left: 0;
+            margin-right: 8px;
+        }
+    }
+
+    // ============================ Filter ============================
+    &-filter-column-title {
+        .logi-table-wrapper-rtl & {
+            padding: 0 16px 0 2.3em;
+        }
+    }
+
+    &-thead tr th.logi-table-column-has-sorters {
+        .logi-table-filter-column-title {
+            .logi-table-rtl & {
+                padding: 0 0 0 2.3em;
+            }
+        }
+    }
+
+    &-filter-trigger-container {
+        .logi-table-wrapper-rtl & {
+            left: 0;
+            right: auto;
+        }
+    }
+
+    // Dropdown
+    &-filter-dropdown {
+        // Checkbox
+        &, &-submenu {
+            .logi-checkbox-wrapper + span {
+                .logi-dropdown-rtl &, .logi-dropdown-menu-submenu-rtl & {
+                    padding-left: 0;
+                    padding-right: 8px;
+                }
+            }
+        }
+    }
+
+    // ========================== Selections ==========================
+    &-selection {
+        .logi-table-wrapper-rtl & {
+            text-align: center;
+        }
+    }
+
+    // ========================== Expandable ==========================
+    &-row-indent {
+        .logi-table-wrapper-rtl & {
+            float: right;
+        }
+    }
+}

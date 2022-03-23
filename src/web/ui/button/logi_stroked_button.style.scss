@@ -1,0 +1,11 @@
+@use '../core/styles/shared';
+
+$logi-stroked-button-padding: 0 15px;
+
+.logi-stroked-button {
+    border: shared.$border-base;
+    padding: $logi-stroked-button-padding;
+
+    /* It has 2px border */
+    line-height: 34px;
+}

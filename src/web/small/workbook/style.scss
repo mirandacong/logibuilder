@@ -1,0 +1,251 @@
+@use 'src/web/assets/styles/shared';
+$autocomplete-name-color: rgb(86, 156, 214);
+$autocomplete-split-color: black;
+$autocomplete-path-color: gray;
+$hint-height: 24px;
+$bg-grey: #F5F5F5;
+$half-base-grey: #FAFAFA;
+$grey: #E0E0E0;
+$half-base-aqua: #E0F5FB;
+
+:host {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.body {
+    position: relative;
+    border-radius: 4px;
+    width: calc(100% - 16px);
+    height: calc(100% - 92px);
+    padding: 8px;
+    background-color: $bg-grey;
+}
+.mat-sheet-tab {
+    box-shadow: shared.$box-shadow;
+    height: 100%;
+    background-color: $half-base-grey;
+}
+.excel {
+    border: shared.$border-base;
+    border-radius: 4px;
+    height: calc(100% - 44px);
+}
+.excel-toolbar {
+    overflow: overlay;
+    display: flex;
+    height: 44px;
+    background-color: shared.$base-white;
+}
+.hint {
+    align-items: center;
+    display: flex;
+    height: $hint-height;
+    .icon {
+        align-items: center;
+
+        display: flex;
+
+        width: 15px;
+        height: 15px;
+        padding: 6px 10px 6px 9px;
+
+        line-height: 24px;
+        color: shared.$black-24;
+    }
+    .hint-text {
+        @include shared.set-font($color: shared.$font-color-base);
+    }
+    .fact {
+        background-color: $grey;
+    }
+    .asm {
+        background-color: $half-base-aqua;
+    }
+    .jump-to-fx {
+        align-items: center;
+
+        display: flex;
+
+        height: $hint-height;
+        padding: 0;
+
+        line-height: $hint-height;
+        @include shared.set-font($weight: bold, $color: rgb(65,120,184,1));
+    }
+    .hint-button {
+        margin-left: auto;
+        @include shared.set-font($weight: bold, $color: shared.$font-color-base);
+    }
+}
+.spinner {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: shared.$base-white;
+}
+.sheet-nav-box {
+    height: 32px;
+    .line-box {
+        align-items: center;
+        display: flex;
+        margin: 0 16px;
+        height: calc(100% - 2px);
+    }
+    .tab-ink-bar {
+        width: 100%;
+        height: 2px;
+    }
+}
+.sheet-nav-icon {
+    margin-right: 4px;
+    width: 18px;
+    height: 18px;
+
+    font-size: 18px;
+    line-height: 18px;
+    color: shared.$black-24;
+    &.actived-icon {
+        color: shared.$font-color-base;
+    }
+}
+.readonly-input:not(.actived-text) {
+    color: shared.$font-color-base !important;
+}
+.icon-box {
+    align-items: center;
+    display: flex;
+    border-right: shared.$border-base;
+    height: 32px;
+    .sheet-add-icon {
+        margin-left: 8px;
+    }
+    .sheet-list-icon {
+        margin: 0 8px;
+    }
+}
+
+.flag-wrapper {
+    @include shared.set-logi-tabs-nav-matMenu;
+}
+
+::ng-deep {
+    .autocomplete-name {
+        /* stylelint-disable-next-line */
+        color: $autocomplete-name-color !important;
+    }
+    .autocomplete-split {
+        /* stylelint-disable-next-line */
+        color: $autocomplete-split-color !important;
+    }
+
+    .autocomplete-path {
+        /* stylelint-disable-next-line */
+        color: $autocomplete-path-color !important;
+    }
+
+    .misc-about-dialog > .mat-dialog-container {
+        overflow: hidden;
+        width: 420px;
+        height: 300px;
+        /* stylelint-disable-next-line */
+        padding: 0;
+    }
+    .set-label-dialog > .mat-dialog-container {
+        box-shadow: 0 24px 48px shared.$black-16;
+        border-radius: 4px;
+        width: 540px;
+        /* stylelint-disable-next-line */
+        height: auto;
+        /* stylelint-disable-next-line */
+        padding: 0;
+    }
+    .label-manage-dialog > .mat-dialog-container {
+        box-shadow: 0 24px 48px shared.$black-16;
+        border-radius: 4px;
+        width: 540px;
+        /* stylelint-disable-next-line */
+        height: auto;
+        /* stylelint-disable-next-line */
+        padding: 0;
+    }
+
+    .cancel-padding-dialog > .mat-dialog-container {
+        padding: 0;
+    }
+
+    /* 公用嵌套对话框 */
+    .logi-container-dialog > .mat-dialog-container {
+        overflow-x: hidden;
+        max-width: 1080px;
+        min-width: 1080px;
+    }
+
+    /* 公用对话框-小型 */
+    .logi-dialog-small-size > .mat-dialog-container {
+        max-width: 270px;
+        min-width: 270px;
+    }
+
+    /* 公用对话框-中型 */
+    .logi-dialog-medium-size > .mat-dialog-container {
+        max-width: 570px;
+        min-width: 570px;
+    }
+
+    .mat-snack-bar-container {
+        /* stylelint-disable-next-line */
+        padding: 0 !important;
+    }
+
+    /* Used for globally disable default tooltip of svgIcon */
+    /* stylelint-disable-next-line */
+    mat-icon {
+        svg {
+            pointer-events: none;
+        }
+    }
+
+    .mat-option.mat-active {
+        font-weight: bold !important;
+        color: shared.$base-blue !important;
+    }
+    .mat-select-panel {
+        padding: 8px 0;
+        min-width: 100% !important;
+    }
+    .mat-select-panel:not([class*=mat-elevation-z]) {
+        box-shadow: 0 12px 24px shared.$black-16 !important;
+    }
+    .mat-select-panel .mat-option {
+        height: 32px !important;
+
+        font-size: 14px !important;
+        line-height: 32px !important;
+        font-weight: 400;
+        color: shared.$black-87
+    }
+    .mat-datepicker-content {
+        margin-top: 12px;
+        box-shadow: 0 12px 24px shared.$black-16;
+    }
+    .mat-datepicker-content .mat-calendar {
+        width: 240px !important;
+        height: 322px !important;
+    }
+    .mat-calendar-body-selected {
+        background-color: shared.$base-brand !important;
+    }
+
+    /* To adjust style when calendar is in simplified Chinese */
+    .mat-calendar-body-cell-content {
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,90 @@
+<div class="top-menu">
+    <logi-fx-menu></logi-fx-menu>
+</div>
+<div class="body" #body>
+    <logi-spinner class="spinner" *ngIf="rendering"></logi-spinner>
+    <logi-tabset class="mat-sheet-tab" (dragStartedIndex$)="setActiveSheet($event)" (dragTabLocation)="shift($event)"
+        (selectedIndexChange)="setActiveSheet($event)" (splitEnd$)="onRefresh()" [alwaysShowPaginationControls]="true"
+        [disabledDrop]="false" [dragBoundary]="body" [extraMode]="false" [hiddenInkBar]="true"
+        [selectedIndex]="selectedIndex" [tabBarExtraEndContent]="error" [tabBarExtraStartContent]="addSheetTemplate"
+        [tabBodyExtraContent]="excel" logiTabStyle="sheet" tabPosition="bottom">
+        <ng-container *ngFor="let sheet of sheetTabs; let index=index; trackBy: trackBy">
+            <logi-tab *ngIf="sheet?.isCustom" [label]="customSheetTemplate">
+                <logi-custom-sheet [sheetname]="sheet.name"></logi-custom-sheet>
+            </logi-tab>
+            <logi-tab *ngIf="!sheet?.isCustom" [label]="sheetTemplate">
+                <logi-editor-sheet *ngIf="hasRendered(sheet)" [node]="getSheetFromName(sheet.name)" cdk-scrollable>
+                </logi-editor-sheet>
+            </logi-tab>
+            <ng-template #customSheetTemplate>
+                <div class="sheet-nav-box" logi-context-menu>
+                    <div class="line-box" (contextmenu)="onContextmenu($event, index)">
+                        <mat-icon class="sheet-nav-icon" [ngClass]="{&quot;actived-icon&quot;: selectedIndex === index}"
+                            svgIcon="ic_sheet">
+                        </mat-icon>
+                        <logi-readonly-input class="readonly-input" [name]="sheet.name"
+                            [style.font-size]="&quot;12px&quot;"
+                            [style.font-weight]="selectedIndex === index ? &quot;bold&quot; : &quot;400&quot;">
+                        </logi-readonly-input>
+                    </div>
+                    <div class="tab-ink-bar" [style.background-color]="&quot;rgba(0,0,0,0.12)&quot;"></div>
+                </div>
+            </ng-template>
+            <ng-template #sheetTemplate>
+                <div class="sheet-nav-box" logi-context-menu>
+                    <div class="line-box">
+                        <mat-icon class="sheet-nav-icon" [ngClass]="{&quot;actived-icon&quot;: selectedIndex === index}"
+                            [style.color]="selectedIndex === index ? getInputNameColor(index) : &quot;rgba(0,0,0,.24)&quot;"
+                            svgIcon="ic_panel_formula"></mat-icon>
+                        <logi-readonly-input class="readonly-input" (change$)="onRename($event)"
+                            (contextmenu)="onContextmenu($event, index)" [name]="sheet.name"
+                            [ngClass]="{&quot;actived-text&quot;: selectedIndex === index}"
+                            [otherNames]="getOtherNames(sheet.name)" [style.color]="getInputNameColor(index)"
+                            [style.font-size]="&quot;12px&quot;"
+                            [style.font-weight]="index === selectedIndex ? &quot;bold&quot; : &quot;400&quot;"
+                            [style.line-height]="&quot;18px&quot;"></logi-readonly-input>
+                    </div>
+                    <div class="tab-ink-bar" [style.background-color]="getInkBarColor(index)"></div>
+                </div>
+            </ng-template>
+        </ng-container>
+    </logi-tabset>
+</div>
+<ng-template #addSheetTemplate>
+    <div class="icon-box">
+        <button class="sheet-add-icon" (click)="addSheet()" [disabled]="readonly" icon="ic_add" logi-icon-button
+            small></button>
+        <button disabled icon="ic_arrow_drop_down" logi-icon-button smaller></button>
+        <button class="sheet-list-icon" (menuOpened)="scrollItem()" [matMenuTriggerFor]="sheetListMenu" icon="ic_list"
+            logi-icon-button small></button>
+    </div>
+</ng-template>
+<ng-template #excel>
+    <logi-excel-toolbar class="excel-toolbar" *ngIf="!sheetTabs[selectedIndex]?.isCustom"></logi-excel-toolbar>
+    <div class="excel" #preview>
+        <logi-excel-preview (saveEvent$)="onSave()"></logi-excel-preview>
+    </div>
+</ng-template>
+<ng-template #error>
+    <logi-error-info class="error-container"></logi-error-info>
+</ng-template>
+<logi-context-menu>
+    <ng-template *ngFor="let action of contextMenuActions; trackBy: trackBy"
+        (execute)="action.click &amp;&amp; action.click($event.item)" [divider]="action.divider"
+        [enabled]="action.enabled" [subMenu]="action.subMenu" [visible]="action.visible" let-item
+        logi-context-menu-item>{{action.html()}}</ng-template>
+</logi-context-menu>
+<mat-menu #sheetListMenu="matMenu" [class]="&quot;logi-style-menu-panel sheet-list-height&quot;">
+    <div class="flag-wrapper">
+        <button class="flag-button" *ngFor="let sheet of sheetTabs; let i = index; trackBy: trackBy" mat-menu-item>
+            <div class="icon-flag-wrapper">
+                <div class="icon-flag" [style.background-color]="getInkBarColor(i)"
+                    [style.visibility]="!sheet?.isCustom ? &quot;visible&quot; : &quot;hidden&quot;"></div>
+            </div>
+            <div class="flag-text" (click)="setActiveSheet(i)">{{sheet.name}}</div>
+            <mat-icon class="selected-icon-wrapper"
+                [style.visibility]="selectedIndex === i ? &quot;visible&quot; : &quot;hidden&quot;"
+                svgIcon="ic_selected"></mat-icon>
+        </button>
+    </div>
+</mat-menu>

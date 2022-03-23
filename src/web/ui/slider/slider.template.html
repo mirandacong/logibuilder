@@ -1,0 +1,8 @@
+<div class="logi-slider-wrapper" #slider [class.logi-dragging]="isDragging()">
+  <div class="logi-slider-rail"></div>
+  <logi-slider-track [included]="included" [length]="track.length!" [offset]="track.offset!" [reverse]="reverse" [vertical]="vertical"></logi-slider-track>
+  <div class="logi-slider-step-wrapper">
+    <div class="logi-slider-step"><span class="logi-slide-dot" *ngFor="let step of steps"></span></div>
+  </div>
+  <logi-slider-handle *ngFor="let handle of handles" [offset]="handle.offset!" [reverse]="reverse" [value]="handle.value!" [vertical]="vertical" [tooltipFormatter]="tooltipFormatter"></logi-slider-handle>
+</div>

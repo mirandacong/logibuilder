@@ -1,0 +1,132 @@
+<div class="table-block" #container>
+    <div class="table-block-title" #table_title [attr.data-node]="node.uuid" [node]="node" logi-node-focusable>
+        <button class="collapsed-btn" (mousedown)="collapseNode(!collapse, $event)"
+            [icon]="collapse ? &quot;ic_arrow_right&quot;:&quot;ic_arrow_down&quot;" logi-icon-button></button>
+        <div class="mat-icon-wrapper">
+            <ng-content select="mat-icon"></ng-content>
+        </div>
+        <div class="node-type">表格</div>
+        <input class="block-name-input" (blur)="renameNode()" [focusType]="focusType.NAME" [node]="node"
+            [readonly]="readonly" [(ngModel)]="name" logi-node-focusable placeholder="表名称" spellcheck="false">
+        <input class="stub-name" (blur)="tableStubChange(stub)" [focusType]="focusType.STUB" [node]="node"
+            [readonly]="readonly" [(ngModel)]="stub" logi-node-focusable placeholder="副表名" spellcheck="false">
+        <button class="stub-btn" (click)="initSubContextMenu();dispatchContextmenu($event)" [contextMenu]="subMenu"
+            [disableRipple]="true" [disabled]="readonly" logi-button logi-context-menu>
+            <mat-icon class="icon-link" [ngClass]="{unlink: node.referenceHeader === undefined}"
+                [svgIcon]="&quot;ic_link&quot;"></mat-icon>
+            <div class="this-column-set">{{getHeaderName()}}</div>
+            <mat-icon class="icon-right-load" svgIcon="ic_arrow_drop_down"></mat-icon>
+        </button>
+        <div class="column-row-tab column-tab" (click)="clickTab(false)"
+            [ngClass]="{&quot;tabs-bold&quot;:isColumnTab}">
+            <span>编辑列</span>
+            <div class="border" [ngClass]="{&quot;active-border&quot;:isColumnTab}"></div>
+        </div>
+        <div class="column-row-tab row-tab" (click)="clickTab(true)" [ngClass]="{&quot;tabs-bold&quot;:!isColumnTab}">
+            <span>编辑行</span>
+            <div class="border" [ngClass]="{&quot;active-border&quot;:!isColumnTab}"></div>
+        </div>
+        <button class="menu-btn" *ngIf="!readonly" (click)="initSubContextMenu();dispatchContextmenu($event);"
+            [style.display]="&quot;inline-block&quot;" fontIcon="more_vert" logi-icon-button></button>
+    </div>
+    <div class="block-body">
+        <div class="dropzone" #dropzone
+            [dndDropZone]="isColumnTab ? [nodeType.COLUMN.toString(), nodeType.COLUMN_BLOCK.toString()] : [nodeType.ROW.toString(), nodeType.ROW_BLOCK.toString()]"
+            [hostUuid]="node.uuid" logi-dnd-dropzone>
+            <div class="drop-placeholder" logi-dnd-placeholder>
+                <div class="drop-circle"></div>
+                <div class="drop-line"></div>
+            </div>
+            <ng-container *ngIf="isColumnTab; else isRowTab">
+                <div *ngFor="let column of node.cols; let i=index; let last=last; trackBy:trackByFnReturnItem"
+                    #drag_col_ref>
+                    <ng-template #standardHeader>
+                        <logi-standard-column *ngIf="isColumn(column)" [col]="column" [inDialog]="false"
+                            [lastNodeInParent]="last" [style.display]="collapse ? &quot;none&quot; : &quot;flex&quot;">
+                        </logi-standard-column>
+                        <logi-standard-column-block *ngIf="isColumnBlock(column)" [inDialog]="false"
+                            [lastNodeInParent]="last" [node]="column"
+                            [style.display]="collapse ? &quot;none&quot; : &quot;flex&quot;">
+                        </logi-standard-column-block>
+                    </ng-template>
+                    <ng-container *ngIf="!isStandardHeader();else standardHeader">
+                        <logi-editor-column-block *ngIf="isColumnBlock(column)" [cb]="column" [lastNodeInParent]="last"
+                            [style.display]="collapse ? &quot;none&quot; : &quot;flex&quot;">
+                            <mat-icon class="block-drag-icon" *ngIf="!readonly" [dndDraggable]="column.uuid"
+                                [dndType]="column.nodetype.toString()" [dragElement]="drag_col_ref"
+                                [dropzoneElement]="dropzone" [focusType]="focusType.DRAG" [image]="colDragImage"
+                                [node]="column" [uuid]="column.uuid" logi-dnd-draggable logi-dnd-image
+                                logi-node-focusable svgIcon="ic_handle"></mat-icon>
+                        </logi-editor-column-block>
+                        <logi-editor-column *ngIf="isColumn(column) &amp;&amp; !column.separator" [col]="column"
+                            [lastNodeInParent]="last" [style.display]="collapse ? &quot;none&quot; : &quot;flex&quot;">
+                            <mat-icon class="drag-icon" *ngIf="!readonly" [dndDraggable]="column.uuid"
+                                [dndType]="column.nodetype.toString()" [dragElement]="drag_col_ref"
+                                [dropzoneElement]="dropzone" [focusType]="focusType.DRAG" [image]="colDragImage"
+                                [node]="column" [uuid]="column.uuid" logi-dnd-draggable logi-dnd-image
+                                logi-node-focusable svgIcon="ic_handle"></mat-icon>
+                        </logi-editor-column>
+                        <logi-editor-separator *ngIf="isColumn(column) &amp;&amp; column.separator" [fb]="column"
+                            [lastNodeInParent]="last" [style.display]="collapse ? &quot;none&quot; : &quot;flex&quot;">
+                            <mat-icon class="drag-icon" *ngIf="!readonly" [dndDraggable]="column.uuid"
+                                [dndType]="column.nodetype.toString()" [dragElement]="drag_col_ref"
+                                [dropzoneElement]="dropzone" [focusType]="focusType.DRAG" [image]="colDragImage"
+                                [node]="column" [uuid]="column.uuid" logi-dnd-draggable logi-dnd-image
+                                logi-node-focusable svgIcon="ic_handle"></mat-icon>
+                        </logi-editor-separator>
+                    </ng-container>
+                    <ng-template #colDragImage>
+                        <logi-drag-img></logi-drag-img>
+                    </ng-template>
+                </div>
+            </ng-container>
+            <div class="footer-line"
+                [style.display]="(collapse || (isStandardHeader() &amp;&amp; isColumnTab)) ? &quot;none&quot; : &quot;flex&quot;">
+                <div class="tree-flag">
+                    <div class="circle"></div>
+                </div>
+                <button #add_btn (click)="addTableChild()" [disabled]="readonly" color="secondary" fontIcon="add"
+                    logi-icon-text-button>{{isColumnTab ? '添加列' : '添加行'}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<logi-context-menu #subMenu [menuClass]="&quot;logi-config-header-menu&quot;">
+    <ng-template *ngFor="let action of subMenuActions; trackBy: trackByFnReturnItem"
+        (execute)="action.click &amp;&amp; action.click()" [divider]="action.divider" [enabled]="action.enabled"
+        [showToolTip]="action.showToolTip" [text]="action.html()" [visible]="action.visible" let-item
+        logi-context-menu-item>
+        <div class="text">
+            <mat-icon *ngIf="action?.isCurr" svgIcon="ic_selected"></mat-icon>
+            <div class="action" [ngClass]="{&quot;curr&quot;: action?.isCurr}">{{action?.html()}}</div>
+        </div>
+    </ng-template>
+</logi-context-menu>
+<ng-template #isRowTab>
+    <div *ngFor="let row of node.rows; let i=index; let last=last; trackBy:trackByFnReturnItem" #drag_row_ref>
+        <logi-editor-row-block *ngIf="isRowBlock(row)" [cb]="row" [lastNodeInParent]="last"
+            [style.display]="collapse ? &quot;none&quot; : &quot;flex&quot;">
+            <mat-icon class="block-drag-icon" *ngIf="!readonly" [dndDraggable]="row.uuid"
+                [dndType]="row.nodetype.toString()" [dragElement]="drag_row_ref" [dropzoneElement]="dropzone"
+                [focusType]="focusType.DRAG" [image]="rowDragImage" [node]="row" [uuid]="row.uuid" logi-dnd-draggable
+                logi-dnd-image logi-node-focusable svgIcon="ic_handle"></mat-icon>
+        </logi-editor-row-block>
+        <logi-editor-row *ngIf="isRow(row) &amp;&amp; !row.separator" #direct_row [lastNodeInParent]="last" [row]="row"
+            [style.display]="collapse ? &quot;none&quot; : &quot;flex&quot;">
+            <mat-icon class="drag-icon" *ngIf="!readonly" [dndDraggable]="row.uuid" [dndType]="row.nodetype.toString()"
+                [dragElement]="drag_row_ref" [dropzoneElement]="dropzone" [focusType]="focusType.DRAG"
+                [image]="rowDragImage" [node]="row" [uuid]="row.uuid" logi-dnd-draggable logi-dnd-image
+                logi-node-focusable svgIcon="ic_handle"></mat-icon>
+        </logi-editor-row>
+        <logi-editor-separator *ngIf="isRow(row) &amp;&amp; row.separator" #direct_row [fb]="row"
+            [lastNodeInParent]="last" [style.display]="collapse ? &quot;none&quot; : &quot;flex&quot;">
+            <mat-icon class="drag-icon" *ngIf="!readonly" [dndDraggable]="row.uuid" [dndType]="row.nodetype.toString()"
+                [dragElement]="drag_row_ref" [dropzoneElement]="dropzone" [focusType]="focusType.DRAG"
+                [image]="rowDragImage" [node]="row" [uuid]="row.uuid" logi-dnd-draggable logi-dnd-image
+                logi-node-focusable svgIcon="ic_handle"></mat-icon>
+        </logi-editor-separator>
+        <ng-template #rowDragImage>
+            <logi-drag-img></logi-drag-img>
+        </ng-template>
+    </div>
+</ng-template>

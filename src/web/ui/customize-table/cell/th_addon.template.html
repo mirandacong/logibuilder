@@ -1,0 +1,13 @@
+<logi-table-filter *ngIf="logiShowFilter || logiCustomFilter; else notFilterTemplate" (filterChange)="onFilterValueChange($event)" [contentTemplate]="notFilterTemplate" [customFilter]="logiCustomFilter" [extraTemplate]="extraTemplate" [filterMultiple]="logiFilterMultiple" [listOfFilter]="logiFilters"></logi-table-filter>
+<ng-template #notFilterTemplate>
+  <ng-template [ngTemplateOutlet]="logiShowSort ? sortTemplate : contentTemplate"></ng-template>
+</ng-template>
+<ng-template #extraTemplate>
+  <ng-content select="[logi-th-extra]"></ng-content>
+</ng-template>
+<ng-template #sortTemplate>
+  <logi-table-sorters [contentTemplate]="contentTemplate" [sortDirections]="sortDirections" [sortOrder]="sortOrder"></logi-table-sorters>
+</ng-template>
+<ng-template #contentTemplate>
+  <ng-content></ng-content>
+</ng-template>

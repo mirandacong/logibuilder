@@ -1,0 +1,118 @@
+@use 'src/web/assets/styles/shared';
+
+$suggestion-panel-max-height: 256px;
+$suggestion-panel-width: 400px;
+$tab-unit-height: 32px;
+
+$scrollbar-thumb-border-radius: 8px;
+$scrollbar-thumb-height: 100px;
+%thumb-vertical {
+    border-radius: $scrollbar-thumb-border-radius;
+    height: $scrollbar-thumb-height;
+    -webkit-appearance: none;
+}
+
+:host {
+    /*
+     * If set to absolute, the size of cdk-overlay-pane is 0, it will
+     * affect overlay positon strategy. The position of panel won't be
+     * adjusted if the panel cannot fit below.
+     */
+    position: relative;
+
+    display: flex;
+
+    font-family: monospace;
+}
+
+/* stylelint-disable-next-line */
+::ng-deep {
+    /* stylelint-disable-next-line */
+    ::-webkit-scrollbar {
+        @include shared.size(12px, 12px);
+        -webkit-appearance: none;
+    }
+
+    /* stylelint-disable-next-line */
+    ::-webkit-scrollbar-thumb:vertical {
+        @extend %thumb-vertical;
+        /* stylelint-disable-next-line */
+        background: linear-gradient(to right, rgba(250, 250, 250, 0) 33%, rgba(0, 0, 0, 0.12) 33% 66%, rgba(250, 250, 250, 0) 66%);
+    }
+
+    /* stylelint-disable-next-line */
+    ::-webkit-scrollbar-thumb:hover:vertical {
+        @extend %thumb-vertical;
+        /* stylelint-disable-next-line */
+        background: linear-gradient(to right, rgba(250, 250, 250, 0) 16%, rgba(0, 0, 0, 0.38) 16% 84%, rgba(250, 250, 250, 0) 84%);
+    }
+
+    /* stylelint-disable-next-line */
+    ::-webkit-scrollbar-thumb:active:vertical {
+        @extend %thumb-vertical;
+        /* stylelint-disable-next-line */
+        background: linear-gradient(to right, rgba(250, 250, 250, 0) 16%, rgba(0, 0, 0, 0.6) 16% 84%, rgba(250, 250, 250, 0) 84%);
+    }
+}
+
+.resolved-node {
+    margin-left: 5px;
+}
+
+.suggest-tab, .resolved-node {
+    flex-direction: column;
+
+    display: flex;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    width: $suggestion-panel-width;
+    padding: 8px 0;
+
+    background: white;
+
+    color: rgb(86, 156, 214);
+
+    max-height: $suggestion-panel-max-height;
+}
+
+.tab-item-container {
+    align-items: center;
+    display: flex;
+    height: $tab-unit-height;
+    line-height: $tab-unit-height;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    .tab-item {
+        overflow: hidden;
+
+        transition: 0.3s;
+
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 10px;
+
+        cursor: pointer;
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        /* stylelint-disable-next-line */
+        ::ng-deep {
+            .part-matched {
+                font-weight: 400;
+                color: shared.$base-blue;
+            }
+        }
+    }
+}
+
+.tab-item-container.active {
+    background-color: rgba(0, 68, 204, 0.08);
+}

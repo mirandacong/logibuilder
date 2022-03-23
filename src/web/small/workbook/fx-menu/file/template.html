@@ -1,0 +1,19 @@
+<button class="file-btn fx-menu-button" (menuClosed)="setOpened(false)" (menuOpened)="setOpened(true)"
+    (mouseenter)="onHoverButton()" [matMenuTriggerFor]="menu" [ngClass]="{&quot;opened&quot;: isOpened}">文件</button>
+<mat-menu #menu="matMenu">
+    <button class="sub-btn" (click)="saveAsModel()" mat-menu-item>
+        <mat-icon class="icon-left-view"></mat-icon><span class="text">另存模型</span>
+    </button>
+    <button class="sub-btn" (click)="onDownload()" mat-menu-item>
+        <mat-icon class="icon-left-view"></mat-icon><span class="text">下载Excel</span>
+    </button>
+    <button class="sub-btn" (click)="uploadInput.click()" mat-menu-item>
+        <mat-icon class="icon-left-view"></mat-icon>
+        <input #uploadInput type="file" style="display: none;" accept=".logi" (change)="onUpload($event)">
+        <span class="text">上传文件</span>
+    </button>
+    <button class="sub-btn" (click)="fileBrowser.click()" [disabled]="readonly" mat-menu-item>
+        <mat-icon class="icon-left-view"></mat-icon><span class="text">从 Excel 更新模型</span>
+        <input #fileBrowser (change)="onOpenExcel($event)" accept=".xlsx" style="display:none" type="file">
+    </button>
+</mat-menu>

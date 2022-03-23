@@ -1,0 +1,110 @@
+/* stylelint-disable */
+@use '../../core/styles/shared';
+
+$box-shadow-color: shared.$black-16;
+
+.logi-table.logi-table-bordered {
+    // ============================ Title =============================
+    > .logi-table-title {
+        border: shared.$border-base;
+        border-bottom: 0;
+    }
+
+    > .logi-table-container {
+        // ============================ Content ============================
+        border: shared.$border-base;
+
+        > .logi-table-content, > .logi-table-header, > .logi-table-body {
+            > table {
+                // ============================= Cell =============================
+                > thead > tr > th, > tbody > tr > td:not(:last-child), > tfoot > tr > th, > tfoot > tr > td:not(:last-child) {
+                    border-right: shared.$border-base;
+                }
+                // ============================ Header ============================
+                > thead {
+                    > tr:not(:last-child) > th {
+                        border-bottom: shared.$border-base;
+                    }
+                }
+
+                // Fixed right should provides additional border
+                > thead > tr, > tbody > tr, > tfoot > tr {
+                    > .logi-table-cell-fix-right-first::after {
+                        border-right: shared.$border-base;
+                    }
+                }
+            }
+
+            // ========================== Expandable ==========================
+            > table > tbody > tr > td {
+                > .logi-table-expanded-row-fixed {
+                    margin: -16px (-16px - 1px);
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 1px;
+                        border-right: shared.$border-base;
+                    }
+                }
+            }
+        }
+    }
+
+    &.logi-table-scroll-horizontal {
+        > .logi-table-container > .logi-table-body {
+            > table > tbody {
+                > tr.logi-table-expanded-row, > tr.logi-table-placeholder {
+                    > td {
+                        border-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // Size related
+    &.logi-table-middle {
+        > .logi-table-container {
+            > .logi-table-content, > .logi-table-body {
+                > table > tbody > tr > td {
+                    > .logi-table-expanded-row-fixed {
+                        margin: -12px (-12px - 1px);
+                    }
+                }
+            }
+        }
+    }
+
+    &.logi-table-small {
+        > .logi-table-container {
+            > .logi-table-content, > .logi-table-body {
+                > table > tbody > tr > td {
+                    > .logi-table-expanded-row-fixed {
+                        margin: -8px (-8px - 1px);
+                    }
+                }
+            }
+        }
+    }
+
+    // ============================ Footer ============================
+    > .logi-table-footer {
+        border: shared.$border-base;
+        border-top: 0;
+    }
+}
+
+.logi-table-cell {
+    // ============================ Nested ============================
+    .logi-table-container:first-child {
+        // :first-child to avoid the case when bordered and title is set
+        border-top: 0;
+    }
+
+    &-scrollbar {
+        box-shadow: 0 1px 0 1px $box-shadow-color;
+    }
+}

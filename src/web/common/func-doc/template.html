@@ -1,0 +1,21 @@
+<ng-container cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+  <div class="title" cdkDragHandle>函数列表</div>
+  <div class="block">
+    <div class="func-doc-nav">
+      <mat-tree class="body" [dataSource]="dataSource" [treeControl]="treeControl">
+        <mat-tree-node class="tree-node" *matTreeNodeDef="let node" (click)="onSelectFunc(node)" [class.selected]="selectedNode === node" [matTreeNodePaddingIndent]="38" matTreeNodePadding><span>{{node.name}}</span></mat-tree-node>
+        <mat-tree-node class="tree-node" *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+          <button class="expand-btn" mat-icon-button matTreeNodeToggle>
+            <mat-icon class="expand-btn-icon mat-icon-rtl-mirror" [svgIcon]="treeControl.isExpanded(node) ? &quot;ic_arrow_drop_down&quot; : &quot;ic_arrow_drop_right&quot;"></mat-icon>
+          </button><span>{{node.name}}</span>
+        </mat-tree-node>
+      </mat-tree>
+    </div>
+    <div class="func-doc-content">
+      <div class="md-content" #md_container></div>
+    </div>
+  </div>
+  <div class="btn-box">
+    <button (click)="onClose()" logi-button>关闭</button>
+  </div>
+</ng-container>

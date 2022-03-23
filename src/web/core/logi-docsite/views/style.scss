@@ -1,0 +1,70 @@
+@use './theme';
+
+$menu-container-width: 240px;
+
+#topbar {
+    position: fixed;
+    color: white;
+    background-color: theme.$theme-color;
+}
+
+:host {
+    flex: 1;
+    display: flex;
+    height: 100%;
+}
+
+#menu-container {
+
+    top: 72px;
+    bottom: 0;
+    left: 0;
+
+    overflow-y: scroll;
+
+    box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
+    width: $menu-container-width;
+    padding-top: 24px;
+
+    -ms-overflow-style: none;
+    background-color: #FFF;
+    scrollbar-width: none;
+}
+
+#menu-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+#doc-container {
+
+    top: 80px;
+    left: 18%;
+    right: 18%;
+
+    transition-duration: 400ms;
+    transition-property: transform, margin-left, margin-right;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    width: 64%;
+    height: 100%;
+}
+
+#toc-container {
+
+    top: 76px;
+    bottom: 12px;
+    right: 0;
+
+    overflow-y: scroll;
+
+    width: 20%;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#toc-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}

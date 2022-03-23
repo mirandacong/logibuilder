@@ -1,0 +1,13 @@
+<div class="tree-flag-top-part">
+  <div class="circle"></div>
+</div>
+<div class="tree-flag-bottom-part" [ngClass]="{&quot;last-node-flag-style&quot;: lastNodeInParent}"></div>
+<div class="fb-container" #container [attr.data-node]="node.uuid" [node]="node" logi-node-focusable>
+  <ng-content select="mat-icon"></ng-content>
+  <div class="node-identifier" #name>
+    <div class="ref-name">
+      <div class="input-name" #ref_name (blur)="nameChange($event)" [focusType]="focusType.NAME" [node]="node" [readonly]="readonly" [styleTarget]="name" logi-node-focusable spellcheck="false"></div>
+    </div>
+  </div>
+  <button class="menu-btn" *ngIf="!readonly" #settings (click)="dispatchContextmenu($event)" fontIcon="more_vert" logi-icon-button></button>
+</div>

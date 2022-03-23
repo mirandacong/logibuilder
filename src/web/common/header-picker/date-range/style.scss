@@ -1,0 +1,287 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette';
+
+@use 'src/web/assets/styles/typography';
+
+/* stylelint-disable-next-line */
+::ng-deep {
+    .logi-config-header-unit {
+        box-shadow: 0 12px 24px palette.logi-black(0.16);
+        padding: 8px 0;
+    }
+    .date-picker {
+        .mat-calendar-body-selected {
+            background-color: map-get(palette.$aris-brand, 600) !important;
+        }
+    }
+}
+.sub-btn {
+    width: 240px;
+    &.active {
+        background-color: palette.logi-brand(0.08);
+        color: palette.logi-brand(1);
+    }
+}
+button.mat-menu-item {
+    width: 240px;
+}
+.mat-menu-item {
+    height: 35px;
+    line-height: 35px;
+}
+
+:host {
+    flex-direction: column;
+    display: flex;
+    .selection {
+        display: flex;
+        max-width: 1040px;
+    }
+    .date {
+        flex-direction: column;
+        display: flex;
+        margin-right: 16px;
+        .date-picker {
+            margin-top: 6px;
+            border: 1px solid palette.logi-black(0.12);
+            border-radius: 4px;
+            width: 240px;
+            line-height: 32px;
+
+            .date-picker-input {
+                width: calc(100% - 42px);
+                @include shared.set-font(14px);
+            }
+        }
+    }
+
+    .interval {
+        flex-direction: column;
+        display: flex;
+        margin-right: 16px;
+
+        .multi-selection {
+            margin-top: 6px;
+            width: 500px;
+        }
+    }
+
+    .caption {
+        @include typography.logi-caption-typography;
+        color: palette.logi-black(0.38);
+    }
+    .unit {
+        .unit-text {
+            margin: auto 8px auto 0;
+
+            font-size: 12px;
+            line-height: 18px;
+            font-weight: 400;
+            color: palette.logi-black(0.6);
+        }
+        .set-unit {
+            align-items: center;
+
+            display: flex;
+
+            margin-top: 6px;
+            border: 1px solid palette.logi-black(0.24);
+            border-radius: 4px;
+            width: 240px;
+            height: 34px;
+
+            background-color: palette.logi-black(0);
+            cursor: pointer;
+
+            text-align: start;
+            &:focus {
+                outline: none;
+            }
+        }
+        .unit-show {
+            flex: 1;
+
+            font-size: 14px;
+            font-weight: 400;
+            color: palette.logi-black(0.87);
+        }
+        .icon-view {
+            opacity: 0.6;
+            margin-top: 3px;
+        }
+    }
+    .text-label {
+        opacity: 0.87;
+
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 400;
+        color: palette.logi-black(1);
+    }
+
+    input {
+        border: none;
+        width: 210px;
+        padding: 0 8px;
+
+        color: palette.logi-black(0.87);
+
+        outline: none;
+    }
+
+    .single-selection {
+        margin-top: 6px;
+        border: 1px solid palette.logi-black(0.24);
+        border-radius: 4px;
+        width: 240px;
+        padding: 0;
+
+        line-height: 32px;
+    }
+
+    .year-range {
+        flex-direction: row;
+        display: flex;
+        margin-top: 16px;
+        height: 58px;
+    }
+
+    .fy, .qr, .hy {
+        margin-right: 16px;
+    }
+
+    .pick-header {
+        margin-top: 6px;
+    }
+
+    /* stylelint-disable-next-line */
+    ::ng-deep {
+        .mat-datepicker-toggle {
+            line-height: 24px;
+
+            button {
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+            }
+        }
+        .mat-menu-panel {
+            min-width: 84px;
+        }
+        .mat-input-element:disabled {
+            background-color: palette.logi-white(1);
+        }
+        .mat-datepicker-toggle-active {
+            color: map-get(palette.$aris-brand, 600);
+        }
+        /* stylelint-disable */
+        .mat-pseudo-checkbox .mat-ripple-element {
+            $ripple: palette.logi-black(0.12);
+            background-color: $ripple !important;
+        }
+        .mat-select-value-text {
+            @include typography.logi-body-2-typography;
+            padding: 0 8px;
+        }
+        .multiselect-item-checkbox div {
+            padding-left: 6px !important;
+        }
+        .multiselect-item-checkbox div::before {
+            animation: none !important;
+            transition: none !important;
+
+            border: none !important;
+
+            background: none !important;
+
+            color: map-get(palette.$aris-brand, 600) !important;
+
+            -webkit-animation: none !important;
+        }
+        .multiselect-item-checkbox div::after {
+            left: 200px !important;
+
+            transition: none !important;
+
+            margin-top: -5px !important;
+            border-color: map-get(palette.$aris-brand, 600) !important;
+            border-width: 0 0 2px 2px !important;
+            width: 12px !important;
+            height: 5px !important;
+        }
+        .dropdown-list {
+            box-shadow: 0 12px 24px palette.logi-black(0.16) !important;
+            border: none !important;
+            border-radius: 4px !important;
+            width: 240px !important;
+            padding: 8px 0 !important;
+        }
+        .dropdown-list li {
+            padding: 8px 10px !important;
+            font-size: 14px !important;
+
+            &:hover {
+                background-color: palette.logi-black(0.04) !important;
+                color: map-get(palette.$aris-brand, 600) !important;
+            }
+            &:active {
+                background-color: palette.aris-brand(0.12) !important;
+                color: map-get(palette.$aris-brand, 600) !important;
+            }
+        }
+        .multiselect-dropdown .dropdown-btn {
+            border: 1px solid palette.logi-black(0.24) !important;
+            border-radius: 4px !important;
+            box-sizing: border-box !important;
+            width: 240px !important;
+            height: 34px !important;
+            padding: 6px 4px !important;
+
+            line-height: unset !important;
+            color: palette.logi-black(0.24) !important;
+
+            outline: none !important;
+        }
+        .option-content {
+            padding-right: 8px;
+            font-family: Noto Sans SC;
+            font-weight: 400;
+            color: shared.$base-brand;
+        }
+        .multiselect-dropdown .dropdown-btn .selected-item {
+            float: unset !important;
+
+            border: none !important;
+            padding: 5px 22px 5px 8px !important;
+
+            background: palette.aris-brand(0.12) !important;
+
+            font-size: 14px !important;
+            color: map-get(palette.$aris-brand, 600) !important;
+
+            &:hover {
+                box-shadow: none !important;
+            }
+        }
+        .multiselect-dropdown .dropdown-btn .selected-item a {
+            position: absolute !important;
+
+            padding-left: 6px !important;
+            padding-top: 1px !important;
+
+            font-family: sans-serif !important;
+            color: map-get(palette.$aris-brand, 600) !important;
+        }
+        .multiselect-dropdown .dropdown-btn .dropdown-down {
+            border-left: 5px solid transparent !important;
+            border-right: 5px solid transparent !important;
+            border-top: 5px solid map-get(palette.$logi-grey, 600) !important;
+        }
+        .multiselect-dropdown .dropdown-btn .dropdown-up {
+            border-bottom: 5px solid map-get(palette.$logi-grey, 600) !important;
+            border-left: 5px solid transparent !important;
+            border-right: 5px solid transparent !important;
+        }
+    }
+}

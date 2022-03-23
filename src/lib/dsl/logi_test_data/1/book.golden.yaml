@@ -1,0 +1,889 @@
+---
+annotations: {}
+labels: []
+name: Test model
+nodetype: 1
+subnodes:
+- annotations: {}
+  labels: []
+  name: Control
+  nodetype: 2
+  subnodes:
+  - annotations: {}
+    labels: []
+    modifier: ++
+    name: Financial Statement
+    nodetype: 3
+    subnodes:
+    - annotations: {}
+      labels: []
+      modifier: +
+      name: China
+      nodetype: 3
+      subnodes: []
+  - annotations: {}
+    header_stub: us mn
+    labels: []
+    name: Revenue Breakup
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      labels:
+      - hist
+      name: '2017'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels:
+        - strategy
+        - CHECK
+        modifier: ''
+        name: FY
+        nodetype: 8
+        slice_exprs:
+        - annotations: {}
+          expression: '{Revenue Breakup!2017!Q1}+{Revenue Breakup!2017!Q2}+{Revenue
+              Breakup!2017!Q3}+{Revenue Breakup!2017!Q4}'
+          name: stock
+          type: 0
+        - annotations: {}
+          expression: '{Revenue Breakup!2017!Q4}'
+          name: current
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - annotations: {}
+      labels:
+      - hist
+      name: '2018'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels:
+        - strategy
+        - CHECK
+        modifier: ''
+        name: FY
+        nodetype: 8
+        slice_exprs:
+        - annotations: {}
+          expression: '{Revenue Breakup!2018!Q1}+{Revenue Breakup!2018!Q2}+{Revenue
+              Breakup!2018!Q3}+{Revenue Breakup!2018!Q4}'
+          name: stock
+          type: 0
+        - annotations: {}
+          expression: '{Revenue Breakup!2018!Q4}'
+          name: current
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - annotations: {}
+      labels:
+      - hist
+      name: '2019'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels:
+        - strategy
+        - CHECK
+        modifier: ''
+        name: FY
+        nodetype: 8
+        slice_exprs:
+        - annotations: {}
+          expression: '{Revenue Breakup!2019!Q1}+{Revenue Breakup!2019!Q2}+{Revenue
+              Breakup!2019!Q3}+{Revenue Breakup!2019!Q4}'
+          name: stock
+          type: 0
+        - annotations: {}
+          expression: '{Revenue Breakup!2019!Q4}'
+          name: current
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - annotations: {}
+      labels:
+      - proj
+      name: '2020'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: FY
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: SUM({Electronic products!Total},{Services})
+      is_def_scalar: false
+      labels:
+      - stock
+      modifier: ++
+      name: Revenue
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: '1'
+      annotations: {}
+      expression: '{Revenue Breakup!Revenue}/{Revenue Breakup!Revenue}.lag(1)-1'
+      is_def_scalar: false
+      labels:
+      - Revenue
+      modifier: --
+      name: yoy growth
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Electronic products
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - annotations: {}
+      labels: []
+      modifier: +
+      name: Electronic products
+      nodetype: 5
+      subnodes:
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels:
+        - assumption
+        modifier: '-'
+        name: iPhone
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: proj
+          type: 0
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: '-'
+        name: iPad
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: '{iPad}[proj].lag(1)*({iPad}[hist]/{iPad}[hist].lag(1)).average()'
+          name: proj
+          type: 0
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: Mac
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: ''
+          name: proj
+          type: 0
+        - annotations: {}
+          expression: ''
+          name: hist
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+      - alias: ''
+        annotations: {}
+        expression: ''
+        is_def_scalar: false
+        labels: []
+        modifier: ''
+        name: Total
+        nodetype: 7
+        slice_exprs:
+        - annotations: {}
+          expression: '{iPhone}[hist]+{iPad}[hist]+{Mac}[hist]'
+          name: hist
+          type: 0
+        - annotations: {}
+          expression: '{iPhone}[proj] + {iPad}[proj] + {Mac}[proj]'
+          name: proj
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - alias: '2'
+      annotations: {}
+      expression: '{Electronic products!Total}'
+      is_def_scalar: false
+      labels:
+      - Total
+      modifier: --
+      name: yoy growth
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Services
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Services}[proj].lag(1)*(1 + {Control!Revenue Breakup!yoy growth@3})'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: '3'
+      annotations: {}
+      expression: ''
+      is_def_scalar: true
+      labels:
+      - service_growth
+      - assumption
+      modifier: --
+      name: yoy growth
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+  - annotations: {}
+    labels: []
+    modifier: ''
+    name: Income Statement
+    nodetype: 3
+    subnodes: []
+  - annotations: {}
+    header_stub: us mn
+    labels: []
+    name: Income Statement
+    nodetype: 4
+    subnodes:
+    - annotations: {}
+      labels:
+      - hist
+      name: '2017'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels:
+        - strategy
+        - CHECK
+        modifier: ''
+        name: FY
+        nodetype: 8
+        slice_exprs:
+        - annotations: {}
+          expression: '{Income Statement!2017!Q1}+{Income Statement!2017!Q2}+{Income
+              Statement!2017!Q3}+{Income Statement!2017!Q4}'
+          name: stock
+          type: 0
+        - annotations: {}
+          expression: '{Income Statement!2017!Q4}'
+          name: current
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - annotations: {}
+      labels:
+      - hist
+      name: '2018'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels:
+        - strategy
+        - CHECK
+        modifier: ''
+        name: FY
+        nodetype: 8
+        slice_exprs:
+        - annotations: {}
+          expression: '{Income Statement!2018!Q1}+{Income Statement!2018!Q2}+{Income
+              Statement!2018!Q3}+{Income Statement!2018!Q4}'
+          name: stock
+          type: 0
+        - annotations: {}
+          expression: '{Income Statement!2018!Q4}'
+          name: current
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - annotations: {}
+      labels:
+      - hist
+      name: '2019'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels:
+        - strategy
+        - CHECK
+        modifier: ''
+        name: FY
+        nodetype: 8
+        slice_exprs:
+        - annotations: {}
+          expression: '{Income Statement!2019!Q1}+{Income Statement!2019!Q2}+{Income
+              Statement!2019!Q3}+{Income Statement!2019!Q4}'
+          name: stock
+          type: 0
+        - annotations: {}
+          expression: '{Income Statement!2019!Q4}'
+          name: current
+          type: 0
+        sources: []
+        subnodes: []
+        type: 0
+    - annotations: {}
+      labels:
+      - proj
+      name: '2020'
+      nodetype: 6
+      subnodes:
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q1
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q2
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q3
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: Q4
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+      - annotations: {}
+        expression: ''
+        labels: []
+        modifier: ''
+        name: FY
+        nodetype: 8
+        slice_exprs: []
+        sources: []
+        subnodes: []
+        type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - current
+      modifier: +
+      name: Cost of Sales
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels:
+      - current
+      modifier: ''
+      name: Operating Expenses
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: '{Revenue Breakup!Revenue} * {as %revenue}[hist].average()'
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Operating Expenses}/{Revenue Breakup!Revenue}'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: as %revenue
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Revenue Breakup!Revenue} - {Operating Expenses}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Operating Income
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Total Interest & Other Income
+      nodetype: 7
+      slice_exprs:
+      - annotations: {}
+        expression: ''
+        name: hist
+        type: 0
+      - annotations: {}
+        expression: ''
+        name: proj
+        type: 0
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Operating Income} + {Total Interest & Other Income}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Pretax Income
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: ''
+      is_def_scalar: true
+      labels: []
+      modifier: ''
+      name: tax rate
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Operating Income} * {tax rate}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: tax
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Pretax Income} - {tax}'
+      is_def_scalar: false
+      labels: []
+      modifier: +
+      name: Net Income
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Revenue Breakup!Revenue} - {Cost of Sales}'
+      is_def_scalar: false
+      labels: []
+      modifier: ''
+      name: Gross Profit
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0
+    - alias: ''
+      annotations: {}
+      expression: '{Gross Profit} / {Revenue Breakup!Revenue}'
+      is_def_scalar: false
+      labels: []
+      modifier: --
+      name: Gross Margin
+      nodetype: 7
+      slice_exprs: []
+      sources: []
+      subnodes: []
+      type: 0

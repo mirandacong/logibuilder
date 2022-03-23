@@ -1,0 +1,7 @@
+<div class="menu-item" (click)="toggle()" [class.selected]="selectedId !== -1"><span>{{node.title}}</span>
+  <mat-icon *ngIf="hideGroup" svgIcon="ic_arrow_right"></mat-icon>
+  <mat-icon *ngIf="!hideGroup" svgIcon="ic_arrow_down"></mat-icon>
+</div>
+<div class="menu" *ngFor="let nod of node.group, let id = index" [style.display]="hideGroup? &quot;none&quot; : &quot;block&quot;"><a class="menu-item" *ngIf="isNavItem(nod)" [class.selected]="selectedId === id" [routerLink]="nod.url">{{nod.title}}</a>
+  <logi-menu-item *ngIf="!isNavItem(nod)" (selectedEvent)="onSelected()" [node]="nod"></logi-menu-item>
+</div>

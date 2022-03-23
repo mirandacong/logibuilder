@@ -1,0 +1,41 @@
+@use '../core/styles/shared.scss';
+
+@use '../core/styles/palette.scss';
+
+:host {
+    position: relative;
+    display: inline-block;
+    .name-input {
+        position: relative;
+        border: none;
+        height: 16px;
+        background-color: transparent;
+        cursor: pointer;
+
+        /* make sure inherit from parent */
+        font-size: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        text-align: center;
+        color: inherit;
+        min-width: 48px;
+        outline: none;
+        user-select: none;
+    }
+    .change-name-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        border: none;
+        width: 100%;
+        background-color: palette.logi-white(1);
+        cursor: auto;
+        color: palette.logi-black(0.6);
+        outline: none;
+    }
+    .show {
+        display: flex;
+    }
+}

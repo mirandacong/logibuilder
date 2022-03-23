@@ -1,0 +1,7 @@
+<span class="logi-active-input-wrapper">
+    <ng-content></ng-content>
+</span>
+<span class="logi-active-input-button-wrapper">
+    <button class='logi-active-input-button' [class.active]='active' [matTooltip]='iconTooltip' logi-icon-button
+        [icon]='icon' (click)='onClick()'></button>
+</span>

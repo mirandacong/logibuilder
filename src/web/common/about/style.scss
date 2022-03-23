@@ -1,0 +1,59 @@
+@use 'src/web/assets/styles/shared.scss';
+
+$width: 420px;
+$buttom-height: 48px;
+$margin-left: 24px;
+$margin-top: 16px;
+$size: 24px;
+$btn-z-index: 2;
+$btn-margin-right: 17px;
+$btn-margin-top: 17px;
+$picture-z-index: 1;
+$close-icon-font-size: 24px;
+$close-icon-hover-color: rgba(112, 112, 112, 1);
+$body-margin-top: 252px;
+$body-background-color: rgba(248, 248, 248, 1);
+$body-line-height: 17px;
+$body-color: rgba(112, 112, 112, 1);
+
+.dialog {
+    position: relative;
+    @include shared.size(300px, 420px);
+}
+
+.btn {
+    z-index: $btn-z-index;
+    float: right;
+
+    margin-right: $btn-margin-right;
+    margin-top: $btn-margin-top;
+    ::ng-deep {
+        .mat-icon {
+            font-size: 18px;
+        }
+    }
+}
+
+.picture {
+    position: absolute;
+    z-index: $picture-z-index;
+}
+
+.body {
+    position: absolute;
+
+    margin-top: $body-margin-top;
+    width: $width;
+    height: $buttom-height;
+
+    background-color: $body-background-color;
+
+    line-height: $body-line-height;
+    @include shared.set-font(14px);
+    color: $body-color;
+}
+
+.version {
+    float: left;
+    margin: $margin-top $margin-left;
+}

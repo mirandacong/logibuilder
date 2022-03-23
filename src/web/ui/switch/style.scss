@@ -1,0 +1,156 @@
+@use '../core/styles/shared';
+@use 'sass:math';
+
+$thumb-size: 20px !default;
+$bar-border-radius: 8px !default;
+$switch-height: 24px !default;
+$switch-spacing: 8px !default;
+$ripple-radius: 20px !default;
+$bar-width: 36px !default;
+$bar-height: 14px !default;
+$bar-track-width: $bar-width - $thumb-size;
+
+:host {
+    display: inline-block;
+    height: $switch-height;
+    line-height: $switch-height;
+    -webkit-tap-highlight-color: transparent;
+    max-width: 100%;
+    outline: none;
+    white-space: nowrap;
+
+    @include shared.user-select(none);
+
+    &.logi-checked {
+        .logi-switch-thumb-container {
+            transform: translate3d($bar-track-width, 0, 0);
+
+            [dir='rtl'] & {
+                transform: translate3d(-$bar-track-width, 0, 0);
+            }
+        }
+    }
+
+    &.logi-disabled {
+        .logi-switch-bar {
+            background-color: shared.$black-24;
+        }
+
+        .logi-switch-label, .logi-switch-thumb-container {
+            cursor: default;
+        }
+    }
+    &:hover:not(.logi-disabled) {
+        .logi-switch-persistent-ripple {
+            background-color: shared.$black-4;
+        }
+    }
+    .logi-switch-label {
+        flex: 1;
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+        height: inherit;
+        cursor: pointer;
+    }
+
+    .logi-switch-label-before {
+        .logi-switch-label {
+            order: 1; }
+        .logi-switch-bar {
+            order: 2; }
+    }
+
+    [dir='rtl'] .logi-switch-label-before .logi-switch-bar, .logi-switch-bar {
+        margin-left: 0;
+        margin-right: $switch-spacing;
+    }
+
+    [dir='rtl'], .logi-switch-label-before {
+        .logi-switch-bar {
+            margin-left: $switch-spacing;
+            margin-right: 0;
+        }
+    }
+
+    .logi-switch-bar-no-side-margin {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .logi-switch-thumb-container {
+        $thumb-bar-vertical-padding: math.div($thumb-size - $bar-height, 2);
+        position: absolute;
+        z-index: 1;
+        top: -$thumb-bar-vertical-padding;
+        left: 0;
+        transform: translate3d(0, 0, 0);
+        transition-property: transform;
+        width: $thumb-size;
+        height: $thumb-size;
+
+        [dir='rtl'] & {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    .logi-switch-thumb {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.21);
+        border-radius: 50%;
+        width: $thumb-size;
+        height: $thumb-size;
+        background-color: shared.$base-white;
+    }
+
+    .logi-switch-bar {
+        position: relative;
+        flex-shrink: 0;
+        border-radius: $bar-border-radius;
+        width: $bar-width;
+        height: $bar-height;
+        background-color: shared.$black-38;
+    }
+
+    .logi-switch-input {
+        $horizontal-offset: math.div($thumb-size, 2);
+        bottom: 0;
+        left: $horizontal-offset;
+
+        [dir='rtl'] & {
+            left: auto;
+            right: $horizontal-offset;
+        }
+    }
+
+    .logi-switch-bar, .logi-switch-thumb {
+        transition: all 80ms linear;
+        transition-delay: 50ms;
+        transition-property: background-color;
+    }
+
+    .logi-switch-ripple {
+        position: absolute;
+        z-index: 1;
+        top: calc(50% - #{$ripple-radius});
+        left: calc(50% - #{$ripple-radius});
+        border-radius: 50%;
+        width: $ripple-radius * 2;
+        height: $ripple-radius * 2;
+        pointer-events: none;
+
+        .logi-ripple-element:not(.logi-switch-persistent-ripple) {
+            opacity: 0.12;
+        }
+    }
+
+    .logi-switch-persistent-ripple {
+        transform: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .logi-switch-content {
+        @include shared.logi-overflow-ellipsis;
+    }
+}

@@ -1,0 +1,37 @@
+<div class="tree-flag-top-part" [ngClass]="{&quot;flag-color&quot;:columnBlockChild()}">
+    <div class="circle"></div>
+</div>
+<div class="tree-flag-bottom-part"
+    [ngClass]="{&quot;flag-color&quot;:columnBlockChild(), &quot;last-node-flag-style&quot;: lastNodeInParent}"></div>
+<div class="fb-container" [attr.data-node]="node.uuid" [node]="node" logi-node-focusable>
+    <ng-content select="mat-icon"></ng-content>
+    <div class="node-identifier" #name>
+        <div class="ref-name">
+            <div class="input-name" #ref_name (blur)="nameChange()" [focusType]="focusType.NAME" [node]="node"
+                [readonly]="readonly" [styleTarget]="name" logi-node-focusable placeholder="列名称" spellcheck="false">
+            </div>
+            <span class="label-container" *ngIf="!showLabelContent; else labelContent"
+                [style.display]="node.labels.length === 0 ? &quot;none&quot; : &quot;&quot;">{{labelNums()}}</span>
+        </div>
+    </div>
+    <div class="formula" *ngIf="node.sliceExprs.length &lt;= 0; else sliceView" #expression>
+        <logi-fb-tag class="fb-tag" (typeChange$)="setTagType($event)" [empty]="isEmpty()" [readonly]="readonly"
+            [type]="node.type"></logi-fb-tag>
+        <ng-container>
+            <logi-equal class="equal"></logi-equal>
+            <logi-simple-editor class="formula-edit" [focusType]="focusType.EXPRESSION" [node]="node"
+                [readonly]="readonly" [styleTarget]="expression" logi-node-focusable></logi-simple-editor>
+        </ng-container>
+        <div class="right-border"></div>
+    </div>
+    <button class="menu-btn" *ngIf="!readonly" (click)="dispatchContextmenu($event)" [disabled]="readonly"
+        fontIcon="more_vert" logi-icon-button></button>
+</div>
+<ng-template #sliceView>
+    <logi-editor-slice-part [node]="node"></logi-editor-slice-part>
+</ng-template>
+<ng-template #labelContent>
+    <ng-container *ngFor="let label of node.labels;trackBy: trackByFnReturnItem">
+        <logi-editor-label class="label-content" [label]="label"></logi-editor-label>
+    </ng-container>
+</ng-template>

@@ -1,0 +1,17 @@
+<label class='logi-radio-label' #label>
+    <div class='logi-radio-container'>
+        <div class='logi-radio-outer-circle'></div>
+        <div class='logi-radio-inner-circle'></div>
+        <div class='logi-radio-ripple' [matRippleCentered]='true'
+            [matRippleColor]='checked ? "rgba(65, 120, 184, 0.12)" : "rgba(0, 0, 0, 0.12)"'
+            [matRippleDisabled]='disableRipple || disabled' [matRippleRadius]='20' [matRippleTrigger]='label'
+            mat-ripple>
+            <div class='logi-ripple-element logi-radio-persistent-ripple'></div>
+        </div>
+        <input class='logi-radio-input cdk-visually-hidden' (change)='onInputChange($event)'
+            (click)='onInputClick($event)' [checked]='checked' [disabled]='disabled' type='radio'>
+    </div>
+    <div class='logi-radio-label-content' [class.logi-radio-label-before]='labelPosition === "before"'>
+        <ng-content></ng-content>
+    </div>
+</label>

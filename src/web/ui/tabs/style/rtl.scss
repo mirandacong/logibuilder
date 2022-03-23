@@ -1,0 +1,41 @@
+.logi-tabs {
+    .logi-tabs-rtl {
+        direction: rtl;
+    }
+
+    .logi-tabs-ink-bar {
+        .logi-tabs-rtl .logi-tabs {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    .logi-tabs-tab-next {
+        .logi-tabs-rtl .logi-tabs {
+            left: 2px;
+            right: auto;
+        }
+    }
+
+    .logi-tabs-tab-prev {
+        .logi-tabs-rtl .logi-tabs {
+            left: auto;
+            right: 2px;
+        }
+    }
+
+    .logi-tabs-nav {
+        .logi-tabs-tab {
+            .logi-tabs-rtl .logi-tabs {
+                margin: 0 0 0 32px;
+            }
+
+            .logiicon {
+                .logi-tabs-rtl .logi-tabs {
+                    margin-left: 8px;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

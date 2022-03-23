@@ -1,0 +1,28 @@
+<ng-container *ngIf="!inDialog">
+  <div class="tree-flag-top-part" [ngClass]="{&quot;flag-color&quot;:columnBlockChild()}">
+    <div class="circle"></div>
+  </div>
+  <div class="tree-flag-bottom-part" [ngClass]="{&quot;flag-color&quot;:columnBlockChild(), &quot;last-node-flag-style&quot;: lastNodeInParent}"></div>
+</ng-container>
+<div class="column-refname-container" [ngClass]="{&quot;in-dialog&quot;: inDialog}" [node]="node" logi-node-focusable>
+  <ng-content select="mat-icon"></ng-content>
+  <div class="node-identifier">
+    <div class="ref-name">
+      <div class="input-name">{{node.name}}</div><span class="column-label-container" *ngIf="!showLabelContent; else labelContent" [style.display]="node.labels.length === 0 ? &quot;none&quot; : &quot;&quot;">{{labelNums()}}</span>
+    </div>
+  </div>
+  <ng-container *ngIf="node.name.length !==  0">
+    <div class="formula" *ngIf="node.sliceExprs.length &lt;= 0; else sliceView">
+      <logi-fb-tag class="fb-tag" [empty]="isEmpty()" [readonly]="true" [type]="node.type"></logi-fb-tag>
+      <logi-equal class="equal"></logi-equal><span class="formula-edit" [innerHTML]="getEquations(node.expression)"></span>
+    </div>
+  </ng-container>
+</div>
+<ng-template #labelContent>
+  <ng-container *ngFor="let label of node.labels;trackBy:trackBy">
+    <logi-editor-label class="column-label-content" [label]="label" [type]="labelType.STANDARD"></logi-editor-label>
+  </ng-container>
+</ng-template>
+<ng-template #sliceView>
+  <logi-editor-slice-part [node]="node"></logi-editor-slice-part>
+</ng-template>

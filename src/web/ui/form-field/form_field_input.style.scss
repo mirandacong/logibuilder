@@ -1,0 +1,30 @@
+.logi-form-field .logi-input-element {
+    border: none !important;
+    height: unset;
+    padding: 0;
+    background-color: transparent !important;
+    &:disabled {
+        background-color: transparent !important;
+    }
+}
+
+.logi-form-field.logi-large {
+    .logi-form-field-flex {
+        height: 56px;
+    }
+    .logi-input-element {
+        font-size: 16px;
+    }
+}
+
+.logi-form-field.logi-small {
+    .logi-form-field-flex {
+        height: 24px;
+    }
+    .logi-form-field-infix {
+        padding: 0;
+    }
+    .logi-input-element {
+        font-size: 14px;
+    }
+}

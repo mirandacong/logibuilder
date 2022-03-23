@@ -1,0 +1,11 @@
+@use '../core/styles/shared';
+
+.logi-inner-option-group {
+    display: block;
+    font-size: 12px;
+    color: shared.$black-38;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 16px;
+    cursor: default;
+}

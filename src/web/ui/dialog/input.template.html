@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>{{data.title}}</h2>
+<mat-dialog-content>
+    <div class='label' *ngIf='data.label !== undefined'>{{data.label}}</div>
+    <div class="input-content">
+        <input [formControl]="control" [placeholder]="data.placeholder" autoFocus required type="text" logi-input>
+        <div class="error" *ngIf="isControlInvalid(control)">{{getControlError()}}</div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <ng-container class="btns" *ngFor="let action of secondaryActions; let i = index;">
+        <button (click)="onClickSecondary(action)" logi-button>{{action.text}}</button>
+    </ng-container>
+    <button *ngIf="primaryAction" (click)="onClickPrimary(primaryAction)" [disabled]="control.invalid"
+        [loading]="loading" logi-flat-button>{{primaryAction.text}}</button>
+</mat-dialog-actions>

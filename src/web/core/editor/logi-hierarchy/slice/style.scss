@@ -1,0 +1,115 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+@use '../shared' as editor;
+
+$autocomplete-name-color: rgb(86, 156, 214);
+$autocomplete-split-color: black;
+$autocomplete-path-color: gray;
+
+$slice-margin: 4px 8px 4px 142px;
+$border: 1px solid rgba(0, 0, 0, 0.12156862745098039);
+$radius: 4px;
+$equal-margin-right: 10px;
+
+:host {
+    flex: 1;
+    align-items: center;
+    display: flex;
+}
+
+.fb-tag {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    left: -26px;
+    &.compact {
+        position: static;
+        margin-left: 10px;
+    }
+}
+.tool-btn-block {
+    justify-content: flex-end;
+    align-self: stretch;
+
+    display: flex;
+    opacity: 0;
+
+    width: 34px;
+
+    &.menu-open {
+        opacity: 1;
+    }
+}
+
+.slice-container {
+    display: flex;
+    width: 100%;
+
+    &.selected {
+        border: shared.$border-selected;
+        background-color: palette.aris-brand(0.08);
+    }
+}
+
+::ng-deep {
+    .slice-expr-item:hover .logi-editor-slice .slice-container .tool-btn-block {
+        opacity: 1;
+    }
+}
+
+.selection-block {
+    position: relative;
+    flex: 1;
+    align-items: center;
+
+    display: flex;
+
+    .left {
+        align-self: flex-start;
+        max-width: 50%;
+    }
+    .equal {
+        margin-right: $equal-margin-right;
+    }
+    .right {
+        flex: 1;
+        align-items: baseline;
+        display: flex;
+    }
+    .editor {
+        padding-left: 7px;
+    }
+
+    .expr-focused {
+        margin-bottom: -1px;
+        margin-top: -1px;
+        border: shared.$border-selected;
+
+        background-color: palette.logi-white(1);
+    }
+}
+
+.slice-menu-btn {
+    align-self: flex-start;
+
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: palette.logi-black(0.6);
+
+    vertical-align: middle;
+    &.disabled {
+        color: palette.logi-black(0.38);
+    }
+}
+
+.slice-menu-item {
+    @include shared.size(32px,240px);
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: 400;
+    color: palette.logi-black(0.87);
+}

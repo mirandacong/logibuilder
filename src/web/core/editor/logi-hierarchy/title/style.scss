@@ -1,0 +1,207 @@
+@use 'src/web/assets/styles/shared';
+
+@use 'src/web/assets/styles/palette.scss';
+
+@use '../shared' as editor;
+
+$color: (
+    'white':rgba(255, 255, 255, 1),
+    'title-base-color': rgba(117, 117, 117, 1),
+    'title-bkg': rgba(250, 250, 250, 1),
+    'hover':rgba(117, 117, 117, 0.08),
+    'disabled':rgba(117, 117, 117, 0.24),
+    'selected-bkg':rgba(117, 117, 117, 0.08),
+    'placeholder': rgba(0, 0, 0, 0.38),
+    'text-color':rgba(0, 0, 0, 0.6),
+    'dropzone-placeholder': rgba(229, 144, 53, 1),
+);
+
+$border: (
+    'selected-border': 1px solid map-get($color, 'title-base-color'),
+    'block-border': 2px solid map-get($color, 'title-base-color'),
+    'circle-border': 2px solid map-get($color, 'title-bkg'),
+);
+
+$radius: 4px;
+$node-type-margin: 10px 16px 10px 0;
+$title-input-width: 96px;
+
+$circle-size: 7px;
+$zindex: 1;
+$dropzone-height: 8px;
+$dropzone-circle-margin: 1px 0 0 9px;
+$dropzone-line-margin: 3px 8px 3px 6px;
+$dropzone-line-height: 2px;
+
+/* Used when dragging nodes starts */
+.dragging-elements-fade-away {
+    /* stylelint-disable-next-line */
+    opacity: 0.38;
+}
+
+:host {
+    display: flex;
+
+    border-radius: $radius;
+
+    background-color: map-get($color, 'title-bkg');
+
+    min-width: 235px;
+}
+.context-titles {
+    display: flex;
+    margin-left: 12px;
+
+    .tree-flag {
+        position: relative;
+        top: 0;
+
+        margin: 0 10px 32px 0;
+        width: 1px;
+
+        background-color: map-get($color, 'title-base-color');
+
+        .circle {
+            position: absolute;
+            top: 16px;
+            left: -3px;
+
+            border: map-get($border, 'circle-border');
+            border-radius: 50%;
+
+            background-color: map-get($color, 'title-base-color');
+            @include shared.size(7px,7px);
+        }
+    }
+}
+
+.show-block-bottom {
+    /* stylelint-disable-next-line */
+    border: 1px solid transparent !important;
+    /* stylelint-disable-next-line */
+    border-radius: $radius !important;
+    &.selected {
+        /* stylelint-disable-next-line */
+        border: map-get($border, 'selected-border') !important;
+        /* stylelint-disable-next-line */
+        border-radius: $radius !important;
+        background-color: map-get($color, 'selected-bkg');
+    }
+}
+
+.title-block {
+    width: 100%;
+    .title-block-header {
+        flex: 1;
+        align-items: center;
+
+        display: flex;
+
+        margin-bottom: 8px;
+        border-bottom: map-get($border, 'block-border');
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        border-top: 1px solid transparent;
+        border-radius: 4px 4px 0 0;
+
+        white-space: nowrap;
+
+        &:hover {
+            border-radius: 4px 4px 0 0;
+            background-color: map-get($color, 'hover');
+        }
+
+        &.selected {
+            border: map-get($border, 'selected-border');
+            border-bottom: map-get($border, 'block-border');
+            border-radius: 4px 4px 0 0;
+            background-color: map-get($color, 'selected-bkg');
+        }
+        &.name-focused, &.expr-focused, &.stub-focused {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+    }
+
+    /* Ensure border of whole row collapse to left. */
+    &.compact-flex {
+        flex: none;
+        /* stylelint-disable-next-line */
+        width: auto !important;
+    }
+}
+
+.title-name-input {
+    margin-right: auto;
+    background: none;
+    @include editor.node-ref-name(12px);
+
+    &.name-focused, &.expr-focused, &.stub-focused {
+        border-left: map-get($border, 'selected-border');
+        border-right: map-get($border, 'selected-border');
+
+        background-color: map-get($color, 'white');
+
+        caret-color: rgba(65, 120, 184, 1);
+        outline: none;
+    }
+    &.compact-input-name {
+        padding: 0;
+    }
+}
+
+.node-type {
+    margin: $node-type-margin;
+    color: map-get($color, 'title-base-color');
+    @include shared.set-font(12px, bold);
+}
+
+.collapsed-btn {
+    color: map-get($color, 'title-base-color');
+}
+
+.collapsed-state-icon {
+    color: map-get($color, 'disabled');
+}
+
+.title-children {
+    flex: 1;
+    margin-left: 6px;
+}
+
+svg#icon {
+    width: 24px;
+}
+
+span.menu-shortcut {
+    position: absolute;
+    right: 16px;
+
+    @include shared.set-font(14px, bold);
+    color: map-get($color, 'placeholder');
+}
+
+.dropzone {
+    padding-bottom: $dropzone-height;
+}
+
+.drop-placeholder {
+    display: flex;
+
+    .drop-circle {
+        z-index: $zindex;
+
+        margin: $dropzone-circle-margin;
+        border: map-get($border, 'circle-border');
+        border-radius: 50%;
+        @include shared.size($circle-size, $circle-size);
+
+        background-color: map-get($color, 'dropzone-placeholder');
+    }
+
+    .drop-line {
+        margin: $dropzone-line-margin;
+        width: 100%;
+        height: $dropzone-line-height;
+        background-color: map-get($color, 'dropzone-placeholder');
+    }
+}

@@ -1,0 +1,65 @@
+/* Reference from material core theming */
+@use '../styles/palette';
+
+@mixin logi-contrast($base: $main-color, $opacity: 0.12) {
+    color: $base;
+    background-color: rgba($base, $opacity);
+}
+
+/**
+ * Extends base palette with default/lighter/darker/text color.
+ * For example:
+ *     $logi-brand: (
+ *         50:  #E7EAFA,
+ *         100: #C3C9F3,
+ *         200: #9AA6EB,
+ *         300: #6D84E4,
+ *         400: #4868DE,
+ *         500: #0C4CD7,
+ *         600: #0044CC,
+ *         700: #003AC0,
+ *         800: #002FB5,
+ *         900: #0019A3,
+ *     )
+ *
+ *     logi-palette($logi-brand) will return:
+ *         $logi-brand: (
+ *             50:  #E7EAFA,
+ *             100: #C3C9F3,
+ *             200: #9AA6EB,
+ *             300: #6D84E4,
+ *             400: #4868DE,
+ *             500: #0C4CD7,
+ *             600: #0044CC,
+ *             700: #003AC0,
+ *             800: #002FB5,
+ *             900: #0019A3,
+ *             default: #0044CC,
+ *             lighter: #9AA6EB,
+ *             darker: #002FB5,
+ *             text: #0044CC,
+ *         )
+ */
+@function logi-palette($base-palette, $default: 600, $lighter: 200, $darker: 800, $text: $default) {
+    $result: map_merge($base-palette, (
+        default: map-get($base-palette, $default),
+        lighter: map-get($base-palette, $lighter),
+        darker: map-get($base-palette, $darker),
+        text: map-get($base-palette, $text),
+    ));
+    @return $result;
+}
+
+@function logi-color($palette, $hue: default, $opacity: null) {
+    @if type-of($hue) == number and $hue >= 0 and $hue <= 1 {
+        @return logi-color($palette, default, $hue);
+    }
+
+    $color: map-get($palette, $hue);
+
+    @if (type-of($color) != color) {
+        @return $color;
+    }
+
+    @return rgba($color, if($opacity == null, opacity($color), $opacity));
+}

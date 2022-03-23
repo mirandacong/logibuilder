@@ -1,0 +1,42 @@
+@use './style/common.scss';
+
+/******************* Tabs tab **********************************/
+.logi-tabs-tab {
+    position: relative;
+    align-items: center;
+    display: inline-flex;
+    transition: 'color,font-size' 0.3s common.$ease-in-out;
+    box-sizing: border-box;
+    height: 100%;
+    cursor: pointer;
+    line-height: 32px;
+    min-height: 32px;
+    text-decoration: none;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    /** TODO(zengkai): Why have this style **/
+    &::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: 0;
+        transition: all 0.3s;
+        border-top: 2px solid transparent;
+        border-radius: common.$border-radius-base common.$border-radius-base 0 0;
+        width: 100%;
+        pointer-events: none;
+    }
+}
+.logi-tabs-tab-active {
+    font-weight: bold;
+    outline: none;
+}
+.logi-tabs-tab-disabled {
+    color: common.$black-12;
+    &:hover {
+        cursor: not-allowed;
+    }
+}

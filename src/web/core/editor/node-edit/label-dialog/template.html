@@ -1,0 +1,33 @@
+<div class="title-head" [ngClass]="{&quot;head-overflow&quot;:hasScrollbar()}">设置标签</div>
+<div class="labels-body" #setlabel>
+  <div class="cur-title">当前标签</div>
+  <div class="cur-labels">
+    <div class="place-holder" *ngIf="curLabel.length === 0">当前没有标签，请在可用标签中选择或在下方输入后回车新建</div>
+    <div class="current">
+      <button class="cur-label" *ngFor="let label of curLabel; let i=index; trackBy: trackByFnReturnIndex" [disabled]="false" [matRippleColor]="'rgba(19,172,89,0.12)'" [ngClass]="{&quot;focused&quot;: nameFocus[i]}" matRipple>
+        <div class="input-label" #label (blur)="nameChange(i)" (dblclick)="ondblclick(i)" [attr.contenteditable]="selected[i]" [ngClass]="{&quot;focused&quot;: nameFocus[i]}" spellcheck="false"></div>
+        <mat-icon class="close-icon" *ngIf="!nameFocus[i]" (click)="removeCurLabel(i)" svgIcon="ic_close"></mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="label-title">可用标签</div>
+  <div class="used-labels">
+    <div class="flex-labels">
+      <button class="label" *ngFor="let label of histLabel; let i=index; trackBy: trackByFnReturnIndex" [disabled]="false" [matRippleColor]="'rgba(19,172,89,0.12)'" matRipple>
+        <div class="label-text" (click)="addLabel(label)">{{label}}</div>
+        <mat-icon class="close-icon" (click)="removeHistLabel(label)" svgIcon="ic_close"></mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="label-title">新建标签</div>
+  <div class="new-labels" [ngClass]="{&quot;scroll&quot;:hasScrollbar()}">
+    <logi-group-input>
+      <input (keydown.enter)="onKeydown()" [formControl]="formControlInput" logi-input placeholder="输入文本，回车新建标签">
+    </logi-group-input>
+    <button class="done" (click)="onInput()" [ngClass]="{&quot;active&quot;: formControlInput.value.trim().length &gt; 0}" fontIcon="done" logi-icon-button></button>
+  </div>
+</div>
+<div class="footer" [ngClass]="{&quot;footer-overflow&quot;:hasScrollbar()}">
+  <div class="foot-text" [ngClass]="{&quot;show&quot;:isExisted}">标签名称已经存在</div>
+  <button class="close" (click)="close()" logi-stroked-button>关闭</button>
+</div>

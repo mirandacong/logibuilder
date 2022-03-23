@@ -1,0 +1,35 @@
+<div class="title-block" #container>
+    <div class="title-block-header" [attr.data-node]="node.uuid" [node]="node" logi-node-focusable>
+        <button class="collapsed-btn" (mousedown)="collapseNode(!collapse, $event)" [disabled]="node.tree.length===0"
+            [icon]="collapse ? &quot;ic_arrow_right&quot;:&quot;ic_arrow_down&quot;" logi-icon-button></button>
+        <ng-content select="mat-icon"></ng-content>
+        <div class="node-type">标题</div>
+        <input class="title-name-input" #ref_name (blur)="renameNode()" [focusType]="focusType.NAME" [node]="node"
+            [readonly]="readonly" [(ngModel)]="name" logi-node-focusable placeholder="标题内容" spellcheck="false">
+        <button class="menu-btn" *ngIf="!readonly" (click)="dispatchContextmenu($event)" fontIcon="more_vert"
+            logi-icon-button></button>
+    </div>
+    <div *ngIf="!collapse">
+        <div class="dropzone" #dropzone [dndDropZone]="dropZone" [hostUuid]="node.uuid" logi-dnd-dropzone>
+            <div class="drop-placeholder" logi-dnd-placeholder>
+                <div class="drop-circle"></div>
+                <div class="drop-line"></div>
+            </div>
+            <div class="context-titles" *ngFor="let child of node.tree; let i=index; trackBy: trackByFnReturnItem"
+                #drag_title_ref>
+                <div class="tree-flag">
+                    <div class="circle"></div>
+                </div>
+                <logi-editor-title class="title-children" *ngIf="isTitle(child)" [title]="child">
+                    <mat-icon *ngIf="!readonly" [dndDraggable]="child.uuid" [dndType]="child.nodetype.toString()"
+                        [dragElement]="drag_title_ref" [dropzoneElement]="dropzone" [focusType]="focusType.DRAG"
+                        [image]="titleDragImage" [node]="child" [uuid]="child.uuid" logi-dnd-draggable logi-dnd-image
+                        logi-node-focusable svgIcon="ic_handle" title="drag"></mat-icon>
+                </logi-editor-title>
+                <ng-template #titleDragImage>
+                    <logi-drag-img></logi-drag-img>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+.logi-scrollbar-horizontal {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    height: var(--scrollbar-width);
+    padding: 0 var(--scrollbar-padding);
+
+    &.with-vertical {
+        right: var(--scrollbar-width);
+    }
+}
+
+.logi-scrollbar-track-horizontal {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: var(--scrollbar-width);
+}
+
+.logi-scrollbar-thumb-horizontal {
+    border-radius: 8px;
+    height: 4px;
+    &:hover {
+        height: 8px;
+    }
+    &.logi-scrollbar-thumb-dragging {
+        height: 8px;
+    }
+}

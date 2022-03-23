@@ -1,0 +1,15 @@
+// card style
+.logi-tabs {
+    .logi-tabs.logi-tabs-card .logi-tabs-card-bar .logi-tabs-tab .logi-tabs-close-x {
+        .logi-tabs-rtl.logi-tabs {
+            margin-left: -5px;
+            margin-right: 3px;
+        }
+    }
+
+    .logi-tabs-extra-content {
+        .an-tabs-rtl .logi-tabs {
+            float: left !important;
+        }
+    }
+}

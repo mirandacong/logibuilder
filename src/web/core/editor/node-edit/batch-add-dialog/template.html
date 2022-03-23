@@ -1,0 +1,16 @@
+<ht mat-dialog-title>批量添加</ht>
+<mat-dialog-content>
+  <div class="content">请输入行/列名称，每行一个</div>
+  <div class="input-name">
+    <textarea class="input" (ngModelChange)="checkName($event)" [(ngModel)]="newNames" placeholder="分项名称" spellcheck="false" type="text"></textarea>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="footer" align="end">
+  <div class="block-left">
+    <logi-checkbox class="check-box" *ngIf="showScalar" (change$)="changed($event)">设为标量</logi-checkbox>
+  </div>
+  <div class="block-right">
+    <button class="cancel" (click)="cancel()" logi-button>取消</button>
+    <button class="ok" (click)="onConfirm()" [disabled]="disabled" logi-flat-button>确定</button>
+  </div>
+</mat-dialog-actions>

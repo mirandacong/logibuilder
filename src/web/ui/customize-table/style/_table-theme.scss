@@ -1,0 +1,21 @@
+@use '../../core/styles/shared';
+
+@use '../../core/theming/theming';
+
+@mixin logi-table-theme($theme) {
+    $primary: map-get($theme, primary);
+    $color: theming.logi-color($primary);
+
+    .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+        color: $color;
+    }
+    .mat-form-field.mat-focused .mat-form-field-ripple {
+        background-color: $color;
+    }
+
+    .cdk-overlay-container {
+        .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+            color: $color;
+        }
+    }
+}
