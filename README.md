@@ -23,20 +23,6 @@ corepack enable
 yarn
 ```
 
-设置环境变量：
-
-如果您的系统是Linux系统，则运行下方命令:
-
-```sh
-export NODE_OPTIONS = '--max-old-space-size=8192'
-```
-
-如果是Windows系统，则运行下方命令：
-
-```sh
-set NODE_OPTIONS = '--max-old-space-size=8192'
-```
-
 ### 启动
 
 在代码所在目录下，运行
