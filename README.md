@@ -1,5 +1,9 @@
 # LogiBuilder
 
+## 在线使用
+
+[逻辑汇](http://www.logiocean.com/logismall)
+
 ## 本地启动
 
 ### 下载代码至本地并解压
